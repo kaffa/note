@@ -1,0 +1,22 @@
+<section id="nikola-tips">
+<h1>Nikola Tips</h1>
+<section id="nikola-serve">
+<h2>1. Nikola serve 自动刷新的命令行怎么写？</h2>
+<div class="code"><pre class="code shell"><a id="rest_code_ccb8dfdfd79f4ed6bc7d9d2247f870d3-1" name="rest_code_ccb8dfdfd79f4ed6bc7d9d2247f870d3-1" href="#rest_code_ccb8dfdfd79f4ed6bc7d9d2247f870d3-1"></a>nikola<span class="w"> </span>auto
+</pre></div>
+<p>即使 <strong>conf.py</strong> 中已绑定非127.0.0.1的地址，上面的命令也只会在127.0.0.1启动调试。</p>
+<p>没有去看源代码，可能这样实现从安全角度存在一定的合理性。</p>
+<p>如果需要任意主机都能获得访问，可使用 -a 参数指定地址0.0.0.0</p>
+<div class="code"><pre class="code shell"><a id="rest_code_f105c611911f4342b3294acd21a2508f-1" name="rest_code_f105c611911f4342b3294acd21a2508f-1" href="#rest_code_f105c611911f4342b3294acd21a2508f-1"></a>nikola<span class="w"> </span>auto<span class="w"> </span>-a0.0.0.0
+</pre></div>
+</section>
+<section id="nikola-theme-css">
+<h2>2. Nikola Theme 如何定制 css</h2>
+<p>如果在模板中有代码</p>
+<div class="code"><pre class="code html+mako"><a id="rest_code_1703d2cd5e1746a1a7696132d54ec56f-1" name="rest_code_1703d2cd5e1746a1a7696132d54ec56f-1" href="#rest_code_1703d2cd5e1746a1a7696132d54ec56f-1"></a><span class="cp">%</span><span class="k">if</span> <span class="n">has_custom_css</span><span class="p">:</span>
+<a id="rest_code_1703d2cd5e1746a1a7696132d54ec56f-2" name="rest_code_1703d2cd5e1746a1a7696132d54ec56f-2" href="#rest_code_1703d2cd5e1746a1a7696132d54ec56f-2"></a>  <span class="p">&lt;</span><span class="nt">link</span> <span class="na">href</span><span class="o">=</span><span class="s">&quot;/assets/css/custom.css&quot;</span> <span class="na">rel</span><span class="o">=</span><span class="s">&quot;stylesheet&quot;</span> <span class="na">type</span><span class="o">=</span><span class="s">&quot;text/css&quot;</span><span class="p">&gt;</span>
+<a id="rest_code_1703d2cd5e1746a1a7696132d54ec56f-3" name="rest_code_1703d2cd5e1746a1a7696132d54ec56f-3" href="#rest_code_1703d2cd5e1746a1a7696132d54ec56f-3"></a><span class="cp">%</span><span class="k">endif</span>
+</pre></div>
+<p>因此，增加 /assets/css/custom.css 文件即可。</p>
+</section>
+</section>

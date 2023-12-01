@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html prefix="" lang="zh_cn">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width">
+<title>EverEdit SFTP Error With FreeBSD | 琅環笔记</title>
+<meta name="theme-color" content="#FED43F">
+<meta name="generator" content="Nikola (getnikola.com)">
+<link rel="alternate" type="application/rss+xml" title="RSS" href="../../rss.xml">
+<link rel="canonical" href="https://www.tt4e.com/posts/everedit-sftp-error-with-freebsd/">
+<link href="../../assets/css/rst.css" rel="stylesheet" type="text/css">
+<link href="../../assets/css/code.css" rel="stylesheet" type="text/css">
+<link href="../../assets/css/font-awesome.css" rel="stylesheet" type="text/css">
+<link href="../../assets/css/styles.css" rel="stylesheet" type="text/css">
+<link href="../../assets/css/custom.css" rel="stylesheet" type="text/css">
+<!--[if lt IE 9]><script src="../../assets/js/html5.js"></script><![endif]--><meta name="author" content="逍遥">
+<link rel="prev" href="../taking-notes-in-orgmode-with-nikola/" title="Taking Notes In Orgmode With Nikola" type="text/html">
+</head>
+<body>
+<script type="text/javascript">
+  // Detect JS support
+  document.body.className = document.body.className + " js_enabled";
+</script><a href="#content" class="sr-only sr-only-focusable">跳到主内容</a>
+<div id="container">
+    <section class="hero is-primary"><!-- Hero header: will stick at the top --><div class="hero-head">
+  <header id="header" class="nav"><div class="container">
+      <div class="nav-left">
+        
+<div class="nav-item is-brand">
+  <h1 id="brand" class="site-header">
+      <a href="https://www.tt4e.com/" title="琅環笔记" rel="home">
+        
+  <span class="level is-mobile">
+
+
+  <span id="blog-title" class="level-item site-title">琅環笔记</span>
+
+  </span>
+
+      </a>
+  </h1>
+</div>
+
+        
+
+      </div>
+      
+<!-- This "nav-toggle" hamburger menu is only visible on mobile -->
+<!-- You need JavaScript to toggle the "is-active" class on "nav-menu" -->
+<span id="nav-toggle-burger" class="nav-toggle">
+  <span></span>
+  <span></span>
+  <span></span>
+</span>
+<div id="menu" class="nav-right nav-menu">
+      <a class="nav-item" title="文章归档" href="../../archive.html">文章归档</a>
+      <a class="nav-item" title="标签" href="../../categories/">标签</a>
+      <a class="nav-item" title="RSS 源" href="../../rss.xml">RSS 源</a>
+
+
+</div>
+<script type="text/javascript">
+document.getElementById('nav-toggle-burger').onclick = function() {
+  var myMenu = document.getElementById('menu');
+  var className = ' ' + myMenu.className + ' ';
+  var IS_ACTIVE_CLASS = 'is-active';
+  if ( ~className.indexOf(' ' + IS_ACTIVE_CLASS + ' ') ) {
+    myMenu.className = className.replace(' ' + IS_ACTIVE_CLASS + ' ', ' ');
+  } else {
+    myMenu.className += ' ' + IS_ACTIVE_CLASS;
+  }
+}
+</script>
+</div>
+  </header>
+</div>
+
+    <!-- Hero content: will be in the middle -->
+    
+  
+    
+
+    <!-- Hero footer: will stick at the bottom -->
+  </section><main id="content" class="section section-main"><div class="container">
+      
+<article class="post-text h-entry hentry postpage" itemscope="itemscope" itemtype="http://schema.org/Article"><header class="heading"><h1 class="title is-1 p-name entry-title" itemprop="headline name">
+    <a href="." class="u-url">EverEdit SFTP Error With FreeBSD</a>
+  </h1>
+
+  <div class="level metadata">
+    
+    <div class="level-left">
+      <div class="level-item">
+        <p class="byline author vcard">
+          <span class="byline-name fn">
+              逍遥
+          </span>
+        </p>
+      </div>
+    </div>
+    
+    <div class="level-right">
+      <div class="level-item">
+        <p class="dateline">
+          <a href="." rel="bookmark">
+            <time class="published dt-published" datetime="2023-12-01T11:09:38+08:00" itemprop="datePublished" title="2023-12-01 11:09">2023-12-01 11:09</time></a>
+        </p>
+      </div>
+      
+        <div class="level-item">
+          <p class="commentline">
+    
+    <a href="#disqus_thread" data-disqus-identifier="cache/posts/everedit-sftp-error-with-freebsd.html">评论</a>
+
+</p>
+        </div>
+      
+      
+  <div class="level-item">
+    <p class="sourceline">
+      <a href="index.rst" id="sourcelink">源文件</a>
+    </p>
+  </div>
+
+      
+    </div>
+  </div>
+  
+
+</header><div class="section content e-content entry-content" itemprop="articleBody text">
+    <section id="section-1"><h2>问题现象</h2>
+<p>EverEdit 4 内置 SFTP 插件连接 FreeBSD 13.2 SSH 时，提示如下:</p>
+<pre class="literal-block">[23:19:56]:Hostname was found in DNS cache
+[23:19:56]:  Trying 192.168.2.81...
+[23:19:56]:Adding handle: conn: 0x22356d0cfa0
+[23:19:56]:Adding handle: send: 0
+[23:19:56]:Adding handle: recv: 0
+[23:19:56]:Curl_addHandleToPipeline: length: 1
+[23:19:56]:- Conn 1 (0x22356d0cfa0) send_pipe: 1, recv_pipe: 0
+[23:19:56]:Connected to 192.168.2.81 (192.168.2.81) port 22 (#1)
+[23:19:56]:Failure establishing ssh session
+[23:19:56]:Closing connection 1</pre>
+<p>而使用其他 SFTP 客户端是完全正常的。</p>
+</section><section id="section-2"><h2>解决方法</h2>
+<p>已提交给作者，还没找出解决办法。</p>
+<p>在网上查找说是连接不上 FreeBSD 13.2 的 sftp，可能与 libcurl 有关。</p>
+<p>但还没有时间写代码来调试。</p>
+<p>待ee作者更新后，我再咨询。</p>
+</section><section id="section-3"><h2>参考</h2>
+<ol class="arabic simple">
+<li><p><a class="reference external" href="https://curl.se/libcurl/c/sftpget.html">https://curl.se/libcurl/c/sftpget.html</a></p></li>
+<li><p><a class="reference external" href="https://curl-users.cool.haxx.narkive.com/ppppPXNc/curl-sftp-failure-establishing-ssh-session">https://curl-users.cool.haxx.narkive.com/ppppPXNc/curl-sftp-failure-establishing-ssh-session</a></p></li>
+</ol></section>
+</div>
+  <aside class="postpromonav"><div class="columns tags" itemprop="keywords">
+        <div class="column has-text-centered">
+          <a class="tag is-primary is-medium p-category" href="../../categories/freebsd/" rel="tag">freebsd</a>
+        </div>
+        <div class="column has-text-centered">
+          <a class="tag is-primary is-medium p-category" href="../../categories/libcurl/" rel="tag">libcurl</a>
+        </div>
+  </div>
+
+    
+  <div class="columns">
+    <div class="column">
+      <nav class="pagination pager hidden-print"><a class="pagination-previous previous" href="../taking-notes-in-orgmode-with-nikola/" rel="prev" title="Taking Notes In Orgmode With Nikola">上一篇文章</a>
+      </nav>
+</div>
+  </div>
+
+  </aside><section class="section comments hidden-print"><h2 class="title is-2">评论</h2>
+      
+    
+        <div id="disqus_thread"></div>
+        <script>
+        var disqus_shortname ="tt4e",
+            disqus_url="https://www.tt4e.com/posts/everedit-sftp-error-with-freebsd/",
+        disqus_title="EverEdit SFTP Error With FreeBSD",
+        disqus_identifier="cache/posts/everedit-sftp-error-with-freebsd.html",
+        disqus_config = function () {
+            this.language = "zh_cn";
+        };
+        (function() {
+            var dsq = document.createElement('script'); dsq.async = true;
+            dsq.src = 'https://' + disqus_shortname + '.disqus.com/embed.js';
+            (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+        })();
+    </script><noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript" rel="nofollow">comments powered by Disqus.</a>
+</noscript>
+    <a href="https://disqus.com" class="dsq-brlink" rel="nofollow">Comments powered by <span class="logo-disqus">Disqus</span></a>
+
+
+    </section></article><script>var disqus_shortname="tt4e";(function(){var a=document.createElement("script");a.async=true;a.src="https://"+disqus_shortname+".disqus.com/count.js";(document.getElementsByTagName("head")[0]||document.getElementsByTagName("body")[0]).appendChild(a)}());</script>
+</div>
+  </main><footer id="footer" class="footer"><div class="container">
+      Contents © 2023         <a href="mailto:xiaoyao@tt4e.com">逍遥</a> - Powered by         <a href="https://getnikola.com" rel="nofollow">Nikola</a>         
+      
+    </div>
+  </footer>
+</div>
+
+  
+
+
+
+
+</body>
+</html>

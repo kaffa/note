@@ -1,0 +1,68 @@
+#+BEGIN_COMMENT
+.. title: Taking Notes In Orgmode With Nikola
+.. slug: taking-notes-in-orgmode-with-nikola
+.. date: 2023-11-30 17:34:15 UTC+08:00
+.. tags: nikola,orgmode 
+.. category: Notes 
+.. link: 
+.. description: 
+.. type: text
+
+#+END_COMMENT
+
+** 步骤
+
+1. 安装 emacs，最新版已内置 Org mode
+2. 安装 nikola
+3. 安装 nikola orgmode 插件，并按插件目录下的 conf.py.sample 修改 conf.py
+4. 开始写笔记
+
+#+BEGIN_SRC sh
+nikola new_post -f orgmode -e
+#+END_SRC
+
+5. 预览
+
+#+BEGIN_SRC sh
+nikola auto -a0.0.0.0
+#+END_SRC
+
+6. 发布到 GitHub
+
+设置 conf.py
+#+BEGIN_SRC python
+GITHUB_SOURCE_BRANCH = 'sources'
+GITHUB_DEPLOY_BRANCH = 'master'
+#+END_SRC
+
+发布
+#+BEGIN_SRC sh
+$ nikola github_deploy
+#+END_SRC
+
+** 其他
+
+1. 修改默认编辑器为 emacs
+
+#+BEGIN_SRC sh
+emacs ~/.profile
+#+END_SRC
+
+#+BEGIN_SRC
+EDITOR=emacs
+#+END_SRC
+
+2. 显示当前 Shell
+
+#+BEGIN_SRC
+echo $0
+#+END_SRC
+
+
+--------------------------------------------------
+
+我在房间里洗个澡
+同时在思考中国哪个rapper能比我屌
+
+--------------------------------------------------
+

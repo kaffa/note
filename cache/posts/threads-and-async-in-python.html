@@ -1,0 +1,52 @@
+<pre class="literal-block">『专家程序员经历多，遇到的坑也多。面对线程的话题，TA 们多半会说：线程很糟糕，你永远不应该使用它们。』</pre>
+<section id="section-1">
+<h1>异步的结构</h1>
+<p>在 Python 中，不适合重量级使用线程。现在更适合使用异步模式，所涉及的库是 asyncio。</p>
+<p>asyncio 的结构如下：</p>
+<table class="table is-bordered">
+<thead>
+<tr><th class="head"><p>层级</p></th>
+<th class="head"><p>概念</p></th>
+<th class="head"><p>实现</p></th>
+</tr>
+</thead>
+<tbody>
+<tr><td><p>9</p></td>
+<td><p>网络：流</p></td>
+<td><p>StreamReader, StreamWriter, asyncio.open_connection(), asyncio.start_server()</p></td>
+</tr>
+<tr><td><p>8</p></td>
+<td><p>网络：TCP/UDP</p></td>
+<td><p>Protocol</p></td>
+</tr>
+<tr><td><p>7</p></td>
+<td><p>网络：传输</p></td>
+<td><p>BaseTransport</p></td>
+</tr>
+<tr><td><p>6</p></td>
+<td><p>工具</p></td>
+<td><p>asyncio.Queue</p></td>
+</tr>
+<tr><td><p>5</p></td>
+<td><p>子进程和线程</p></td>
+<td><p>run_in_executor(), asyncio.subprocess</p></td>
+</tr>
+<tr><td><p>4</p></td>
+<td><p>任务</p></td>
+<td><p>asyncio.Task, asyncio.create_task()</p></td>
+</tr>
+<tr><td><p>3</p></td>
+<td><p>未来对象</p></td>
+<td><p>asyncio.Future</p></td>
+</tr>
+<tr><td><p>2</p></td>
+<td><p>事件循环</p></td>
+<td><p>asyncio.run(), BaseEventLoop</p></td>
+</tr>
+<tr><td><p>1</p></td>
+<td><p>协程</p></td>
+<td><p>async def, async with, async for, await</p></td>
+</tr>
+</tbody>
+</table>
+</section>

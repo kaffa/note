@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<?xml-stylesheet type="text/xsl" href="../assets/xml/rss.xsl" media="all"?><rss version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>琅環笔记 (关于 Tips 的文章)</title><link>https://www.tt4e.com/</link><description></description><atom:link href="https://www.tt4e.com/categories/cat_tips.xml" rel="self" type="application/rss+xml"></atom:link><language>zh_cn</language><copyright>Contents © 2023 &lt;a href="mailto:xiaoyao@tt4e.com"&gt;逍遥&lt;/a&gt; </copyright><lastBuildDate>Thu, 30 Nov 2023 09:40:35 GMT</lastBuildDate><generator>Nikola (getnikola.com)</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>Nikola Tips</title><link>https://www.tt4e.com/posts/nikola-tips/</link><dc:creator>逍遥</dc:creator><description>&lt;section id="nikola-tips"&gt;
+&lt;h2&gt;Nikola Tips&lt;/h2&gt;
+&lt;section id="nikola-serve"&gt;
+&lt;h3&gt;1. Nikola serve 自动刷新的命令行怎么写？&lt;/h3&gt;
+&lt;div class="code"&gt;&lt;pre class="code shell"&gt;&lt;a id="rest_code_ccb8dfdfd79f4ed6bc7d9d2247f870d3-1" name="rest_code_ccb8dfdfd79f4ed6bc7d9d2247f870d3-1" href="https://www.tt4e.com/posts/nikola-tips/#rest_code_ccb8dfdfd79f4ed6bc7d9d2247f870d3-1"&gt;&lt;/a&gt;nikola&lt;span class="w"&gt; &lt;/span&gt;auto
+&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;即使 &lt;strong&gt;conf.py&lt;/strong&gt; 中已绑定非127.0.0.1的地址，上面的命令也只会在127.0.0.1启动调试。&lt;/p&gt;
+&lt;p&gt;没有去看源代码，可能这样实现从安全角度存在一定的合理性。&lt;/p&gt;
+&lt;p&gt;如果需要任意主机都能获得访问，可使用 -a 参数指定地址0.0.0.0&lt;/p&gt;
+&lt;div class="code"&gt;&lt;pre class="code shell"&gt;&lt;a id="rest_code_f105c611911f4342b3294acd21a2508f-1" name="rest_code_f105c611911f4342b3294acd21a2508f-1" href="https://www.tt4e.com/posts/nikola-tips/#rest_code_f105c611911f4342b3294acd21a2508f-1"&gt;&lt;/a&gt;nikola&lt;span class="w"&gt; &lt;/span&gt;auto&lt;span class="w"&gt; &lt;/span&gt;-a0.0.0.0
+&lt;/pre&gt;&lt;/div&gt;
+&lt;/section&gt;
+&lt;section id="nikola-theme-css"&gt;
+&lt;h3&gt;2. Nikola Theme 如何定制 css&lt;/h3&gt;
+&lt;p&gt;如果在模板中有代码&lt;/p&gt;
+&lt;div class="code"&gt;&lt;pre class="code html+mako"&gt;&lt;a id="rest_code_1703d2cd5e1746a1a7696132d54ec56f-1" name="rest_code_1703d2cd5e1746a1a7696132d54ec56f-1" href="https://www.tt4e.com/posts/nikola-tips/#rest_code_1703d2cd5e1746a1a7696132d54ec56f-1"&gt;&lt;/a&gt;&lt;span class="cp"&gt;%&lt;/span&gt;&lt;span class="k"&gt;if&lt;/span&gt; &lt;span class="n"&gt;has_custom_css&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;
+&lt;a id="rest_code_1703d2cd5e1746a1a7696132d54ec56f-2" name="rest_code_1703d2cd5e1746a1a7696132d54ec56f-2" href="https://www.tt4e.com/posts/nikola-tips/#rest_code_1703d2cd5e1746a1a7696132d54ec56f-2"&gt;&lt;/a&gt;  &lt;span class="p"&gt;&amp;lt;&lt;/span&gt;&lt;span class="nt"&gt;link&lt;/span&gt; &lt;span class="na"&gt;href&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s"&gt;"/assets/css/custom.css"&lt;/span&gt; &lt;span class="na"&gt;rel&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s"&gt;"stylesheet"&lt;/span&gt; &lt;span class="na"&gt;type&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s"&gt;"text/css"&lt;/span&gt;&lt;span class="p"&gt;&amp;gt;&lt;/span&gt;
+&lt;a id="rest_code_1703d2cd5e1746a1a7696132d54ec56f-3" name="rest_code_1703d2cd5e1746a1a7696132d54ec56f-3" href="https://www.tt4e.com/posts/nikola-tips/#rest_code_1703d2cd5e1746a1a7696132d54ec56f-3"&gt;&lt;/a&gt;&lt;span class="cp"&gt;%&lt;/span&gt;&lt;span class="k"&gt;endif&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;因此，增加 /assets/css/custom.css 文件即可。&lt;/p&gt;
+&lt;/section&gt;
+&lt;/section&gt;</description><category>nikola</category><guid>https://www.tt4e.com/posts/nikola-tips/</guid><pubDate>Mon, 27 Nov 2023 11:34:15 GMT</pubDate></item><item><title>「'ssh'不是内部或外部命令，也不是可运行的程序或批处理文件」的解决方法</title><link>https://www.tt4e.com/posts/ssh-is-not-recognized-as-an-internal-or-external-command/</link><dc:creator>逍遥</dc:creator><description>&lt;section id="section-1"&gt;
+&lt;h2&gt;问题现象&lt;/h2&gt;
+&lt;p&gt;当在 &lt;a class="reference external" href="https://github.com/microsoft/terminal"&gt;Windows Terminal&lt;/a&gt; 中运行 &lt;em&gt;ssh&lt;/em&gt; 命令时，终端中提示：&lt;/p&gt;
+&lt;div class="code"&gt;&lt;pre class="code text"&gt;&lt;a id="rest_code_09febd8388d84b87af494482220aea35-1" name="rest_code_09febd8388d84b87af494482220aea35-1" href="https://www.tt4e.com/posts/ssh-is-not-recognized-as-an-internal-or-external-command/#rest_code_09febd8388d84b87af494482220aea35-1"&gt;&lt;/a&gt;'ssh'不是内部或外部命令，也不是可运行的程序或批处理文件
+&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;English Version&lt;/p&gt;
+&lt;div class="code"&gt;&lt;pre class="code text"&gt;&lt;a id="rest_code_087e0e782ac54d838c161ee422ac2893-1" name="rest_code_087e0e782ac54d838c161ee422ac2893-1" href="https://www.tt4e.com/posts/ssh-is-not-recognized-as-an-internal-or-external-command/#rest_code_087e0e782ac54d838c161ee422ac2893-1"&gt;&lt;/a&gt;'ssh' is not recognized as an internal or external command, operable program or batch file.
+&lt;/pre&gt;&lt;/div&gt;
+&lt;/section&gt;
+&lt;section id="section-2"&gt;
+&lt;h2&gt;解决方法&lt;/h2&gt;
+&lt;p&gt;在 Windows 设置中安装 OpenSSH 客户端，且在环境变量 PATH 中加入：&lt;/p&gt;
+&lt;div class="code"&gt;&lt;pre class="code text"&gt;&lt;a id="rest_code_a0b05d87f8444f08866a95dd3d4b17b3-1" name="rest_code_a0b05d87f8444f08866a95dd3d4b17b3-1" href="https://www.tt4e.com/posts/ssh-is-not-recognized-as-an-internal-or-external-command/#rest_code_a0b05d87f8444f08866a95dd3d4b17b3-1"&gt;&lt;/a&gt;C:\Windows\System32\OpenSSH
+&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;验证方法：检查以上目录中是否有 ssh.exe 文件。&lt;/p&gt;
+&lt;/section&gt;</description><category>openssh</category><category>ssh</category><guid>https://www.tt4e.com/posts/ssh-is-not-recognized-as-an-internal-or-external-command/</guid><pubDate>Mon, 27 Nov 2023 05:17:12 GMT</pubDate></item><item><title>SecureCRT 中 Emacs 或 Vim 方向键变成 ABCD 的解决方法</title><link>https://www.tt4e.com/posts/solution-to-arrow-keys-changed-into-abcd-in-securecrt-emacs-vim/</link><dc:creator>逍遥</dc:creator><description>&lt;section id="section-1"&gt;
+&lt;h2&gt;问题现象&lt;/h2&gt;
+&lt;p&gt;在 SecureCRT 中使用 Emacs 或 Vim 方向键变成 ABCD，看起来是键盘的模式导致的。&lt;/p&gt;
+&lt;/section&gt;
+&lt;section id="section-2"&gt;
+&lt;h2&gt;解决方法&lt;/h2&gt;
+&lt;ol class="arabic simple"&gt;
+&lt;li&gt;&lt;p&gt;打开菜单 Options -&amp;gt; Edit Default Session...&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;在打开的窗口 Session Options - Default 中，点击左侧 Terminal -&amp;gt; Emulation -&amp;gt; Modes&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;右侧的 Emulation Modes 下，Numeric keypad 和 Application keypad 单选框组中，选择 Application keypad。&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;保存&lt;/p&gt;&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/section&gt;</description><category>securecrt</category><guid>https://www.tt4e.com/posts/solution-to-arrow-keys-changed-into-abcd-in-securecrt-emacs-vim/</guid><pubDate>Fri, 24 Nov 2023 23:25:01 GMT</pubDate></item></channel></rss>

@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html prefix="" lang="zh_cn">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width">
+<title>「'ssh'不是内部或外部命令，也不是可运行的程序或批处理文件」的解决方法 | 琅環笔记</title>
+<meta name="theme-color" content="#FED43F">
+<meta name="generator" content="Nikola (getnikola.com)">
+<link rel="alternate" type="application/rss+xml" title="RSS" href="../../rss.xml">
+<link rel="canonical" href="https://www.tt4e.com/posts/ssh-is-not-recognized-as-an-internal-or-external-command/">
+<link href="../../assets/css/rst.css" rel="stylesheet" type="text/css">
+<link href="../../assets/css/code.css" rel="stylesheet" type="text/css">
+<link href="../../assets/css/font-awesome.css" rel="stylesheet" type="text/css">
+<link href="../../assets/css/styles.css" rel="stylesheet" type="text/css">
+<link href="../../assets/css/custom.css" rel="stylesheet" type="text/css">
+<!--[if lt IE 9]><script src="../../assets/js/html5.js"></script><![endif]--><meta name="author" content="逍遥">
+<link rel="prev" href="../threads-and-async-in-python/" title="Threads and Async in Python" type="text/html">
+<link rel="next" href="../nikola-tips/" title="Nikola Tips" type="text/html">
+</head>
+<body>
+<script type="text/javascript">
+  // Detect JS support
+  document.body.className = document.body.className + " js_enabled";
+</script><a href="#content" class="sr-only sr-only-focusable">跳到主内容</a>
+<div id="container">
+    <section class="hero is-primary"><!-- Hero header: will stick at the top --><div class="hero-head">
+  <header id="header" class="nav"><div class="container">
+      <div class="nav-left">
+        
+<div class="nav-item is-brand">
+  <h1 id="brand" class="site-header">
+      <a href="https://www.tt4e.com/" title="琅環笔记" rel="home">
+        
+  <span class="level is-mobile">
+
+
+  <span id="blog-title" class="level-item site-title">琅環笔记</span>
+
+  </span>
+
+      </a>
+  </h1>
+</div>
+
+        
+
+      </div>
+      
+<!-- This "nav-toggle" hamburger menu is only visible on mobile -->
+<!-- You need JavaScript to toggle the "is-active" class on "nav-menu" -->
+<span id="nav-toggle-burger" class="nav-toggle">
+  <span></span>
+  <span></span>
+  <span></span>
+</span>
+<div id="menu" class="nav-right nav-menu">
+      <a class="nav-item" title="文章归档" href="../../archive.html">文章归档</a>
+      <a class="nav-item" title="标签" href="../../categories/">标签</a>
+      <a class="nav-item" title="RSS 源" href="../../rss.xml">RSS 源</a>
+
+
+</div>
+<script type="text/javascript">
+document.getElementById('nav-toggle-burger').onclick = function() {
+  var myMenu = document.getElementById('menu');
+  var className = ' ' + myMenu.className + ' ';
+  var IS_ACTIVE_CLASS = 'is-active';
+  if ( ~className.indexOf(' ' + IS_ACTIVE_CLASS + ' ') ) {
+    myMenu.className = className.replace(' ' + IS_ACTIVE_CLASS + ' ', ' ');
+  } else {
+    myMenu.className += ' ' + IS_ACTIVE_CLASS;
+  }
+}
+</script>
+</div>
+  </header>
+</div>
+
+    <!-- Hero content: will be in the middle -->
+    
+  
+    
+
+    <!-- Hero footer: will stick at the bottom -->
+  </section><main id="content" class="section section-main"><div class="container">
+      
+<article class="post-text h-entry hentry postpage" itemscope="itemscope" itemtype="http://schema.org/Article"><header class="heading"><h1 class="title is-1 p-name entry-title" itemprop="headline name">
+    <a href="." class="u-url">「'ssh'不是内部或外部命令，也不是可运行的程序或批处理文件」的解决方法</a>
+  </h1>
+
+  <div class="level metadata">
+    
+    <div class="level-left">
+      <div class="level-item">
+        <p class="byline author vcard">
+          <span class="byline-name fn">
+              逍遥
+          </span>
+        </p>
+      </div>
+    </div>
+    
+    <div class="level-right">
+      <div class="level-item">
+        <p class="dateline">
+          <a href="." rel="bookmark">
+            <time class="published dt-published" datetime="2023-11-27T13:17:12+08:00" itemprop="datePublished" title="2023-11-27 13:17">2023-11-27 13:17</time></a>
+        </p>
+      </div>
+      
+        <div class="level-item">
+          <p class="commentline">
+    
+    <a href="#disqus_thread" data-disqus-identifier="cache/posts/ssh-is-not-recognized-as-an-internal-or-external-command.html">评论</a>
+
+</p>
+        </div>
+      
+      
+  <div class="level-item">
+    <p class="sourceline">
+      <a href="index.rst" id="sourcelink">源文件</a>
+    </p>
+  </div>
+
+      
+    </div>
+  </div>
+  
+
+</header><div class="section content e-content entry-content" itemprop="articleBody text">
+    <section id="section-1"><h2>问题现象</h2>
+<p>当在 <a class="reference external" href="https://github.com/microsoft/terminal">Windows Terminal</a> 中运行 <em>ssh</em> 命令时，终端中提示：</p>
+<div class="code"><pre class="code text"><a id="rest_code_09febd8388d84b87af494482220aea35-1" name="rest_code_09febd8388d84b87af494482220aea35-1" href="#rest_code_09febd8388d84b87af494482220aea35-1"></a>'ssh'不是内部或外部命令，也不是可运行的程序或批处理文件
+</pre></div>
+<p>English Version</p>
+<div class="code"><pre class="code text"><a id="rest_code_087e0e782ac54d838c161ee422ac2893-1" name="rest_code_087e0e782ac54d838c161ee422ac2893-1" href="#rest_code_087e0e782ac54d838c161ee422ac2893-1"></a>'ssh' is not recognized as an internal or external command, operable program or batch file.
+</pre></div>
+</section><section id="section-2"><h2>解决方法</h2>
+<p>在 Windows 设置中安装 OpenSSH 客户端，且在环境变量 PATH 中加入：</p>
+<div class="code"><pre class="code text"><a id="rest_code_a0b05d87f8444f08866a95dd3d4b17b3-1" name="rest_code_a0b05d87f8444f08866a95dd3d4b17b3-1" href="#rest_code_a0b05d87f8444f08866a95dd3d4b17b3-1"></a>C:\Windows\System32\OpenSSH
+</pre></div>
+<p>验证方法：检查以上目录中是否有 ssh.exe 文件。</p>
+</section>
+</div>
+  <aside class="postpromonav"><div class="columns tags" itemprop="keywords">
+        <div class="column has-text-centered">
+          <a class="tag is-primary is-medium p-category" href="../../categories/openssh/" rel="tag">openssh</a>
+        </div>
+        <div class="column has-text-centered">
+          <a class="tag is-primary is-medium p-category" href="../../categories/ssh/" rel="tag">ssh</a>
+        </div>
+  </div>
+
+    
+  <div class="columns">
+    <div class="column">
+      <nav class="pagination pager hidden-print"><a class="pagination-previous previous" href="../threads-and-async-in-python/" rel="prev" title="Threads and Async in Python">上一篇文章</a>
+          <a class="pagination-next next" href="../nikola-tips/" rel="next" title="Nikola Tips">下一篇文章</a>
+      </nav>
+</div>
+  </div>
+
+  </aside><section class="section comments hidden-print"><h2 class="title is-2">评论</h2>
+      
+    
+        <div id="disqus_thread"></div>
+        <script>
+        var disqus_shortname ="tt4e",
+            disqus_url="https://www.tt4e.com/posts/ssh-is-not-recognized-as-an-internal-or-external-command/",
+        disqus_title="\u300c'ssh'\u4e0d\u662f\u5185\u90e8\u6216\u5916\u90e8\u547d\u4ee4\uff0c\u4e5f\u4e0d\u662f\u53ef\u8fd0\u884c\u7684\u7a0b\u5e8f\u6216\u6279\u5904\u7406\u6587\u4ef6\u300d\u7684\u89e3\u51b3\u65b9\u6cd5",
+        disqus_identifier="cache/posts/ssh-is-not-recognized-as-an-internal-or-external-command.html",
+        disqus_config = function () {
+            this.language = "zh_cn";
+        };
+        (function() {
+            var dsq = document.createElement('script'); dsq.async = true;
+            dsq.src = 'https://' + disqus_shortname + '.disqus.com/embed.js';
+            (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+        })();
+    </script><noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript" rel="nofollow">comments powered by Disqus.</a>
+</noscript>
+    <a href="https://disqus.com" class="dsq-brlink" rel="nofollow">Comments powered by <span class="logo-disqus">Disqus</span></a>
+
+
+    </section></article><script>var disqus_shortname="tt4e";(function(){var a=document.createElement("script");a.async=true;a.src="https://"+disqus_shortname+".disqus.com/count.js";(document.getElementsByTagName("head")[0]||document.getElementsByTagName("body")[0]).appendChild(a)}());</script>
+</div>
+  </main><footer id="footer" class="footer"><div class="container">
+      Contents © 2023         <a href="mailto:xiaoyao@tt4e.com">逍遥</a> - Powered by         <a href="https://getnikola.com" rel="nofollow">Nikola</a>         
+      
+    </div>
+  </footer>
+</div>
+
+  
+
+
+
+
+</body>
+</html>

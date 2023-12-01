@@ -1,0 +1,17 @@
+﻿.content h2 {
+    margin-top: 2rem;
+}
+div.code {
+    margin: 0 0 1rem 0;
+}
+
+div.code pre, pre.literal-block,  /* rst */
+div.highlight pre /* orgmode */
+{
+    margin: 0;
+    padding: 1.25rem 1.5rem;
+    font-family: monospace;
+    font-size: 1rem;
+    overflow-x: auto;
+}
+

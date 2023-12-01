@@ -1,0 +1,154 @@
+<?xml version="1.0" encoding="utf-8"?>
+<?xml-stylesheet type="text/xsl" href="../assets/xml/rss.xsl" media="all"?><rss version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>琅環笔记 (关于 Notes 的文章)</title><link>https://www.tt4e.com/</link><description></description><atom:link href="https://www.tt4e.com/categories/cat_notes.xml" rel="self" type="application/rss+xml"></atom:link><language>zh_cn</language><copyright>Contents © 2023 &lt;a href="mailto:xiaoyao@tt4e.com"&gt;逍遥&lt;/a&gt; </copyright><lastBuildDate>Fri, 01 Dec 2023 08:21:48 GMT</lastBuildDate><generator>Nikola (getnikola.com)</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>EverEdit SFTP Error With FreeBSD</title><link>https://www.tt4e.com/posts/everedit-sftp-error-with-freebsd/</link><dc:creator>逍遥</dc:creator><description>&lt;section id="section-1"&gt;
+&lt;h2&gt;问题现象&lt;/h2&gt;
+&lt;p&gt;EverEdit 4 内置 SFTP 插件连接 FreeBSD 13.2 SSH 时，提示如下:&lt;/p&gt;
+&lt;pre class="literal-block"&gt;[23:19:56]:Hostname was found in DNS cache
+[23:19:56]:  Trying 192.168.2.81...
+[23:19:56]:Adding handle: conn: 0x22356d0cfa0
+[23:19:56]:Adding handle: send: 0
+[23:19:56]:Adding handle: recv: 0
+[23:19:56]:Curl_addHandleToPipeline: length: 1
+[23:19:56]:- Conn 1 (0x22356d0cfa0) send_pipe: 1, recv_pipe: 0
+[23:19:56]:Connected to 192.168.2.81 (192.168.2.81) port 22 (#1)
+[23:19:56]:Failure establishing ssh session
+[23:19:56]:Closing connection 1&lt;/pre&gt;
+&lt;p&gt;而使用其他 SFTP 客户端是完全正常的。&lt;/p&gt;
+&lt;/section&gt;
+&lt;section id="section-2"&gt;
+&lt;h2&gt;解决方法&lt;/h2&gt;
+&lt;p&gt;已提交给作者，还没找出解决办法。&lt;/p&gt;
+&lt;p&gt;在网上查找说是连接不上 FreeBSD 13.2 的 sftp，可能与 libcurl 有关。&lt;/p&gt;
+&lt;p&gt;但还没有时间写代码来调试。&lt;/p&gt;
+&lt;p&gt;待ee作者更新后，我再咨询。&lt;/p&gt;
+&lt;/section&gt;
+&lt;section id="section-3"&gt;
+&lt;h2&gt;参考&lt;/h2&gt;
+&lt;ol class="arabic simple"&gt;
+&lt;li&gt;&lt;p&gt;&lt;a class="reference external" href="https://curl.se/libcurl/c/sftpget.html"&gt;https://curl.se/libcurl/c/sftpget.html&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;&lt;a class="reference external" href="https://curl-users.cool.haxx.narkive.com/ppppPXNc/curl-sftp-failure-establishing-ssh-session"&gt;https://curl-users.cool.haxx.narkive.com/ppppPXNc/curl-sftp-failure-establishing-ssh-session&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/section&gt;</description><category>freebsd</category><category>libcurl</category><guid>https://www.tt4e.com/posts/everedit-sftp-error-with-freebsd/</guid><pubDate>Fri, 01 Dec 2023 03:09:38 GMT</pubDate></item><item><title>Taking Notes In Orgmode With Nikola</title><link>https://www.tt4e.com/posts/taking-notes-in-orgmode-with-nikola/</link><dc:creator>逍遥</dc:creator><description>&lt;div id="outline-container-org2c1771e" class="outline-2"&gt;
+&lt;h2 id="org2c1771e"&gt;步骤&lt;/h2&gt;
+&lt;div class="outline-text-2" id="text-org2c1771e"&gt;
+&lt;ol class="org-ol"&gt;
+&lt;li&gt;安装 emacs，最新版已内置 Org mode&lt;/li&gt;
+&lt;li&gt;安装 nikola&lt;/li&gt;
+&lt;li&gt;安装 nikola orgmode 插件，并按插件目录下的 conf.py.sample 修改 conf.py&lt;/li&gt;
+&lt;li&gt;开始写笔记&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;nikola&lt;span class="w"&gt; &lt;/span&gt;new_post&lt;span class="w"&gt; &lt;/span&gt;-f&lt;span class="w"&gt; &lt;/span&gt;orgmode&lt;span class="w"&gt; &lt;/span&gt;-e
+&lt;/pre&gt;&lt;/div&gt;
+
+&lt;ol class="org-ol"&gt;
+&lt;li&gt;预览&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;nikola&lt;span class="w"&gt; &lt;/span&gt;auto&lt;span class="w"&gt; &lt;/span&gt;-a0.0.0.0
+&lt;/pre&gt;&lt;/div&gt;
+
+&lt;ol class="org-ol"&gt;
+&lt;li&gt;发布到 GitHub&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;
+设置 conf.py
+&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="n"&gt;GITHUB_SOURCE_BRANCH&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="s1"&gt;'sources'&lt;/span&gt;
+&lt;span class="n"&gt;GITHUB_DEPLOY_BRANCH&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="s1"&gt;'master'&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;
+发布
+&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;$&lt;span class="w"&gt; &lt;/span&gt;nikola&lt;span class="w"&gt; &lt;/span&gt;github_deploy
+&lt;/pre&gt;&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+
+&lt;div id="outline-container-orgdc95aa0" class="outline-2"&gt;
+&lt;h2 id="orgdc95aa0"&gt;其他&lt;/h2&gt;
+&lt;div class="outline-text-2" id="text-orgdc95aa0"&gt;
+&lt;ol class="org-ol"&gt;
+&lt;li&gt;修改默认编辑器为 emacs&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;emacs&lt;span class="w"&gt; &lt;/span&gt;~/.profile
+&lt;/pre&gt;&lt;/div&gt;
+
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;EDITOR=emacs
+&lt;/pre&gt;&lt;/div&gt;
+
+&lt;ol class="org-ol"&gt;
+&lt;li&gt;显示当前 Shell&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;echo $0
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;hr&gt;
+
+&lt;p&gt;
+我在房间里洗个澡
+同时在思考中国哪个rapper能比我屌
+&lt;/p&gt;
+
+&lt;hr&gt;
+&lt;/div&gt;
+&lt;/div&gt;</description><category>nikola</category><category>orgmode</category><guid>https://www.tt4e.com/posts/taking-notes-in-orgmode-with-nikola/</guid><pubDate>Thu, 30 Nov 2023 09:34:15 GMT</pubDate></item><item><title>琅環笔记</title><link>https://www.tt4e.com/posts/lang-huan-notes/</link><dc:creator>逍遥</dc:creator><description>&lt;section id="section-1"&gt;
+&lt;h2&gt;笔记有什么内容？&lt;/h2&gt;
+&lt;ul class="simple"&gt;
+&lt;li&gt;&lt;p&gt;主要内容为编程语言、数据库、操作系统、算法、计算机科学相关内容&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;开发中遇到的坑和 Tips&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;开发手册或开发文档中有的，但不好找的内容&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;文档中没提到，源码中有的内容&lt;/p&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/section&gt;
+&lt;section id="nikola"&gt;
+&lt;h2&gt;我为何选 Nikola？&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;p&gt;优点&lt;/p&gt;
+&lt;ol class="arabic"&gt;
+&lt;li&gt;&lt;p&gt;支持 rst 格式，还支持 Org mode；&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;以 Python 开发，模板并不绑定 Jinja2 或 Mako，都支持；&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;支持的格式有&lt;/p&gt;
+&lt;ul class="simple"&gt;
+&lt;li&gt;&lt;p&gt;reStructuredText (default and pre-configured)&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;Markdown (pre-configured since v7.8.7)&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;Jupyter Notebook&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;HTML&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;PHP&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;anything Pandoc supports (including Textile, DocBook, LaTeX, MediaWiki, TWiki, OPML, Emacs Org-Mode, txt2tags, Microsoft Word .docx, EPUB, Haddock markup)&lt;/p&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;如果包含插件的格式，还支持&lt;/p&gt;
+&lt;ul class="simple"&gt;
+&lt;li&gt;&lt;p&gt;AsciiDoc&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;BBCode&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;CommonMark&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;IRC logs&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;Markmin&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;MediaWiki (smc.mw)&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;Misaka&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;ODT&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;Emacs Org-Mode&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;reST with HTML 5 output&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;Textile&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;txt2tags&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;CreoleWiki&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;WordPress posts&lt;/p&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;由于 rst 的优势，天然支持混合词法分析器的代码高亮，比如 html+mako&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;Nikola 名字取得好&lt;/p&gt;&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;缺点&lt;/p&gt;
+&lt;ol class="arabic simple"&gt;
+&lt;li&gt;&lt;p&gt;主题的设计的感觉，不如 Hugo 的丰富&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;安装过程有小坑（等再次安装时会写一篇笔记记录）&lt;/p&gt;&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;img alt="Nikola" class="ml-5" src="https://www.tt4e.com/images/nikola.jpg" style="width: 400px; height: 400px;"&gt;
+&lt;/section&gt;</description><category>nikola</category><guid>https://www.tt4e.com/posts/lang-huan-notes/</guid><pubDate>Fri, 24 Nov 2023 23:18:29 GMT</pubDate></item></channel></rss>
