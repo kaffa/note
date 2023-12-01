@@ -1,4 +1,4 @@
-Sitemap: https://www.tt4e.com/sitemapindex.xml
+Sitemap: https://note.tt4e.com/sitemapindex.xml
 
 User-Agent: *
-Host: www.tt4e.com
+Host: note.tt4e.com

@@ -5,7 +5,7 @@ STOP_RENDERING = runtime.STOP_RENDERING
 __M_dict_builtin = dict
 __M_locals_builtin = locals
 _magic_number = 10
-_modified_time = 1701418907.3848143
+_modified_time = 1701467006.50052
 _enable_loop = True
 _template_filename = 'themes/carpet/templates/crumbs.tmpl'
 _template_uri = 'crumbs.tmpl'
@@ -29,9 +29,9 @@ def render_bar(context,crumbs):
     __M_caller = context.caller_stack._push_frame()
     try:
         loop = __M_loop = runtime.LoopStack()
+        carpet__breadcrumb_separator = context.get('carpet__breadcrumb_separator', UNDEFINED)
         carpet__breadcrumb_home = context.get('carpet__breadcrumb_home', UNDEFINED)
         index_file = context.get('index_file', UNDEFINED)
-        carpet__breadcrumb_separator = context.get('carpet__breadcrumb_separator', UNDEFINED)
         __M_writer = context.writer()
         __M_writer('\n')
         if crumbs:

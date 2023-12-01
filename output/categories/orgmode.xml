@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<?xml-stylesheet type="text/xsl" href="../assets/xml/rss.xsl" media="all"?><rss version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>琅環笔记 (关于 orgmode 的文章)</title><link>https://www.tt4e.com/</link><description></description><atom:link href="https://www.tt4e.com/categories/orgmode.xml" rel="self" type="application/rss+xml"></atom:link><language>zh_cn</language><copyright>Contents © 2023 &lt;a href="mailto:xiaoyao@tt4e.com"&gt;逍遥&lt;/a&gt; </copyright><lastBuildDate>Thu, 30 Nov 2023 13:10:12 GMT</lastBuildDate><generator>Nikola (getnikola.com)</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>Taking Notes In Orgmode With Nikola</title><link>https://www.tt4e.com/posts/taking-notes-in-orgmode-with-nikola/</link><dc:creator>逍遥</dc:creator><description>&lt;div id="outline-container-org2c1771e" class="outline-2"&gt;
+<?xml-stylesheet type="text/xsl" href="../assets/xml/rss.xsl" media="all"?><rss version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>琅環笔记 (关于 orgmode 的文章)</title><link>https://note.tt4e.com/</link><description></description><atom:link href="https://note.tt4e.com/categories/orgmode.xml" rel="self" type="application/rss+xml"></atom:link><language>zh_cn</language><copyright>Contents © 2023 &lt;a href="mailto:xiaoyao@tt4e.com"&gt;逍遥&lt;/a&gt; </copyright><lastBuildDate>Fri, 01 Dec 2023 19:17:58 GMT</lastBuildDate><generator>Nikola (getnikola.com)</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>Taking Notes In Orgmode With Nikola</title><link>https://note.tt4e.com/posts/taking-notes-in-orgmode-with-nikola/</link><dc:creator>逍遥</dc:creator><description>&lt;div id="outline-container-org2c1771e" class="outline-2"&gt;
 &lt;h2 id="org2c1771e"&gt;步骤&lt;/h2&gt;
 &lt;div class="outline-text-2" id="text-org2c1771e"&gt;
 &lt;ol class="org-ol"&gt;
@@ -68,4 +68,4 @@
 
 &lt;hr&gt;
 &lt;/div&gt;
-&lt;/div&gt;</description><category>nikola</category><category>orgmode</category><guid>https://www.tt4e.com/posts/taking-notes-in-orgmode-with-nikola/</guid><pubDate>Thu, 30 Nov 2023 09:34:15 GMT</pubDate></item></channel></rss>
+&lt;/div&gt;</description><category>nikola</category><category>orgmode</category><guid>https://note.tt4e.com/posts/taking-notes-in-orgmode-with-nikola/</guid><pubDate>Thu, 30 Nov 2023 09:34:15 GMT</pubDate></item></channel></rss>

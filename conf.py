@@ -20,10 +20,10 @@ BLOG_AUTHOR = "逍遥"  # (translatable)
 BLOG_TITLE = "琅環笔记"  # (translatable)
 # This is the main URL for your site. It will be used
 # in a prominent link. Don't forget the protocol (http/https)!
-SITE_URL = "https://www.tt4e.com/"
+SITE_URL = "https://note.tt4e.com/"
 # This is the URL where Nikola's output will be deployed.
 # If not set, defaults to SITE_URL
-# BASE_URL = "https://www.tt4e.com/"
+# BASE_URL = "https://note.tt4e.com/"
 BLOG_EMAIL = "xiaoyao@tt4e.com"
 BLOG_DESCRIPTION = "琅環福地"  # (translatable)
 
