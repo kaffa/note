@@ -5,7 +5,7 @@ STOP_RENDERING = runtime.STOP_RENDERING
 __M_dict_builtin = dict
 __M_locals_builtin = locals
 _magic_number = 10
-_modified_time = 1701540236.425485
+_modified_time = 1701540377.422904
 _enable_loop = True
 _template_filename = 'themes/carpet/templates/base_helper.tmpl'
 _template_uri = 'base_helper.tmpl'
@@ -34,35 +34,35 @@ def render_body(context,**pageargs):
 def render_html_headstart(context):
     __M_caller = context.caller_stack._push_frame()
     try:
-        lang = context.get('lang', UNDEFINED)
-        favicons = context.get('favicons', UNDEFINED)
         mathjax_config = context.get('mathjax_config', UNDEFINED)
-        blog_title = context.get('blog_title', UNDEFINED)
-        comment_system_id = context.get('comment_system_id', UNDEFINED)
-        carpet__head_prefix = context.get('carpet__head_prefix', UNDEFINED)
-        carpet__late_load_css = context.get('carpet__late_load_css', UNDEFINED)
-        abs_link = context.get('abs_link', UNDEFINED)
-        use_open_graph = context.get('use_open_graph', UNDEFINED)
-        twitter_card = context.get('twitter_card', UNDEFINED)
-        prevlink = context.get('prevlink', UNDEFINED)
+        title = context.get('title', UNDEFINED)
         nextlink = context.get('nextlink', UNDEFINED)
+        use_open_graph = context.get('use_open_graph', UNDEFINED)
+        blog_title = context.get('blog_title', UNDEFINED)
+        url_replacer = context.get('url_replacer', UNDEFINED)
+        favicons = context.get('favicons', UNDEFINED)
+        description = context.get('description', UNDEFINED)
+        lang = context.get('lang', UNDEFINED)
         theme_color = context.get('theme_color', UNDEFINED)
+        comment_system = context.get('comment_system', UNDEFINED)
+        abs_link = context.get('abs_link', UNDEFINED)
+        use_cdn = context.get('use_cdn', UNDEFINED)
         def html_feedlinks():
             return render_html_feedlinks(context)
+        is_rtl = context.get('is_rtl', UNDEFINED)
         extra_head_data = context.get('extra_head_data', UNDEFINED)
-        def html_stylesheets():
-            return render_html_stylesheets(context)
-        title = context.get('title', UNDEFINED)
         def late_load_css():
             return render_late_load_css(context)
-        use_base_tag = context.get('use_base_tag', UNDEFINED)
-        use_cdn = context.get('use_cdn', UNDEFINED)
-        url_type = context.get('url_type', UNDEFINED)
-        description = context.get('description', UNDEFINED)
-        is_rtl = context.get('is_rtl', UNDEFINED)
+        prevlink = context.get('prevlink', UNDEFINED)
+        def html_stylesheets():
+            return render_html_stylesheets(context)
+        comment_system_id = context.get('comment_system_id', UNDEFINED)
+        carpet__late_load_css = context.get('carpet__late_load_css', UNDEFINED)
         permalink = context.get('permalink', UNDEFINED)
-        comment_system = context.get('comment_system', UNDEFINED)
-        url_replacer = context.get('url_replacer', UNDEFINED)
+        carpet__head_prefix = context.get('carpet__head_prefix', UNDEFINED)
+        url_type = context.get('url_type', UNDEFINED)
+        use_base_tag = context.get('use_base_tag', UNDEFINED)
+        twitter_card = context.get('twitter_card', UNDEFINED)
         __M_writer = context.writer()
         __M_writer('\n<!DOCTYPE html>\n<html ')
         __M_writer("prefix='")
@@ -163,10 +163,10 @@ def render_html_headstart(context):
 def render_late_load_css(context):
     __M_caller = context.caller_stack._push_frame()
     try:
-        def preload_stylesheets():
-            return render_preload_stylesheets(context)
         def html_stylesheets():
             return render_html_stylesheets(context)
+        def preload_stylesheets():
+            return render_preload_stylesheets(context)
         __M_writer = context.writer()
         __M_writer('\n  ')
         __M_writer(str(preload_stylesheets()))
@@ -181,10 +181,10 @@ def render_late_load_css(context):
 def render_preload_stylesheets(context):
     __M_caller = context.caller_stack._push_frame()
     try:
-        has_custom_css = context.get('has_custom_css', UNDEFINED)
         use_bundles = context.get('use_bundles', UNDEFINED)
         needs_ipython_css = context.get('needs_ipython_css', UNDEFINED)
         use_cdn = context.get('use_cdn', UNDEFINED)
+        has_custom_css = context.get('has_custom_css', UNDEFINED)
         __M_writer = context.writer()
         __M_writer('\n')
         if use_bundles:
@@ -206,10 +206,10 @@ def render_preload_stylesheets(context):
 def render_html_stylesheets(context):
     __M_caller = context.caller_stack._push_frame()
     try:
-        has_custom_css = context.get('has_custom_css', UNDEFINED)
         use_bundles = context.get('use_bundles', UNDEFINED)
         needs_ipython_css = context.get('needs_ipython_css', UNDEFINED)
         use_cdn = context.get('use_cdn', UNDEFINED)
+        has_custom_css = context.get('has_custom_css', UNDEFINED)
         __M_writer = context.writer()
         __M_writer('\n')
         if use_bundles:
@@ -232,12 +232,12 @@ def render_html_feedlinks(context):
     __M_caller = context.caller_stack._push_frame()
     try:
         _link = context.get('_link', UNDEFINED)
-        len = context.get('len', UNDEFINED)
         generate_atom = context.get('generate_atom', UNDEFINED)
-        sorted = context.get('sorted', UNDEFINED)
+        len = context.get('len', UNDEFINED)
         translations = context.get('translations', UNDEFINED)
-        rss_link = context.get('rss_link', UNDEFINED)
+        sorted = context.get('sorted', UNDEFINED)
         generate_rss = context.get('generate_rss', UNDEFINED)
+        rss_link = context.get('rss_link', UNDEFINED)
         __M_writer = context.writer()
         __M_writer('\n')
         if rss_link:
@@ -276,12 +276,12 @@ def render_html_feedlinks(context):
 def render_html_translations(context):
     __M_caller = context.caller_stack._push_frame()
     try:
-        lang = context.get('lang', UNDEFINED)
         _link = context.get('_link', UNDEFINED)
+        translations = context.get('translations', UNDEFINED)
+        sorted = context.get('sorted', UNDEFINED)
+        lang = context.get('lang', UNDEFINED)
         messages = context.get('messages', UNDEFINED)
         abs_link = context.get('abs_link', UNDEFINED)
-        sorted = context.get('sorted', UNDEFINED)
-        translations = context.get('translations', UNDEFINED)
         __M_writer = context.writer()
         __M_writer('\n<div class="level translations">\n')
         for langname in sorted(translations):
@@ -302,8 +302,8 @@ def render_html_translations(context):
 def render_late_load_js(context):
     __M_caller = context.caller_stack._push_frame()
     try:
-        carpet__late_load_css = context.get('carpet__late_load_css', UNDEFINED)
         social_buttons_code = context.get('social_buttons_code', UNDEFINED)
+        carpet__late_load_css = context.get('carpet__late_load_css', UNDEFINED)
         __M_writer = context.writer()
         __M_writer('\n')
         if carpet__late_load_css:

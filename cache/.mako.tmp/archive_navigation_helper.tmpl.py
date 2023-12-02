@@ -5,7 +5,7 @@ STOP_RENDERING = runtime.STOP_RENDERING
 __M_dict_builtin = dict
 __M_locals_builtin = locals
 _magic_number = 10
-_modified_time = 1701540235.9387956
+_modified_time = 1701540376.7369487
 _enable_loop = True
 _template_filename = 'themes/carpet/templates/archive_navigation_helper.tmpl'
 _template_uri = 'archive_navigation_helper.tmpl'
@@ -28,12 +28,12 @@ def render_body(context,**pageargs):
 def render_archive_navigation(context):
     __M_caller = context.caller_stack._push_frame()
     try:
-        previous_archive = context.get('previous_archive', UNDEFINED)
-        up_archive = context.get('up_archive', UNDEFINED)
-        pagekind = context.get('pagekind', UNDEFINED)
-        next_archive = context.get('next_archive', UNDEFINED)
-        has_archive_navigation = context.get('has_archive_navigation', UNDEFINED)
         messages = context.get('messages', UNDEFINED)
+        next_archive = context.get('next_archive', UNDEFINED)
+        up_archive = context.get('up_archive', UNDEFINED)
+        has_archive_navigation = context.get('has_archive_navigation', UNDEFINED)
+        pagekind = context.get('pagekind', UNDEFINED)
+        previous_archive = context.get('previous_archive', UNDEFINED)
         __M_writer = context.writer()
         __M_writer('\n')
         if 'archive_page' in pagekind:
