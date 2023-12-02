@@ -5,7 +5,7 @@ STOP_RENDERING = runtime.STOP_RENDERING
 __M_dict_builtin = dict
 __M_locals_builtin = locals
 _magic_number = 10
-_modified_time = 1701542092.1340904
+_modified_time = 1701542337.0420866
 _enable_loop = True
 _template_filename = 'themes/carpet/templates/story.tmpl'
 _template_uri = 'story.tmpl'
@@ -36,15 +36,15 @@ def render_body(context,**pageargs):
     __M_caller = context.caller_stack._push_frame()
     try:
         __M_locals = __M_dict_builtin(pageargs=pageargs)
-        def content():
-            return render_content(context._locals(__M_locals))
-        comments = _mako_get_namespace(context, 'comments')
-        post = context.get('post', UNDEFINED)
+        messages = context.get('messages', UNDEFINED)
+        enable_comments = context.get('enable_comments', UNDEFINED)
         helper = _mako_get_namespace(context, 'helper')
         pheader = _mako_get_namespace(context, 'pheader')
         site_has_comments = context.get('site_has_comments', UNDEFINED)
-        enable_comments = context.get('enable_comments', UNDEFINED)
-        messages = context.get('messages', UNDEFINED)
+        post = context.get('post', UNDEFINED)
+        def content():
+            return render_content(context._locals(__M_locals))
+        comments = _mako_get_namespace(context, 'comments')
         __M_writer = context.writer()
         __M_writer('\n')
         __M_writer('\n')
@@ -63,15 +63,15 @@ def render_body(context,**pageargs):
 def render_content(context,**pageargs):
     __M_caller = context.caller_stack._push_frame()
     try:
-        def content():
-            return render_content(context)
-        comments = _mako_get_namespace(context, 'comments')
-        post = context.get('post', UNDEFINED)
+        messages = context.get('messages', UNDEFINED)
+        enable_comments = context.get('enable_comments', UNDEFINED)
         helper = _mako_get_namespace(context, 'helper')
         pheader = _mako_get_namespace(context, 'pheader')
         site_has_comments = context.get('site_has_comments', UNDEFINED)
-        enable_comments = context.get('enable_comments', UNDEFINED)
-        messages = context.get('messages', UNDEFINED)
+        post = context.get('post', UNDEFINED)
+        def content():
+            return render_content(context)
+        comments = _mako_get_namespace(context, 'comments')
         __M_writer = context.writer()
         __M_writer('\n<article class="post-')
         __M_writer(str(post.meta('type')))
