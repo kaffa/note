@@ -5,7 +5,7 @@ STOP_RENDERING = runtime.STOP_RENDERING
 __M_dict_builtin = dict
 __M_locals_builtin = locals
 _magic_number = 10
-_modified_time = 1701529907.9037094
+_modified_time = 1701533022.3200579
 _enable_loop = True
 _template_filename = 'templates/book.tmpl'
 _template_uri = 'book.tmpl'
@@ -36,14 +36,14 @@ def render_body(context,**pageargs):
     __M_caller = context.caller_stack._push_frame()
     try:
         __M_locals = __M_dict_builtin(pageargs=pageargs)
-        def content():
-            return render_content(context._locals(__M_locals))
-        def extra_head():
-            return render_extra_head(context._locals(__M_locals))
-        parent = context.get('parent', UNDEFINED)
         post = context.get('post', UNDEFINED)
         def extra_js():
             return render_extra_js(context._locals(__M_locals))
+        def extra_head():
+            return render_extra_head(context._locals(__M_locals))
+        def content():
+            return render_content(context._locals(__M_locals))
+        parent = context.get('parent', UNDEFINED)
         __M_writer = context.writer()
         __M_writer('\n')
         __M_writer('\n')
