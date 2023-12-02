@@ -1,16 +1,16 @@
 <section id="section-1">
 <h1>问题现象</h1>
 <p>当在 <a class="reference external" href="https://github.com/microsoft/terminal">Windows Terminal</a> 中运行 <em>ssh</em> 命令时，终端中提示：</p>
-<div class="code"><pre class="code text"><a id="rest_code_09febd8388d84b87af494482220aea35-1" name="rest_code_09febd8388d84b87af494482220aea35-1" href="#rest_code_09febd8388d84b87af494482220aea35-1"></a>&#39;ssh&#39;不是内部或外部命令，也不是可运行的程序或批处理文件
+<div class="code"><pre class="code text"><a id="rest_code_e3dc9715eb044cdaa4a4afcf8fd82545-1" name="rest_code_e3dc9715eb044cdaa4a4afcf8fd82545-1" href="#rest_code_e3dc9715eb044cdaa4a4afcf8fd82545-1"></a>&#39;ssh&#39;不是内部或外部命令，也不是可运行的程序或批处理文件
 </pre></div>
 <p>English Version</p>
-<div class="code"><pre class="code text"><a id="rest_code_087e0e782ac54d838c161ee422ac2893-1" name="rest_code_087e0e782ac54d838c161ee422ac2893-1" href="#rest_code_087e0e782ac54d838c161ee422ac2893-1"></a>&#39;ssh&#39; is not recognized as an internal or external command, operable program or batch file.
+<div class="code"><pre class="code text"><a id="rest_code_97eb1cb4cb0646cc91f1e310670379f6-1" name="rest_code_97eb1cb4cb0646cc91f1e310670379f6-1" href="#rest_code_97eb1cb4cb0646cc91f1e310670379f6-1"></a>&#39;ssh&#39; is not recognized as an internal or external command, operable program or batch file.
 </pre></div>
 </section>
 <section id="section-2">
 <h1>解决方法</h1>
 <p>在 Windows 设置中安装 OpenSSH 客户端，且在环境变量 PATH 中加入：</p>
-<div class="code"><pre class="code text"><a id="rest_code_a0b05d87f8444f08866a95dd3d4b17b3-1" name="rest_code_a0b05d87f8444f08866a95dd3d4b17b3-1" href="#rest_code_a0b05d87f8444f08866a95dd3d4b17b3-1"></a>C:\Windows\System32\OpenSSH
+<div class="code"><pre class="code text"><a id="rest_code_b82e06639f384d37b3f270b1e7258a12-1" name="rest_code_b82e06639f384d37b3f270b1e7258a12-1" href="#rest_code_b82e06639f384d37b3f270b1e7258a12-1"></a>C:\Windows\System32\OpenSSH
 </pre></div>
 <p>验证方法：检查以上目录中是否有 ssh.exe 文件。</p>
 </section>
