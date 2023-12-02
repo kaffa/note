@@ -5,7 +5,7 @@ STOP_RENDERING = runtime.STOP_RENDERING
 __M_dict_builtin = dict
 __M_locals_builtin = locals
 _magic_number = 10
-_modified_time = 1701467090.6150906
+_modified_time = 1701479776.0552628
 _enable_loop = True
 _template_filename = 'themes/carpet/templates/base.tmpl'
 _template_uri = 'base.tmpl'
@@ -49,35 +49,35 @@ def render_body(context,**pageargs):
         _mako_get_namespace(context, 'base')._populate(_import_ns, ['*'])
         _mako_get_namespace(context, 'header')._populate(_import_ns, ['*'])
         _mako_get_namespace(context, 'footer')._populate(_import_ns, ['*'])
-        header = _mako_get_namespace(context, 'header')
-        blog_description = _import_ns.get('blog_description', context.get('blog_description', UNDEFINED))
-        carpet__show_hero = _import_ns.get('carpet__show_hero', context.get('carpet__show_hero', UNDEFINED))
-        base = _mako_get_namespace(context, 'base')
-        footer = _mako_get_namespace(context, 'footer')
-        messages = _import_ns.get('messages', context.get('messages', UNDEFINED))
-        carpet__body_prefix = _import_ns.get('carpet__body_prefix', context.get('carpet__body_prefix', UNDEFINED))
-        carpet__content_suffix = _import_ns.get('carpet__content_suffix', context.get('carpet__content_suffix', UNDEFINED))
-        carpet__cookie_path = _import_ns.get('carpet__cookie_path', context.get('carpet__cookie_path', UNDEFINED))
-        set_locale = _import_ns.get('set_locale', context.get('set_locale', UNDEFINED))
-        lang = _import_ns.get('lang', context.get('lang', UNDEFINED))
-        blog_title = _import_ns.get('blog_title', context.get('blog_title', UNDEFINED))
-        carpet__cookie_message = _import_ns.get('carpet__cookie_message', context.get('carpet__cookie_message', UNDEFINED))
-        carpet__content_prefix = _import_ns.get('carpet__content_prefix', context.get('carpet__content_prefix', UNDEFINED))
         carpet__show_hero_title = _import_ns.get('carpet__show_hero_title', context.get('carpet__show_hero_title', UNDEFINED))
         carpet__cookie_expiry = _import_ns.get('carpet__cookie_expiry', context.get('carpet__cookie_expiry', UNDEFINED))
-        body_end = _import_ns.get('body_end', context.get('body_end', UNDEFINED))
-        title = _import_ns.get('title', context.get('title', UNDEFINED))
-        def extra_head():
-            return render_extra_head(context._locals(__M_locals))
-        def extra_js():
-            return render_extra_js(context._locals(__M_locals))
+        def content():
+            return render_content(context._locals(__M_locals))
+        set_locale = _import_ns.get('set_locale', context.get('set_locale', UNDEFINED))
+        carpet__body_prefix = _import_ns.get('carpet__body_prefix', context.get('carpet__body_prefix', UNDEFINED))
+        footer = _mako_get_namespace(context, 'footer')
+        carpet__cookie_message = _import_ns.get('carpet__cookie_message', context.get('carpet__cookie_message', UNDEFINED))
+        blog_title = _import_ns.get('blog_title', context.get('blog_title', UNDEFINED))
+        carpet__content_prefix = _import_ns.get('carpet__content_prefix', context.get('carpet__content_prefix', UNDEFINED))
+        carpet__content_suffix = _import_ns.get('carpet__content_suffix', context.get('carpet__content_suffix', UNDEFINED))
         def html_hero_body():
             return render_html_hero_body(context._locals(__M_locals))
         template_hooks = _import_ns.get('template_hooks', context.get('template_hooks', UNDEFINED))
+        base = _mako_get_namespace(context, 'base')
+        title = _import_ns.get('title', context.get('title', UNDEFINED))
+        carpet__cookie_path = _import_ns.get('carpet__cookie_path', context.get('carpet__cookie_path', UNDEFINED))
+        def extra_head():
+            return render_extra_head(context._locals(__M_locals))
         carpet__hero_footer = _import_ns.get('carpet__hero_footer', context.get('carpet__hero_footer', UNDEFINED))
-        def content():
-            return render_content(context._locals(__M_locals))
+        header = _mako_get_namespace(context, 'header')
         carpet__hero_size = _import_ns.get('carpet__hero_size', context.get('carpet__hero_size', UNDEFINED))
+        def extra_js():
+            return render_extra_js(context._locals(__M_locals))
+        carpet__show_hero = _import_ns.get('carpet__show_hero', context.get('carpet__show_hero', UNDEFINED))
+        blog_description = _import_ns.get('blog_description', context.get('blog_description', UNDEFINED))
+        messages = _import_ns.get('messages', context.get('messages', UNDEFINED))
+        lang = _import_ns.get('lang', context.get('lang', UNDEFINED))
+        body_end = _import_ns.get('body_end', context.get('body_end', UNDEFINED))
         __M_writer = context.writer()
         __M_writer('\n')
         __M_writer('\n')
@@ -194,13 +194,13 @@ def render_html_hero_body(context,**pageargs):
         _mako_get_namespace(context, 'base')._populate(_import_ns, ['*'])
         _mako_get_namespace(context, 'header')._populate(_import_ns, ['*'])
         _mako_get_namespace(context, 'footer')._populate(_import_ns, ['*'])
+        carpet__show_hero_title = _import_ns.get('carpet__show_hero_title', context.get('carpet__show_hero_title', UNDEFINED))
+        carpet__show_hero = _import_ns.get('carpet__show_hero', context.get('carpet__show_hero', UNDEFINED))
+        blog_description = _import_ns.get('blog_description', context.get('blog_description', UNDEFINED))
+        blog_title = _import_ns.get('blog_title', context.get('blog_title', UNDEFINED))
+        title = _import_ns.get('title', context.get('title', UNDEFINED))
         def html_hero_body():
             return render_html_hero_body(context)
-        carpet__show_hero_title = _import_ns.get('carpet__show_hero_title', context.get('carpet__show_hero_title', UNDEFINED))
-        blog_description = _import_ns.get('blog_description', context.get('blog_description', UNDEFINED))
-        title = _import_ns.get('title', context.get('title', UNDEFINED))
-        blog_title = _import_ns.get('blog_title', context.get('blog_title', UNDEFINED))
-        carpet__show_hero = _import_ns.get('carpet__show_hero', context.get('carpet__show_hero', UNDEFINED))
         __M_writer = context.writer()
         __M_writer('\n')
         if carpet__show_hero:

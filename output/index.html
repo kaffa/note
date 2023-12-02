@@ -14,7 +14,7 @@
 <link href="assets/css/font-awesome.css" rel="stylesheet" type="text/css">
 <link href="assets/css/styles.css" rel="stylesheet" type="text/css">
 <link href="assets/css/custom.css" rel="stylesheet" type="text/css">
-<!--[if lt IE 9]><script src="assets/js/html5.js"></script><![endif]--><link rel="prefetch" href="posts/everedit-sftp-error-with-freebsd/" type="text/html">
+<!--[if lt IE 9]><script src="assets/js/html5.js"></script><![endif]--><link rel="prefetch" href="posts/securecrt/" type="text/html">
 </head>
 <body>
 <script type="text/javascript">
@@ -84,6 +84,46 @@ document.getElementById('nav-toggle-burger').onclick = function() {
 
   
 <div class="postindex">
+    <div class="columns">
+      <div class="column">
+        <div class="card post-card">
+          <article class="h-entry post-text"><div class="card-content">
+              <div class="media metadata">
+                <div class="media-content">
+                  <p class="title is-2 p-name entry-title">
+                    <a href="posts/securecrt/" class="u-url">SecureCRT</a>
+                  </p>
+                </div>
+                  <div class="media-right">
+                    <span class="icon">
+                      <i class="fa fa-file-text-o" aria-hidden="true"></i>
+                    </span>
+                    <span class="visuallyhidden">text</span>
+                  </div>
+              </div>
+                <div class="content e-content entry-content">
+                  <p>在这里书写你的文章。</p>
+                </div>
+            </div>
+
+            <footer class="card-footer"><p class="card-footer-item byline author vcard">
+                <span class="byline-name fn">
+                    逍遥
+                </span>
+              </p>
+              <p class="card-footer-item dateline">
+                <a href="posts/securecrt/" rel="bookmark">
+                  <time class="published dt-published" datetime="2023-12-02T08:09:47+08:00" title="2023-12-02 08:09">2023-12-02 08:09</time></a>
+              </p>
+                <p class="card-footer-item commentline">
+    
+    <a href="posts/securecrt/#disqus_thread" data-disqus-identifier="cache/posts/securecrt.html">评论</a>
+
+</p>
+            </footer></article>
+</div>
+      </div>
+    </div>
     <div class="columns">
       <div class="column">
         <div class="card post-card">
@@ -269,20 +309,50 @@ document.getElementById('nav-toggle-burger').onclick = function() {
                 <div class="content e-content entry-content">
                   <section id="nikola-tips"><h2>Nikola Tips</h2>
 <section id="nikola-serve"><h3>1. Nikola serve 自动刷新的命令行怎么写？</h3>
-<div class="code"><pre class="code shell"><a id="rest_code_ccb8dfdfd79f4ed6bc7d9d2247f870d3-1" name="rest_code_ccb8dfdfd79f4ed6bc7d9d2247f870d3-1" href="posts/nikola-tips/#rest_code_ccb8dfdfd79f4ed6bc7d9d2247f870d3-1"></a>nikola<span class="w"> </span>auto
+<div class="code"><pre class="code shell"><a id="rest_code_9441212948ef4caf99ea58766b55503d-1" name="rest_code_9441212948ef4caf99ea58766b55503d-1" href="posts/nikola-tips/#rest_code_9441212948ef4caf99ea58766b55503d-1"></a>nikola<span class="w"> </span>auto
 </pre></div>
 <p>即使 <strong>conf.py</strong> 中已绑定非127.0.0.1的地址，上面的命令也只会在127.0.0.1启动调试。</p>
 <p>没有去看源代码，可能这样实现从安全角度存在一定的合理性。</p>
 <p>如果需要任意主机都能获得访问，可使用 -a 参数指定地址0.0.0.0</p>
-<div class="code"><pre class="code shell"><a id="rest_code_f105c611911f4342b3294acd21a2508f-1" name="rest_code_f105c611911f4342b3294acd21a2508f-1" href="posts/nikola-tips/#rest_code_f105c611911f4342b3294acd21a2508f-1"></a>nikola<span class="w"> </span>auto<span class="w"> </span>-a0.0.0.0
+<div class="code"><pre class="code shell"><a id="rest_code_8bbab2be079840728fe76bea19ef23da-1" name="rest_code_8bbab2be079840728fe76bea19ef23da-1" href="posts/nikola-tips/#rest_code_8bbab2be079840728fe76bea19ef23da-1"></a>nikola<span class="w"> </span>auto<span class="w"> </span>-a0.0.0.0
 </pre></div>
 </section><section id="nikola-theme-css"><h3>2. Nikola Theme 如何定制 css</h3>
 <p>如果在模板中有代码</p>
-<div class="code"><pre class="code html+mako"><a id="rest_code_1703d2cd5e1746a1a7696132d54ec56f-1" name="rest_code_1703d2cd5e1746a1a7696132d54ec56f-1" href="posts/nikola-tips/#rest_code_1703d2cd5e1746a1a7696132d54ec56f-1"></a><span class="cp">%</span><span class="k">if</span> <span class="n">has_custom_css</span><span class="p">:</span>
-<a id="rest_code_1703d2cd5e1746a1a7696132d54ec56f-2" name="rest_code_1703d2cd5e1746a1a7696132d54ec56f-2" href="posts/nikola-tips/#rest_code_1703d2cd5e1746a1a7696132d54ec56f-2"></a>  <span class="p">&lt;</span><span class="nt">link</span> <span class="na">href</span><span class="o">=</span><span class="s">"/assets/css/custom.css"</span> <span class="na">rel</span><span class="o">=</span><span class="s">"stylesheet"</span> <span class="na">type</span><span class="o">=</span><span class="s">"text/css"</span><span class="p">&gt;</span>
-<a id="rest_code_1703d2cd5e1746a1a7696132d54ec56f-3" name="rest_code_1703d2cd5e1746a1a7696132d54ec56f-3" href="posts/nikola-tips/#rest_code_1703d2cd5e1746a1a7696132d54ec56f-3"></a><span class="cp">%</span><span class="k">endif</span>
+<div class="code"><pre class="code html+mako"><a id="rest_code_a4749c7788744a3d97e5310e753c07aa-1" name="rest_code_a4749c7788744a3d97e5310e753c07aa-1" href="posts/nikola-tips/#rest_code_a4749c7788744a3d97e5310e753c07aa-1"></a><span class="cp">%</span><span class="k">if</span> <span class="n">has_custom_css</span><span class="p">:</span>
+<a id="rest_code_a4749c7788744a3d97e5310e753c07aa-2" name="rest_code_a4749c7788744a3d97e5310e753c07aa-2" href="posts/nikola-tips/#rest_code_a4749c7788744a3d97e5310e753c07aa-2"></a>  <span class="p">&lt;</span><span class="nt">link</span> <span class="na">href</span><span class="o">=</span><span class="s">"/assets/css/custom.css"</span> <span class="na">rel</span><span class="o">=</span><span class="s">"stylesheet"</span> <span class="na">type</span><span class="o">=</span><span class="s">"text/css"</span><span class="p">&gt;</span>
+<a id="rest_code_a4749c7788744a3d97e5310e753c07aa-3" name="rest_code_a4749c7788744a3d97e5310e753c07aa-3" href="posts/nikola-tips/#rest_code_a4749c7788744a3d97e5310e753c07aa-3"></a><span class="cp">%</span><span class="k">endif</span>
 </pre></div>
 <p>因此，增加 /assets/css/custom.css 文件即可。</p>
+</section><section id="nikola-github"><h3>3. Nikola 如何推送到 GitHub</h3>
+<p>先设置好 git 推送</p>
+<div class="code"><pre class="code sh"><a id="rest_code_07536cbd58b34935adcdb82462349da8-1" name="rest_code_07536cbd58b34935adcdb82462349da8-1" href="posts/nikola-tips/#rest_code_07536cbd58b34935adcdb82462349da8-1"></a>git<span class="w"> </span>config<span class="w"> </span>--global<span class="w"> </span>--add<span class="w"> </span>safe.directory<span class="w"> </span>/usr/home/kaffa/web/note.tt4e.com
+<a id="rest_code_07536cbd58b34935adcdb82462349da8-2" name="rest_code_07536cbd58b34935adcdb82462349da8-2" href="posts/nikola-tips/#rest_code_07536cbd58b34935adcdb82462349da8-2"></a>git<span class="w"> </span>config<span class="w"> </span>--global<span class="w"> </span>user.email<span class="w"> </span><span class="s2">"kaffacoffee@outlook.com"</span>
+<a id="rest_code_07536cbd58b34935adcdb82462349da8-3" name="rest_code_07536cbd58b34935adcdb82462349da8-3" href="posts/nikola-tips/#rest_code_07536cbd58b34935adcdb82462349da8-3"></a>git<span class="w"> </span>config<span class="w"> </span>--global<span class="w"> </span>user.name<span class="w"> </span><span class="s2">"Kaffa"</span>
+</pre></div>
+<p>将以下内容保存为 aio.sh 脚本</p>
+<div class="code"><pre class="code sh"><a id="rest_code_c19b5a1fb8ad4b7baefd172118def513-1" name="rest_code_c19b5a1fb8ad4b7baefd172118def513-1" href="posts/nikola-tips/#rest_code_c19b5a1fb8ad4b7baefd172118def513-1"></a><span class="ch">#!/bin/bash</span>
+<a id="rest_code_c19b5a1fb8ad4b7baefd172118def513-2" name="rest_code_c19b5a1fb8ad4b7baefd172118def513-2" href="posts/nikola-tips/#rest_code_c19b5a1fb8ad4b7baefd172118def513-2"></a><span class="c1">#</span>
+<a id="rest_code_c19b5a1fb8ad4b7baefd172118def513-3" name="rest_code_c19b5a1fb8ad4b7baefd172118def513-3" href="posts/nikola-tips/#rest_code_c19b5a1fb8ad4b7baefd172118def513-3"></a><span class="c1"># nikola output push to github</span>
+<a id="rest_code_c19b5a1fb8ad4b7baefd172118def513-4" name="rest_code_c19b5a1fb8ad4b7baefd172118def513-4" href="posts/nikola-tips/#rest_code_c19b5a1fb8ad4b7baefd172118def513-4"></a><span class="nb">cd</span><span class="w"> </span>~/web/note.tt4e.com/
+<a id="rest_code_c19b5a1fb8ad4b7baefd172118def513-5" name="rest_code_c19b5a1fb8ad4b7baefd172118def513-5" href="posts/nikola-tips/#rest_code_c19b5a1fb8ad4b7baefd172118def513-5"></a>nikola<span class="w"> </span>build
+<a id="rest_code_c19b5a1fb8ad4b7baefd172118def513-6" name="rest_code_c19b5a1fb8ad4b7baefd172118def513-6" href="posts/nikola-tips/#rest_code_c19b5a1fb8ad4b7baefd172118def513-6"></a>git<span class="w"> </span>add<span class="w"> </span>.
+<a id="rest_code_c19b5a1fb8ad4b7baefd172118def513-7" name="rest_code_c19b5a1fb8ad4b7baefd172118def513-7" href="posts/nikola-tips/#rest_code_c19b5a1fb8ad4b7baefd172118def513-7"></a>git<span class="w"> </span>commit<span class="w"> </span>-am<span class="w"> </span><span class="s1">'Kaffa'</span>
+<a id="rest_code_c19b5a1fb8ad4b7baefd172118def513-8" name="rest_code_c19b5a1fb8ad4b7baefd172118def513-8" href="posts/nikola-tips/#rest_code_c19b5a1fb8ad4b7baefd172118def513-8"></a>git<span class="w"> </span>push
+</pre></div>
+<p>先 su 到 root 用户，然后运行以下命令，再 su 会当前用户</p>
+<div class="code"><pre class="code sh"><a id="rest_code_7a6d8d235c9241aea4479bd9c9b31851-1" name="rest_code_7a6d8d235c9241aea4479bd9c9b31851-1" href="posts/nikola-tips/#rest_code_7a6d8d235c9241aea4479bd9c9b31851-1"></a>chown<span class="w"> </span>-R<span class="w"> </span>kaffa:wheel<span class="w"> </span>.git
+<a id="rest_code_7a6d8d235c9241aea4479bd9c9b31851-2" name="rest_code_7a6d8d235c9241aea4479bd9c9b31851-2" href="posts/nikola-tips/#rest_code_7a6d8d235c9241aea4479bd9c9b31851-2"></a>chmod<span class="w"> </span>-R<span class="w"> </span><span class="m">777</span><span class="w"> </span>./aio.sh
+</pre></div>
+<p>如果遇到错误提示 Unable to create ... /.git/index.lock: Permission denied，则需要</p>
+<aside class="system-message"><p class="system-message-title">System Message: ERROR/3 (<span class="docutils literal">&lt;string&gt;</span>, line 71)</p>
+<p>Error in "code-block" directive:
+maximum 1 argument(s) allowed, 5 supplied.</p>
+<pre class="literal-block">.. code-block :: sh
+  chown -R kaffa:wheel .git
+</pre>
+</aside><p>其中 用户名和所属组，可以用 groups 命令查看。</p>
+<p>完成书上步骤后，则每次可以运行 aio.sh 来推送 GitHub，GitHub 收到推送后，会使用 GitHub Action 来处理发布。</p>
+<p>使用以上方法是有效的，但却说明没有认真读 nikola 文档。</p>
 </section></section>
 </div>
             </div>
@@ -566,12 +636,19 @@ document.getElementById('nav-toggle-burger').onclick = function() {
 <p>实际上支持的种类就是 pygments 所支持的，Demo 在 <a class="reference external" href="http://pygments.org/">http://pygments.org/</a></p>
 <p>目前可用的如下：</p>
 <p>abap | abnf | ada, ada95, ada2005 | adl | agda | ahk, autohotkey | alloy | ampl | antlr-as, antlr-actionscript | antlr-cpp | antlr-csharp, antlr-c# | antlr-java | antlr-objc | antlr-perl | antlr-python | antlr-ruby, antlr-rb | antlr | apacheconf, aconf, apache | apl | applescript | arduino | as, actionscript | as3, actionscript3 | aspectj | aspx-cs | aspx-vb | asy, asymptote | at, ambienttalk, ambienttalk/2 | autoit | awk, gawk, mawk, nawk | basemake | bash, sh, ksh, shell | bat, batch, dosbatch, winbatch | bbcode | bc | befunge | blitzbasic, b3d, bplus | blitzmax, bmax | bnf | boo | boogie | brainfuck, bf | bro | bugs, winbugs, openbugs | c-objdump | c | ca65 | cadl | camkes, idl4 | cbmbas | ceylon | cfc | cfengine3, cf3 | cfm | cfs | chai, chaiscript | chapel, chpl | cheetah, spitfire | cirru | clay | clean | clojure, clj | clojurescript, cljs | cmake | cobol | cobolfree | coffee-script, coffeescript, coffee | common-lisp, cl, lisp | componentpascal, cp | console, shell-session | control, debcontrol | coq | cpp, c++ | cpp-objdump, c++-objdumb, cxx-objdump | cpsa | crmsh, pcmk | croc | cryptol, cry | csharp, c# | csound, csound-orc | csound-document, csound-csd | csound-score, csound-sco | css+django, css+jinja | css+erb, css+ruby | css+genshitext, css+genshi | css+lasso | css+mako | css+mako | css+mozpreproc | css+myghty | css+php | css+smarty | css | cucumber, gherkin | cuda, cu | cypher | cython, pyx, pyrex | d-objdump | d | dart | delphi, pas, pascal, objectpascal | dg | diff, udiff | django, jinja | docker, dockerfile | doscon | dpatch | dtd | duel, jbst, jsonml+bst | dylan-console, dylan-repl | dylan-lid, lid | dylan | earl-grey, earlgrey, eg | easytrieve | ebnf | ec | ecl | eiffel | elixir, ex, exs | elm | emacs, elisp, emacs-lisp | erb | erl | erlang | evoque | extempore | ezhil | factor | fan | fancy, fy | felix, flx | fish, fishshell | flatline | fortran | fortranfixed | foxpro, vfp, clipper, xbase | fsharp | gap | gas, asm | genshi, kid, xml+genshi, xml+kid | genshitext | glsl | gnuplot | go | golo | gooddata-cl | gosu | groff, nroff, man | groovy | gst | haml | handlebars | haskell, hs | haxeml, hxml | hexdump | hsail, hsa | html+cheetah, html+spitfire, htmlcheetah | html+django, html+jinja, htmldjango | html+evoque | html+genshi, html+kid | html+handlebars | html+lasso | html+mako | html+mako | html+myghty | html+php | html+smarty | html+twig | html+velocity | html | http | hx, haxe, hxsl | hybris, hy | hylang | i6t | idl | idris, idr | iex | igor, igorpro | inform6, i6 | inform7, i7 | ini, cfg, dosini | io | ioke, ik | irc | isabelle | j | jade | jags | jasmin, jasminxt | java | javascript+mozpreproc | jcl | jlcon | js+cheetah, javascript+cheetah, js+spitfire, javascript+spitfire | js+django, javascript+django, js+jinja, javascript+jinja | js+erb, javascript+erb, js+ruby, javascript+ruby | js+genshitext, js+genshi, javascript+genshitext, javascript+genshi | js+lasso, javascript+lasso | js+mako, javascript+mako | js+mako, javascript+mako | js+myghty, javascript+myghty | js+php, javascript+php | js+smarty, javascript+smarty | js, javascript | jsgf | json | jsonld, json-ld | jsp | julia, jl | kal | kconfig, menuconfig, linux-config, kernel-config | koka | kotlin | lagda, literate-agda | lasso, lassoscript | lcry, literate-cryptol, lcryptol | lean | less | lhs, literate-haskell, lhaskell | lidr, literate-idris, lidris | lighty, lighttpd | limbo | liquid | live-script, livescript | llvm | logos | logtalk | lsl | lua | make, makefile, mf, bsdmake | mako | mako | maql | mask | mason | mathematica, mma, nb | matlab | matlabsession | minid | modelica | modula2, m2 | monkey | moocode, moo | moon, moonscript | mozhashpreproc | mozpercentpreproc | mql, mq4, mq5, mql4, mql5 | mscgen, msc | mupad | mxml | myghty | mysql | nasm | ncl | nemerle | nesc | newlisp | newspeak | nginx | nimrod, nim | nit | nixos, nix | nsis, nsi, nsh | numpy | objdump-nasm | objdump | objective-c++, objectivec++, obj-c++, objc++ | objective-c, objectivec, obj-c, objc | objective-j, objectivej, obj-j, objj | ocaml | octave | odin | ooc | opa | openedge, abl, progress | pacmanconf | pan | parasail | pawn | perl, pl | perl6, pl6 | php, php3, php4, php5 | pig | pike | pkgconfig | plpgsql | postgresql, postgres | postscript, postscr | pot, po | pov | powershell, posh, ps1, psm1 | praat | prolog | properties, jproperties | protobuf, proto | ps1con | psql, postgresql-console, postgres-console | puppet | py3tb | pycon | pypylog, pypy | pytb | python, py, sage | python3, py3 | qbasic, basic | qml, qbs | qvto, qvt | racket, rkt | ragel-c | ragel-cpp | ragel-d | ragel-em | ragel-java | ragel-objc | ragel-ruby, ragel-rb | ragel | raw | rb, ruby, duby | rbcon, irb | rconsole, rout | rd | rebol | red, red/system | redcode | registry | resource, resourcebundle | rexx, arexx | rhtml, html+erb, html+ruby | roboconf-graph | roboconf-instances | robotframework | rql | rsl | rst, rest, restructuredtext | rts, trafficscript | rust | sass | sc, supercollider | scala | scaml | scheme, scm | scilab | scss | shen | silver | slim | smali | smalltalk, squeak, st | smarty | sml | snobol | sourceslist, sources.list, debsources | sp | sparql | spec | splus, s, r | sql | sqlite3 | squidconf, squid.conf, squid | ssp | stan | swift | swig | systemverilog, sv | tads3 | tap | tcl | tcsh, csh | tcshcon | tea | termcap | terminfo | terraform, tf | tex, latex | text | thrift | todotxt | trac-wiki, moin | treetop | ts, typescript | turtle | twig | typoscript | typoscriptcssdata | typoscripthtmldata | urbiscript | vala, vapi | vb.net, vbnet | vcl | vclsnippets, vclsnippet | vctreestatus | velocity | verilog, v | vgl | vhdl | vim | wdiff | x10, xten | xml+cheetah, xml+spitfire | xml+django, xml+jinja | xml+erb, xml+ruby | xml+evoque | xml+lasso | xml+mako | xml+mako | xml+myghty | xml+php | xml+smarty | xml+velocity | xml | xquery, xqy, xq, xql, xqm | xslt | xtend | xul+mozpreproc | yaml+jinja, salt, sls | yaml | zephir |</p>
-<p>可以通过以下命令查看:: shell</p>
-<blockquote>
-<p>pygmentize -L</p>
-</blockquote>
-<ol class="arabic simple" start="5">
-<li><p>Nikola 在房间里洗个澡同时在思考SSG的名字取得比我好。</p></li>
+<p>可以通过以下命令查看</p>
+<div class="code"><pre class="code sh"><a id="rest_code_bd4ed71313a148b1a3d044c75903cb29-1" name="rest_code_bd4ed71313a148b1a3d044c75903cb29-1" href="posts/lang-huan-notes/#rest_code_bd4ed71313a148b1a3d044c75903cb29-1"></a>pygmentize<span class="w"> </span>-L
+</pre></div>
+<ol class="arabic" start="5">
+<li>
+<p>Nikola 如果是艾志恒，会不会唱：</p>
+<p>在房间里洗个澡
+同时在思考其它的jamstack哪个能比我屌
+Posts keep increasing
+你们格式都认不到
+我们code好
+但目前我还嫌自己PR的少</p>
+</li>
 </ol>
 </li>
 </ol>

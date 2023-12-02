@@ -19,7 +19,7 @@
  </url>
  <url>
   <loc>https://note.tt4e.com/archive.html</loc>
-  <lastmod>2023-12-01T19:17:00Z</lastmod>
+  <lastmod>2023-12-02T01:16:00Z</lastmod>
  </url>
  <url>
   <loc>https://note.tt4e.com/authors/</loc>
@@ -208,6 +208,10 @@
  <url>
   <loc>https://note.tt4e.com/posts/noting-with-nikola/</loc>
   <lastmod>2023-11-24T23:18:00Z</lastmod>
+ </url>
+ <url>
+  <loc>https://note.tt4e.com/posts/securecrt/</loc>
+  <lastmod>2023-12-02T01:16:00Z</lastmod>
  </url>
  <url>
   <loc>https://note.tt4e.com/posts/solution-to-arrow-keys-changed-into-abcd-in-securecrt-emacs-vim/</loc>
