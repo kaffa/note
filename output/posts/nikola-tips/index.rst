@@ -75,9 +75,10 @@ Nikola Tips
   chown -R kaffa:wheel .git
   chmod -R 777 ./aio.sh
 
-如果遇到错误提示 Unable to create ... /.git/index.lock: Permission denied，则需要
+如果遇到错误提示 Unable to create ** /.git/index.lock: Permission denied，则需要
 
 .. code-block :: sh
+
   chown -R kaffa:wheel .git  
 
 其中 用户名和所属组，可以用 groups 命令查看。
