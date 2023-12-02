@@ -15,3 +15,6 @@ div.highlight pre /* orgmode */
     overflow-x: auto;
 }
 
+article.post-text div.content section {
+    margin: 1rem 0 0 0;
+}

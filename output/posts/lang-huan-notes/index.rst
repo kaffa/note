@@ -69,12 +69,12 @@
 
      5. Nikola 如果是艾志恒，会不会唱：
 
-        在房间里洗个澡
-        同时在思考其它的jamstack哪个能比我屌
-        Posts keep increasing
-        你们格式都认不到
-        我们code好
-        但目前我还嫌自己PR的少
+        | 在房间里洗个澡
+        | 同时在思考其它的jamstack哪个能比我屌
+        | Posts keep increasing
+        | 你们格式都认不到
+        | 我们code好
+        | 但目前我还嫌自己PR的少
 
      
 -  缺点

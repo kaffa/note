@@ -5,7 +5,7 @@ STOP_RENDERING = runtime.STOP_RENDERING
 __M_dict_builtin = dict
 __M_locals_builtin = locals
 _magic_number = 10
-_modified_time = 1701479911.6178775
+_modified_time = 1701529340.621306
 _enable_loop = True
 _template_filename = 'themes/carpet/templates/index_helper.tmpl'
 _template_uri = 'index_helper.tmpl'
@@ -56,10 +56,10 @@ def render_html_pager(context):
 def render_mathjax_script(context,posts):
     __M_caller = context.caller_stack._push_frame()
     try:
-        mathjax_config = context.get('mathjax_config', UNDEFINED)
         katex_auto_render = context.get('katex_auto_render', UNDEFINED)
-        use_katex = context.get('use_katex', UNDEFINED)
         any = context.get('any', UNDEFINED)
+        use_katex = context.get('use_katex', UNDEFINED)
+        mathjax_config = context.get('mathjax_config', UNDEFINED)
         __M_writer = context.writer()
         __M_writer('\n')
         if any(post.has_math for post in posts):
