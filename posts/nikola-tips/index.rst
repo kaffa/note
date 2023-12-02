@@ -51,8 +51,8 @@ Nikola Tips
 .. code-block :: sh
 
   git config --global --add safe.directory /usr/home/kaffa/web/note.tt4e.com
-  git config --global user.email "kaffacoffee@outlook.com"
-  git config --global user.name "Kaffa"
+  git config --global user.email "yourname@tt4e.com"
+  git config --global user.name "Your Name"
 
 
 将以下内容保存为 aio.sh 脚本
@@ -97,7 +97,7 @@ Nikola 官方支持推送到 GitHub
 解释一下：
 
 1. GITHUB_DEPLOY_BRANCH：发布分支，是 Nikola 产生的 HTML 文件，建议命名为 src。
-2. GITHUB_SOURCE_BRANCH：源码分支，建议在 GitHub 上设置为默认分支，建议命名为 main，而不是 master[#fn1]_。
+2. GITHUB_SOURCE_BRANCH：源码分支，建议在 GitHub 上设置为默认分支，建议命名为 main，而不是 master [#fn1]_。
 3. GITHUB_REMOTE_NAME：远程仓库名；
 4. GITHUB_COMMIT_SOURCE：True，发布时会自动提交 src 分支。
 
@@ -107,8 +107,10 @@ Nikola 官方支持推送到 GitHub
 
 .. code-block ::
 
+  nikola github_deploy
+
 
 脚注
 ==================================================
 
-[#fn1] master：类似 master，slave 这样带有种族歧视色彩的词，在编程世界中将不再继续使用，现有使用也逐步 `重命名 <https://github.com/github/renaming>`_。
+.. [#fn1] master：类似 master，slave 这样带有种族歧视色彩的词，在编程世界中将不再继续使用，现有使用也逐步 `重命名 <https://github.com/github/renaming>`_。
