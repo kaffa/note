@@ -1,6 +1,6 @@
-﻿cache
+﻿cache/
 .doit.db.db
-__pycache__
-output
-draft
+__pycache__/
+output/
+draft/
 #*#

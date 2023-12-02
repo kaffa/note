@@ -5,7 +5,7 @@ STOP_RENDERING = runtime.STOP_RENDERING
 __M_dict_builtin = dict
 __M_locals_builtin = locals
 _magic_number = 10
-_modified_time = 1701533329.0321221
+_modified_time = 1701534000.940872
 _enable_loop = True
 _template_filename = 'themes/carpet/templates/list_post.tmpl'
 _template_uri = 'list_post.tmpl'
@@ -34,11 +34,11 @@ def render_body(context,**pageargs):
         _mako_get_namespace(context, 'archive_nav')._populate(_import_ns, ['*'])
         def content():
             return render_content(context._locals(__M_locals))
-        messages = _import_ns.get('messages', context.get('messages', UNDEFINED))
         posts = _import_ns.get('posts', context.get('posts', UNDEFINED))
         archive_nav = _mako_get_namespace(context, 'archive_nav')
-        date_format = _import_ns.get('date_format', context.get('date_format', UNDEFINED))
+        messages = _import_ns.get('messages', context.get('messages', UNDEFINED))
         title = _import_ns.get('title', context.get('title', UNDEFINED))
+        date_format = _import_ns.get('date_format', context.get('date_format', UNDEFINED))
         __M_writer = context.writer()
         __M_writer('\n')
         __M_writer('\n\n')
@@ -59,11 +59,11 @@ def render_content(context,**pageargs):
         _mako_get_namespace(context, 'archive_nav')._populate(_import_ns, ['*'])
         def content():
             return render_content(context)
-        messages = _import_ns.get('messages', context.get('messages', UNDEFINED))
         posts = _import_ns.get('posts', context.get('posts', UNDEFINED))
         archive_nav = _mako_get_namespace(context, 'archive_nav')
-        date_format = _import_ns.get('date_format', context.get('date_format', UNDEFINED))
+        messages = _import_ns.get('messages', context.get('messages', UNDEFINED))
         title = _import_ns.get('title', context.get('title', UNDEFINED))
+        date_format = _import_ns.get('date_format', context.get('date_format', UNDEFINED))
         __M_writer = context.writer()
         __M_writer('\n<article class="listpage">\n  <header class="heading">\n    <h1 class="title is-1">')
         __M_writer(filters.html_escape(str(title)))
