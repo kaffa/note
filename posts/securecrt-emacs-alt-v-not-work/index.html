@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html prefix="" lang="zh_cn">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width">
+<title>SecureCRT 中 Emacs 向上翻页快捷键 Alt+V 失效 | 琅環笔记</title>
+<meta name="theme-color" content="#FED43F">
+<meta name="generator" content="Nikola (getnikola.com)">
+<link rel="alternate" type="application/rss+xml" title="RSS" href="../../rss.xml">
+<link rel="canonical" href="https://note.tt4e.com/posts/securecrt-emacs-alt-v-not-work/">
+<link href="../../assets/css/rst.css" rel="stylesheet" type="text/css">
+<link href="../../assets/css/code.css" rel="stylesheet" type="text/css">
+<link href="../../assets/css/font-awesome.css" rel="stylesheet" type="text/css">
+<link href="../../assets/css/styles.css" rel="stylesheet" type="text/css">
+<link href="../../assets/css/custom.css" rel="stylesheet" type="text/css">
+<!--[if lt IE 9]><script src="../../assets/js/html5.js"></script><![endif]--><meta name="author" content="逍遥">
+<link rel="prev" href="../everedit-sftp-error-with-freebsd/" title="EverEdit SFTP Error With FreeBSD" type="text/html">
+</head>
+<body>
+<script type="text/javascript">
+  // Detect JS support
+  document.body.className = document.body.className + " js_enabled";
+</script><a href="#content" class="sr-only sr-only-focusable">跳到主内容</a>
+<div id="container">
+    <section class="hero is-primary"><!-- Hero header: will stick at the top --><div class="hero-head">
+  <header id="header" class="nav"><div class="container">
+      <div class="nav-left">
+        
+<div class="nav-item is-brand">
+  <h1 id="brand" class="site-header">
+      <a href="https://note.tt4e.com/" title="琅環笔记" rel="home">
+        
+  <span class="level is-mobile">
+
+
+  <span id="blog-title" class="level-item site-title">琅環笔记</span>
+
+  </span>
+
+      </a>
+  </h1>
+</div>
+
+        
+
+      </div>
+      
+<!-- This "nav-toggle" hamburger menu is only visible on mobile -->
+<!-- You need JavaScript to toggle the "is-active" class on "nav-menu" -->
+<span id="nav-toggle-burger" class="nav-toggle">
+  <span></span>
+  <span></span>
+  <span></span>
+</span>
+<div id="menu" class="nav-right nav-menu">
+      <a class="nav-item" title="文章归档" href="../../archive.html">文章归档</a>
+      <a class="nav-item" title="标签" href="../../categories/">标签</a>
+      <a class="nav-item" title="RSS 源" href="../../rss.xml">RSS 源</a>
+
+
+</div>
+<script type="text/javascript">
+document.getElementById('nav-toggle-burger').onclick = function() {
+  var myMenu = document.getElementById('menu');
+  var className = ' ' + myMenu.className + ' ';
+  var IS_ACTIVE_CLASS = 'is-active';
+  if ( ~className.indexOf(' ' + IS_ACTIVE_CLASS + ' ') ) {
+    myMenu.className = className.replace(' ' + IS_ACTIVE_CLASS + ' ', ' ');
+  } else {
+    myMenu.className += ' ' + IS_ACTIVE_CLASS;
+  }
+}
+</script>
+</div>
+  </header>
+</div>
+
+    <!-- Hero content: will be in the middle -->
+    
+  
+    
+
+    <!-- Hero footer: will stick at the bottom -->
+  </section><main id="content" class="section section-main"><div class="container">
+      
+<article class="post-text h-entry hentry postpage" itemscope="itemscope" itemtype="http://schema.org/Article"><header class="heading"><h1 class="title is-1 p-name entry-title" itemprop="headline name">
+    <a href="." class="u-url">SecureCRT 中 Emacs 向上翻页快捷键 Alt+V 失效</a>
+  </h1>
+
+  <div class="level metadata">
+    
+    <div class="level-left">
+      <div class="level-item">
+        <p class="byline author vcard">
+          <span class="byline-name fn">
+              逍遥
+          </span>
+        </p>
+      </div>
+    </div>
+    
+    <div class="level-right">
+      <div class="level-item">
+        <p class="dateline">
+          <a href="." rel="bookmark">
+            <time class="published dt-published" datetime="2023-12-02T08:09:47+08:00" itemprop="datePublished" title="2023-12-02 08:09">2023-12-02 08:09</time></a>
+        </p>
+      </div>
+      
+        <div class="level-item">
+          <p class="commentline">
+    
+    <a href="#disqus_thread" data-disqus-identifier="cache/posts/securecrt-emacs-alt-v-not-work.html">评论</a>
+
+</p>
+        </div>
+      
+      
+  <div class="level-item">
+    <p class="sourceline">
+      <a href="index.rst" id="sourcelink">源文件</a>
+    </p>
+  </div>
+
+      
+    </div>
+  </div>
+  
+
+</header><div class="section content e-content entry-content" itemprop="articleBody text">
+    <section id="section-1"><h2>问题现象</h2>
+<p>无论怎么配置 Options 中 Emacs 的配置，M-v 都无法向上滚屏。</p>
+<p>配置位置：Menu「Options」-&gt; Edit Default Session... -&gt; Dialog「Session Options - Default」 -&gt; Tree「Category」-&gt; Emulation -&gt; Emacs -&gt; CheckBox「Use ALT as meta key」</p>
+<p>尝试修改各相关配置无效。</p>
+<p>尝试搜索关键字，Google 中似乎类似问题很少人问。</p>
+</section><section id="section-2"><h2>解决方法</h2>
+<p>因为 Google 搜索关键字 SecureCRT Emacs ALT-V 没有类似提问，所以怀疑我的现象是特例 &lt;-- 想到这一点非常重要。</p>
+<p>特例说明，问题产生条件是我独有的，很大可能是我的环境引入的，就是说，不是内因，而是外因，是由于 SecureCRT 之外的程序导致的。</p>
+<p>想到这一点后，我尝试逐个关闭电脑相关程序来排除，终于当我关闭「富途牛牛」时，在 Emacs 中，Alt+V 或说 M-v 生效了，可以成功向上滚动。</p>
+<p>再查看「富途牛牛」的快捷键清单中，是截屏直播的快捷键。同理还有全屏直播 Alt+C，以及快捷键 Ctrl+1，Alt+1 也显示被其他软件占用。</p>
+<p>不知是不是因为富途牛牛的产品经理视角狭隘，或者开发人员用的都是 macOS，要不怎么会设计出这些明显冲突的全局快捷键。</p>
+</section>
+</div>
+  <aside class="postpromonav"><div class="columns tags" itemprop="keywords">
+        <div class="column has-text-centered">
+          <a class="tag is-primary is-medium p-category" href="../../categories/emacs/" rel="tag">emacs</a>
+        </div>
+        <div class="column has-text-centered">
+          <a class="tag is-primary is-medium p-category" href="../../categories/securecrt/" rel="tag">securecrt</a>
+        </div>
+  </div>
+
+    
+  <div class="columns">
+    <div class="column">
+      <nav class="pagination pager hidden-print"><a class="pagination-previous previous" href="../everedit-sftp-error-with-freebsd/" rel="prev" title="EverEdit SFTP Error With FreeBSD">上一篇文章</a>
+      </nav>
+</div>
+  </div>
+
+  </aside><section class="section comments hidden-print"><h2 class="title is-2">评论</h2>
+      
+    
+        <div id="disqus_thread"></div>
+        <script>
+        var disqus_shortname ="tt4e",
+            disqus_url="https://note.tt4e.com/posts/securecrt-emacs-alt-v-not-work/",
+        disqus_title="SecureCRT \u4e2d Emacs \u5411\u4e0a\u7ffb\u9875\u5feb\u6377\u952e Alt+V \u5931\u6548",
+        disqus_identifier="cache/posts/securecrt-emacs-alt-v-not-work.html",
+        disqus_config = function () {
+            this.language = "zh_cn";
+        };
+        (function() {
+            var dsq = document.createElement('script'); dsq.async = true;
+            dsq.src = 'https://' + disqus_shortname + '.disqus.com/embed.js';
+            (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+        })();
+    </script><noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript" rel="nofollow">comments powered by Disqus.</a>
+</noscript>
+    <a href="https://disqus.com" class="dsq-brlink" rel="nofollow">Comments powered by <span class="logo-disqus">Disqus</span></a>
+
+
+    </section></article><script>var disqus_shortname="tt4e";(function(){var a=document.createElement("script");a.async=true;a.src="https://"+disqus_shortname+".disqus.com/count.js";(document.getElementsByTagName("head")[0]||document.getElementsByTagName("body")[0]).appendChild(a)}());</script>
+</div>
+  </main><footer id="footer" class="footer"><div class="container">
+      Contents © 2023         <a href="mailto:xiaoyao@tt4e.com">逍遥</a> - Powered by         <a href="https://getnikola.com" rel="nofollow">Nikola</a>         
+      
+    </div>
+  </footer>
+</div>
+
+  
+
+
+
+
+</body>
+</html>

@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="utf-8"?>
+<?xml-stylesheet type="text/xsl" href="../assets/xml/rss.xsl" media="all"?><rss version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>琅環笔记 (关于 Tips 的文章)</title><link>https://note.tt4e.com/</link><description></description><atom:link href="https://note.tt4e.com/categories/cat_tips.xml" rel="self" type="application/rss+xml"></atom:link><language>zh_cn</language><copyright>Contents © 2023 &lt;a href="mailto:xiaoyao@tt4e.com"&gt;逍遥&lt;/a&gt; </copyright><lastBuildDate>Sat, 02 Dec 2023 14:43:44 GMT</lastBuildDate><generator>Nikola (getnikola.com)</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>SecureCRT 中 Emacs 向上翻页快捷键 Alt+V 失效</title><link>https://note.tt4e.com/posts/securecrt-emacs-alt-v-not-work/</link><dc:creator>逍遥</dc:creator><description>&lt;section id="section-1"&gt;
+&lt;h2&gt;问题现象&lt;/h2&gt;
+&lt;p&gt;无论怎么配置 Options 中 Emacs 的配置，M-v 都无法向上滚屏。&lt;/p&gt;
+&lt;p&gt;配置位置：Menu「Options」-&amp;gt; Edit Default Session... -&amp;gt; Dialog「Session Options - Default」 -&amp;gt; Tree「Category」-&amp;gt; Emulation -&amp;gt; Emacs -&amp;gt; CheckBox「Use ALT as meta key」&lt;/p&gt;
+&lt;p&gt;尝试修改各相关配置无效。&lt;/p&gt;
+&lt;p&gt;尝试搜索关键字，Google 中似乎类似问题很少人问。&lt;/p&gt;
+&lt;/section&gt;
+&lt;section id="section-2"&gt;
+&lt;h2&gt;解决方法&lt;/h2&gt;
+&lt;p&gt;因为 Google 搜索关键字 SecureCRT Emacs ALT-V 没有类似提问，所以怀疑我的现象是特例 &amp;lt;-- 想到这一点非常重要。&lt;/p&gt;
+&lt;p&gt;特例说明，问题产生条件是我独有的，很大可能是我的环境引入的，就是说，不是内因，而是外因，是由于 SecureCRT 之外的程序导致的。&lt;/p&gt;
+&lt;p&gt;想到这一点后，我尝试逐个关闭电脑相关程序来排除，终于当我关闭「富途牛牛」时，在 Emacs 中，Alt+V 或说 M-v 生效了，可以成功向上滚动。&lt;/p&gt;
+&lt;p&gt;再查看「富途牛牛」的快捷键清单中，是截屏直播的快捷键。同理还有全屏直播 Alt+C，以及快捷键 Ctrl+1，Alt+1 也显示被其他软件占用。&lt;/p&gt;
+&lt;p&gt;不知是不是因为富途牛牛的产品经理视角狭隘，或者开发人员用的都是 macOS，要不怎么会设计出这些明显冲突的全局快捷键。&lt;/p&gt;
+&lt;/section&gt;</description><category>emacs</category><category>securecrt</category><guid>https://note.tt4e.com/posts/securecrt-emacs-alt-v-not-work/</guid><pubDate>Sat, 02 Dec 2023 00:09:47 GMT</pubDate></item><item><title>Nikola Tips</title><link>https://note.tt4e.com/posts/nikola-tips/</link><dc:creator>逍遥</dc:creator><description>&lt;section id="nikola-tips"&gt;
+&lt;h2&gt;Nikola Tips&lt;/h2&gt;
+&lt;section id="nikola-serve"&gt;
+&lt;h3&gt;1. Nikola serve 自动刷新的命令行怎么写？&lt;/h3&gt;
+&lt;div class="code"&gt;&lt;pre class="code shell"&gt;&lt;a id="rest_code_eae6d219a4b4498c9b09eaa1327cebbf-1" name="rest_code_eae6d219a4b4498c9b09eaa1327cebbf-1" href="https://note.tt4e.com/posts/nikola-tips/#rest_code_eae6d219a4b4498c9b09eaa1327cebbf-1"&gt;&lt;/a&gt;nikola&lt;span class="w"&gt; &lt;/span&gt;auto
+&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;即使 &lt;strong&gt;conf.py&lt;/strong&gt; 中已绑定非127.0.0.1的地址，上面的命令也只会在127.0.0.1启动调试。&lt;/p&gt;
+&lt;p&gt;没有去看源代码，可能这样实现从安全角度存在一定的合理性。&lt;/p&gt;
+&lt;p&gt;如果需要任意主机都能获得访问，可使用 -a 参数指定地址0.0.0.0&lt;/p&gt;
+&lt;div class="code"&gt;&lt;pre class="code shell"&gt;&lt;a id="rest_code_01db5e42d4b64f268a26c726b03bf99f-1" name="rest_code_01db5e42d4b64f268a26c726b03bf99f-1" href="https://note.tt4e.com/posts/nikola-tips/#rest_code_01db5e42d4b64f268a26c726b03bf99f-1"&gt;&lt;/a&gt;nikola&lt;span class="w"&gt; &lt;/span&gt;auto&lt;span class="w"&gt; &lt;/span&gt;-a0.0.0.0
+&lt;/pre&gt;&lt;/div&gt;
+&lt;/section&gt;
+&lt;section id="nikola-theme-css"&gt;
+&lt;h3&gt;2. Nikola Theme 如何定制 css&lt;/h3&gt;
+&lt;p&gt;如果在模板中有代码&lt;/p&gt;
+&lt;div class="code"&gt;&lt;pre class="code html+mako"&gt;&lt;a id="rest_code_00c8298575174dd6b64f657b173d3597-1" name="rest_code_00c8298575174dd6b64f657b173d3597-1" href="https://note.tt4e.com/posts/nikola-tips/#rest_code_00c8298575174dd6b64f657b173d3597-1"&gt;&lt;/a&gt;&lt;span class="cp"&gt;%&lt;/span&gt;&lt;span class="k"&gt;if&lt;/span&gt; &lt;span class="n"&gt;has_custom_css&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;
+&lt;a id="rest_code_00c8298575174dd6b64f657b173d3597-2" name="rest_code_00c8298575174dd6b64f657b173d3597-2" href="https://note.tt4e.com/posts/nikola-tips/#rest_code_00c8298575174dd6b64f657b173d3597-2"&gt;&lt;/a&gt;  &lt;span class="p"&gt;&amp;lt;&lt;/span&gt;&lt;span class="nt"&gt;link&lt;/span&gt; &lt;span class="na"&gt;href&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s"&gt;"/assets/css/custom.css"&lt;/span&gt; &lt;span class="na"&gt;rel&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s"&gt;"stylesheet"&lt;/span&gt; &lt;span class="na"&gt;type&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s"&gt;"text/css"&lt;/span&gt;&lt;span class="p"&gt;&amp;gt;&lt;/span&gt;
+&lt;a id="rest_code_00c8298575174dd6b64f657b173d3597-3" name="rest_code_00c8298575174dd6b64f657b173d3597-3" href="https://note.tt4e.com/posts/nikola-tips/#rest_code_00c8298575174dd6b64f657b173d3597-3"&gt;&lt;/a&gt;&lt;span class="cp"&gt;%&lt;/span&gt;&lt;span class="k"&gt;endif&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;因此，增加 /assets/css/custom.css 文件即可。&lt;/p&gt;
+&lt;/section&gt;
+&lt;section id="nikola-github"&gt;
+&lt;h3&gt;3. Nikola 如何推送到 GitHub&lt;/h3&gt;
+&lt;p&gt;先设置好 git 推送&lt;/p&gt;
+&lt;div class="code"&gt;&lt;pre class="code sh"&gt;&lt;a id="rest_code_2debd702d5db4e56bea331e656618115-1" name="rest_code_2debd702d5db4e56bea331e656618115-1" href="https://note.tt4e.com/posts/nikola-tips/#rest_code_2debd702d5db4e56bea331e656618115-1"&gt;&lt;/a&gt;git&lt;span class="w"&gt; &lt;/span&gt;config&lt;span class="w"&gt; &lt;/span&gt;--global&lt;span class="w"&gt; &lt;/span&gt;--add&lt;span class="w"&gt; &lt;/span&gt;safe.directory&lt;span class="w"&gt; &lt;/span&gt;/usr/home/kaffa/web/note.tt4e.com
+&lt;a id="rest_code_2debd702d5db4e56bea331e656618115-2" name="rest_code_2debd702d5db4e56bea331e656618115-2" href="https://note.tt4e.com/posts/nikola-tips/#rest_code_2debd702d5db4e56bea331e656618115-2"&gt;&lt;/a&gt;git&lt;span class="w"&gt; &lt;/span&gt;config&lt;span class="w"&gt; &lt;/span&gt;--global&lt;span class="w"&gt; &lt;/span&gt;user.email&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="s2"&gt;"kaffacoffee@outlook.com"&lt;/span&gt;
+&lt;a id="rest_code_2debd702d5db4e56bea331e656618115-3" name="rest_code_2debd702d5db4e56bea331e656618115-3" href="https://note.tt4e.com/posts/nikola-tips/#rest_code_2debd702d5db4e56bea331e656618115-3"&gt;&lt;/a&gt;git&lt;span class="w"&gt; &lt;/span&gt;config&lt;span class="w"&gt; &lt;/span&gt;--global&lt;span class="w"&gt; &lt;/span&gt;user.name&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="s2"&gt;"Kaffa"&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;将以下内容保存为 aio.sh 脚本&lt;/p&gt;
+&lt;div class="code"&gt;&lt;pre class="code sh"&gt;&lt;a id="rest_code_eeeeb43e0c0d476ca4f2887a53d51a52-1" name="rest_code_eeeeb43e0c0d476ca4f2887a53d51a52-1" href="https://note.tt4e.com/posts/nikola-tips/#rest_code_eeeeb43e0c0d476ca4f2887a53d51a52-1"&gt;&lt;/a&gt;&lt;span class="ch"&gt;#!/bin/bash&lt;/span&gt;
+&lt;a id="rest_code_eeeeb43e0c0d476ca4f2887a53d51a52-2" name="rest_code_eeeeb43e0c0d476ca4f2887a53d51a52-2" href="https://note.tt4e.com/posts/nikola-tips/#rest_code_eeeeb43e0c0d476ca4f2887a53d51a52-2"&gt;&lt;/a&gt;&lt;span class="c1"&gt;#&lt;/span&gt;
+&lt;a id="rest_code_eeeeb43e0c0d476ca4f2887a53d51a52-3" name="rest_code_eeeeb43e0c0d476ca4f2887a53d51a52-3" href="https://note.tt4e.com/posts/nikola-tips/#rest_code_eeeeb43e0c0d476ca4f2887a53d51a52-3"&gt;&lt;/a&gt;&lt;span class="c1"&gt;# nikola output push to github&lt;/span&gt;
+&lt;a id="rest_code_eeeeb43e0c0d476ca4f2887a53d51a52-4" name="rest_code_eeeeb43e0c0d476ca4f2887a53d51a52-4" href="https://note.tt4e.com/posts/nikola-tips/#rest_code_eeeeb43e0c0d476ca4f2887a53d51a52-4"&gt;&lt;/a&gt;&lt;span class="nb"&gt;cd&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;~/web/note.tt4e.com/
+&lt;a id="rest_code_eeeeb43e0c0d476ca4f2887a53d51a52-5" name="rest_code_eeeeb43e0c0d476ca4f2887a53d51a52-5" href="https://note.tt4e.com/posts/nikola-tips/#rest_code_eeeeb43e0c0d476ca4f2887a53d51a52-5"&gt;&lt;/a&gt;nikola&lt;span class="w"&gt; &lt;/span&gt;build
+&lt;a id="rest_code_eeeeb43e0c0d476ca4f2887a53d51a52-6" name="rest_code_eeeeb43e0c0d476ca4f2887a53d51a52-6" href="https://note.tt4e.com/posts/nikola-tips/#rest_code_eeeeb43e0c0d476ca4f2887a53d51a52-6"&gt;&lt;/a&gt;git&lt;span class="w"&gt; &lt;/span&gt;add&lt;span class="w"&gt; &lt;/span&gt;.
+&lt;a id="rest_code_eeeeb43e0c0d476ca4f2887a53d51a52-7" name="rest_code_eeeeb43e0c0d476ca4f2887a53d51a52-7" href="https://note.tt4e.com/posts/nikola-tips/#rest_code_eeeeb43e0c0d476ca4f2887a53d51a52-7"&gt;&lt;/a&gt;git&lt;span class="w"&gt; &lt;/span&gt;commit&lt;span class="w"&gt; &lt;/span&gt;-am&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="s1"&gt;'Kaffa'&lt;/span&gt;
+&lt;a id="rest_code_eeeeb43e0c0d476ca4f2887a53d51a52-8" name="rest_code_eeeeb43e0c0d476ca4f2887a53d51a52-8" href="https://note.tt4e.com/posts/nikola-tips/#rest_code_eeeeb43e0c0d476ca4f2887a53d51a52-8"&gt;&lt;/a&gt;git&lt;span class="w"&gt; &lt;/span&gt;push
+&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;先 su 到 root 用户，然后运行以下命令，再 su 会当前用户&lt;/p&gt;
+&lt;div class="code"&gt;&lt;pre class="code sh"&gt;&lt;a id="rest_code_537b9cbd0f0e47ae8f2bdae919bf696d-1" name="rest_code_537b9cbd0f0e47ae8f2bdae919bf696d-1" href="https://note.tt4e.com/posts/nikola-tips/#rest_code_537b9cbd0f0e47ae8f2bdae919bf696d-1"&gt;&lt;/a&gt;chown&lt;span class="w"&gt; &lt;/span&gt;-R&lt;span class="w"&gt; &lt;/span&gt;kaffa:wheel&lt;span class="w"&gt; &lt;/span&gt;.git
+&lt;a id="rest_code_537b9cbd0f0e47ae8f2bdae919bf696d-2" name="rest_code_537b9cbd0f0e47ae8f2bdae919bf696d-2" href="https://note.tt4e.com/posts/nikola-tips/#rest_code_537b9cbd0f0e47ae8f2bdae919bf696d-2"&gt;&lt;/a&gt;chmod&lt;span class="w"&gt; &lt;/span&gt;-R&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="m"&gt;777&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;./aio.sh
+&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;如果遇到错误提示 Unable to create ** /.git/index.lock: Permission denied，则需要&lt;/p&gt;
+&lt;div class="code"&gt;&lt;pre class="code sh"&gt;&lt;a id="rest_code_06de695f8743496d958579d171ecf301-1" name="rest_code_06de695f8743496d958579d171ecf301-1" href="https://note.tt4e.com/posts/nikola-tips/#rest_code_06de695f8743496d958579d171ecf301-1"&gt;&lt;/a&gt;chown&lt;span class="w"&gt; &lt;/span&gt;-R&lt;span class="w"&gt; &lt;/span&gt;kaffa:wheel&lt;span class="w"&gt; &lt;/span&gt;.git
+&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;其中 用户名和所属组，可以用 groups 命令查看。&lt;/p&gt;
+&lt;p&gt;完成书上步骤后，则每次可以运行 aio.sh 来推送 GitHub，GitHub 收到推送后，会使用 GitHub Action 来处理发布。&lt;/p&gt;
+&lt;p&gt;使用以上方法是有效的，但却说明没有认真读 nikola 文档。&lt;/p&gt;
+&lt;section id="nikola-github-1"&gt;
+&lt;h4&gt;Nikola 官方支持推送到 GitHub&lt;/h4&gt;
+&lt;p&gt;&lt;a class="reference external" href="https://getnikola.com/handbook.html#toc-entry-60"&gt;官方文档&lt;/a&gt;&lt;/p&gt;
+&lt;/section&gt;
+&lt;/section&gt;
+&lt;/section&gt;</description><category>nikola</category><guid>https://note.tt4e.com/posts/nikola-tips/</guid><pubDate>Mon, 27 Nov 2023 11:34:15 GMT</pubDate></item><item><title>「'ssh'不是内部或外部命令，也不是可运行的程序或批处理文件」的解决方法</title><link>https://note.tt4e.com/posts/ssh-is-not-recognized-as-an-internal-or-external-command/</link><dc:creator>逍遥</dc:creator><description>&lt;section id="section-1"&gt;
+&lt;h2&gt;问题现象&lt;/h2&gt;
+&lt;p&gt;当在 &lt;a class="reference external" href="https://github.com/microsoft/terminal"&gt;Windows Terminal&lt;/a&gt; 中运行 &lt;em&gt;ssh&lt;/em&gt; 命令时，终端中提示：&lt;/p&gt;
+&lt;div class="code"&gt;&lt;pre class="code text"&gt;&lt;a id="rest_code_09febd8388d84b87af494482220aea35-1" name="rest_code_09febd8388d84b87af494482220aea35-1" href="https://note.tt4e.com/posts/ssh-is-not-recognized-as-an-internal-or-external-command/#rest_code_09febd8388d84b87af494482220aea35-1"&gt;&lt;/a&gt;'ssh'不是内部或外部命令，也不是可运行的程序或批处理文件
+&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;English Version&lt;/p&gt;
+&lt;div class="code"&gt;&lt;pre class="code text"&gt;&lt;a id="rest_code_087e0e782ac54d838c161ee422ac2893-1" name="rest_code_087e0e782ac54d838c161ee422ac2893-1" href="https://note.tt4e.com/posts/ssh-is-not-recognized-as-an-internal-or-external-command/#rest_code_087e0e782ac54d838c161ee422ac2893-1"&gt;&lt;/a&gt;'ssh' is not recognized as an internal or external command, operable program or batch file.
+&lt;/pre&gt;&lt;/div&gt;
+&lt;/section&gt;
+&lt;section id="section-2"&gt;
+&lt;h2&gt;解决方法&lt;/h2&gt;
+&lt;p&gt;在 Windows 设置中安装 OpenSSH 客户端，且在环境变量 PATH 中加入：&lt;/p&gt;
+&lt;div class="code"&gt;&lt;pre class="code text"&gt;&lt;a id="rest_code_a0b05d87f8444f08866a95dd3d4b17b3-1" name="rest_code_a0b05d87f8444f08866a95dd3d4b17b3-1" href="https://note.tt4e.com/posts/ssh-is-not-recognized-as-an-internal-or-external-command/#rest_code_a0b05d87f8444f08866a95dd3d4b17b3-1"&gt;&lt;/a&gt;C:\Windows\System32\OpenSSH
+&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;验证方法：检查以上目录中是否有 ssh.exe 文件。&lt;/p&gt;
+&lt;/section&gt;</description><category>openssh</category><category>ssh</category><guid>https://note.tt4e.com/posts/ssh-is-not-recognized-as-an-internal-or-external-command/</guid><pubDate>Mon, 27 Nov 2023 05:17:12 GMT</pubDate></item><item><title>SecureCRT 中 Emacs 或 Vim 方向键变成 ABCD 的解决方法</title><link>https://note.tt4e.com/posts/solution-to-arrow-keys-changed-into-abcd-in-securecrt-emacs-vim/</link><dc:creator>逍遥</dc:creator><description>&lt;section id="section-1"&gt;
+&lt;h2&gt;问题现象&lt;/h2&gt;
+&lt;p&gt;在 SecureCRT 中使用 Emacs 或 Vim 方向键变成 ABCD，看起来是键盘的模式导致的。&lt;/p&gt;
+&lt;/section&gt;
+&lt;section id="section-2"&gt;
+&lt;h2&gt;解决方法&lt;/h2&gt;
+&lt;ol class="arabic simple"&gt;
+&lt;li&gt;&lt;p&gt;打开菜单 Options -&amp;gt; Edit Default Session...&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;在打开的窗口 Session Options - Default 中，点击左侧 Terminal -&amp;gt; Emulation -&amp;gt; Modes&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;右侧的 Emulation Modes 下，Numeric keypad 和 Application keypad 单选框组中，选择 Application keypad。&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;保存&lt;/p&gt;&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/section&gt;</description><category>securecrt</category><guid>https://note.tt4e.com/posts/solution-to-arrow-keys-changed-into-abcd-in-securecrt-emacs-vim/</guid><pubDate>Fri, 24 Nov 2023 23:25:01 GMT</pubDate></item></channel></rss>

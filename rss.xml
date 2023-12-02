@@ -1,0 +1,317 @@
+<?xml version="1.0" encoding="utf-8"?>
+<?xml-stylesheet type="text/xsl" href="assets/xml/rss.xsl" media="all"?><rss version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>琅環笔记</title><link>https://note.tt4e.com/</link><description>琅環福地</description><atom:link href="https://note.tt4e.com/rss.xml" rel="self" type="application/rss+xml"></atom:link><language>zh_cn</language><copyright>Contents © 2023 &lt;a href="mailto:xiaoyao@tt4e.com"&gt;逍遥&lt;/a&gt; </copyright><lastBuildDate>Sat, 02 Dec 2023 14:56:43 GMT</lastBuildDate><generator>Nikola (getnikola.com)</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>SecureCRT 中 Emacs 向上翻页快捷键 Alt+V 失效</title><link>https://note.tt4e.com/posts/securecrt-emacs-alt-v-not-work/</link><dc:creator>逍遥</dc:creator><description>&lt;section id="section-1"&gt;
+&lt;h2&gt;问题现象&lt;/h2&gt;
+&lt;p&gt;无论怎么配置 Options 中 Emacs 的配置，M-v 都无法向上滚屏。&lt;/p&gt;
+&lt;p&gt;配置位置：Menu「Options」-&amp;gt; Edit Default Session... -&amp;gt; Dialog「Session Options - Default」 -&amp;gt; Tree「Category」-&amp;gt; Emulation -&amp;gt; Emacs -&amp;gt; CheckBox「Use ALT as meta key」&lt;/p&gt;
+&lt;p&gt;尝试修改各相关配置无效。&lt;/p&gt;
+&lt;p&gt;尝试搜索关键字，Google 中似乎类似问题很少人问。&lt;/p&gt;
+&lt;/section&gt;
+&lt;section id="section-2"&gt;
+&lt;h2&gt;解决方法&lt;/h2&gt;
+&lt;p&gt;因为 Google 搜索关键字 SecureCRT Emacs ALT-V 没有类似提问，所以怀疑我的现象是特例 &amp;lt;-- 想到这一点非常重要。&lt;/p&gt;
+&lt;p&gt;特例说明，问题产生条件是我独有的，很大可能是我的环境引入的，就是说，不是内因，而是外因，是由于 SecureCRT 之外的程序导致的。&lt;/p&gt;
+&lt;p&gt;想到这一点后，我尝试逐个关闭电脑相关程序来排除，终于当我关闭「富途牛牛」时，在 Emacs 中，Alt+V 或说 M-v 生效了，可以成功向上滚动。&lt;/p&gt;
+&lt;p&gt;再查看「富途牛牛」的快捷键清单中，是截屏直播的快捷键。同理还有全屏直播 Alt+C，以及快捷键 Ctrl+1，Alt+1 也显示被其他软件占用。&lt;/p&gt;
+&lt;p&gt;不知是不是因为富途牛牛的产品经理视角狭隘，或者开发人员用的都是 macOS，要不怎么会设计出这些明显冲突的全局快捷键。&lt;/p&gt;
+&lt;/section&gt;</description><category>emacs</category><category>securecrt</category><guid>https://note.tt4e.com/posts/securecrt-emacs-alt-v-not-work/</guid><pubDate>Sat, 02 Dec 2023 00:09:47 GMT</pubDate></item><item><title>EverEdit SFTP Error With FreeBSD</title><link>https://note.tt4e.com/posts/everedit-sftp-error-with-freebsd/</link><dc:creator>逍遥</dc:creator><description>&lt;section id="section-1"&gt;
+&lt;h2&gt;问题现象&lt;/h2&gt;
+&lt;p&gt;EverEdit 4 内置 SFTP 插件连接 FreeBSD 13.2 SSH 时，提示如下:&lt;/p&gt;
+&lt;pre class="literal-block"&gt;[23:19:56]:Hostname was found in DNS cache
+[23:19:56]:  Trying 192.168.2.81...
+[23:19:56]:Adding handle: conn: 0x22356d0cfa0
+[23:19:56]:Adding handle: send: 0
+[23:19:56]:Adding handle: recv: 0
+[23:19:56]:Curl_addHandleToPipeline: length: 1
+[23:19:56]:- Conn 1 (0x22356d0cfa0) send_pipe: 1, recv_pipe: 0
+[23:19:56]:Connected to 192.168.2.81 (192.168.2.81) port 22 (#1)
+[23:19:56]:Failure establishing ssh session
+[23:19:56]:Closing connection 1&lt;/pre&gt;
+&lt;p&gt;而使用其他 SFTP 客户端是完全正常的。&lt;/p&gt;
+&lt;/section&gt;
+&lt;section id="section-2"&gt;
+&lt;h2&gt;解决方法&lt;/h2&gt;
+&lt;p&gt;已提交给作者，还没找出解决办法。&lt;/p&gt;
+&lt;p&gt;在网上查找说是连接不上 FreeBSD 13.2 的 sftp，可能与 libcurl 有关。&lt;/p&gt;
+&lt;p&gt;但还没有时间写代码来调试。&lt;/p&gt;
+&lt;p&gt;待ee作者更新后，我再咨询。&lt;/p&gt;
+&lt;/section&gt;
+&lt;section id="section-3"&gt;
+&lt;h2&gt;参考&lt;/h2&gt;
+&lt;ol class="arabic simple"&gt;
+&lt;li&gt;&lt;p&gt;&lt;a class="reference external" href="https://curl.se/libcurl/c/sftpget.html"&gt;https://curl.se/libcurl/c/sftpget.html&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;&lt;a class="reference external" href="https://curl-users.cool.haxx.narkive.com/ppppPXNc/curl-sftp-failure-establishing-ssh-session"&gt;https://curl-users.cool.haxx.narkive.com/ppppPXNc/curl-sftp-failure-establishing-ssh-session&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/section&gt;</description><category>freebsd</category><category>libcurl</category><guid>https://note.tt4e.com/posts/everedit-sftp-error-with-freebsd/</guid><pubDate>Fri, 01 Dec 2023 03:09:38 GMT</pubDate></item><item><title>Taking Notes In Orgmode With Nikola</title><link>https://note.tt4e.com/posts/taking-notes-in-orgmode-with-nikola/</link><dc:creator>逍遥</dc:creator><description>&lt;div id="outline-container-org2c1771e" class="outline-2"&gt;
+&lt;h2 id="org2c1771e"&gt;步骤&lt;/h2&gt;
+&lt;div class="outline-text-2" id="text-org2c1771e"&gt;
+&lt;ol class="org-ol"&gt;
+&lt;li&gt;安装 emacs，最新版已内置 Org mode&lt;/li&gt;
+&lt;li&gt;安装 nikola&lt;/li&gt;
+&lt;li&gt;安装 nikola orgmode 插件，并按插件目录下的 conf.py.sample 修改 conf.py&lt;/li&gt;
+&lt;li&gt;开始写笔记&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;nikola&lt;span class="w"&gt; &lt;/span&gt;new_post&lt;span class="w"&gt; &lt;/span&gt;-f&lt;span class="w"&gt; &lt;/span&gt;orgmode&lt;span class="w"&gt; &lt;/span&gt;-e
+&lt;/pre&gt;&lt;/div&gt;
+
+&lt;ol class="org-ol"&gt;
+&lt;li&gt;预览&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;nikola&lt;span class="w"&gt; &lt;/span&gt;auto&lt;span class="w"&gt; &lt;/span&gt;-a0.0.0.0
+&lt;/pre&gt;&lt;/div&gt;
+
+&lt;ol class="org-ol"&gt;
+&lt;li&gt;发布到 GitHub&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;
+设置 conf.py
+&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="n"&gt;GITHUB_SOURCE_BRANCH&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="s1"&gt;'sources'&lt;/span&gt;
+&lt;span class="n"&gt;GITHUB_DEPLOY_BRANCH&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="s1"&gt;'master'&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;
+发布
+&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;$&lt;span class="w"&gt; &lt;/span&gt;nikola&lt;span class="w"&gt; &lt;/span&gt;github_deploy
+&lt;/pre&gt;&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+
+&lt;div id="outline-container-orgdc95aa0" class="outline-2"&gt;
+&lt;h2 id="orgdc95aa0"&gt;其他&lt;/h2&gt;
+&lt;div class="outline-text-2" id="text-orgdc95aa0"&gt;
+&lt;ol class="org-ol"&gt;
+&lt;li&gt;修改默认编辑器为 emacs&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;emacs&lt;span class="w"&gt; &lt;/span&gt;~/.profile
+&lt;/pre&gt;&lt;/div&gt;
+
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;EDITOR=emacs
+&lt;/pre&gt;&lt;/div&gt;
+
+&lt;ol class="org-ol"&gt;
+&lt;li&gt;显示当前 Shell&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;echo $0
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;hr&gt;
+
+&lt;p&gt;
+我在房间里洗个澡
+同时在思考中国哪个rapper能比我屌
+&lt;/p&gt;
+
+&lt;hr&gt;
+&lt;/div&gt;
+&lt;/div&gt;</description><category>nikola</category><category>orgmode</category><guid>https://note.tt4e.com/posts/taking-notes-in-orgmode-with-nikola/</guid><pubDate>Thu, 30 Nov 2023 09:34:15 GMT</pubDate></item><item><title>Nikola Tips</title><link>https://note.tt4e.com/posts/nikola-tips/</link><dc:creator>逍遥</dc:creator><description>&lt;section id="nikola-tips"&gt;
+&lt;h2&gt;Nikola Tips&lt;/h2&gt;
+&lt;section id="nikola-serve"&gt;
+&lt;h3&gt;1. Nikola serve 自动刷新的命令行怎么写？&lt;/h3&gt;
+&lt;div class="code"&gt;&lt;pre class="code shell"&gt;&lt;a id="rest_code_eae6d219a4b4498c9b09eaa1327cebbf-1" name="rest_code_eae6d219a4b4498c9b09eaa1327cebbf-1" href="https://note.tt4e.com/posts/nikola-tips/#rest_code_eae6d219a4b4498c9b09eaa1327cebbf-1"&gt;&lt;/a&gt;nikola&lt;span class="w"&gt; &lt;/span&gt;auto
+&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;即使 &lt;strong&gt;conf.py&lt;/strong&gt; 中已绑定非127.0.0.1的地址，上面的命令也只会在127.0.0.1启动调试。&lt;/p&gt;
+&lt;p&gt;没有去看源代码，可能这样实现从安全角度存在一定的合理性。&lt;/p&gt;
+&lt;p&gt;如果需要任意主机都能获得访问，可使用 -a 参数指定地址0.0.0.0&lt;/p&gt;
+&lt;div class="code"&gt;&lt;pre class="code shell"&gt;&lt;a id="rest_code_01db5e42d4b64f268a26c726b03bf99f-1" name="rest_code_01db5e42d4b64f268a26c726b03bf99f-1" href="https://note.tt4e.com/posts/nikola-tips/#rest_code_01db5e42d4b64f268a26c726b03bf99f-1"&gt;&lt;/a&gt;nikola&lt;span class="w"&gt; &lt;/span&gt;auto&lt;span class="w"&gt; &lt;/span&gt;-a0.0.0.0
+&lt;/pre&gt;&lt;/div&gt;
+&lt;/section&gt;
+&lt;section id="nikola-theme-css"&gt;
+&lt;h3&gt;2. Nikola Theme 如何定制 css&lt;/h3&gt;
+&lt;p&gt;如果在模板中有代码&lt;/p&gt;
+&lt;div class="code"&gt;&lt;pre class="code html+mako"&gt;&lt;a id="rest_code_00c8298575174dd6b64f657b173d3597-1" name="rest_code_00c8298575174dd6b64f657b173d3597-1" href="https://note.tt4e.com/posts/nikola-tips/#rest_code_00c8298575174dd6b64f657b173d3597-1"&gt;&lt;/a&gt;&lt;span class="cp"&gt;%&lt;/span&gt;&lt;span class="k"&gt;if&lt;/span&gt; &lt;span class="n"&gt;has_custom_css&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;
+&lt;a id="rest_code_00c8298575174dd6b64f657b173d3597-2" name="rest_code_00c8298575174dd6b64f657b173d3597-2" href="https://note.tt4e.com/posts/nikola-tips/#rest_code_00c8298575174dd6b64f657b173d3597-2"&gt;&lt;/a&gt;  &lt;span class="p"&gt;&amp;lt;&lt;/span&gt;&lt;span class="nt"&gt;link&lt;/span&gt; &lt;span class="na"&gt;href&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s"&gt;"/assets/css/custom.css"&lt;/span&gt; &lt;span class="na"&gt;rel&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s"&gt;"stylesheet"&lt;/span&gt; &lt;span class="na"&gt;type&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s"&gt;"text/css"&lt;/span&gt;&lt;span class="p"&gt;&amp;gt;&lt;/span&gt;
+&lt;a id="rest_code_00c8298575174dd6b64f657b173d3597-3" name="rest_code_00c8298575174dd6b64f657b173d3597-3" href="https://note.tt4e.com/posts/nikola-tips/#rest_code_00c8298575174dd6b64f657b173d3597-3"&gt;&lt;/a&gt;&lt;span class="cp"&gt;%&lt;/span&gt;&lt;span class="k"&gt;endif&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;因此，增加 /assets/css/custom.css 文件即可。&lt;/p&gt;
+&lt;/section&gt;
+&lt;section id="nikola-github"&gt;
+&lt;h3&gt;3. Nikola 如何推送到 GitHub&lt;/h3&gt;
+&lt;p&gt;先设置好 git 推送&lt;/p&gt;
+&lt;div class="code"&gt;&lt;pre class="code sh"&gt;&lt;a id="rest_code_2debd702d5db4e56bea331e656618115-1" name="rest_code_2debd702d5db4e56bea331e656618115-1" href="https://note.tt4e.com/posts/nikola-tips/#rest_code_2debd702d5db4e56bea331e656618115-1"&gt;&lt;/a&gt;git&lt;span class="w"&gt; &lt;/span&gt;config&lt;span class="w"&gt; &lt;/span&gt;--global&lt;span class="w"&gt; &lt;/span&gt;--add&lt;span class="w"&gt; &lt;/span&gt;safe.directory&lt;span class="w"&gt; &lt;/span&gt;/usr/home/kaffa/web/note.tt4e.com
+&lt;a id="rest_code_2debd702d5db4e56bea331e656618115-2" name="rest_code_2debd702d5db4e56bea331e656618115-2" href="https://note.tt4e.com/posts/nikola-tips/#rest_code_2debd702d5db4e56bea331e656618115-2"&gt;&lt;/a&gt;git&lt;span class="w"&gt; &lt;/span&gt;config&lt;span class="w"&gt; &lt;/span&gt;--global&lt;span class="w"&gt; &lt;/span&gt;user.email&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="s2"&gt;"kaffacoffee@outlook.com"&lt;/span&gt;
+&lt;a id="rest_code_2debd702d5db4e56bea331e656618115-3" name="rest_code_2debd702d5db4e56bea331e656618115-3" href="https://note.tt4e.com/posts/nikola-tips/#rest_code_2debd702d5db4e56bea331e656618115-3"&gt;&lt;/a&gt;git&lt;span class="w"&gt; &lt;/span&gt;config&lt;span class="w"&gt; &lt;/span&gt;--global&lt;span class="w"&gt; &lt;/span&gt;user.name&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="s2"&gt;"Kaffa"&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;将以下内容保存为 aio.sh 脚本&lt;/p&gt;
+&lt;div class="code"&gt;&lt;pre class="code sh"&gt;&lt;a id="rest_code_eeeeb43e0c0d476ca4f2887a53d51a52-1" name="rest_code_eeeeb43e0c0d476ca4f2887a53d51a52-1" href="https://note.tt4e.com/posts/nikola-tips/#rest_code_eeeeb43e0c0d476ca4f2887a53d51a52-1"&gt;&lt;/a&gt;&lt;span class="ch"&gt;#!/bin/bash&lt;/span&gt;
+&lt;a id="rest_code_eeeeb43e0c0d476ca4f2887a53d51a52-2" name="rest_code_eeeeb43e0c0d476ca4f2887a53d51a52-2" href="https://note.tt4e.com/posts/nikola-tips/#rest_code_eeeeb43e0c0d476ca4f2887a53d51a52-2"&gt;&lt;/a&gt;&lt;span class="c1"&gt;#&lt;/span&gt;
+&lt;a id="rest_code_eeeeb43e0c0d476ca4f2887a53d51a52-3" name="rest_code_eeeeb43e0c0d476ca4f2887a53d51a52-3" href="https://note.tt4e.com/posts/nikola-tips/#rest_code_eeeeb43e0c0d476ca4f2887a53d51a52-3"&gt;&lt;/a&gt;&lt;span class="c1"&gt;# nikola output push to github&lt;/span&gt;
+&lt;a id="rest_code_eeeeb43e0c0d476ca4f2887a53d51a52-4" name="rest_code_eeeeb43e0c0d476ca4f2887a53d51a52-4" href="https://note.tt4e.com/posts/nikola-tips/#rest_code_eeeeb43e0c0d476ca4f2887a53d51a52-4"&gt;&lt;/a&gt;&lt;span class="nb"&gt;cd&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;~/web/note.tt4e.com/
+&lt;a id="rest_code_eeeeb43e0c0d476ca4f2887a53d51a52-5" name="rest_code_eeeeb43e0c0d476ca4f2887a53d51a52-5" href="https://note.tt4e.com/posts/nikola-tips/#rest_code_eeeeb43e0c0d476ca4f2887a53d51a52-5"&gt;&lt;/a&gt;nikola&lt;span class="w"&gt; &lt;/span&gt;build
+&lt;a id="rest_code_eeeeb43e0c0d476ca4f2887a53d51a52-6" name="rest_code_eeeeb43e0c0d476ca4f2887a53d51a52-6" href="https://note.tt4e.com/posts/nikola-tips/#rest_code_eeeeb43e0c0d476ca4f2887a53d51a52-6"&gt;&lt;/a&gt;git&lt;span class="w"&gt; &lt;/span&gt;add&lt;span class="w"&gt; &lt;/span&gt;.
+&lt;a id="rest_code_eeeeb43e0c0d476ca4f2887a53d51a52-7" name="rest_code_eeeeb43e0c0d476ca4f2887a53d51a52-7" href="https://note.tt4e.com/posts/nikola-tips/#rest_code_eeeeb43e0c0d476ca4f2887a53d51a52-7"&gt;&lt;/a&gt;git&lt;span class="w"&gt; &lt;/span&gt;commit&lt;span class="w"&gt; &lt;/span&gt;-am&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="s1"&gt;'Kaffa'&lt;/span&gt;
+&lt;a id="rest_code_eeeeb43e0c0d476ca4f2887a53d51a52-8" name="rest_code_eeeeb43e0c0d476ca4f2887a53d51a52-8" href="https://note.tt4e.com/posts/nikola-tips/#rest_code_eeeeb43e0c0d476ca4f2887a53d51a52-8"&gt;&lt;/a&gt;git&lt;span class="w"&gt; &lt;/span&gt;push
+&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;先 su 到 root 用户，然后运行以下命令，再 su 会当前用户&lt;/p&gt;
+&lt;div class="code"&gt;&lt;pre class="code sh"&gt;&lt;a id="rest_code_537b9cbd0f0e47ae8f2bdae919bf696d-1" name="rest_code_537b9cbd0f0e47ae8f2bdae919bf696d-1" href="https://note.tt4e.com/posts/nikola-tips/#rest_code_537b9cbd0f0e47ae8f2bdae919bf696d-1"&gt;&lt;/a&gt;chown&lt;span class="w"&gt; &lt;/span&gt;-R&lt;span class="w"&gt; &lt;/span&gt;kaffa:wheel&lt;span class="w"&gt; &lt;/span&gt;.git
+&lt;a id="rest_code_537b9cbd0f0e47ae8f2bdae919bf696d-2" name="rest_code_537b9cbd0f0e47ae8f2bdae919bf696d-2" href="https://note.tt4e.com/posts/nikola-tips/#rest_code_537b9cbd0f0e47ae8f2bdae919bf696d-2"&gt;&lt;/a&gt;chmod&lt;span class="w"&gt; &lt;/span&gt;-R&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="m"&gt;777&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;./aio.sh
+&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;如果遇到错误提示 Unable to create ** /.git/index.lock: Permission denied，则需要&lt;/p&gt;
+&lt;div class="code"&gt;&lt;pre class="code sh"&gt;&lt;a id="rest_code_06de695f8743496d958579d171ecf301-1" name="rest_code_06de695f8743496d958579d171ecf301-1" href="https://note.tt4e.com/posts/nikola-tips/#rest_code_06de695f8743496d958579d171ecf301-1"&gt;&lt;/a&gt;chown&lt;span class="w"&gt; &lt;/span&gt;-R&lt;span class="w"&gt; &lt;/span&gt;kaffa:wheel&lt;span class="w"&gt; &lt;/span&gt;.git
+&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;其中 用户名和所属组，可以用 groups 命令查看。&lt;/p&gt;
+&lt;p&gt;完成书上步骤后，则每次可以运行 aio.sh 来推送 GitHub，GitHub 收到推送后，会使用 GitHub Action 来处理发布。&lt;/p&gt;
+&lt;p&gt;使用以上方法是有效的，但却说明没有认真读 nikola 文档。&lt;/p&gt;
+&lt;section id="nikola-github-1"&gt;
+&lt;h4&gt;Nikola 官方支持推送到 GitHub&lt;/h4&gt;
+&lt;p&gt;&lt;a class="reference external" href="https://getnikola.com/handbook.html#toc-entry-60"&gt;官方文档&lt;/a&gt;&lt;/p&gt;
+&lt;/section&gt;
+&lt;/section&gt;
+&lt;/section&gt;</description><category>nikola</category><guid>https://note.tt4e.com/posts/nikola-tips/</guid><pubDate>Mon, 27 Nov 2023 11:34:15 GMT</pubDate></item><item><title>「'ssh'不是内部或外部命令，也不是可运行的程序或批处理文件」的解决方法</title><link>https://note.tt4e.com/posts/ssh-is-not-recognized-as-an-internal-or-external-command/</link><dc:creator>逍遥</dc:creator><description>&lt;section id="section-1"&gt;
+&lt;h2&gt;问题现象&lt;/h2&gt;
+&lt;p&gt;当在 &lt;a class="reference external" href="https://github.com/microsoft/terminal"&gt;Windows Terminal&lt;/a&gt; 中运行 &lt;em&gt;ssh&lt;/em&gt; 命令时，终端中提示：&lt;/p&gt;
+&lt;div class="code"&gt;&lt;pre class="code text"&gt;&lt;a id="rest_code_09febd8388d84b87af494482220aea35-1" name="rest_code_09febd8388d84b87af494482220aea35-1" href="https://note.tt4e.com/posts/ssh-is-not-recognized-as-an-internal-or-external-command/#rest_code_09febd8388d84b87af494482220aea35-1"&gt;&lt;/a&gt;'ssh'不是内部或外部命令，也不是可运行的程序或批处理文件
+&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;English Version&lt;/p&gt;
+&lt;div class="code"&gt;&lt;pre class="code text"&gt;&lt;a id="rest_code_087e0e782ac54d838c161ee422ac2893-1" name="rest_code_087e0e782ac54d838c161ee422ac2893-1" href="https://note.tt4e.com/posts/ssh-is-not-recognized-as-an-internal-or-external-command/#rest_code_087e0e782ac54d838c161ee422ac2893-1"&gt;&lt;/a&gt;'ssh' is not recognized as an internal or external command, operable program or batch file.
+&lt;/pre&gt;&lt;/div&gt;
+&lt;/section&gt;
+&lt;section id="section-2"&gt;
+&lt;h2&gt;解决方法&lt;/h2&gt;
+&lt;p&gt;在 Windows 设置中安装 OpenSSH 客户端，且在环境变量 PATH 中加入：&lt;/p&gt;
+&lt;div class="code"&gt;&lt;pre class="code text"&gt;&lt;a id="rest_code_a0b05d87f8444f08866a95dd3d4b17b3-1" name="rest_code_a0b05d87f8444f08866a95dd3d4b17b3-1" href="https://note.tt4e.com/posts/ssh-is-not-recognized-as-an-internal-or-external-command/#rest_code_a0b05d87f8444f08866a95dd3d4b17b3-1"&gt;&lt;/a&gt;C:\Windows\System32\OpenSSH
+&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;验证方法：检查以上目录中是否有 ssh.exe 文件。&lt;/p&gt;
+&lt;/section&gt;</description><category>openssh</category><category>ssh</category><guid>https://note.tt4e.com/posts/ssh-is-not-recognized-as-an-internal-or-external-command/</guid><pubDate>Mon, 27 Nov 2023 05:17:12 GMT</pubDate></item><item><title>Threads and Async in Python</title><link>https://note.tt4e.com/posts/threads-and-async-in-python/</link><dc:creator>逍遥</dc:creator><description>&lt;pre class="literal-block"&gt;『专家程序员经历多，遇到的坑也多。面对线程的话题，TA 们多半会说：线程很糟糕，你永远不应该使用它们。』&lt;/pre&gt;
+&lt;section id="section-1"&gt;
+&lt;h2&gt;异步的结构&lt;/h2&gt;
+&lt;p&gt;在 Python 中，不适合重量级使用线程。现在更适合使用异步模式，所涉及的库是 asyncio。&lt;/p&gt;
+&lt;p&gt;asyncio 的结构如下：&lt;/p&gt;
+&lt;table class="table is-bordered"&gt;
+&lt;thead&gt;
+&lt;tr&gt;&lt;th class="head"&gt;&lt;p&gt;层级&lt;/p&gt;&lt;/th&gt;
+&lt;th class="head"&gt;&lt;p&gt;概念&lt;/p&gt;&lt;/th&gt;
+&lt;th class="head"&gt;&lt;p&gt;实现&lt;/p&gt;&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;&lt;td&gt;&lt;p&gt;9&lt;/p&gt;&lt;/td&gt;
+&lt;td&gt;&lt;p&gt;网络：流&lt;/p&gt;&lt;/td&gt;
+&lt;td&gt;&lt;p&gt;StreamReader, StreamWriter, asyncio.open_connection(), asyncio.start_server()&lt;/p&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;&lt;td&gt;&lt;p&gt;8&lt;/p&gt;&lt;/td&gt;
+&lt;td&gt;&lt;p&gt;网络：TCP/UDP&lt;/p&gt;&lt;/td&gt;
+&lt;td&gt;&lt;p&gt;Protocol&lt;/p&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;&lt;td&gt;&lt;p&gt;7&lt;/p&gt;&lt;/td&gt;
+&lt;td&gt;&lt;p&gt;网络：传输&lt;/p&gt;&lt;/td&gt;
+&lt;td&gt;&lt;p&gt;BaseTransport&lt;/p&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;&lt;td&gt;&lt;p&gt;6&lt;/p&gt;&lt;/td&gt;
+&lt;td&gt;&lt;p&gt;工具&lt;/p&gt;&lt;/td&gt;
+&lt;td&gt;&lt;p&gt;asyncio.Queue&lt;/p&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;&lt;td&gt;&lt;p&gt;5&lt;/p&gt;&lt;/td&gt;
+&lt;td&gt;&lt;p&gt;子进程和线程&lt;/p&gt;&lt;/td&gt;
+&lt;td&gt;&lt;p&gt;run_in_executor(), asyncio.subprocess&lt;/p&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;&lt;td&gt;&lt;p&gt;4&lt;/p&gt;&lt;/td&gt;
+&lt;td&gt;&lt;p&gt;任务&lt;/p&gt;&lt;/td&gt;
+&lt;td&gt;&lt;p&gt;asyncio.Task, asyncio.create_task()&lt;/p&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;&lt;td&gt;&lt;p&gt;3&lt;/p&gt;&lt;/td&gt;
+&lt;td&gt;&lt;p&gt;未来对象&lt;/p&gt;&lt;/td&gt;
+&lt;td&gt;&lt;p&gt;asyncio.Future&lt;/p&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;&lt;td&gt;&lt;p&gt;2&lt;/p&gt;&lt;/td&gt;
+&lt;td&gt;&lt;p&gt;事件循环&lt;/p&gt;&lt;/td&gt;
+&lt;td&gt;&lt;p&gt;asyncio.run(), BaseEventLoop&lt;/p&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;&lt;td&gt;&lt;p&gt;1&lt;/p&gt;&lt;/td&gt;
+&lt;td&gt;&lt;p&gt;协程&lt;/p&gt;&lt;/td&gt;
+&lt;td&gt;&lt;p&gt;async def, async with, async for, await&lt;/p&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;/section&gt;</description><category>asyncio</category><guid>https://note.tt4e.com/posts/threads-and-async-in-python/</guid><pubDate>Sat, 25 Nov 2023 21:56:23 GMT</pubDate></item><item><title>SecureCRT 中 Emacs 或 Vim 方向键变成 ABCD 的解决方法</title><link>https://note.tt4e.com/posts/solution-to-arrow-keys-changed-into-abcd-in-securecrt-emacs-vim/</link><dc:creator>逍遥</dc:creator><description>&lt;section id="section-1"&gt;
+&lt;h2&gt;问题现象&lt;/h2&gt;
+&lt;p&gt;在 SecureCRT 中使用 Emacs 或 Vim 方向键变成 ABCD，看起来是键盘的模式导致的。&lt;/p&gt;
+&lt;/section&gt;
+&lt;section id="section-2"&gt;
+&lt;h2&gt;解决方法&lt;/h2&gt;
+&lt;ol class="arabic simple"&gt;
+&lt;li&gt;&lt;p&gt;打开菜单 Options -&amp;gt; Edit Default Session...&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;在打开的窗口 Session Options - Default 中，点击左侧 Terminal -&amp;gt; Emulation -&amp;gt; Modes&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;右侧的 Emulation Modes 下，Numeric keypad 和 Application keypad 单选框组中，选择 Application keypad。&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;保存&lt;/p&gt;&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/section&gt;</description><category>securecrt</category><guid>https://note.tt4e.com/posts/solution-to-arrow-keys-changed-into-abcd-in-securecrt-emacs-vim/</guid><pubDate>Fri, 24 Nov 2023 23:25:01 GMT</pubDate></item><item><title>琅環笔记</title><link>https://note.tt4e.com/posts/lang-huan-notes/</link><dc:creator>逍遥</dc:creator><description>&lt;section id="section-1"&gt;
+&lt;h2&gt;笔记有什么内容？&lt;/h2&gt;
+&lt;ul class="simple"&gt;
+&lt;li&gt;&lt;p&gt;主要内容为编程语言、数据库、操作系统、算法、计算机科学相关内容&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;开发中遇到的坑和 Tips&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;开发手册或开发文档中有的，但不好找的内容&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;文档中没提到，源码中有的内容&lt;/p&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/section&gt;
+&lt;section id="nikola"&gt;
+&lt;h2&gt;我为何选 Nikola？&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;p&gt;优点&lt;/p&gt;
+&lt;ol class="arabic"&gt;
+&lt;li&gt;&lt;p&gt;支持 rst 格式，还支持 Org mode；&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;以 Python 开发，模板并不绑定 Jinja2 或 Mako，都支持；&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;支持的格式有&lt;/p&gt;
+&lt;ul class="simple"&gt;
+&lt;li&gt;&lt;p&gt;reStructuredText (default and pre-configured)&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;Markdown (pre-configured since v7.8.7)&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;Jupyter Notebook&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;HTML&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;PHP&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;anything Pandoc supports (including Textile, DocBook, LaTeX, MediaWiki, TWiki, OPML, Emacs Org-Mode, txt2tags, Microsoft Word .docx, EPUB, Haddock markup)&lt;/p&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;如果包含插件的格式，还支持&lt;/p&gt;
+&lt;ul class="simple"&gt;
+&lt;li&gt;&lt;p&gt;AsciiDoc&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;BBCode&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;CommonMark&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;IRC logs&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;Markmin&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;MediaWiki (smc.mw)&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;Misaka&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;ODT&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;Emacs Org-Mode&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;reST with HTML 5 output&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;Textile&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;txt2tags&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;CreoleWiki&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;WordPress posts&lt;/p&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;由于 rst 的优势，天然支持混合词法分析器的代码高亮，比如 html+mako&lt;/p&gt;
+&lt;p&gt;实际上支持的种类就是 pygments 所支持的，Demo 在 &lt;a class="reference external" href="http://pygments.org/"&gt;http://pygments.org/&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;目前可用的如下：&lt;/p&gt;
+&lt;p&gt;abap | abnf | ada, ada95, ada2005 | adl | agda | ahk, autohotkey | alloy | ampl | antlr-as, antlr-actionscript | antlr-cpp | antlr-csharp, antlr-c# | antlr-java | antlr-objc | antlr-perl | antlr-python | antlr-ruby, antlr-rb | antlr | apacheconf, aconf, apache | apl | applescript | arduino | as, actionscript | as3, actionscript3 | aspectj | aspx-cs | aspx-vb | asy, asymptote | at, ambienttalk, ambienttalk/2 | autoit | awk, gawk, mawk, nawk | basemake | bash, sh, ksh, shell | bat, batch, dosbatch, winbatch | bbcode | bc | befunge | blitzbasic, b3d, bplus | blitzmax, bmax | bnf | boo | boogie | brainfuck, bf | bro | bugs, winbugs, openbugs | c-objdump | c | ca65 | cadl | camkes, idl4 | cbmbas | ceylon | cfc | cfengine3, cf3 | cfm | cfs | chai, chaiscript | chapel, chpl | cheetah, spitfire | cirru | clay | clean | clojure, clj | clojurescript, cljs | cmake | cobol | cobolfree | coffee-script, coffeescript, coffee | common-lisp, cl, lisp | componentpascal, cp | console, shell-session | control, debcontrol | coq | cpp, c++ | cpp-objdump, c++-objdumb, cxx-objdump | cpsa | crmsh, pcmk | croc | cryptol, cry | csharp, c# | csound, csound-orc | csound-document, csound-csd | csound-score, csound-sco | css+django, css+jinja | css+erb, css+ruby | css+genshitext, css+genshi | css+lasso | css+mako | css+mako | css+mozpreproc | css+myghty | css+php | css+smarty | css | cucumber, gherkin | cuda, cu | cypher | cython, pyx, pyrex | d-objdump | d | dart | delphi, pas, pascal, objectpascal | dg | diff, udiff | django, jinja | docker, dockerfile | doscon | dpatch | dtd | duel, jbst, jsonml+bst | dylan-console, dylan-repl | dylan-lid, lid | dylan | earl-grey, earlgrey, eg | easytrieve | ebnf | ec | ecl | eiffel | elixir, ex, exs | elm | emacs, elisp, emacs-lisp | erb | erl | erlang | evoque | extempore | ezhil | factor | fan | fancy, fy | felix, flx | fish, fishshell | flatline | fortran | fortranfixed | foxpro, vfp, clipper, xbase | fsharp | gap | gas, asm | genshi, kid, xml+genshi, xml+kid | genshitext | glsl | gnuplot | go | golo | gooddata-cl | gosu | groff, nroff, man | groovy | gst | haml | handlebars | haskell, hs | haxeml, hxml | hexdump | hsail, hsa | html+cheetah, html+spitfire, htmlcheetah | html+django, html+jinja, htmldjango | html+evoque | html+genshi, html+kid | html+handlebars | html+lasso | html+mako | html+mako | html+myghty | html+php | html+smarty | html+twig | html+velocity | html | http | hx, haxe, hxsl | hybris, hy | hylang | i6t | idl | idris, idr | iex | igor, igorpro | inform6, i6 | inform7, i7 | ini, cfg, dosini | io | ioke, ik | irc | isabelle | j | jade | jags | jasmin, jasminxt | java | javascript+mozpreproc | jcl | jlcon | js+cheetah, javascript+cheetah, js+spitfire, javascript+spitfire | js+django, javascript+django, js+jinja, javascript+jinja | js+erb, javascript+erb, js+ruby, javascript+ruby | js+genshitext, js+genshi, javascript+genshitext, javascript+genshi | js+lasso, javascript+lasso | js+mako, javascript+mako | js+mako, javascript+mako | js+myghty, javascript+myghty | js+php, javascript+php | js+smarty, javascript+smarty | js, javascript | jsgf | json | jsonld, json-ld | jsp | julia, jl | kal | kconfig, menuconfig, linux-config, kernel-config | koka | kotlin | lagda, literate-agda | lasso, lassoscript | lcry, literate-cryptol, lcryptol | lean | less | lhs, literate-haskell, lhaskell | lidr, literate-idris, lidris | lighty, lighttpd | limbo | liquid | live-script, livescript | llvm | logos | logtalk | lsl | lua | make, makefile, mf, bsdmake | mako | mako | maql | mask | mason | mathematica, mma, nb | matlab | matlabsession | minid | modelica | modula2, m2 | monkey | moocode, moo | moon, moonscript | mozhashpreproc | mozpercentpreproc | mql, mq4, mq5, mql4, mql5 | mscgen, msc | mupad | mxml | myghty | mysql | nasm | ncl | nemerle | nesc | newlisp | newspeak | nginx | nimrod, nim | nit | nixos, nix | nsis, nsi, nsh | numpy | objdump-nasm | objdump | objective-c++, objectivec++, obj-c++, objc++ | objective-c, objectivec, obj-c, objc | objective-j, objectivej, obj-j, objj | ocaml | octave | odin | ooc | opa | openedge, abl, progress | pacmanconf | pan | parasail | pawn | perl, pl | perl6, pl6 | php, php3, php4, php5 | pig | pike | pkgconfig | plpgsql | postgresql, postgres | postscript, postscr | pot, po | pov | powershell, posh, ps1, psm1 | praat | prolog | properties, jproperties | protobuf, proto | ps1con | psql, postgresql-console, postgres-console | puppet | py3tb | pycon | pypylog, pypy | pytb | python, py, sage | python3, py3 | qbasic, basic | qml, qbs | qvto, qvt | racket, rkt | ragel-c | ragel-cpp | ragel-d | ragel-em | ragel-java | ragel-objc | ragel-ruby, ragel-rb | ragel | raw | rb, ruby, duby | rbcon, irb | rconsole, rout | rd | rebol | red, red/system | redcode | registry | resource, resourcebundle | rexx, arexx | rhtml, html+erb, html+ruby | roboconf-graph | roboconf-instances | robotframework | rql | rsl | rst, rest, restructuredtext | rts, trafficscript | rust | sass | sc, supercollider | scala | scaml | scheme, scm | scilab | scss | shen | silver | slim | smali | smalltalk, squeak, st | smarty | sml | snobol | sourceslist, sources.list, debsources | sp | sparql | spec | splus, s, r | sql | sqlite3 | squidconf, squid.conf, squid | ssp | stan | swift | swig | systemverilog, sv | tads3 | tap | tcl | tcsh, csh | tcshcon | tea | termcap | terminfo | terraform, tf | tex, latex | text | thrift | todotxt | trac-wiki, moin | treetop | ts, typescript | turtle | twig | typoscript | typoscriptcssdata | typoscripthtmldata | urbiscript | vala, vapi | vb.net, vbnet | vcl | vclsnippets, vclsnippet | vctreestatus | velocity | verilog, v | vgl | vhdl | vim | wdiff | x10, xten | xml+cheetah, xml+spitfire | xml+django, xml+jinja | xml+erb, xml+ruby | xml+evoque | xml+lasso | xml+mako | xml+mako | xml+myghty | xml+php | xml+smarty | xml+velocity | xml | xquery, xqy, xq, xql, xqm | xslt | xtend | xul+mozpreproc | yaml+jinja, salt, sls | yaml | zephir |&lt;/p&gt;
+&lt;p&gt;可以通过以下命令查看&lt;/p&gt;
+&lt;div class="code"&gt;&lt;pre class="code sh"&gt;&lt;a id="rest_code_ab8bfbcb3ce04126bde60530362514a1-1" name="rest_code_ab8bfbcb3ce04126bde60530362514a1-1" href="https://note.tt4e.com/posts/lang-huan-notes/#rest_code_ab8bfbcb3ce04126bde60530362514a1-1"&gt;&lt;/a&gt;pygmentize&lt;span class="w"&gt; &lt;/span&gt;-L
+&lt;/pre&gt;&lt;/div&gt;
+&lt;ol class="arabic" start="5"&gt;
+&lt;li&gt;&lt;p&gt;Nikola 如果是艾志恒，会不会唱：&lt;/p&gt;
+&lt;div class="line-block"&gt;
+&lt;div class="line"&gt;在房间里洗个澡&lt;/div&gt;
+&lt;div class="line"&gt;同时在思考其它的jamstack哪个能比我屌&lt;/div&gt;
+&lt;div class="line"&gt;Posts keep increasing&lt;/div&gt;
+&lt;div class="line"&gt;你们格式都认不到&lt;/div&gt;
+&lt;div class="line"&gt;我们code好&lt;/div&gt;
+&lt;div class="line"&gt;但目前我还嫌自己PR的少&lt;/div&gt;
+&lt;/div&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;缺点&lt;/p&gt;
+&lt;ol class="arabic simple"&gt;
+&lt;li&gt;&lt;p&gt;主题的设计的感觉，不如 Hugo 的丰富&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;安装过程有小坑（等再次安装时会写一篇笔记记录）&lt;/p&gt;&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;img alt="Nikola" class="ml-5" src="https://note.tt4e.com/images/nikola.jpg" style="width: 400px; height: 400px;"&gt;
+&lt;/section&gt;</description><category>nikola</category><guid>https://note.tt4e.com/posts/lang-huan-notes/</guid><pubDate>Fri, 24 Nov 2023 23:18:29 GMT</pubDate></item></channel></rss>

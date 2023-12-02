@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<?xml-stylesheet type="text/xsl" href="../assets/xml/rss.xsl" media="all"?><rss version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>琅環笔记 (关于 emacs 的文章)</title><link>https://note.tt4e.com/</link><description></description><atom:link href="https://note.tt4e.com/categories/emacs.xml" rel="self" type="application/rss+xml"></atom:link><language>zh_cn</language><copyright>Contents © 2023 &lt;a href="mailto:xiaoyao@tt4e.com"&gt;逍遥&lt;/a&gt; </copyright><lastBuildDate>Sat, 02 Dec 2023 14:43:44 GMT</lastBuildDate><generator>Nikola (getnikola.com)</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>SecureCRT 中 Emacs 向上翻页快捷键 Alt+V 失效</title><link>https://note.tt4e.com/posts/securecrt-emacs-alt-v-not-work/</link><dc:creator>逍遥</dc:creator><description>&lt;section id="section-1"&gt;
+&lt;h2&gt;问题现象&lt;/h2&gt;
+&lt;p&gt;无论怎么配置 Options 中 Emacs 的配置，M-v 都无法向上滚屏。&lt;/p&gt;
+&lt;p&gt;配置位置：Menu「Options」-&amp;gt; Edit Default Session... -&amp;gt; Dialog「Session Options - Default」 -&amp;gt; Tree「Category」-&amp;gt; Emulation -&amp;gt; Emacs -&amp;gt; CheckBox「Use ALT as meta key」&lt;/p&gt;
+&lt;p&gt;尝试修改各相关配置无效。&lt;/p&gt;
+&lt;p&gt;尝试搜索关键字，Google 中似乎类似问题很少人问。&lt;/p&gt;
+&lt;/section&gt;
+&lt;section id="section-2"&gt;
+&lt;h2&gt;解决方法&lt;/h2&gt;
+&lt;p&gt;因为 Google 搜索关键字 SecureCRT Emacs ALT-V 没有类似提问，所以怀疑我的现象是特例 &amp;lt;-- 想到这一点非常重要。&lt;/p&gt;
+&lt;p&gt;特例说明，问题产生条件是我独有的，很大可能是我的环境引入的，就是说，不是内因，而是外因，是由于 SecureCRT 之外的程序导致的。&lt;/p&gt;
+&lt;p&gt;想到这一点后，我尝试逐个关闭电脑相关程序来排除，终于当我关闭「富途牛牛」时，在 Emacs 中，Alt+V 或说 M-v 生效了，可以成功向上滚动。&lt;/p&gt;
+&lt;p&gt;再查看「富途牛牛」的快捷键清单中，是截屏直播的快捷键。同理还有全屏直播 Alt+C，以及快捷键 Ctrl+1，Alt+1 也显示被其他软件占用。&lt;/p&gt;
+&lt;p&gt;不知是不是因为富途牛牛的产品经理视角狭隘，或者开发人员用的都是 macOS，要不怎么会设计出这些明显冲突的全局快捷键。&lt;/p&gt;
+&lt;/section&gt;</description><category>emacs</category><category>securecrt</category><guid>https://note.tt4e.com/posts/securecrt-emacs-alt-v-not-work/</guid><pubDate>Sat, 02 Dec 2023 00:09:47 GMT</pubDate></item></channel></rss>
