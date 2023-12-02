@@ -5,7 +5,7 @@ STOP_RENDERING = runtime.STOP_RENDERING
 __M_dict_builtin = dict
 __M_locals_builtin = locals
 _magic_number = 10
-_modified_time = 1701529340.6938834
+_modified_time = 1701529589.0176945
 _enable_loop = True
 _template_filename = 'themes/carpet/templates/list.tmpl'
 _template_uri = 'list.tmpl'
@@ -32,11 +32,11 @@ def render_body(context,**pageargs):
         __M_locals = __M_dict_builtin(pageargs=pageargs)
         _import_ns = {}
         _mako_get_namespace(context, 'archive_nav')._populate(_import_ns, ['*'])
-        archive_nav = _mako_get_namespace(context, 'archive_nav')
         def content():
             return render_content(context._locals(__M_locals))
         title = _import_ns.get('title', context.get('title', UNDEFINED))
         items = _import_ns.get('items', context.get('items', UNDEFINED))
+        archive_nav = _mako_get_namespace(context, 'archive_nav')
         messages = _import_ns.get('messages', context.get('messages', UNDEFINED))
         __M_writer = context.writer()
         __M_writer('\n')
@@ -56,11 +56,11 @@ def render_content(context,**pageargs):
     try:
         _import_ns = {}
         _mako_get_namespace(context, 'archive_nav')._populate(_import_ns, ['*'])
-        archive_nav = _mako_get_namespace(context, 'archive_nav')
         def content():
             return render_content(context)
         title = _import_ns.get('title', context.get('title', UNDEFINED))
         items = _import_ns.get('items', context.get('items', UNDEFINED))
+        archive_nav = _mako_get_namespace(context, 'archive_nav')
         messages = _import_ns.get('messages', context.get('messages', UNDEFINED))
         __M_writer = context.writer()
         __M_writer('\n<article class="listpage">\n  <header class="heading">\n    <h1 class="title is-1">')
