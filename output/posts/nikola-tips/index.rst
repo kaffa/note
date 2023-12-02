@@ -110,4 +110,5 @@ Nikola 官方支持推送到 GitHub
 
 脚注
 ==================================================
+
 [#fn1] master：类似 master，slave 这样带有种族歧视色彩的词，在编程世界中将不再继续使用，现有使用也逐步 `重命名 <https://github.com/github/renaming>`_。
