@@ -5,7 +5,7 @@ STOP_RENDERING = runtime.STOP_RENDERING
 __M_dict_builtin = dict
 __M_locals_builtin = locals
 _magic_number = 10
-_modified_time = 1701541317.5759914
+_modified_time = 1701541764.3534439
 _enable_loop = True
 _template_filename = 'themes/carpet/templates/post.tmpl'
 _template_uri = 'post.tmpl'
@@ -45,22 +45,22 @@ def render_body(context,**pageargs):
     __M_caller = context.caller_stack._push_frame()
     try:
         __M_locals = __M_dict_builtin(pageargs=pageargs)
-        carpet__hero_post_title = context.get('carpet__hero_post_title', UNDEFINED)
         post = context.get('post', UNDEFINED)
         enable_comments = context.get('enable_comments', UNDEFINED)
-        helper = _mako_get_namespace(context, 'helper')
-        comments = _mako_get_namespace(context, 'comments')
-        title = context.get('title', UNDEFINED)
+        messages = context.get('messages', UNDEFINED)
         def extra_head():
             return render_extra_head(context._locals(__M_locals))
-        parent = context.get('parent', UNDEFINED)
-        site_has_comments = context.get('site_has_comments', UNDEFINED)
-        messages = context.get('messages', UNDEFINED)
+        title = context.get('title', UNDEFINED)
         def html_hero_body():
             return render_html_hero_body(context._locals(__M_locals))
+        helper = _mako_get_namespace(context, 'helper')
         def content():
             return render_content(context._locals(__M_locals))
         pheader = _mako_get_namespace(context, 'pheader')
+        carpet__hero_post_title = context.get('carpet__hero_post_title', UNDEFINED)
+        comments = _mako_get_namespace(context, 'comments')
+        parent = context.get('parent', UNDEFINED)
+        site_has_comments = context.get('site_has_comments', UNDEFINED)
         __M_writer = context.writer()
         __M_writer('\n')
         __M_writer('\n')
@@ -90,11 +90,11 @@ def render_body(context,**pageargs):
 def render_extra_head(context,**pageargs):
     __M_caller = context.caller_stack._push_frame()
     try:
-        post = context.get('post', UNDEFINED)
-        helper = _mako_get_namespace(context, 'helper')
         def extra_head():
             return render_extra_head(context)
+        helper = _mako_get_namespace(context, 'helper')
         parent = context.get('parent', UNDEFINED)
+        post = context.get('post', UNDEFINED)
         __M_writer = context.writer()
         __M_writer('\n  ')
         __M_writer(str(parent.extra_head()))
@@ -142,12 +142,12 @@ def render_extra_head(context,**pageargs):
 def render_html_hero_body(context,**pageargs):
     __M_caller = context.caller_stack._push_frame()
     try:
+        post = context.get('post', UNDEFINED)
         carpet__hero_post_title = context.get('carpet__hero_post_title', UNDEFINED)
+        parent = context.get('parent', UNDEFINED)
+        title = context.get('title', UNDEFINED)
         def html_hero_body():
             return render_html_hero_body(context)
-        post = context.get('post', UNDEFINED)
-        title = context.get('title', UNDEFINED)
-        parent = context.get('parent', UNDEFINED)
         __M_writer = context.writer()
         __M_writer('\n')
         if not carpet__hero_post_title:
@@ -210,13 +210,13 @@ def render_content(context,**pageargs):
     try:
         post = context.get('post', UNDEFINED)
         enable_comments = context.get('enable_comments', UNDEFINED)
-        helper = _mako_get_namespace(context, 'helper')
-        comments = _mako_get_namespace(context, 'comments')
         messages = context.get('messages', UNDEFINED)
-        site_has_comments = context.get('site_has_comments', UNDEFINED)
+        helper = _mako_get_namespace(context, 'helper')
+        pheader = _mako_get_namespace(context, 'pheader')
         def content():
             return render_content(context)
-        pheader = _mako_get_namespace(context, 'pheader')
+        comments = _mako_get_namespace(context, 'comments')
+        site_has_comments = context.get('site_has_comments', UNDEFINED)
         __M_writer = context.writer()
         __M_writer('\n<article class="post-')
         __M_writer(str(post.meta('type')))
