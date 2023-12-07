@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html prefix="" lang="zh_cn">
+<head>
+<meta charset="utf-8">
+<meta name="description" content="本文说明 python 中获取绝对路径和相对路径时需要注意的点。">
+<meta name="viewport" content="width=device-width">
+<title>Absolute and Relative Path in Python | 琅環笔记</title>
+<meta name="theme-color" content="#FED43F">
+<meta name="generator" content="Nikola (getnikola.com)">
+<link rel="alternate" type="application/rss+xml" title="RSS" href="../../rss.xml">
+<link rel="canonical" href="https://note.tt4e.com/posts/absolute-and-relative-path-in-python/">
+<link href="../../assets/css/rst.css" rel="stylesheet" type="text/css">
+<link href="../../assets/css/code.css" rel="stylesheet" type="text/css">
+<link href="../../assets/css/font-awesome.css" rel="stylesheet" type="text/css">
+<link href="../../assets/css/styles.css" rel="stylesheet" type="text/css">
+<link href="../../assets/css/custom.css" rel="stylesheet" type="text/css">
+<!--[if lt IE 9]><script src="../../assets/js/html5.js"></script><![endif]--><meta name="description" content="本文说明 python 中获取绝对路径和相对路径时需要注意的点。">
+<meta name="author" content="逍遥">
+<link rel="prev" href="../securecrt-emacs-alt-v-not-work/" title="SecureCRT 中 Emacs 向上翻页快捷键 Alt+V 失效" type="text/html">
+</head>
+<body>
+<script type="text/javascript">
+  // Detect JS support
+  document.body.className = document.body.className + " js_enabled";
+</script><a href="#content" class="sr-only sr-only-focusable">跳到主内容</a>
+<div id="container">
+    <section class="hero is-primary"><!-- Hero header: will stick at the top --><div class="hero-head">
+  <header id="header" class="nav"><div class="container">
+      <div class="nav-left">
+        
+<div class="nav-item is-brand">
+  <h1 id="brand" class="site-header">
+      <a href="https://note.tt4e.com/" title="琅環笔记" rel="home">
+        
+  <span class="level is-mobile">
+
+
+  <span id="blog-title" class="level-item site-title">琅環笔记</span>
+
+  </span>
+
+      </a>
+  </h1>
+</div>
+
+        
+
+      </div>
+      
+<!-- This "nav-toggle" hamburger menu is only visible on mobile -->
+<!-- You need JavaScript to toggle the "is-active" class on "nav-menu" -->
+<span id="nav-toggle-burger" class="nav-toggle">
+  <span></span>
+  <span></span>
+  <span></span>
+</span>
+<div id="menu" class="nav-right nav-menu">
+      <a class="nav-item" title="文章归档" href="../../archive.html">文章归档</a>
+      <a class="nav-item" title="标签" href="../../categories/">标签</a>
+      <a class="nav-item" title="RSS 源" href="../../rss.xml">RSS 源</a>
+
+
+</div>
+<script type="text/javascript">
+document.getElementById('nav-toggle-burger').onclick = function() {
+  var myMenu = document.getElementById('menu');
+  var className = ' ' + myMenu.className + ' ';
+  var IS_ACTIVE_CLASS = 'is-active';
+  if ( ~className.indexOf(' ' + IS_ACTIVE_CLASS + ' ') ) {
+    myMenu.className = className.replace(' ' + IS_ACTIVE_CLASS + ' ', ' ');
+  } else {
+    myMenu.className += ' ' + IS_ACTIVE_CLASS;
+  }
+}
+</script>
+</div>
+  </header>
+</div>
+
+    <!-- Hero content: will be in the middle -->
+    
+  
+    
+
+    <!-- Hero footer: will stick at the bottom -->
+  </section><main id="content" class="section section-main"><div class="container">
+      
+<article class="post-text h-entry hentry postpage" itemscope="itemscope" itemtype="http://schema.org/Article"><header class="heading"><h1 class="title is-1 p-name entry-title" itemprop="headline name">
+    <a href="." class="u-url">Absolute and Relative Path in Python</a>
+  </h1>
+
+  <div class="level metadata">
+    
+    <div class="level-left">
+      <div class="level-item">
+        <p class="byline author vcard">
+          <span class="byline-name fn">
+              逍遥
+          </span>
+        </p>
+      </div>
+    </div>
+    
+    <div class="level-right">
+      <div class="level-item">
+        <p class="dateline">
+          <a href="." rel="bookmark">
+            <time class="published dt-published" datetime="2023-12-07T08:12:45+08:00" itemprop="datePublished" title="2023-12-07 08:12">2023-12-07 08:12</time></a>
+        </p>
+      </div>
+      
+        <div class="level-item">
+          <p class="commentline">
+    
+    <a href="#disqus_thread" data-disqus-identifier="cache/posts/absolute-and-relative-path-in-python.html">评论</a>
+
+</p>
+        </div>
+      
+      
+  <div class="level-item">
+    <p class="sourceline">
+      <a href="index.rst" id="sourcelink">源文件</a>
+    </p>
+  </div>
+
+      
+        <meta name="description" itemprop="description" content="本文说明 python 中获取绝对路径和相对路径时需要注意的点。">
+</div>
+  </div>
+  
+
+</header><div class="section content e-content entry-content" itemprop="articleBody text">
+    <section id="os-path-isabs"><h2>1. os.path.isabs()</h2>
+<p>os.path.isabs() 的行为是：如果路径以 / 开头，或者在非类 Unix 平台上，以盘符跟一个 os.sep 开头，就返回 True；否则，就返回 False</p>
+<p>这里要注意的是在 Windows 上，是支持两种斜线符号的，一种是Windows的斜线，但需要双写以转义 '\'，另一种是类似 Unix 反写 '/'。</p>
+<p>看如下代码，在 Windows 下的返回结果</p>
+<div class="code"><pre class="code python"><a id="rest_code_78f877eb48cf4b49bcff1a9cde7d22d6-1" name="rest_code_78f877eb48cf4b49bcff1a9cde7d22d6-1" href="#rest_code_78f877eb48cf4b49bcff1a9cde7d22d6-1"></a><span class="n">Python</span> <span class="mf">3.10.6</span> <span class="p">(</span><span class="n">tags</span><span class="o">/</span><span class="n">v3</span><span class="mf">.10.6</span><span class="p">:</span><span class="mi">9</span><span class="n">c7b4bd</span><span class="p">,</span> <span class="n">Aug</span>  <span class="mi">1</span> <span class="mi">2022</span><span class="p">,</span> <span class="mi">21</span><span class="p">:</span><span class="mi">53</span><span class="p">:</span><span class="mi">49</span><span class="p">)</span> <span class="p">[</span><span class="n">MSC</span> <span class="n">v</span><span class="mf">.1932</span> <span class="mi">64</span> <span class="n">bit</span> <span class="p">(</span><span class="n">AMD64</span><span class="p">)]</span> <span class="n">on</span> <span class="n">win32</span>
+<a id="rest_code_78f877eb48cf4b49bcff1a9cde7d22d6-2" name="rest_code_78f877eb48cf4b49bcff1a9cde7d22d6-2" href="#rest_code_78f877eb48cf4b49bcff1a9cde7d22d6-2"></a><span class="n">Type</span> <span class="s2">"help"</span><span class="p">,</span> <span class="s2">"copyright"</span><span class="p">,</span> <span class="s2">"credits"</span> <span class="ow">or</span> <span class="s2">"license"</span> <span class="k">for</span> <span class="n">more</span> <span class="n">information</span><span class="o">.</span>
+<a id="rest_code_78f877eb48cf4b49bcff1a9cde7d22d6-3" name="rest_code_78f877eb48cf4b49bcff1a9cde7d22d6-3" href="#rest_code_78f877eb48cf4b49bcff1a9cde7d22d6-3"></a><span class="o">&gt;&gt;&gt;</span> <span class="kn">import</span> <span class="nn">os</span>
+<a id="rest_code_78f877eb48cf4b49bcff1a9cde7d22d6-4" name="rest_code_78f877eb48cf4b49bcff1a9cde7d22d6-4" href="#rest_code_78f877eb48cf4b49bcff1a9cde7d22d6-4"></a><span class="o">&gt;&gt;&gt;</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">isabs</span><span class="p">(</span><span class="s1">'c:/abc'</span><span class="p">)</span>
+<a id="rest_code_78f877eb48cf4b49bcff1a9cde7d22d6-5" name="rest_code_78f877eb48cf4b49bcff1a9cde7d22d6-5" href="#rest_code_78f877eb48cf4b49bcff1a9cde7d22d6-5"></a><span class="kc">True</span>
+<a id="rest_code_78f877eb48cf4b49bcff1a9cde7d22d6-6" name="rest_code_78f877eb48cf4b49bcff1a9cde7d22d6-6" href="#rest_code_78f877eb48cf4b49bcff1a9cde7d22d6-6"></a><span class="o">&gt;&gt;&gt;</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">isabs</span><span class="p">(</span><span class="s1">'/abc'</span><span class="p">)</span>
+<a id="rest_code_78f877eb48cf4b49bcff1a9cde7d22d6-7" name="rest_code_78f877eb48cf4b49bcff1a9cde7d22d6-7" href="#rest_code_78f877eb48cf4b49bcff1a9cde7d22d6-7"></a><span class="kc">True</span>
+<a id="rest_code_78f877eb48cf4b49bcff1a9cde7d22d6-8" name="rest_code_78f877eb48cf4b49bcff1a9cde7d22d6-8" href="#rest_code_78f877eb48cf4b49bcff1a9cde7d22d6-8"></a><span class="o">&gt;&gt;&gt;</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">isabs</span><span class="p">(</span><span class="s1">'c:</span><span class="se">\a</span><span class="s1">bc'</span><span class="p">)</span>
+<a id="rest_code_78f877eb48cf4b49bcff1a9cde7d22d6-9" name="rest_code_78f877eb48cf4b49bcff1a9cde7d22d6-9" href="#rest_code_78f877eb48cf4b49bcff1a9cde7d22d6-9"></a><span class="kc">False</span>
+<a id="rest_code_78f877eb48cf4b49bcff1a9cde7d22d6-10" name="rest_code_78f877eb48cf4b49bcff1a9cde7d22d6-10" href="#rest_code_78f877eb48cf4b49bcff1a9cde7d22d6-10"></a><span class="o">&gt;&gt;&gt;</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">isabs</span><span class="p">(</span><span class="s1">'c:/abc'</span><span class="p">)</span>
+<a id="rest_code_78f877eb48cf4b49bcff1a9cde7d22d6-11" name="rest_code_78f877eb48cf4b49bcff1a9cde7d22d6-11" href="#rest_code_78f877eb48cf4b49bcff1a9cde7d22d6-11"></a><span class="kc">True</span>
+<a id="rest_code_78f877eb48cf4b49bcff1a9cde7d22d6-12" name="rest_code_78f877eb48cf4b49bcff1a9cde7d22d6-12" href="#rest_code_78f877eb48cf4b49bcff1a9cde7d22d6-12"></a><span class="o">&gt;&gt;&gt;</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">isabs</span><span class="p">(</span><span class="s1">'c:</span><span class="se">\\</span><span class="s1">abc'</span><span class="p">)</span>
+<a id="rest_code_78f877eb48cf4b49bcff1a9cde7d22d6-13" name="rest_code_78f877eb48cf4b49bcff1a9cde7d22d6-13" href="#rest_code_78f877eb48cf4b49bcff1a9cde7d22d6-13"></a><span class="kc">True</span>
+<a id="rest_code_78f877eb48cf4b49bcff1a9cde7d22d6-14" name="rest_code_78f877eb48cf4b49bcff1a9cde7d22d6-14" href="#rest_code_78f877eb48cf4b49bcff1a9cde7d22d6-14"></a><span class="o">&gt;&gt;&gt;</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">isabs</span><span class="p">(</span><span class="s1">'</span><span class="se">\\</span><span class="s1">abc'</span><span class="p">)</span>
+<a id="rest_code_78f877eb48cf4b49bcff1a9cde7d22d6-15" name="rest_code_78f877eb48cf4b49bcff1a9cde7d22d6-15" href="#rest_code_78f877eb48cf4b49bcff1a9cde7d22d6-15"></a><span class="kc">True</span>
+<a id="rest_code_78f877eb48cf4b49bcff1a9cde7d22d6-16" name="rest_code_78f877eb48cf4b49bcff1a9cde7d22d6-16" href="#rest_code_78f877eb48cf4b49bcff1a9cde7d22d6-16"></a><span class="o">&gt;&gt;&gt;</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">isabs</span><span class="p">(</span><span class="s1">'abc'</span><span class="p">)</span>
+<a id="rest_code_78f877eb48cf4b49bcff1a9cde7d22d6-17" name="rest_code_78f877eb48cf4b49bcff1a9cde7d22d6-17" href="#rest_code_78f877eb48cf4b49bcff1a9cde7d22d6-17"></a><span class="kc">False</span>
+</pre></div>
+<p>所以说，实际上这个方法在 Windows 并不好用，试着查看源代码，但实现并不是 Python 的，似乎有 macpath,posixpath,ntpath，但 ntpath 在 Windows 上返回就是上述值。</p>
+</section><section id="pathlib-path-is-absolute-windows"><h2>2. pathlib.Path().is_absolute() 在 Windows 上更好用</h2>
+<p>实际上判断是否绝对路径时，应该使用以下代码</p>
+<div class="code"><pre class="code python"><a id="rest_code_76d9fdbf6de042a7aa26746fb0a91d5d-1" name="rest_code_76d9fdbf6de042a7aa26746fb0a91d5d-1" href="#rest_code_76d9fdbf6de042a7aa26746fb0a91d5d-1"></a><span class="kn">import</span> <span class="nn">pathlib</span>
+<a id="rest_code_76d9fdbf6de042a7aa26746fb0a91d5d-2" name="rest_code_76d9fdbf6de042a7aa26746fb0a91d5d-2" href="#rest_code_76d9fdbf6de042a7aa26746fb0a91d5d-2"></a><span class="n">pathlib</span><span class="o">.</span><span class="n">Path</span><span class="p">(</span><span class="s1">'/abc'</span><span class="p">)</span><span class="o">.</span><span class="n">is_absolute</span><span class="p">()</span>
+</pre></div>
+</section>
+</div>
+  <aside class="postpromonav"><div class="columns tags" itemprop="keywords">
+        <div class="column has-text-centered">
+          <a class="tag is-primary is-medium p-category" href="../../categories/path/" rel="tag">path</a>
+        </div>
+        <div class="column has-text-centered">
+          <a class="tag is-primary is-medium p-category" href="../../categories/python/" rel="tag">python</a>
+        </div>
+  </div>
+
+    
+  <div class="columns">
+    <div class="column">
+      <nav class="pagination pager hidden-print"><a class="pagination-previous previous" href="../securecrt-emacs-alt-v-not-work/" rel="prev" title="SecureCRT 中 Emacs 向上翻页快捷键 Alt+V 失效">上一篇文章</a>
+      </nav>
+</div>
+  </div>
+
+  </aside><section class="section comments hidden-print"><h2 class="title is-2">评论</h2>
+      
+    
+        <div id="disqus_thread"></div>
+        <script>
+        var disqus_shortname ="tt4e",
+            disqus_url="https://note.tt4e.com/posts/absolute-and-relative-path-in-python/",
+        disqus_title="Absolute and Relative Path in Python",
+        disqus_identifier="cache/posts/absolute-and-relative-path-in-python.html",
+        disqus_config = function () {
+            this.language = "zh_cn";
+        };
+        (function() {
+            var dsq = document.createElement('script'); dsq.async = true;
+            dsq.src = 'https://' + disqus_shortname + '.disqus.com/embed.js';
+            (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+        })();
+    </script><noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript" rel="nofollow">comments powered by Disqus.</a>
+</noscript>
+    <a href="https://disqus.com" class="dsq-brlink" rel="nofollow">Comments powered by <span class="logo-disqus">Disqus</span></a>
+
+
+    </section></article><script>var disqus_shortname="tt4e";(function(){var a=document.createElement("script");a.async=true;a.src="https://"+disqus_shortname+".disqus.com/count.js";(document.getElementsByTagName("head")[0]||document.getElementsByTagName("body")[0]).appendChild(a)}());</script>
+</div>
+  </main><footer id="footer" class="footer"><div class="container">
+      Contents © 2023         <a href="mailto:xiaoyao@tt4e.com">逍遥</a> - Powered by         <a href="https://getnikola.com" rel="nofollow">Nikola</a>         
+      
+    </div>
+  </footer>
+</div>
+
+  
+
+
+
+
+</body>
+</html>

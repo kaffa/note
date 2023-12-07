@@ -14,7 +14,7 @@
 <link href="assets/css/font-awesome.css" rel="stylesheet" type="text/css">
 <link href="assets/css/styles.css" rel="stylesheet" type="text/css">
 <link href="assets/css/custom.css" rel="stylesheet" type="text/css">
-<!--[if lt IE 9]><script src="assets/js/html5.js"></script><![endif]--><link rel="prefetch" href="posts/securecrt-emacs-alt-v-not-work/" type="text/html">
+<!--[if lt IE 9]><script src="assets/js/html5.js"></script><![endif]--><link rel="prefetch" href="posts/absolute-and-relative-path-in-python/" type="text/html">
 </head>
 <body>
 <script type="text/javascript">
@@ -84,6 +84,74 @@ document.getElementById('nav-toggle-burger').onclick = function() {
 
   
 <div class="postindex">
+    <div class="columns">
+      <div class="column">
+        <div class="card post-card">
+          <article class="h-entry post-text"><div class="card-content">
+              <div class="media metadata">
+                <div class="media-content">
+                  <p class="title is-2 p-name entry-title">
+                    <a href="posts/absolute-and-relative-path-in-python/" class="u-url">Absolute and Relative Path in Python</a>
+                  </p>
+                </div>
+                  <div class="media-right">
+                    <span class="icon">
+                      <i class="fa fa-file-text-o" aria-hidden="true"></i>
+                    </span>
+                    <span class="visuallyhidden">text</span>
+                  </div>
+              </div>
+                <div class="content e-content entry-content">
+                  <section id="os-path-isabs"><h2>1. os.path.isabs()</h2>
+<p>os.path.isabs() 的行为是：如果路径以 / 开头，或者在非类 Unix 平台上，以盘符跟一个 os.sep 开头，就返回 True；否则，就返回 False</p>
+<p>这里要注意的是在 Windows 上，是支持两种斜线符号的，一种是Windows的斜线，但需要双写以转义 '\'，另一种是类似 Unix 反写 '/'。</p>
+<p>看如下代码，在 Windows 下的返回结果</p>
+<div class="code"><pre class="code python"><a id="rest_code_78f877eb48cf4b49bcff1a9cde7d22d6-1" name="rest_code_78f877eb48cf4b49bcff1a9cde7d22d6-1" href="posts/absolute-and-relative-path-in-python/#rest_code_78f877eb48cf4b49bcff1a9cde7d22d6-1"></a><span class="n">Python</span> <span class="mf">3.10.6</span> <span class="p">(</span><span class="n">tags</span><span class="o">/</span><span class="n">v3</span><span class="mf">.10.6</span><span class="p">:</span><span class="mi">9</span><span class="n">c7b4bd</span><span class="p">,</span> <span class="n">Aug</span>  <span class="mi">1</span> <span class="mi">2022</span><span class="p">,</span> <span class="mi">21</span><span class="p">:</span><span class="mi">53</span><span class="p">:</span><span class="mi">49</span><span class="p">)</span> <span class="p">[</span><span class="n">MSC</span> <span class="n">v</span><span class="mf">.1932</span> <span class="mi">64</span> <span class="n">bit</span> <span class="p">(</span><span class="n">AMD64</span><span class="p">)]</span> <span class="n">on</span> <span class="n">win32</span>
+<a id="rest_code_78f877eb48cf4b49bcff1a9cde7d22d6-2" name="rest_code_78f877eb48cf4b49bcff1a9cde7d22d6-2" href="posts/absolute-and-relative-path-in-python/#rest_code_78f877eb48cf4b49bcff1a9cde7d22d6-2"></a><span class="n">Type</span> <span class="s2">"help"</span><span class="p">,</span> <span class="s2">"copyright"</span><span class="p">,</span> <span class="s2">"credits"</span> <span class="ow">or</span> <span class="s2">"license"</span> <span class="k">for</span> <span class="n">more</span> <span class="n">information</span><span class="o">.</span>
+<a id="rest_code_78f877eb48cf4b49bcff1a9cde7d22d6-3" name="rest_code_78f877eb48cf4b49bcff1a9cde7d22d6-3" href="posts/absolute-and-relative-path-in-python/#rest_code_78f877eb48cf4b49bcff1a9cde7d22d6-3"></a><span class="o">&gt;&gt;&gt;</span> <span class="kn">import</span> <span class="nn">os</span>
+<a id="rest_code_78f877eb48cf4b49bcff1a9cde7d22d6-4" name="rest_code_78f877eb48cf4b49bcff1a9cde7d22d6-4" href="posts/absolute-and-relative-path-in-python/#rest_code_78f877eb48cf4b49bcff1a9cde7d22d6-4"></a><span class="o">&gt;&gt;&gt;</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">isabs</span><span class="p">(</span><span class="s1">'c:/abc'</span><span class="p">)</span>
+<a id="rest_code_78f877eb48cf4b49bcff1a9cde7d22d6-5" name="rest_code_78f877eb48cf4b49bcff1a9cde7d22d6-5" href="posts/absolute-and-relative-path-in-python/#rest_code_78f877eb48cf4b49bcff1a9cde7d22d6-5"></a><span class="kc">True</span>
+<a id="rest_code_78f877eb48cf4b49bcff1a9cde7d22d6-6" name="rest_code_78f877eb48cf4b49bcff1a9cde7d22d6-6" href="posts/absolute-and-relative-path-in-python/#rest_code_78f877eb48cf4b49bcff1a9cde7d22d6-6"></a><span class="o">&gt;&gt;&gt;</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">isabs</span><span class="p">(</span><span class="s1">'/abc'</span><span class="p">)</span>
+<a id="rest_code_78f877eb48cf4b49bcff1a9cde7d22d6-7" name="rest_code_78f877eb48cf4b49bcff1a9cde7d22d6-7" href="posts/absolute-and-relative-path-in-python/#rest_code_78f877eb48cf4b49bcff1a9cde7d22d6-7"></a><span class="kc">True</span>
+<a id="rest_code_78f877eb48cf4b49bcff1a9cde7d22d6-8" name="rest_code_78f877eb48cf4b49bcff1a9cde7d22d6-8" href="posts/absolute-and-relative-path-in-python/#rest_code_78f877eb48cf4b49bcff1a9cde7d22d6-8"></a><span class="o">&gt;&gt;&gt;</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">isabs</span><span class="p">(</span><span class="s1">'c:</span><span class="se">\a</span><span class="s1">bc'</span><span class="p">)</span>
+<a id="rest_code_78f877eb48cf4b49bcff1a9cde7d22d6-9" name="rest_code_78f877eb48cf4b49bcff1a9cde7d22d6-9" href="posts/absolute-and-relative-path-in-python/#rest_code_78f877eb48cf4b49bcff1a9cde7d22d6-9"></a><span class="kc">False</span>
+<a id="rest_code_78f877eb48cf4b49bcff1a9cde7d22d6-10" name="rest_code_78f877eb48cf4b49bcff1a9cde7d22d6-10" href="posts/absolute-and-relative-path-in-python/#rest_code_78f877eb48cf4b49bcff1a9cde7d22d6-10"></a><span class="o">&gt;&gt;&gt;</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">isabs</span><span class="p">(</span><span class="s1">'c:/abc'</span><span class="p">)</span>
+<a id="rest_code_78f877eb48cf4b49bcff1a9cde7d22d6-11" name="rest_code_78f877eb48cf4b49bcff1a9cde7d22d6-11" href="posts/absolute-and-relative-path-in-python/#rest_code_78f877eb48cf4b49bcff1a9cde7d22d6-11"></a><span class="kc">True</span>
+<a id="rest_code_78f877eb48cf4b49bcff1a9cde7d22d6-12" name="rest_code_78f877eb48cf4b49bcff1a9cde7d22d6-12" href="posts/absolute-and-relative-path-in-python/#rest_code_78f877eb48cf4b49bcff1a9cde7d22d6-12"></a><span class="o">&gt;&gt;&gt;</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">isabs</span><span class="p">(</span><span class="s1">'c:</span><span class="se">\\</span><span class="s1">abc'</span><span class="p">)</span>
+<a id="rest_code_78f877eb48cf4b49bcff1a9cde7d22d6-13" name="rest_code_78f877eb48cf4b49bcff1a9cde7d22d6-13" href="posts/absolute-and-relative-path-in-python/#rest_code_78f877eb48cf4b49bcff1a9cde7d22d6-13"></a><span class="kc">True</span>
+<a id="rest_code_78f877eb48cf4b49bcff1a9cde7d22d6-14" name="rest_code_78f877eb48cf4b49bcff1a9cde7d22d6-14" href="posts/absolute-and-relative-path-in-python/#rest_code_78f877eb48cf4b49bcff1a9cde7d22d6-14"></a><span class="o">&gt;&gt;&gt;</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">isabs</span><span class="p">(</span><span class="s1">'</span><span class="se">\\</span><span class="s1">abc'</span><span class="p">)</span>
+<a id="rest_code_78f877eb48cf4b49bcff1a9cde7d22d6-15" name="rest_code_78f877eb48cf4b49bcff1a9cde7d22d6-15" href="posts/absolute-and-relative-path-in-python/#rest_code_78f877eb48cf4b49bcff1a9cde7d22d6-15"></a><span class="kc">True</span>
+<a id="rest_code_78f877eb48cf4b49bcff1a9cde7d22d6-16" name="rest_code_78f877eb48cf4b49bcff1a9cde7d22d6-16" href="posts/absolute-and-relative-path-in-python/#rest_code_78f877eb48cf4b49bcff1a9cde7d22d6-16"></a><span class="o">&gt;&gt;&gt;</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">isabs</span><span class="p">(</span><span class="s1">'abc'</span><span class="p">)</span>
+<a id="rest_code_78f877eb48cf4b49bcff1a9cde7d22d6-17" name="rest_code_78f877eb48cf4b49bcff1a9cde7d22d6-17" href="posts/absolute-and-relative-path-in-python/#rest_code_78f877eb48cf4b49bcff1a9cde7d22d6-17"></a><span class="kc">False</span>
+</pre></div>
+<p>所以说，实际上这个方法在 Windows 并不好用，试着查看源代码，但实现并不是 Python 的，似乎有 macpath,posixpath,ntpath，但 ntpath 在 Windows 上返回就是上述值。</p>
+</section><section id="pathlib-path-is-absolute-windows"><h2>2. pathlib.Path().is_absolute() 在 Windows 上更好用</h2>
+<p>实际上判断是否绝对路径时，应该使用以下代码</p>
+<div class="code"><pre class="code python"><a id="rest_code_76d9fdbf6de042a7aa26746fb0a91d5d-1" name="rest_code_76d9fdbf6de042a7aa26746fb0a91d5d-1" href="posts/absolute-and-relative-path-in-python/#rest_code_76d9fdbf6de042a7aa26746fb0a91d5d-1"></a><span class="kn">import</span> <span class="nn">pathlib</span>
+<a id="rest_code_76d9fdbf6de042a7aa26746fb0a91d5d-2" name="rest_code_76d9fdbf6de042a7aa26746fb0a91d5d-2" href="posts/absolute-and-relative-path-in-python/#rest_code_76d9fdbf6de042a7aa26746fb0a91d5d-2"></a><span class="n">pathlib</span><span class="o">.</span><span class="n">Path</span><span class="p">(</span><span class="s1">'/abc'</span><span class="p">)</span><span class="o">.</span><span class="n">is_absolute</span><span class="p">()</span>
+</pre></div>
+</section>
+</div>
+            </div>
+
+            <footer class="card-footer"><p class="card-footer-item byline author vcard">
+                <span class="byline-name fn">
+                    逍遥
+                </span>
+              </p>
+              <p class="card-footer-item dateline">
+                <a href="posts/absolute-and-relative-path-in-python/" rel="bookmark">
+                  <time class="published dt-published" datetime="2023-12-07T08:12:45+08:00" title="2023-12-07 08:12">2023-12-07 08:12</time></a>
+              </p>
+                <p class="card-footer-item commentline">
+    
+    <a href="posts/absolute-and-relative-path-in-python/#disqus_thread" data-disqus-identifier="cache/posts/absolute-and-relative-path-in-python.html">评论</a>
+
+</p>
+            </footer></article>
+</div>
+      </div>
+    </div>
     <div class="columns">
       <div class="column">
         <div class="card post-card">
@@ -215,9 +283,9 @@ document.getElementById('nav-toggle-burger').onclick = function() {
                   </div>
               </div>
                 <div class="content e-content entry-content">
-                  <div id="outline-container-org7957c54" class="outline-2">
-<h2 id="org7957c54">步骤</h2>
-<div class="outline-text-2" id="text-org7957c54">
+                  <div id="outline-container-org7a79d88" class="outline-2">
+<h2 id="org7a79d88">步骤</h2>
+<div class="outline-text-2" id="text-org7a79d88">
 <ol class="org-ol">
 <li>安装 emacs，最新版已内置 Org mode</li>
 <li>安装 nikola</li>
@@ -251,9 +319,9 @@ document.getElementById('nav-toggle-burger').onclick = function() {
 </div>
 </div>
 
-<div id="outline-container-orga135b25" class="outline-2">
-<h2 id="orga135b25">其他</h2>
-<div class="outline-text-2" id="text-orga135b25">
+<div id="outline-container-orga75643a" class="outline-2">
+<h2 id="orga75643a">其他</h2>
+<div class="outline-text-2" id="text-orga75643a">
 <ol class="org-ol">
 <li>修改默认编辑器为 emacs</li>
 </ol>
@@ -320,42 +388,42 @@ document.getElementById('nav-toggle-burger').onclick = function() {
                 <div class="content e-content entry-content">
                   <section id="nikola-tips"><h2>Nikola Tips</h2>
 <section id="nikola-serve"><h3>1. Nikola serve 自动刷新的命令行怎么写？</h3>
-<div class="code"><pre class="code shell"><a id="rest_code_4d2107849c234111a3abf21bdd54c901-1" name="rest_code_4d2107849c234111a3abf21bdd54c901-1" href="posts/nikola-tips/#rest_code_4d2107849c234111a3abf21bdd54c901-1"></a>nikola<span class="w"> </span>auto
+<div class="code"><pre class="code shell"><a id="rest_code_e65edc90ad874d859b78dbfecd67abb4-1" name="rest_code_e65edc90ad874d859b78dbfecd67abb4-1" href="posts/nikola-tips/#rest_code_e65edc90ad874d859b78dbfecd67abb4-1"></a>nikola<span class="w"> </span>auto
 </pre></div>
 <p>即使 <strong>conf.py</strong> 中已绑定非127.0.0.1的地址，上面的命令也只会在127.0.0.1启动调试。</p>
 <p>没有去看源代码，可能这样实现从安全角度存在一定的合理性。</p>
 <p>如果需要任意主机都能获得访问，可使用 -a 参数指定地址0.0.0.0</p>
-<div class="code"><pre class="code shell"><a id="rest_code_2c7c543c41974450b03a2db3ced71a38-1" name="rest_code_2c7c543c41974450b03a2db3ced71a38-1" href="posts/nikola-tips/#rest_code_2c7c543c41974450b03a2db3ced71a38-1"></a>nikola<span class="w"> </span>auto<span class="w"> </span>-a0.0.0.0
+<div class="code"><pre class="code shell"><a id="rest_code_1d39d1269db44f6182d7b3b248d26b03-1" name="rest_code_1d39d1269db44f6182d7b3b248d26b03-1" href="posts/nikola-tips/#rest_code_1d39d1269db44f6182d7b3b248d26b03-1"></a>nikola<span class="w"> </span>auto<span class="w"> </span>-a0.0.0.0
 </pre></div>
 </section><section id="nikola-theme-css"><h3>2. Nikola Theme 如何定制 css</h3>
 <p>如果在模板中有代码</p>
-<div class="code"><pre class="code html+mako"><a id="rest_code_8316aac9a071432b92906b3c143ac9fc-1" name="rest_code_8316aac9a071432b92906b3c143ac9fc-1" href="posts/nikola-tips/#rest_code_8316aac9a071432b92906b3c143ac9fc-1"></a><span class="cp">%</span><span class="k">if</span> <span class="n">has_custom_css</span><span class="p">:</span>
-<a id="rest_code_8316aac9a071432b92906b3c143ac9fc-2" name="rest_code_8316aac9a071432b92906b3c143ac9fc-2" href="posts/nikola-tips/#rest_code_8316aac9a071432b92906b3c143ac9fc-2"></a>  <span class="p">&lt;</span><span class="nt">link</span> <span class="na">href</span><span class="o">=</span><span class="s">"/assets/css/custom.css"</span> <span class="na">rel</span><span class="o">=</span><span class="s">"stylesheet"</span> <span class="na">type</span><span class="o">=</span><span class="s">"text/css"</span><span class="p">&gt;</span>
-<a id="rest_code_8316aac9a071432b92906b3c143ac9fc-3" name="rest_code_8316aac9a071432b92906b3c143ac9fc-3" href="posts/nikola-tips/#rest_code_8316aac9a071432b92906b3c143ac9fc-3"></a><span class="cp">%</span><span class="k">endif</span>
+<div class="code"><pre class="code html+mako"><a id="rest_code_4f8aa68c06f24de6b985e1111b74963f-1" name="rest_code_4f8aa68c06f24de6b985e1111b74963f-1" href="posts/nikola-tips/#rest_code_4f8aa68c06f24de6b985e1111b74963f-1"></a><span class="cp">%</span><span class="k">if</span> <span class="n">has_custom_css</span><span class="p">:</span>
+<a id="rest_code_4f8aa68c06f24de6b985e1111b74963f-2" name="rest_code_4f8aa68c06f24de6b985e1111b74963f-2" href="posts/nikola-tips/#rest_code_4f8aa68c06f24de6b985e1111b74963f-2"></a>  <span class="p">&lt;</span><span class="nt">link</span> <span class="na">href</span><span class="o">=</span><span class="s">"/assets/css/custom.css"</span> <span class="na">rel</span><span class="o">=</span><span class="s">"stylesheet"</span> <span class="na">type</span><span class="o">=</span><span class="s">"text/css"</span><span class="p">&gt;</span>
+<a id="rest_code_4f8aa68c06f24de6b985e1111b74963f-3" name="rest_code_4f8aa68c06f24de6b985e1111b74963f-3" href="posts/nikola-tips/#rest_code_4f8aa68c06f24de6b985e1111b74963f-3"></a><span class="cp">%</span><span class="k">endif</span>
 </pre></div>
 <p>因此，增加 /assets/css/custom.css 文件即可。</p>
 </section><section id="nikola-github"><h3>3. Nikola 如何推送到 GitHub</h3>
 <p>先设置好 git 推送</p>
-<div class="code"><pre class="code sh"><a id="rest_code_b274d4cc1e524e85b5925828bed2a956-1" name="rest_code_b274d4cc1e524e85b5925828bed2a956-1" href="posts/nikola-tips/#rest_code_b274d4cc1e524e85b5925828bed2a956-1"></a>git<span class="w"> </span>config<span class="w"> </span>--global<span class="w"> </span>--add<span class="w"> </span>safe.directory<span class="w"> </span>/usr/home/kaffa/web/note.tt4e.com
-<a id="rest_code_b274d4cc1e524e85b5925828bed2a956-2" name="rest_code_b274d4cc1e524e85b5925828bed2a956-2" href="posts/nikola-tips/#rest_code_b274d4cc1e524e85b5925828bed2a956-2"></a>git<span class="w"> </span>config<span class="w"> </span>--global<span class="w"> </span>user.email<span class="w"> </span><span class="s2">"yourname@tt4e.com"</span>
-<a id="rest_code_b274d4cc1e524e85b5925828bed2a956-3" name="rest_code_b274d4cc1e524e85b5925828bed2a956-3" href="posts/nikola-tips/#rest_code_b274d4cc1e524e85b5925828bed2a956-3"></a>git<span class="w"> </span>config<span class="w"> </span>--global<span class="w"> </span>user.name<span class="w"> </span><span class="s2">"Your Name"</span>
+<div class="code"><pre class="code sh"><a id="rest_code_d9de9e052e23423bbabb77d76c003fd3-1" name="rest_code_d9de9e052e23423bbabb77d76c003fd3-1" href="posts/nikola-tips/#rest_code_d9de9e052e23423bbabb77d76c003fd3-1"></a>git<span class="w"> </span>config<span class="w"> </span>--global<span class="w"> </span>--add<span class="w"> </span>safe.directory<span class="w"> </span>/usr/home/kaffa/web/note.tt4e.com
+<a id="rest_code_d9de9e052e23423bbabb77d76c003fd3-2" name="rest_code_d9de9e052e23423bbabb77d76c003fd3-2" href="posts/nikola-tips/#rest_code_d9de9e052e23423bbabb77d76c003fd3-2"></a>git<span class="w"> </span>config<span class="w"> </span>--global<span class="w"> </span>user.email<span class="w"> </span><span class="s2">"yourname@tt4e.com"</span>
+<a id="rest_code_d9de9e052e23423bbabb77d76c003fd3-3" name="rest_code_d9de9e052e23423bbabb77d76c003fd3-3" href="posts/nikola-tips/#rest_code_d9de9e052e23423bbabb77d76c003fd3-3"></a>git<span class="w"> </span>config<span class="w"> </span>--global<span class="w"> </span>user.name<span class="w"> </span><span class="s2">"Your Name"</span>
 </pre></div>
 <p>将以下内容保存为 aio.sh 脚本</p>
-<div class="code"><pre class="code sh"><a id="rest_code_f4a60db9f5a74d3396e72268f16d2e2a-1" name="rest_code_f4a60db9f5a74d3396e72268f16d2e2a-1" href="posts/nikola-tips/#rest_code_f4a60db9f5a74d3396e72268f16d2e2a-1"></a><span class="ch">#!/bin/bash</span>
-<a id="rest_code_f4a60db9f5a74d3396e72268f16d2e2a-2" name="rest_code_f4a60db9f5a74d3396e72268f16d2e2a-2" href="posts/nikola-tips/#rest_code_f4a60db9f5a74d3396e72268f16d2e2a-2"></a><span class="c1">#</span>
-<a id="rest_code_f4a60db9f5a74d3396e72268f16d2e2a-3" name="rest_code_f4a60db9f5a74d3396e72268f16d2e2a-3" href="posts/nikola-tips/#rest_code_f4a60db9f5a74d3396e72268f16d2e2a-3"></a><span class="c1"># nikola output push to github</span>
-<a id="rest_code_f4a60db9f5a74d3396e72268f16d2e2a-4" name="rest_code_f4a60db9f5a74d3396e72268f16d2e2a-4" href="posts/nikola-tips/#rest_code_f4a60db9f5a74d3396e72268f16d2e2a-4"></a><span class="nb">cd</span><span class="w"> </span>~/web/note.tt4e.com/
-<a id="rest_code_f4a60db9f5a74d3396e72268f16d2e2a-5" name="rest_code_f4a60db9f5a74d3396e72268f16d2e2a-5" href="posts/nikola-tips/#rest_code_f4a60db9f5a74d3396e72268f16d2e2a-5"></a>nikola<span class="w"> </span>build
-<a id="rest_code_f4a60db9f5a74d3396e72268f16d2e2a-6" name="rest_code_f4a60db9f5a74d3396e72268f16d2e2a-6" href="posts/nikola-tips/#rest_code_f4a60db9f5a74d3396e72268f16d2e2a-6"></a>git<span class="w"> </span>add<span class="w"> </span>.
-<a id="rest_code_f4a60db9f5a74d3396e72268f16d2e2a-7" name="rest_code_f4a60db9f5a74d3396e72268f16d2e2a-7" href="posts/nikola-tips/#rest_code_f4a60db9f5a74d3396e72268f16d2e2a-7"></a>git<span class="w"> </span>commit<span class="w"> </span>-am<span class="w"> </span><span class="s1">'Kaffa'</span>
-<a id="rest_code_f4a60db9f5a74d3396e72268f16d2e2a-8" name="rest_code_f4a60db9f5a74d3396e72268f16d2e2a-8" href="posts/nikola-tips/#rest_code_f4a60db9f5a74d3396e72268f16d2e2a-8"></a>git<span class="w"> </span>push
+<div class="code"><pre class="code sh"><a id="rest_code_787f1a3679ad49ccb812d9f4e0a34cf1-1" name="rest_code_787f1a3679ad49ccb812d9f4e0a34cf1-1" href="posts/nikola-tips/#rest_code_787f1a3679ad49ccb812d9f4e0a34cf1-1"></a><span class="ch">#!/bin/bash</span>
+<a id="rest_code_787f1a3679ad49ccb812d9f4e0a34cf1-2" name="rest_code_787f1a3679ad49ccb812d9f4e0a34cf1-2" href="posts/nikola-tips/#rest_code_787f1a3679ad49ccb812d9f4e0a34cf1-2"></a><span class="c1">#</span>
+<a id="rest_code_787f1a3679ad49ccb812d9f4e0a34cf1-3" name="rest_code_787f1a3679ad49ccb812d9f4e0a34cf1-3" href="posts/nikola-tips/#rest_code_787f1a3679ad49ccb812d9f4e0a34cf1-3"></a><span class="c1"># nikola output push to github</span>
+<a id="rest_code_787f1a3679ad49ccb812d9f4e0a34cf1-4" name="rest_code_787f1a3679ad49ccb812d9f4e0a34cf1-4" href="posts/nikola-tips/#rest_code_787f1a3679ad49ccb812d9f4e0a34cf1-4"></a><span class="nb">cd</span><span class="w"> </span>~/web/note.tt4e.com/
+<a id="rest_code_787f1a3679ad49ccb812d9f4e0a34cf1-5" name="rest_code_787f1a3679ad49ccb812d9f4e0a34cf1-5" href="posts/nikola-tips/#rest_code_787f1a3679ad49ccb812d9f4e0a34cf1-5"></a>nikola<span class="w"> </span>build
+<a id="rest_code_787f1a3679ad49ccb812d9f4e0a34cf1-6" name="rest_code_787f1a3679ad49ccb812d9f4e0a34cf1-6" href="posts/nikola-tips/#rest_code_787f1a3679ad49ccb812d9f4e0a34cf1-6"></a>git<span class="w"> </span>add<span class="w"> </span>.
+<a id="rest_code_787f1a3679ad49ccb812d9f4e0a34cf1-7" name="rest_code_787f1a3679ad49ccb812d9f4e0a34cf1-7" href="posts/nikola-tips/#rest_code_787f1a3679ad49ccb812d9f4e0a34cf1-7"></a>git<span class="w"> </span>commit<span class="w"> </span>-am<span class="w"> </span><span class="s1">'Kaffa'</span>
+<a id="rest_code_787f1a3679ad49ccb812d9f4e0a34cf1-8" name="rest_code_787f1a3679ad49ccb812d9f4e0a34cf1-8" href="posts/nikola-tips/#rest_code_787f1a3679ad49ccb812d9f4e0a34cf1-8"></a>git<span class="w"> </span>push
 </pre></div>
 <p>先 su 到 root 用户，然后运行以下命令，再 su 会当前用户</p>
-<div class="code"><pre class="code sh"><a id="rest_code_206754ccb23f47d4bc3bbddebe37cede-1" name="rest_code_206754ccb23f47d4bc3bbddebe37cede-1" href="posts/nikola-tips/#rest_code_206754ccb23f47d4bc3bbddebe37cede-1"></a>chown<span class="w"> </span>-R<span class="w"> </span>kaffa:wheel<span class="w"> </span>.git
-<a id="rest_code_206754ccb23f47d4bc3bbddebe37cede-2" name="rest_code_206754ccb23f47d4bc3bbddebe37cede-2" href="posts/nikola-tips/#rest_code_206754ccb23f47d4bc3bbddebe37cede-2"></a>chmod<span class="w"> </span>-R<span class="w"> </span><span class="m">777</span><span class="w"> </span>./aio.sh
+<div class="code"><pre class="code sh"><a id="rest_code_1d02a42272eb47dc861444810555eed1-1" name="rest_code_1d02a42272eb47dc861444810555eed1-1" href="posts/nikola-tips/#rest_code_1d02a42272eb47dc861444810555eed1-1"></a>chown<span class="w"> </span>-R<span class="w"> </span>kaffa:wheel<span class="w"> </span>.git
+<a id="rest_code_1d02a42272eb47dc861444810555eed1-2" name="rest_code_1d02a42272eb47dc861444810555eed1-2" href="posts/nikola-tips/#rest_code_1d02a42272eb47dc861444810555eed1-2"></a>chmod<span class="w"> </span>-R<span class="w"> </span><span class="m">777</span><span class="w"> </span>./aio.sh
 </pre></div>
 <p>如果遇到错误提示 Unable to create ** /.git/index.lock: Permission denied，则需要</p>
-<div class="code"><pre class="code sh"><a id="rest_code_5e5f878cb5124159a8c78bd9a73000f5-1" name="rest_code_5e5f878cb5124159a8c78bd9a73000f5-1" href="posts/nikola-tips/#rest_code_5e5f878cb5124159a8c78bd9a73000f5-1"></a>chown<span class="w"> </span>-R<span class="w"> </span>kaffa:wheel<span class="w"> </span>.git
+<div class="code"><pre class="code sh"><a id="rest_code_dc717a3849404bce875db4479bcbf8f3-1" name="rest_code_dc717a3849404bce875db4479bcbf8f3-1" href="posts/nikola-tips/#rest_code_dc717a3849404bce875db4479bcbf8f3-1"></a>chown<span class="w"> </span>-R<span class="w"> </span>kaffa:wheel<span class="w"> </span>.git
 </pre></div>
 <p>其中 用户名和所属组，可以用 groups 命令查看。</p>
 <p>完成书上步骤后，则每次可以运行 aio.sh 来推送 GitHub，GitHub 收到推送后，会使用 GitHub Action 来处理发布。</p>
@@ -371,7 +439,7 @@ document.getElementById('nav-toggle-burger').onclick = function() {
 </ol>
 <p>补充：</p>
 <p>采用这种方法时，Github Pages 的 Build and deployment 一节，source 下拉框中，要选择 Deploy from a branch，而不是 GitHub Actions。</p>
-<div class="code"><pre class="code text"><a id="rest_code_daa984c33fd340c089c453f46135d14d-1" name="rest_code_daa984c33fd340c089c453f46135d14d-1" href="posts/nikola-tips/#rest_code_daa984c33fd340c089c453f46135d14d-1"></a>nikola github_deploy
+<div class="code"><pre class="code text"><a id="rest_code_88a550dd602f4e888f6d966c41915c7e-1" name="rest_code_88a550dd602f4e888f6d966c41915c7e-1" href="posts/nikola-tips/#rest_code_88a550dd602f4e888f6d966c41915c7e-1"></a>nikola github_deploy
 </pre></div>
 </section></section></section><section id="section-1"><h2>脚注</h2>
 <aside class="footnote-list brackets"><aside class="footnote brackets" id="fn1" role="doc-footnote"><span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="posts/nikola-tips/#footnote-reference-1">1</a><span class="fn-bracket">]</span></span>
@@ -418,14 +486,14 @@ document.getElementById('nav-toggle-burger').onclick = function() {
                 <div class="content e-content entry-content">
                   <section id="section-1"><h2>问题现象</h2>
 <p>当在 <a class="reference external" href="https://github.com/microsoft/terminal">Windows Terminal</a> 中运行 <em>ssh</em> 命令时，终端中提示：</p>
-<div class="code"><pre class="code text"><a id="rest_code_837a3b1e1d4b446693aab0f8fb75bd33-1" name="rest_code_837a3b1e1d4b446693aab0f8fb75bd33-1" href="posts/ssh-is-not-recognized-as-an-internal-or-external-command/#rest_code_837a3b1e1d4b446693aab0f8fb75bd33-1"></a>'ssh'不是内部或外部命令，也不是可运行的程序或批处理文件
+<div class="code"><pre class="code text"><a id="rest_code_e92b00248e81438e96d1eea562a006ec-1" name="rest_code_e92b00248e81438e96d1eea562a006ec-1" href="posts/ssh-is-not-recognized-as-an-internal-or-external-command/#rest_code_e92b00248e81438e96d1eea562a006ec-1"></a>'ssh'不是内部或外部命令，也不是可运行的程序或批处理文件
 </pre></div>
 <p>English Version</p>
-<div class="code"><pre class="code text"><a id="rest_code_7b523f78ec8546ceab4f7bb906c817a7-1" name="rest_code_7b523f78ec8546ceab4f7bb906c817a7-1" href="posts/ssh-is-not-recognized-as-an-internal-or-external-command/#rest_code_7b523f78ec8546ceab4f7bb906c817a7-1"></a>'ssh' is not recognized as an internal or external command, operable program or batch file.
+<div class="code"><pre class="code text"><a id="rest_code_73ccfa5fcd594f1280210654629d304f-1" name="rest_code_73ccfa5fcd594f1280210654629d304f-1" href="posts/ssh-is-not-recognized-as-an-internal-or-external-command/#rest_code_73ccfa5fcd594f1280210654629d304f-1"></a>'ssh' is not recognized as an internal or external command, operable program or batch file.
 </pre></div>
 </section><section id="section-2"><h2>解决方法</h2>
 <p>在 Windows 设置中安装 OpenSSH 客户端，且在环境变量 PATH 中加入：</p>
-<div class="code"><pre class="code text"><a id="rest_code_7f850d80836e43f88f809bc747259f34-1" name="rest_code_7f850d80836e43f88f809bc747259f34-1" href="posts/ssh-is-not-recognized-as-an-internal-or-external-command/#rest_code_7f850d80836e43f88f809bc747259f34-1"></a>C:\Windows\System32\OpenSSH
+<div class="code"><pre class="code text"><a id="rest_code_cc6fc35191c142b39292dce0fa1c8992-1" name="rest_code_cc6fc35191c142b39292dce0fa1c8992-1" href="posts/ssh-is-not-recognized-as-an-internal-or-external-command/#rest_code_cc6fc35191c142b39292dce0fa1c8992-1"></a>C:\Windows\System32\OpenSSH
 </pre></div>
 <p>验证方法：检查以上目录中是否有 ssh.exe 文件。</p>
 </section>
@@ -660,7 +728,7 @@ document.getElementById('nav-toggle-burger').onclick = function() {
 <p>目前可用的如下：</p>
 <p>abap | abnf | ada, ada95, ada2005 | adl | agda | ahk, autohotkey | alloy | ampl | antlr-as, antlr-actionscript | antlr-cpp | antlr-csharp, antlr-c# | antlr-java | antlr-objc | antlr-perl | antlr-python | antlr-ruby, antlr-rb | antlr | apacheconf, aconf, apache | apl | applescript | arduino | as, actionscript | as3, actionscript3 | aspectj | aspx-cs | aspx-vb | asy, asymptote | at, ambienttalk, ambienttalk/2 | autoit | awk, gawk, mawk, nawk | basemake | bash, sh, ksh, shell | bat, batch, dosbatch, winbatch | bbcode | bc | befunge | blitzbasic, b3d, bplus | blitzmax, bmax | bnf | boo | boogie | brainfuck, bf | bro | bugs, winbugs, openbugs | c-objdump | c | ca65 | cadl | camkes, idl4 | cbmbas | ceylon | cfc | cfengine3, cf3 | cfm | cfs | chai, chaiscript | chapel, chpl | cheetah, spitfire | cirru | clay | clean | clojure, clj | clojurescript, cljs | cmake | cobol | cobolfree | coffee-script, coffeescript, coffee | common-lisp, cl, lisp | componentpascal, cp | console, shell-session | control, debcontrol | coq | cpp, c++ | cpp-objdump, c++-objdumb, cxx-objdump | cpsa | crmsh, pcmk | croc | cryptol, cry | csharp, c# | csound, csound-orc | csound-document, csound-csd | csound-score, csound-sco | css+django, css+jinja | css+erb, css+ruby | css+genshitext, css+genshi | css+lasso | css+mako | css+mako | css+mozpreproc | css+myghty | css+php | css+smarty | css | cucumber, gherkin | cuda, cu | cypher | cython, pyx, pyrex | d-objdump | d | dart | delphi, pas, pascal, objectpascal | dg | diff, udiff | django, jinja | docker, dockerfile | doscon | dpatch | dtd | duel, jbst, jsonml+bst | dylan-console, dylan-repl | dylan-lid, lid | dylan | earl-grey, earlgrey, eg | easytrieve | ebnf | ec | ecl | eiffel | elixir, ex, exs | elm | emacs, elisp, emacs-lisp | erb | erl | erlang | evoque | extempore | ezhil | factor | fan | fancy, fy | felix, flx | fish, fishshell | flatline | fortran | fortranfixed | foxpro, vfp, clipper, xbase | fsharp | gap | gas, asm | genshi, kid, xml+genshi, xml+kid | genshitext | glsl | gnuplot | go | golo | gooddata-cl | gosu | groff, nroff, man | groovy | gst | haml | handlebars | haskell, hs | haxeml, hxml | hexdump | hsail, hsa | html+cheetah, html+spitfire, htmlcheetah | html+django, html+jinja, htmldjango | html+evoque | html+genshi, html+kid | html+handlebars | html+lasso | html+mako | html+mako | html+myghty | html+php | html+smarty | html+twig | html+velocity | html | http | hx, haxe, hxsl | hybris, hy | hylang | i6t | idl | idris, idr | iex | igor, igorpro | inform6, i6 | inform7, i7 | ini, cfg, dosini | io | ioke, ik | irc | isabelle | j | jade | jags | jasmin, jasminxt | java | javascript+mozpreproc | jcl | jlcon | js+cheetah, javascript+cheetah, js+spitfire, javascript+spitfire | js+django, javascript+django, js+jinja, javascript+jinja | js+erb, javascript+erb, js+ruby, javascript+ruby | js+genshitext, js+genshi, javascript+genshitext, javascript+genshi | js+lasso, javascript+lasso | js+mako, javascript+mako | js+mako, javascript+mako | js+myghty, javascript+myghty | js+php, javascript+php | js+smarty, javascript+smarty | js, javascript | jsgf | json | jsonld, json-ld | jsp | julia, jl | kal | kconfig, menuconfig, linux-config, kernel-config | koka | kotlin | lagda, literate-agda | lasso, lassoscript | lcry, literate-cryptol, lcryptol | lean | less | lhs, literate-haskell, lhaskell | lidr, literate-idris, lidris | lighty, lighttpd | limbo | liquid | live-script, livescript | llvm | logos | logtalk | lsl | lua | make, makefile, mf, bsdmake | mako | mako | maql | mask | mason | mathematica, mma, nb | matlab | matlabsession | minid | modelica | modula2, m2 | monkey | moocode, moo | moon, moonscript | mozhashpreproc | mozpercentpreproc | mql, mq4, mq5, mql4, mql5 | mscgen, msc | mupad | mxml | myghty | mysql | nasm | ncl | nemerle | nesc | newlisp | newspeak | nginx | nimrod, nim | nit | nixos, nix | nsis, nsi, nsh | numpy | objdump-nasm | objdump | objective-c++, objectivec++, obj-c++, objc++ | objective-c, objectivec, obj-c, objc | objective-j, objectivej, obj-j, objj | ocaml | octave | odin | ooc | opa | openedge, abl, progress | pacmanconf | pan | parasail | pawn | perl, pl | perl6, pl6 | php, php3, php4, php5 | pig | pike | pkgconfig | plpgsql | postgresql, postgres | postscript, postscr | pot, po | pov | powershell, posh, ps1, psm1 | praat | prolog | properties, jproperties | protobuf, proto | ps1con | psql, postgresql-console, postgres-console | puppet | py3tb | pycon | pypylog, pypy | pytb | python, py, sage | python3, py3 | qbasic, basic | qml, qbs | qvto, qvt | racket, rkt | ragel-c | ragel-cpp | ragel-d | ragel-em | ragel-java | ragel-objc | ragel-ruby, ragel-rb | ragel | raw | rb, ruby, duby | rbcon, irb | rconsole, rout | rd | rebol | red, red/system | redcode | registry | resource, resourcebundle | rexx, arexx | rhtml, html+erb, html+ruby | roboconf-graph | roboconf-instances | robotframework | rql | rsl | rst, rest, restructuredtext | rts, trafficscript | rust | sass | sc, supercollider | scala | scaml | scheme, scm | scilab | scss | shen | silver | slim | smali | smalltalk, squeak, st | smarty | sml | snobol | sourceslist, sources.list, debsources | sp | sparql | spec | splus, s, r | sql | sqlite3 | squidconf, squid.conf, squid | ssp | stan | swift | swig | systemverilog, sv | tads3 | tap | tcl | tcsh, csh | tcshcon | tea | termcap | terminfo | terraform, tf | tex, latex | text | thrift | todotxt | trac-wiki, moin | treetop | ts, typescript | turtle | twig | typoscript | typoscriptcssdata | typoscripthtmldata | urbiscript | vala, vapi | vb.net, vbnet | vcl | vclsnippets, vclsnippet | vctreestatus | velocity | verilog, v | vgl | vhdl | vim | wdiff | x10, xten | xml+cheetah, xml+spitfire | xml+django, xml+jinja | xml+erb, xml+ruby | xml+evoque | xml+lasso | xml+mako | xml+mako | xml+myghty | xml+php | xml+smarty | xml+velocity | xml | xquery, xqy, xq, xql, xqm | xslt | xtend | xul+mozpreproc | yaml+jinja, salt, sls | yaml | zephir |</p>
 <p>可以通过以下命令查看</p>
-<div class="code"><pre class="code sh"><a id="rest_code_1a39dbf0711d4a43be5f3a145d335f1d-1" name="rest_code_1a39dbf0711d4a43be5f3a145d335f1d-1" href="posts/lang-huan-notes/#rest_code_1a39dbf0711d4a43be5f3a145d335f1d-1"></a>pygmentize<span class="w"> </span>-L
+<div class="code"><pre class="code sh"><a id="rest_code_bb807a9d1f7341348bd0a9bb3ba41f60-1" name="rest_code_bb807a9d1f7341348bd0a9bb3ba41f60-1" href="posts/lang-huan-notes/#rest_code_bb807a9d1f7341348bd0a9bb3ba41f60-1"></a>pygmentize<span class="w"> </span>-L
 </pre></div>
 <ol class="arabic" start="5">
 <li>
