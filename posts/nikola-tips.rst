@@ -88,4 +88,10 @@ Nikola Tips
 
 使用以上方法是有效的，但却说明没有认真读 nikola 文档。
 
+Nikola 官方支持推送到 GitHub
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+`官方文档 <https://getnikola.com/handbook.html#toc-entry-60>`_
+
+
 
