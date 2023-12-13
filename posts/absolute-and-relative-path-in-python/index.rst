@@ -27,7 +27,7 @@ os.path.isabs() 的行为是：如果路径以 / 开头，或者在非类 Unix �
     True
     >>> os.path.isabs('/abc')
     True
-    >>> os.path.isabs('c:\abc')
+    >>> os.path.isabs('c:\abc') # 未转义，错误
     False
     >>> os.path.isabs('c:/abc')
     True

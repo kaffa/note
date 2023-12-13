@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html prefix="" lang="zh_cn">
+<head>
+<meta charset="utf-8">
+<meta name="description" content="Python 中写文件 codecs open 和内置 open 函数之间的差异">
+<meta name="viewport" content="width=device-width">
+<title>The different linesep between codecs open and open in python 3 | 琅環笔记</title>
+<meta name="theme-color" content="#FED43F">
+<meta name="generator" content="Nikola (getnikola.com)">
+<link rel="alternate" type="application/rss+xml" title="RSS" href="../../rss.xml">
+<link rel="canonical" href="https://note.tt4e.com/posts/the-different-linesep-between-codecs-open-and-open-in-python-3/">
+<link href="../../assets/css/rst.css" rel="stylesheet" type="text/css">
+<link href="../../assets/css/code.css" rel="stylesheet" type="text/css">
+<link href="../../assets/css/font-awesome.css" rel="stylesheet" type="text/css">
+<link href="../../assets/css/styles.css" rel="stylesheet" type="text/css">
+<link href="../../assets/css/custom.css" rel="stylesheet" type="text/css">
+<!--[if lt IE 9]><script src="../../assets/js/html5.js"></script><![endif]--><meta name="description" content="Python 中写文件 codecs open 和内置 open 函数之间的差异">
+<meta name="author" content="逍遥">
+<link rel="prev" href="../absolute-and-relative-path-in-python/" title="Absolute and Relative Path in Python" type="text/html">
+</head>
+<body>
+<script type="text/javascript">
+  // Detect JS support
+  document.body.className = document.body.className + " js_enabled";
+</script><a href="#content" class="sr-only sr-only-focusable">跳到主内容</a>
+<div id="container">
+    <section class="hero is-primary"><!-- Hero header: will stick at the top --><div class="hero-head">
+  <header id="header" class="nav"><div class="container">
+      <div class="nav-left">
+        
+<div class="nav-item is-brand">
+  <h1 id="brand" class="site-header">
+      <a href="https://note.tt4e.com/" title="琅環笔记" rel="home">
+        
+  <span class="level is-mobile">
+
+
+  <span id="blog-title" class="level-item site-title">琅環笔记</span>
+
+  </span>
+
+      </a>
+  </h1>
+</div>
+
+        
+
+      </div>
+      
+<!-- This "nav-toggle" hamburger menu is only visible on mobile -->
+<!-- You need JavaScript to toggle the "is-active" class on "nav-menu" -->
+<span id="nav-toggle-burger" class="nav-toggle">
+  <span></span>
+  <span></span>
+  <span></span>
+</span>
+<div id="menu" class="nav-right nav-menu">
+      <a class="nav-item" title="文章归档" href="../../archive.html">文章归档</a>
+      <a class="nav-item" title="标签" href="../../categories/">标签</a>
+      <a class="nav-item" title="RSS 源" href="../../rss.xml">RSS 源</a>
+
+
+</div>
+<script type="text/javascript">
+document.getElementById('nav-toggle-burger').onclick = function() {
+  var myMenu = document.getElementById('menu');
+  var className = ' ' + myMenu.className + ' ';
+  var IS_ACTIVE_CLASS = 'is-active';
+  if ( ~className.indexOf(' ' + IS_ACTIVE_CLASS + ' ') ) {
+    myMenu.className = className.replace(' ' + IS_ACTIVE_CLASS + ' ', ' ');
+  } else {
+    myMenu.className += ' ' + IS_ACTIVE_CLASS;
+  }
+}
+</script>
+</div>
+  </header>
+</div>
+
+    <!-- Hero content: will be in the middle -->
+    
+  
+    
+
+    <!-- Hero footer: will stick at the bottom -->
+  </section><main id="content" class="section section-main"><div class="container">
+      
+<article class="post-text h-entry hentry postpage" itemscope="itemscope" itemtype="http://schema.org/Article"><header class="heading"><h1 class="title is-1 p-name entry-title" itemprop="headline name">
+    <a href="." class="u-url">The different linesep between codecs open and open in python 3</a>
+  </h1>
+
+  <div class="level metadata">
+    
+    <div class="level-left">
+      <div class="level-item">
+        <p class="byline author vcard">
+          <span class="byline-name fn">
+              逍遥
+          </span>
+        </p>
+      </div>
+    </div>
+    
+    <div class="level-right">
+      <div class="level-item">
+        <p class="dateline">
+          <a href="." rel="bookmark">
+            <time class="published dt-published" datetime="2023-12-13T20:01:17+08:00" itemprop="datePublished" title="2023-12-13 20:01">2023-12-13 20:01</time></a>
+        </p>
+      </div>
+      
+        <div class="level-item">
+          <p class="commentline">
+    
+    <a href="#disqus_thread" data-disqus-identifier="cache/posts/the-different-linesep-between-codecs-open-and-open-in-python-3.html">评论</a>
+
+</p>
+        </div>
+      
+      
+  <div class="level-item">
+    <p class="sourceline">
+      <a href="index.rst" id="sourcelink">源文件</a>
+    </p>
+  </div>
+
+      
+        <meta name="description" itemprop="description" content="Python 中写文件 codecs open 和内置 open 函数之间的差异">
+</div>
+  </div>
+  
+
+</header><div class="section content e-content entry-content" itemprop="articleBody text">
+    <section id="section-1"><h2>文件分隔符之回车换行的故事</h2>
+<p>最初的打字机上，将打字位置 Carriage 从行末移动到行首叫做 Carriage Return，既CR，既回车，将纸张上滚一行，叫做换行 Linefeed。</p>
+<p>来到计算机时代，分别为这两种操作都定义了 ASCII 码</p>
+<ol class="arabic simple">
+<li><p>ASCII n: CR，Carriage Return，UNIX 上是行分隔符，newline，取第一个字；macOS 也采用了此换行符；</p></li>
+<li><p>ASCII r: LF，Linefeed，Classic Mac OS 中，文件换行符是这个；</p></li>
+<li><p>ASCII rn: CRLF，Carriage Return &amp; Linefeed，Windows 最晚出现，为在 Windows 上能显示 Unix 和 Apple Mac OS 文件内容，弄出一个兼容的。</p></li>
+</ol></section><section id="python"><h2>Python 世界的换行</h2>
+<p>为兼容各平台差异，Python 的 os 模块中弄出多个属性来处理，比如</p>
+<ul class="simple">
+<li><p>linesep 行分隔符</p></li>
+<li><p>sep 文件路径名分割符</p></li>
+<li><p>pathsep 文件路径分隔符</p></li>
+<li><p>curdir 当前工作目录</p></li>
+<li><p>pardir 父目录</p></li>
+</ul>
+<p>os 模块是处理好了这件事，但其它模块却不一定。</p>
+</section><section id="python-2"><h2>Python 2 的写文件</h2>
+<ol class="arabic simple">
+<li><p>open()，可能最早从 c 语言 fopen 学习的，未考虑编码参数</p></li>
+<li><p>codecs.open()，支持编码参数</p></li>
+<li><p>io.open()，支持编码参数的 open()，推荐使用</p></li>
+</ol></section><section id="python-3"><h2>Python 3 的写文件</h2>
+<ol class="arabic simple">
+<li><p>open()，修正了 Python 2 时代的设计遗漏，支持 encoding 和 newline 参数</p></li>
+<li><p>codecs.open()，在读写文件时不推荐使用了，且此模块方法在 Windows 下有坑，文件换行符会弄成 LF</p></li>
+</ol></section><section id="section-2"><h2>不同平台的差异随处可见</h2>
+<p>一定程度上反映了，人各有各的思想，分久必合，当人们无法忍受差异时，就会发展为统一。</p>
+</section>
+</div>
+  <aside class="postpromonav"><div class="columns tags" itemprop="keywords">
+        <div class="column has-text-centered">
+          <a class="tag is-primary is-medium p-category" href="../../categories/linesep/" rel="tag">linesep</a>
+        </div>
+        <div class="column has-text-centered">
+          <a class="tag is-primary is-medium p-category" href="../../categories/newline/" rel="tag">newline</a>
+        </div>
+  </div>
+
+    
+  <div class="columns">
+    <div class="column">
+      <nav class="pagination pager hidden-print"><a class="pagination-previous previous" href="../absolute-and-relative-path-in-python/" rel="prev" title="Absolute and Relative Path in Python">上一篇文章</a>
+      </nav>
+</div>
+  </div>
+
+  </aside><section class="section comments hidden-print"><h2 class="title is-2">评论</h2>
+      
+    
+        <div id="disqus_thread"></div>
+        <script>
+        var disqus_shortname ="tt4e",
+            disqus_url="https://note.tt4e.com/posts/the-different-linesep-between-codecs-open-and-open-in-python-3/",
+        disqus_title="The different linesep between codecs open and open in python 3",
+        disqus_identifier="cache/posts/the-different-linesep-between-codecs-open-and-open-in-python-3.html",
+        disqus_config = function () {
+            this.language = "zh_cn";
+        };
+        (function() {
+            var dsq = document.createElement('script'); dsq.async = true;
+            dsq.src = 'https://' + disqus_shortname + '.disqus.com/embed.js';
+            (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+        })();
+    </script><noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript" rel="nofollow">comments powered by Disqus.</a>
+</noscript>
+    <a href="https://disqus.com" class="dsq-brlink" rel="nofollow">Comments powered by <span class="logo-disqus">Disqus</span></a>
+
+
+    </section></article><script>var disqus_shortname="tt4e";(function(){var a=document.createElement("script");a.async=true;a.src="https://"+disqus_shortname+".disqus.com/count.js";(document.getElementsByTagName("head")[0]||document.getElementsByTagName("body")[0]).appendChild(a)}());</script>
+</div>
+  </main><footer id="footer" class="footer"><div class="container">
+      Contents © 2023         <a href="mailto:xiaoyao@tt4e.com">逍遥</a> - Powered by         <a href="https://getnikola.com" rel="nofollow">Nikola</a>         
+      
+    </div>
+  </footer>
+</div>
+
+  
+
+
+
+
+</body>
+</html>

@@ -15,11 +15,11 @@
  </url>
  <url>
   <loc>https://note.tt4e.com/archive.html</loc>
-  <lastmod>2023-12-07T03:09:00Z</lastmod>
+  <lastmod>2023-12-13T12:01:00Z</lastmod>
  </url>
  <url>
   <loc>https://note.tt4e.com/categories/</loc>
-  <lastmod>2023-12-07T03:09:00Z</lastmod>
+  <lastmod>2023-12-13T12:06:00Z</lastmod>
  </url>
  <url>
   <loc>https://note.tt4e.com/categories/asyncio/</loc>
@@ -38,6 +38,10 @@
   <lastmod>2023-12-07T03:09:00Z</lastmod>
  </url>
  <url>
+  <loc>https://note.tt4e.com/categories/cat_trps/</loc>
+  <lastmod>2023-12-13T12:06:00Z</lastmod>
+ </url>
+ <url>
   <loc>https://note.tt4e.com/categories/emacs/</loc>
   <lastmod>2023-12-07T03:09:00Z</lastmod>
  </url>
@@ -48,6 +52,14 @@
  <url>
   <loc>https://note.tt4e.com/categories/libcurl/</loc>
   <lastmod>2023-12-07T03:09:00Z</lastmod>
+ </url>
+ <url>
+  <loc>https://note.tt4e.com/categories/linesep/</loc>
+  <lastmod>2023-12-13T12:06:00Z</lastmod>
+ </url>
+ <url>
+  <loc>https://note.tt4e.com/categories/newline/</loc>
+  <lastmod>2023-12-13T12:06:00Z</lastmod>
  </url>
  <url>
   <loc>https://note.tt4e.com/categories/nikola/</loc>
@@ -184,6 +196,10 @@
  <url>
   <loc>https://note.tt4e.com/posts/taking-notes-in-orgmode-with-nikola/</loc>
   <lastmod>2023-12-07T03:09:00Z</lastmod>
+ </url>
+ <url>
+  <loc>https://note.tt4e.com/posts/the-different-linesep-between-codecs-open-and-open-in-python-3/</loc>
+  <lastmod>2023-12-13T12:01:00Z</lastmod>
  </url>
  <url>
   <loc>https://note.tt4e.com/posts/threads-and-async-in-python/</loc>
