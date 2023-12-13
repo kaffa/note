@@ -1,8 +1,8 @@
 .. title: The different linesep between codecs open and open in python 3
 .. slug: the-different-linesep-between-codecs-open-and-open-in-python-3
 .. date: 2023-12-13 20:01:17 UTC+08:00
-.. tags: linesep,newline
-.. category: Trps
+.. tags: python,linesep,newline
+.. category: Tips
 .. link: 
 .. description: Python 中写文件 codecs open 和内置 open 函数之间的差异
 .. type: text
@@ -15,11 +15,11 @@
 
 来到计算机时代，分别为这两种操作都定义了 ASCII 码
 
-1. ASCII \n: CR，Carriage Return，UNIX 上是行分隔符，newline，取第一个字；macOS 也采用了此换行符；
+1. ASCII \\n: CR，Carriage Return，UNIX 上是行分隔符，newline，取第一个字；macOS 也采用了此换行符；
 
-2. ASCII \r: LF，Linefeed，Classic Mac OS 中，文件换行符是这个；
+2. ASCII \\r: LF，Linefeed，Classic Mac OS 中，文件换行符是这个；
 
-3. ASCII \r\n: CRLF，Carriage Return & Linefeed，Windows 最晚出现，为在 Windows 上能显示 Unix 和 Apple Mac OS 文件内容，弄出一个兼容的。
+3. ASCII \\r\\n: CRLF，Carriage Return & Linefeed，Windows 最晚出现，为在 Windows 上能显示 Unix 和 Apple Mac OS 文件内容，弄出一个兼容的。
 
 
 Python 世界的换行

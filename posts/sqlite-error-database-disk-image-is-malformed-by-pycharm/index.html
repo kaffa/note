@@ -3,19 +3,18 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width">
-<title>EverEdit SFTP Error With FreeBSD | 琅環笔记</title>
+<title>SQLite Error database disk image is malformed by PyCharm | 琅環笔记</title>
 <meta name="theme-color" content="#FED43F">
 <meta name="generator" content="Nikola (getnikola.com)">
 <link rel="alternate" type="application/rss+xml" title="RSS" href="../../rss.xml">
-<link rel="canonical" href="https://note.tt4e.com/posts/everedit-sftp-error-with-freebsd/">
+<link rel="canonical" href="https://note.tt4e.com/posts/sqlite-error-database-disk-image-is-malformed-by-pycharm/">
 <link href="../../assets/css/rst.css" rel="stylesheet" type="text/css">
 <link href="../../assets/css/code.css" rel="stylesheet" type="text/css">
 <link href="../../assets/css/font-awesome.css" rel="stylesheet" type="text/css">
 <link href="../../assets/css/styles.css" rel="stylesheet" type="text/css">
 <link href="../../assets/css/custom.css" rel="stylesheet" type="text/css">
 <!--[if lt IE 9]><script src="../../assets/js/html5.js"></script><![endif]--><meta name="author" content="逍遥">
-<link rel="prev" href="../taking-notes-in-orgmode-with-nikola/" title="Taking Notes In Orgmode With Nikola" type="text/html">
-<link rel="next" href="../securecrt-emacs-alt-v-not-work/" title="SecureCRT 中 Emacs 向上翻页快捷键 Alt+V 失效" type="text/html">
+<link rel="prev" href="../the-different-linesep-between-codecs-open-and-open-in-python-3/" title="The different linesep between codecs open and open in python 3" type="text/html">
 </head>
 <body>
 <script type="text/javascript">
@@ -79,7 +78,7 @@ document.getElementById('nav-toggle-burger').onclick = function() {
     <!-- Hero content: will be in the middle -->
     
   
-          <div class="hero-body hero-evereditsftperrorwithfreebsd">
+          <div class="hero-body hero-sqliteerrordatabasediskimageismalformedbypycharm">
           <div class="container has-text-centered">
               <p class="title">琅環笔记</p>
               <p class="is-size-6" style="text-align: left">乐博学强记，尝为鹅厂从事。游于洞宫，遇一人于途，问逍遥曰：“君读书几何？”遥曰：“吾之未读者，则二十年内书盖有之也，若二十年外，则吾固已尽读之矣。”其人论议超然，遥颇内服，相与欢甚。因共至一处，大石中忽然有门，引遥入数歩，则别是天地，宫室嵯峨。引入一室中，陈书满架，其人曰：“此PL史也。”又至一室，则曰：“OS志也。”毎室各有奇书，惟一室屋宇颇高，封识甚严，有二犬守之。遥问故，答曰：“此皆操作系统、编程语言、算法分析、生发正骨诸秘籍。”指二犬曰：“此龙也。”历观诸室书，皆Windows以前事，多所未闻者，如「BeOS」、「Solaris」、「FreeBSD」、「LISP」亦皆在焉。遥心乐之，欲赁住数十日，其人笑曰：“君痴矣。此岂可赁地耶？”即命小童送出，遥问地名，对曰：“琅嬛福地也。”</p>
@@ -91,7 +90,7 @@ document.getElementById('nav-toggle-burger').onclick = function() {
   </section><main id="content" class="section section-main"><div class="container">
       
 <article class="post-text h-entry hentry postpage" itemscope="itemscope" itemtype="http://schema.org/Article"><header class="heading"><h1 class="title is-1 p-name entry-title" itemprop="headline name">
-    <a href="." class="u-url">EverEdit SFTP Error With FreeBSD</a>
+    <a href="." class="u-url">SQLite Error database disk image is malformed by PyCharm</a>
   </h1>
 
   <div class="level metadata">
@@ -110,14 +109,14 @@ document.getElementById('nav-toggle-burger').onclick = function() {
       <div class="level-item">
         <p class="dateline">
           <a href="." rel="bookmark">
-            <time class="published dt-published" datetime="2023-12-01T11:09:38+08:00" itemprop="datePublished" title="2023-12-01 11:09">2023-12-01 11:09</time></a>
+            <time class="published dt-published" datetime="2023-12-13T21:14:50+08:00" itemprop="datePublished" title="2023-12-13 21:14">2023-12-13 21:14</time></a>
         </p>
       </div>
       
         <div class="level-item">
           <p class="commentline">
     
-    <a href="#disqus_thread" data-disqus-identifier="cache/posts/everedit-sftp-error-with-freebsd.html">评论</a>
+    <a href="#disqus_thread" data-disqus-identifier="cache/posts/sqlite-error-database-disk-image-is-malformed-by-pycharm.html">评论</a>
 
 </p>
         </div>
@@ -135,44 +134,43 @@ document.getElementById('nav-toggle-burger').onclick = function() {
   
 
 </header><div class="section content e-content entry-content" itemprop="articleBody text">
-    <section id="section-1"><h2>问题现象</h2>
-<p>EverEdit 4 内置 SFTP 插件连接 FreeBSD 13.2 SSH 时，提示如下:</p>
-<pre class="literal-block">[23:19:56]:Hostname was found in DNS cache
-[23:19:56]:  Trying 192.168.2.81...
-[23:19:56]:Adding handle: conn: 0x22356d0cfa0
-[23:19:56]:Adding handle: send: 0
-[23:19:56]:Adding handle: recv: 0
-[23:19:56]:Curl_addHandleToPipeline: length: 1
-[23:19:56]:- Conn 1 (0x22356d0cfa0) send_pipe: 1, recv_pipe: 0
-[23:19:56]:Connected to 192.168.2.81 (192.168.2.81) port 22 (#1)
-[23:19:56]:Failure establishing ssh session
-[23:19:56]:Closing connection 1</pre>
-<p>而使用其他 SFTP 客户端是完全正常的。</p>
-</section><section id="section-2"><h2>解决方法</h2>
-<p>已提交给作者，还没找出解决办法。</p>
-<p>在网上查找说是连接不上 FreeBSD 13.2 的 sftp，可能与 libcurl 有关。</p>
-<p>但还没有时间写代码来调试。</p>
-<p>待ee作者更新后，我再咨询。</p>
-</section><section id="section-3"><h2>参考</h2>
-<ol class="arabic simple">
-<li><p><a class="reference external" href="https://curl.se/libcurl/c/sftpget.html">https://curl.se/libcurl/c/sftpget.html</a></p></li>
-<li><p><a class="reference external" href="https://curl-users.cool.haxx.narkive.com/ppppPXNc/curl-sftp-failure-establishing-ssh-session">https://curl-users.cool.haxx.narkive.com/ppppPXNc/curl-sftp-failure-establishing-ssh-session</a></p></li>
-</ol></section>
+    <section id="tips"><h2>大多数 Tips 背后总能找到一个设计错误</h2>
+<p>Tips 之所以让人眼前一亮，那是因为这个 Tips 的结构不寻常。</p>
+<p>大体上，是因为设计者没有想到，或者想到了，但没有设计好导致的。</p>
+<p>比如下面这个：</p>
+</section><section id="database-disk-image-is-malformed"><h2>database disk image is malformed</h2>
+<p>SQLite 提示 "database disk image is malformed"</p>
+<p>看起来很惊悚，说是数据库磁盘镜像畸形了。</p>
+<p>第一感觉似乎是磁盘硬件坏道了？</p>
+</section><section id="section-1"><h2>问题重现</h2>
+<p>当我在 PyCharm 中选中了项目的根目录后，在菜单 File -&gt; File Properties -&gt; Line Separators 的切换后，SQLite 数据库文件报错了；</p>
+<p>我进行这个操作的主要原因是，每当我添加文件到 git 时，以 LF 为分隔符的 sitemap.xml 文件总是有一个 warning；</p>
+<p>而这个报错的主要原因，被证明是一个 Python 2 的遗留问题导致的。</p>
+<div class="code"><pre class="code bash"><a id="rest_code_22fecc18e09f43e592968ee9622f0c0c-1" name="rest_code_22fecc18e09f43e592968ee9622f0c0c-1" href="#rest_code_22fecc18e09f43e592968ee9622f0c0c-1"></a>&gt;git<span class="w"> </span>add<span class="w"> </span>.
+<a id="rest_code_22fecc18e09f43e592968ee9622f0c0c-2" name="rest_code_22fecc18e09f43e592968ee9622f0c0c-2" href="#rest_code_22fecc18e09f43e592968ee9622f0c0c-2"></a>warning:<span class="w"> </span>LF<span class="w"> </span>will<span class="w"> </span>be<span class="w"> </span>replaced<span class="w"> </span>by<span class="w"> </span>CRLF<span class="w"> </span><span class="k">in</span><span class="w"> </span>docs/sitemap.xml.
+<a id="rest_code_22fecc18e09f43e592968ee9622f0c0c-3" name="rest_code_22fecc18e09f43e592968ee9622f0c0c-3" href="#rest_code_22fecc18e09f43e592968ee9622f0c0c-3"></a>The<span class="w"> </span>file<span class="w"> </span>will<span class="w"> </span>have<span class="w"> </span>its<span class="w"> </span>original<span class="w"> </span>line<span class="w"> </span>endings<span class="w"> </span><span class="k">in</span><span class="w"> </span>your<span class="w"> </span>working<span class="w"> </span>directory
+</pre></div>
+</section><section id="section-2"><h2>问题原因</h2>
+<p>没有充分证实，但非常有可能是 LF 到 CRLF 的替换损坏了 SQLite 的数据库文件。</p>
+<p>你想问问 PyCharm，你怎么这么蠢？</p>
+<p>PyCharm 可能会说，怪我干什么，我只是个工具！</p>
+<p>但我认为吧，PyCharm 确实有理由识别这是一个数据库文件吧，毕竟你是可以直接打开浏览和处理的。</p>
+<p>好在此处，是之用到 SQLite 作为数据生成的本地缓存，且在 GitHub 上有备份，于是拿了一份下来本地覆盖既修复了。</p>
+</section>
 </div>
   <aside class="postpromonav"><div class="columns tags" itemprop="keywords">
         <div class="column has-text-centered">
-          <a class="tag is-primary is-medium p-category" href="../../categories/freebsd/" rel="tag">freebsd</a>
+          <a class="tag is-primary is-medium p-category" href="../../categories/pycharm/" rel="tag">PyCharm</a>
         </div>
         <div class="column has-text-centered">
-          <a class="tag is-primary is-medium p-category" href="../../categories/libcurl/" rel="tag">libcurl</a>
+          <a class="tag is-primary is-medium p-category" href="../../categories/sqlite/" rel="tag">SQLite</a>
         </div>
   </div>
 
     
   <div class="columns">
     <div class="column">
-      <nav class="pagination pager hidden-print"><a class="pagination-previous previous" href="../taking-notes-in-orgmode-with-nikola/" rel="prev" title="Taking Notes In Orgmode With Nikola">上一篇文章</a>
-          <a class="pagination-next next" href="../securecrt-emacs-alt-v-not-work/" rel="next" title="SecureCRT 中 Emacs 向上翻页快捷键 Alt+V 失效">下一篇文章</a>
+      <nav class="pagination pager hidden-print"><a class="pagination-previous previous" href="../the-different-linesep-between-codecs-open-and-open-in-python-3/" rel="prev" title="The different linesep between codecs open and open in python 3">上一篇文章</a>
       </nav>
 </div>
   </div>
@@ -183,9 +181,9 @@ document.getElementById('nav-toggle-burger').onclick = function() {
         <div id="disqus_thread"></div>
         <script>
         var disqus_shortname ="tt4e",
-            disqus_url="https://note.tt4e.com/posts/everedit-sftp-error-with-freebsd/",
-        disqus_title="EverEdit SFTP Error With FreeBSD",
-        disqus_identifier="cache/posts/everedit-sftp-error-with-freebsd.html",
+            disqus_url="https://note.tt4e.com/posts/sqlite-error-database-disk-image-is-malformed-by-pycharm/",
+        disqus_title="SQLite Error database disk image is malformed by PyCharm",
+        disqus_identifier="cache/posts/sqlite-error-database-disk-image-is-malformed-by-pycharm.html",
         disqus_config = function () {
             this.language = "zh_cn";
         };

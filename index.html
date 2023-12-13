@@ -2,19 +2,20 @@
 <html prefix="" lang="zh_cn">
 <head>
 <meta charset="utf-8">
-<meta name="description" content="琅環福地">
+<meta name="description" content="乐博学强记，尝为鹅厂从事。游于洞宫，遇一人于途，问逍遥曰：“君读书几何？”遥曰：“吾之未读者，则二十年内书盖有之也，若二十年外，则吾固已尽读之矣。”其人论议超然，遥颇内服，相与欢甚。因共至一处，大石中忽然有门，引遥入数歩，则别是天地，宫室嵯峨。引入一室中，陈书满架，其人曰：“此PL史也。”又至一室，则曰：“OS志也。”毎室各有奇书，惟一室屋宇颇高，封识甚严，有二犬守之。遥问故，答曰：“此皆操作系统、编程语言、算法分析、生发正骨诸秘籍。”指二犬曰：“此龙也。”历观诸室书，皆Windows以前事，多所未闻者，如「BeOS」、「Solaris」、「FreeBSD」、「LISP」亦皆在焉。遥心乐之，欲赁住数十日，其人笑曰：“君痴矣。此岂可赁地耶？”即命小童送出，遥问地名，对曰：“琅嬛福地也。”">
 <meta name="viewport" content="width=device-width">
 <title>琅環笔记</title>
 <meta name="theme-color" content="#FED43F">
 <meta name="generator" content="Nikola (getnikola.com)">
 <link rel="alternate" type="application/rss+xml" title="RSS" href="rss.xml">
 <link rel="canonical" href="https://note.tt4e.com/">
+<link rel="next" href="index-1.html" type="text/html">
 <link href="assets/css/rst.css" rel="stylesheet" type="text/css">
 <link href="assets/css/code.css" rel="stylesheet" type="text/css">
 <link href="assets/css/font-awesome.css" rel="stylesheet" type="text/css">
 <link href="assets/css/styles.css" rel="stylesheet" type="text/css">
 <link href="assets/css/custom.css" rel="stylesheet" type="text/css">
-<!--[if lt IE 9]><script src="assets/js/html5.js"></script><![endif]--><link rel="prefetch" href="posts/the-different-linesep-between-codecs-open-and-open-in-python-3/" type="text/html">
+<!--[if lt IE 9]><script src="assets/js/html5.js"></script><![endif]--><link rel="prefetch" href="posts/sqlite-error-database-disk-image-is-malformed-by-pycharm/" type="text/html">
 </head>
 <body>
 <script type="text/javascript">
@@ -77,6 +78,12 @@ document.getElementById('nav-toggle-burger').onclick = function() {
 
     <!-- Hero content: will be in the middle -->
     
+          <div class="hero-body hero-">
+          <div class="container has-text-centered">
+              <p class="title">琅環笔记</p>
+              <p class="is-size-6" style="text-align: left">乐博学强记，尝为鹅厂从事。游于洞宫，遇一人于途，问逍遥曰：“君读书几何？”遥曰：“吾之未读者，则二十年内书盖有之也，若二十年外，则吾固已尽读之矣。”其人论议超然，遥颇内服，相与欢甚。因共至一处，大石中忽然有门，引遥入数歩，则别是天地，宫室嵯峨。引入一室中，陈书满架，其人曰：“此PL史也。”又至一室，则曰：“OS志也。”毎室各有奇书，惟一室屋宇颇高，封识甚严，有二犬守之。遥问故，答曰：“此皆操作系统、编程语言、算法分析、生发正骨诸秘籍。”指二犬曰：“此龙也。”历观诸室书，皆Windows以前事，多所未闻者，如「BeOS」、「Solaris」、「FreeBSD」、「LISP」亦皆在焉。遥心乐之，欲赁住数十日，其人笑曰：“君痴矣。此岂可赁地耶？”即命小童送出，遥问地名，对曰：“琅嬛福地也。”</p>
+          </div>
+        </div>
     
     <!-- Hero footer: will stick at the bottom -->
   </section><main id="content" class="section section-main"><div class="container">
@@ -84,6 +91,68 @@ document.getElementById('nav-toggle-burger').onclick = function() {
 
   
 <div class="postindex">
+    <div class="columns">
+      <div class="column">
+        <div class="card post-card">
+          <article class="h-entry post-text"><div class="card-content">
+              <div class="media metadata">
+                <div class="media-content">
+                  <p class="title is-2 p-name entry-title">
+                    <a href="posts/sqlite-error-database-disk-image-is-malformed-by-pycharm/" class="u-url">SQLite Error database disk image is malformed by PyCharm</a>
+                  </p>
+                </div>
+                  <div class="media-right">
+                    <span class="icon">
+                      <i class="fa fa-file-text-o" aria-hidden="true"></i>
+                    </span>
+                    <span class="visuallyhidden">text</span>
+                  </div>
+              </div>
+                <div class="content e-content entry-content">
+                  <section id="tips"><h2>大多数 Tips 背后总能找到一个设计错误</h2>
+<p>Tips 之所以让人眼前一亮，那是因为这个 Tips 的结构不寻常。</p>
+<p>大体上，是因为设计者没有想到，或者想到了，但没有设计好导致的。</p>
+<p>比如下面这个：</p>
+</section><section id="database-disk-image-is-malformed"><h2>database disk image is malformed</h2>
+<p>SQLite 提示 "database disk image is malformed"</p>
+<p>看起来很惊悚，说是数据库磁盘镜像畸形了。</p>
+<p>第一感觉似乎是磁盘硬件坏道了？</p>
+</section><section id="section-1"><h2>问题重现</h2>
+<p>当我在 PyCharm 中选中了项目的根目录后，在菜单 File -&gt; File Properties -&gt; Line Separators 的切换后，SQLite 数据库文件报错了；</p>
+<p>我进行这个操作的主要原因是，每当我添加文件到 git 时，以 LF 为分隔符的 sitemap.xml 文件总是有一个 warning；</p>
+<p>而这个报错的主要原因，被证明是一个 Python 2 的遗留问题导致的。</p>
+<div class="code"><pre class="code bash"><a id="rest_code_22fecc18e09f43e592968ee9622f0c0c-1" name="rest_code_22fecc18e09f43e592968ee9622f0c0c-1" href="posts/sqlite-error-database-disk-image-is-malformed-by-pycharm/#rest_code_22fecc18e09f43e592968ee9622f0c0c-1"></a>&gt;git<span class="w"> </span>add<span class="w"> </span>.
+<a id="rest_code_22fecc18e09f43e592968ee9622f0c0c-2" name="rest_code_22fecc18e09f43e592968ee9622f0c0c-2" href="posts/sqlite-error-database-disk-image-is-malformed-by-pycharm/#rest_code_22fecc18e09f43e592968ee9622f0c0c-2"></a>warning:<span class="w"> </span>LF<span class="w"> </span>will<span class="w"> </span>be<span class="w"> </span>replaced<span class="w"> </span>by<span class="w"> </span>CRLF<span class="w"> </span><span class="k">in</span><span class="w"> </span>docs/sitemap.xml.
+<a id="rest_code_22fecc18e09f43e592968ee9622f0c0c-3" name="rest_code_22fecc18e09f43e592968ee9622f0c0c-3" href="posts/sqlite-error-database-disk-image-is-malformed-by-pycharm/#rest_code_22fecc18e09f43e592968ee9622f0c0c-3"></a>The<span class="w"> </span>file<span class="w"> </span>will<span class="w"> </span>have<span class="w"> </span>its<span class="w"> </span>original<span class="w"> </span>line<span class="w"> </span>endings<span class="w"> </span><span class="k">in</span><span class="w"> </span>your<span class="w"> </span>working<span class="w"> </span>directory
+</pre></div>
+</section><section id="section-2"><h2>问题原因</h2>
+<p>没有充分证实，但非常有可能是 LF 到 CRLF 的替换损坏了 SQLite 的数据库文件。</p>
+<p>你想问问 PyCharm，你怎么这么蠢？</p>
+<p>PyCharm 可能会说，怪我干什么，我只是个工具！</p>
+<p>但我认为吧，PyCharm 确实有理由识别这是一个数据库文件吧，毕竟你是可以直接打开浏览和处理的。</p>
+<p>好在此处，是之用到 SQLite 作为数据生成的本地缓存，且在 GitHub 上有备份，于是拿了一份下来本地覆盖既修复了。</p>
+</section>
+</div>
+            </div>
+
+            <footer class="card-footer"><p class="card-footer-item byline author vcard">
+                <span class="byline-name fn">
+                    逍遥
+                </span>
+              </p>
+              <p class="card-footer-item dateline">
+                <a href="posts/sqlite-error-database-disk-image-is-malformed-by-pycharm/" rel="bookmark">
+                  <time class="published dt-published" datetime="2023-12-13T21:14:50+08:00" title="2023-12-13 21:14">2023-12-13 21:14</time></a>
+              </p>
+                <p class="card-footer-item commentline">
+    
+    <a href="posts/sqlite-error-database-disk-image-is-malformed-by-pycharm/#disqus_thread" data-disqus-identifier="cache/posts/sqlite-error-database-disk-image-is-malformed-by-pycharm.html">评论</a>
+
+</p>
+            </footer></article>
+</div>
+      </div>
+    </div>
     <div class="columns">
       <div class="column">
         <div class="card post-card">
@@ -106,9 +175,9 @@ document.getElementById('nav-toggle-burger').onclick = function() {
 <p>最初的打字机上，将打字位置 Carriage 从行末移动到行首叫做 Carriage Return，既CR，既回车，将纸张上滚一行，叫做换行 Linefeed。</p>
 <p>来到计算机时代，分别为这两种操作都定义了 ASCII 码</p>
 <ol class="arabic simple">
-<li><p>ASCII n: CR，Carriage Return，UNIX 上是行分隔符，newline，取第一个字；macOS 也采用了此换行符；</p></li>
-<li><p>ASCII r: LF，Linefeed，Classic Mac OS 中，文件换行符是这个；</p></li>
-<li><p>ASCII rn: CRLF，Carriage Return &amp; Linefeed，Windows 最晚出现，为在 Windows 上能显示 Unix 和 Apple Mac OS 文件内容，弄出一个兼容的。</p></li>
+<li><p>ASCII \n: CR，Carriage Return，UNIX 上是行分隔符，newline，取第一个字；macOS 也采用了此换行符；</p></li>
+<li><p>ASCII \r: LF，Linefeed，Classic Mac OS 中，文件换行符是这个；</p></li>
+<li><p>ASCII \r\n: CRLF，Carriage Return &amp; Linefeed，Windows 最晚出现，为在 Windows 上能显示 Unix 和 Apple Mac OS 文件内容，弄出一个兼容的。</p></li>
 </ol></section><section id="python"><h2>Python 世界的换行</h2>
 <p>为兼容各平台差异，Python 的 os 模块中弄出多个属性来处理，比如</p>
 <ul class="simple">
@@ -731,121 +800,14 @@ document.getElementById('nav-toggle-burger').onclick = function() {
 </div>
       </div>
     </div>
-    <div class="columns">
-      <div class="column">
-        <div class="card post-card">
-          <article class="h-entry post-text"><div class="card-content">
-              <div class="media metadata">
-                <div class="media-content">
-                  <p class="title is-2 p-name entry-title">
-                    <a href="posts/lang-huan-notes/" class="u-url">琅環笔记</a>
-                  </p>
-                </div>
-                  <div class="media-right">
-                    <span class="icon">
-                      <i class="fa fa-file-text-o" aria-hidden="true"></i>
-                    </span>
-                    <span class="visuallyhidden">text</span>
-                  </div>
-              </div>
-                <div class="content e-content entry-content">
-                  <section id="section-1"><h2>笔记有什么内容？</h2>
-<ul class="simple">
-<li><p>主要内容为编程语言、数据库、操作系统、算法、计算机科学相关内容</p></li>
-<li><p>开发中遇到的坑和 Tips</p></li>
-<li><p>开发手册或开发文档中有的，但不好找的内容</p></li>
-<li><p>文档中没提到，源码中有的内容</p></li>
-</ul></section><section id="nikola"><h2>我为何选 Nikola？</h2>
-<ul>
-<li>
-<p>优点</p>
-<ol class="arabic">
-<li><p>支持 rst 格式，还支持 Org mode；</p></li>
-<li><p>以 Python 开发，模板并不绑定 Jinja2 或 Mako，都支持；</p></li>
-<li>
-<p>支持的格式有</p>
-<ul class="simple">
-<li><p>reStructuredText (default and pre-configured)</p></li>
-<li><p>Markdown (pre-configured since v7.8.7)</p></li>
-<li><p>Jupyter Notebook</p></li>
-<li><p>HTML</p></li>
-<li><p>PHP</p></li>
-<li><p>anything Pandoc supports (including Textile, DocBook, LaTeX, MediaWiki, TWiki, OPML, Emacs Org-Mode, txt2tags, Microsoft Word .docx, EPUB, Haddock markup)</p></li>
-</ul>
-<p>如果包含插件的格式，还支持</p>
-<ul class="simple">
-<li><p>AsciiDoc</p></li>
-<li><p>BBCode</p></li>
-<li><p>CommonMark</p></li>
-<li><p>IRC logs</p></li>
-<li><p>Markmin</p></li>
-<li><p>MediaWiki (smc.mw)</p></li>
-<li><p>Misaka</p></li>
-<li><p>ODT</p></li>
-<li><p>Emacs Org-Mode</p></li>
-<li><p>reST with HTML 5 output</p></li>
-<li><p>Textile</p></li>
-<li><p>txt2tags</p></li>
-<li><p>CreoleWiki</p></li>
-<li><p>WordPress posts</p></li>
-</ul>
-</li>
-<li>
-<p>由于 rst 的优势，天然支持混合词法分析器的代码高亮，比如 html+mako</p>
-<p>实际上支持的种类就是 pygments 所支持的，Demo 在 <a class="reference external" href="http://pygments.org/">http://pygments.org/</a></p>
-<p>目前可用的如下：</p>
-<p>abap | abnf | ada, ada95, ada2005 | adl | agda | ahk, autohotkey | alloy | ampl | antlr-as, antlr-actionscript | antlr-cpp | antlr-csharp, antlr-c# | antlr-java | antlr-objc | antlr-perl | antlr-python | antlr-ruby, antlr-rb | antlr | apacheconf, aconf, apache | apl | applescript | arduino | as, actionscript | as3, actionscript3 | aspectj | aspx-cs | aspx-vb | asy, asymptote | at, ambienttalk, ambienttalk/2 | autoit | awk, gawk, mawk, nawk | basemake | bash, sh, ksh, shell | bat, batch, dosbatch, winbatch | bbcode | bc | befunge | blitzbasic, b3d, bplus | blitzmax, bmax | bnf | boo | boogie | brainfuck, bf | bro | bugs, winbugs, openbugs | c-objdump | c | ca65 | cadl | camkes, idl4 | cbmbas | ceylon | cfc | cfengine3, cf3 | cfm | cfs | chai, chaiscript | chapel, chpl | cheetah, spitfire | cirru | clay | clean | clojure, clj | clojurescript, cljs | cmake | cobol | cobolfree | coffee-script, coffeescript, coffee | common-lisp, cl, lisp | componentpascal, cp | console, shell-session | control, debcontrol | coq | cpp, c++ | cpp-objdump, c++-objdumb, cxx-objdump | cpsa | crmsh, pcmk | croc | cryptol, cry | csharp, c# | csound, csound-orc | csound-document, csound-csd | csound-score, csound-sco | css+django, css+jinja | css+erb, css+ruby | css+genshitext, css+genshi | css+lasso | css+mako | css+mako | css+mozpreproc | css+myghty | css+php | css+smarty | css | cucumber, gherkin | cuda, cu | cypher | cython, pyx, pyrex | d-objdump | d | dart | delphi, pas, pascal, objectpascal | dg | diff, udiff | django, jinja | docker, dockerfile | doscon | dpatch | dtd | duel, jbst, jsonml+bst | dylan-console, dylan-repl | dylan-lid, lid | dylan | earl-grey, earlgrey, eg | easytrieve | ebnf | ec | ecl | eiffel | elixir, ex, exs | elm | emacs, elisp, emacs-lisp | erb | erl | erlang | evoque | extempore | ezhil | factor | fan | fancy, fy | felix, flx | fish, fishshell | flatline | fortran | fortranfixed | foxpro, vfp, clipper, xbase | fsharp | gap | gas, asm | genshi, kid, xml+genshi, xml+kid | genshitext | glsl | gnuplot | go | golo | gooddata-cl | gosu | groff, nroff, man | groovy | gst | haml | handlebars | haskell, hs | haxeml, hxml | hexdump | hsail, hsa | html+cheetah, html+spitfire, htmlcheetah | html+django, html+jinja, htmldjango | html+evoque | html+genshi, html+kid | html+handlebars | html+lasso | html+mako | html+mako | html+myghty | html+php | html+smarty | html+twig | html+velocity | html | http | hx, haxe, hxsl | hybris, hy | hylang | i6t | idl | idris, idr | iex | igor, igorpro | inform6, i6 | inform7, i7 | ini, cfg, dosini | io | ioke, ik | irc | isabelle | j | jade | jags | jasmin, jasminxt | java | javascript+mozpreproc | jcl | jlcon | js+cheetah, javascript+cheetah, js+spitfire, javascript+spitfire | js+django, javascript+django, js+jinja, javascript+jinja | js+erb, javascript+erb, js+ruby, javascript+ruby | js+genshitext, js+genshi, javascript+genshitext, javascript+genshi | js+lasso, javascript+lasso | js+mako, javascript+mako | js+mako, javascript+mako | js+myghty, javascript+myghty | js+php, javascript+php | js+smarty, javascript+smarty | js, javascript | jsgf | json | jsonld, json-ld | jsp | julia, jl | kal | kconfig, menuconfig, linux-config, kernel-config | koka | kotlin | lagda, literate-agda | lasso, lassoscript | lcry, literate-cryptol, lcryptol | lean | less | lhs, literate-haskell, lhaskell | lidr, literate-idris, lidris | lighty, lighttpd | limbo | liquid | live-script, livescript | llvm | logos | logtalk | lsl | lua | make, makefile, mf, bsdmake | mako | mako | maql | mask | mason | mathematica, mma, nb | matlab | matlabsession | minid | modelica | modula2, m2 | monkey | moocode, moo | moon, moonscript | mozhashpreproc | mozpercentpreproc | mql, mq4, mq5, mql4, mql5 | mscgen, msc | mupad | mxml | myghty | mysql | nasm | ncl | nemerle | nesc | newlisp | newspeak | nginx | nimrod, nim | nit | nixos, nix | nsis, nsi, nsh | numpy | objdump-nasm | objdump | objective-c++, objectivec++, obj-c++, objc++ | objective-c, objectivec, obj-c, objc | objective-j, objectivej, obj-j, objj | ocaml | octave | odin | ooc | opa | openedge, abl, progress | pacmanconf | pan | parasail | pawn | perl, pl | perl6, pl6 | php, php3, php4, php5 | pig | pike | pkgconfig | plpgsql | postgresql, postgres | postscript, postscr | pot, po | pov | powershell, posh, ps1, psm1 | praat | prolog | properties, jproperties | protobuf, proto | ps1con | psql, postgresql-console, postgres-console | puppet | py3tb | pycon | pypylog, pypy | pytb | python, py, sage | python3, py3 | qbasic, basic | qml, qbs | qvto, qvt | racket, rkt | ragel-c | ragel-cpp | ragel-d | ragel-em | ragel-java | ragel-objc | ragel-ruby, ragel-rb | ragel | raw | rb, ruby, duby | rbcon, irb | rconsole, rout | rd | rebol | red, red/system | redcode | registry | resource, resourcebundle | rexx, arexx | rhtml, html+erb, html+ruby | roboconf-graph | roboconf-instances | robotframework | rql | rsl | rst, rest, restructuredtext | rts, trafficscript | rust | sass | sc, supercollider | scala | scaml | scheme, scm | scilab | scss | shen | silver | slim | smali | smalltalk, squeak, st | smarty | sml | snobol | sourceslist, sources.list, debsources | sp | sparql | spec | splus, s, r | sql | sqlite3 | squidconf, squid.conf, squid | ssp | stan | swift | swig | systemverilog, sv | tads3 | tap | tcl | tcsh, csh | tcshcon | tea | termcap | terminfo | terraform, tf | tex, latex | text | thrift | todotxt | trac-wiki, moin | treetop | ts, typescript | turtle | twig | typoscript | typoscriptcssdata | typoscripthtmldata | urbiscript | vala, vapi | vb.net, vbnet | vcl | vclsnippets, vclsnippet | vctreestatus | velocity | verilog, v | vgl | vhdl | vim | wdiff | x10, xten | xml+cheetah, xml+spitfire | xml+django, xml+jinja | xml+erb, xml+ruby | xml+evoque | xml+lasso | xml+mako | xml+mako | xml+myghty | xml+php | xml+smarty | xml+velocity | xml | xquery, xqy, xq, xql, xqm | xslt | xtend | xul+mozpreproc | yaml+jinja, salt, sls | yaml | zephir |</p>
-<p>可以通过以下命令查看</p>
-<div class="code"><pre class="code sh"><a id="rest_code_bb807a9d1f7341348bd0a9bb3ba41f60-1" name="rest_code_bb807a9d1f7341348bd0a9bb3ba41f60-1" href="posts/lang-huan-notes/#rest_code_bb807a9d1f7341348bd0a9bb3ba41f60-1"></a>pygmentize<span class="w"> </span>-L
-</pre></div>
-<ol class="arabic" start="5">
-<li>
-<p>Nikola 如果是艾志恒，会不会唱：</p>
-<div class="line-block">
-<div class="line">在房间里洗个澡</div>
-<div class="line">同时在思考其它的jamstack哪个能比我屌</div>
-<div class="line">Posts keep increasing</div>
-<div class="line">你们格式都认不到</div>
-<div class="line">我们code好</div>
-<div class="line">但目前我还嫌自己PR的少</div>
-</div>
-</li>
-</ol>
-</li>
-</ol>
-</li>
-<li>
-<p>缺点</p>
-<ol class="arabic simple">
-<li><p>主题的设计的感觉，不如 Hugo 的丰富</p></li>
-<li><p>安装过程有小坑（等再次安装时会写一篇笔记记录）</p></li>
-</ol>
-</li>
-</ul>
-<img alt="Nikola" class="ml-5" src="images/nikola.jpg" style="width: 400px; height: 400px;"></section>
-</div>
-            </div>
-
-            <footer class="card-footer"><p class="card-footer-item byline author vcard">
-                <span class="byline-name fn">
-                    逍遥
-                </span>
-              </p>
-              <p class="card-footer-item dateline">
-                <a href="posts/lang-huan-notes/" rel="bookmark">
-                  <time class="published dt-published" datetime="2023-11-25T07:18:29+08:00" title="2023-11-25 07:18">2023-11-25 07:18</time></a>
-              </p>
-                <p class="card-footer-item commentline">
-    
-    <a href="posts/lang-huan-notes/#disqus_thread" data-disqus-identifier="cache/posts/lang-huan-notes.html">评论</a>
-
-</p>
-            </footer></article>
-</div>
-      </div>
-    </div>
 </div>
 
+  <div class="columns">
+    <div class="column">
+      <nav class="pagination postindexpager pager"><a class="pagination-next next" href="index-1.html" rel="next">以前的文章</a>
+      </nav>
+</div>
+  </div>
 
 
     
