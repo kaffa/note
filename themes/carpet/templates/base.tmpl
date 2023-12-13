@@ -40,7 +40,7 @@ ${template_hooks['extra_head']()}
       %if carpet__show_hero:
         %if title:
           <div class="hero-body hero-${title|lower,h,trim}">
-\        %else:
+        %else:
           <div class="hero-body">
         %endif
         %if carpet__show_hero_title:
@@ -49,7 +49,7 @@ ${template_hooks['extra_head']()}
               <p class="title">${blog_title|h}</p>
             %endif
             %if blog_description:
-              <p class="subtitle">${blog_description|h}</p>
+              <p class="is-size-6" style="text-align: left">${blog_description}</p>
             %endif
           </div>
         %endif

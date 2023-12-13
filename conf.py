@@ -25,7 +25,7 @@ SITE_URL = "https://note.tt4e.com/"
 # If not set, defaults to SITE_URL
 # BASE_URL = "https://note.tt4e.com/"
 BLOG_EMAIL = "xiaoyao@tt4e.com"
-BLOG_DESCRIPTION = "琅環福地"  # (translatable)
+BLOG_DESCRIPTION = "乐博学强记，尝为鹅厂从事。游于洞宫，遇一人于途，问逍遥曰：“君读书几何？”遥曰：“吾之未读者，则二十年内书盖有之也，若二十年外，则吾固已尽读之矣。”其人论议超然，遥颇内服，相与欢甚。因共至一处，大石中忽然有门，引遥入数歩，则别是天地，宫室嵯峨。引入一室中，陈书满架，其人曰：“此PL史也。”又至一室，则曰：“OS志也。”毎室各有奇书，惟一室屋宇颇高，封识甚严，有二犬守之。遥问故，答曰：“此皆操作系统、编程语言、算法分析、生发正骨诸秘籍。”指二犬曰：“此龙也。”历观诸室书，皆Windows以前事，多所未闻者，如「BeOS」、「Solaris」、「FreeBSD」、「LISP」亦皆在焉。遥心乐之，欲赁住数十日，其人笑曰：“君痴矣。此岂可赁地耶？”即命小童送出，遥问地名，对曰：“琅嬛福地也。”"  # (translatable)
 
 # Nikola is multilingual!
 #
@@ -1413,7 +1413,7 @@ WARN_ABOUT_TAG_METADATA = False
 # It can be anything, data, functions, modules, etc.
 GLOBAL_CONTEXT = {
     "carpet__unlink_blog_brand": False,
-    "carpet__show_hero": False,
+    "carpet__show_hero": True,
     "carpet__show_hero_title": True,
     "carpet__hero_post_title": False,
     "carpet__hero_size": "",
