@@ -7,90 +7,98 @@
                         http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">
  <sitemap>
   <loc>https://note.tt4e.com/categories/asyncio.xml</loc>
-  <lastmod>2023-12-07T03:09:00Z</lastmod>
+  <lastmod>2024-01-20T08:12:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>https://note.tt4e.com/categories/cat_notes.xml</loc>
-  <lastmod>2023-12-07T03:09:00Z</lastmod>
+  <lastmod>2024-01-20T08:12:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>https://note.tt4e.com/categories/cat_python.xml</loc>
-  <lastmod>2023-12-07T03:09:00Z</lastmod>
+  <lastmod>2024-01-20T08:12:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>https://note.tt4e.com/categories/cat_tips.xml</loc>
-  <lastmod>2023-12-13T14:55:00Z</lastmod>
+  <lastmod>2024-01-20T08:12:00Z</lastmod>
+ </sitemap>
+ <sitemap>
+  <loc>https://note.tt4e.com/categories/cmd.xml</loc>
+  <lastmod>2024-01-20T08:12:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>https://note.tt4e.com/categories/emacs.xml</loc>
-  <lastmod>2023-12-07T03:09:00Z</lastmod>
+  <lastmod>2024-01-20T08:12:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>https://note.tt4e.com/categories/freebsd.xml</loc>
-  <lastmod>2023-12-07T03:09:00Z</lastmod>
+  <lastmod>2024-01-20T08:12:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>https://note.tt4e.com/categories/libcurl.xml</loc>
-  <lastmod>2023-12-07T03:09:00Z</lastmod>
+  <lastmod>2024-01-20T08:12:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>https://note.tt4e.com/categories/linesep.xml</loc>
-  <lastmod>2023-12-13T14:55:00Z</lastmod>
+  <lastmod>2024-01-20T08:12:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>https://note.tt4e.com/categories/newline.xml</loc>
-  <lastmod>2023-12-13T14:55:00Z</lastmod>
+  <lastmod>2024-01-20T08:12:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>https://note.tt4e.com/categories/nikola.xml</loc>
-  <lastmod>2023-12-07T03:09:00Z</lastmod>
+  <lastmod>2024-01-20T08:12:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>https://note.tt4e.com/categories/openssh.xml</loc>
-  <lastmod>2023-12-07T03:09:00Z</lastmod>
+  <lastmod>2024-01-20T08:12:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>https://note.tt4e.com/categories/orgmode.xml</loc>
-  <lastmod>2023-12-07T03:09:00Z</lastmod>
+  <lastmod>2024-01-20T08:12:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>https://note.tt4e.com/categories/path.xml</loc>
-  <lastmod>2023-12-13T11:38:00Z</lastmod>
+  <lastmod>2024-01-20T08:12:00Z</lastmod>
+ </sitemap>
+ <sitemap>
+  <loc>https://note.tt4e.com/categories/proxy.xml</loc>
+  <lastmod>2024-01-20T08:12:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>https://note.tt4e.com/categories/pycharm.xml</loc>
-  <lastmod>2023-12-13T14:21:00Z</lastmod>
+  <lastmod>2024-01-20T08:12:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>https://note.tt4e.com/categories/python.xml</loc>
-  <lastmod>2023-12-13T14:55:00Z</lastmod>
+  <lastmod>2024-01-20T08:12:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>https://note.tt4e.com/categories/securecrt.xml</loc>
-  <lastmod>2023-12-07T03:09:00Z</lastmod>
+  <lastmod>2024-01-20T08:12:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>https://note.tt4e.com/categories/sqlite.xml</loc>
-  <lastmod>2023-12-13T14:21:00Z</lastmod>
+  <lastmod>2024-01-20T08:12:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>https://note.tt4e.com/categories/ssh.xml</loc>
-  <lastmod>2023-12-07T03:09:00Z</lastmod>
+  <lastmod>2024-01-20T08:12:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>https://note.tt4e.com/galleries/demo/rss.xml</loc>
-  <lastmod>2023-12-13T14:23:00Z</lastmod>
+  <lastmod>2024-01-20T08:12:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>https://note.tt4e.com/galleries/rss.xml</loc>
-  <lastmod>2023-12-13T14:23:00Z</lastmod>
+  <lastmod>2024-01-20T08:12:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>https://note.tt4e.com/rss.xml</loc>
-  <lastmod>2023-12-13T14:55:00Z</lastmod>
+  <lastmod>2024-01-20T08:12:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>https://note.tt4e.com/sitemap.xml</loc>
-  <lastmod>2023-12-13T16:13:00Z</lastmod>
+  <lastmod>2024-01-20T08:12:00Z</lastmod>
  </sitemap>
 </sitemapindex>

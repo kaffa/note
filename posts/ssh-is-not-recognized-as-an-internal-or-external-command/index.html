@@ -82,7 +82,7 @@ document.getElementById('nav-toggle-burger').onclick = function() {
           <div class="hero-body hero-ssh">
           <div class="container has-text-centered">
               <p class="title">琅環笔记</p>
-              <p class="is-size-6" style="text-align: left">乐博学强记，尝为鹅厂从事。游于洞宫，遇一人于途，问逍遥曰：“君读书几何？”遥曰：“吾之未读者，则二十年内书盖有之也，若二十年外，则吾固已尽读之矣。”其人论议超然，遥颇内服，相与欢甚。因共至一处，大石中忽然有门，引遥入数歩，则别是天地，宫室嵯峨。引入一室中，陈书满架，其人曰：“此PL史也。”又至一室，则曰：“OS志也。”毎室各有奇书，惟一室屋宇颇高，封识甚严，有二犬守之。遥问故，答曰：“此皆操作系统、编程语言、算法分析、生发正骨诸秘籍。”指二犬曰：“此龙也。”历观诸室书，皆Windows以前事，多所未闻者，如「BeOS」、「Solaris」、「FreeBSD」、「LISP」亦皆在焉。遥心乐之，欲赁住数十日，其人笑曰：“君痴矣。此岂可赁地耶？”即命小童送出，遥问地名，对曰：“琅嬛福地也。”</p>
+              <p class="is-size-6" style="text-align: left">有博学强记者，尝为鹅厂从事。游于洞宫，遇一人于途，问逍遥曰：“君读书几何？”遥曰：“吾之未读者，则二十年内书盖有之也，若二十年外，则吾固已尽读之矣。”其人论议超然，遥颇内服，相与欢甚。因共至一处，大石中忽然有门，引遥入数歩，则别是天地，宫室嵯峨。引入一室中，陈书满架，其人曰：“此PL史也。”又至一室，则曰：“OS志也。”毎室各有奇书，惟一室屋宇颇高，封识甚严，有二犬守之。遥问故，答曰：“此皆操作系统、编程语言、算法分析、生发正骨诸秘籍。”指二犬曰：“此龙也。”历观诸室书，皆Windows以前事，多所未闻者，如「BeOS」、「Solaris」、「FreeBSD」、「LISP」亦皆在焉。遥心乐之，欲赁住数十日，其人笑曰：“君痴矣。此岂可赁地耶？”即命小童送出，遥问地名，对曰：“琅嬛福地也。”</p>
           </div>
         </div>
     
@@ -137,14 +137,14 @@ document.getElementById('nav-toggle-burger').onclick = function() {
 </header><div class="section content e-content entry-content" itemprop="articleBody text">
     <section id="section-1"><h2>问题现象</h2>
 <p>当在 <a class="reference external" href="https://github.com/microsoft/terminal">Windows Terminal</a> 中运行 <em>ssh</em> 命令时，终端中提示：</p>
-<div class="code"><pre class="code text"><a id="rest_code_e92b00248e81438e96d1eea562a006ec-1" name="rest_code_e92b00248e81438e96d1eea562a006ec-1" href="#rest_code_e92b00248e81438e96d1eea562a006ec-1"></a>'ssh'不是内部或外部命令，也不是可运行的程序或批处理文件
+<div class="code"><pre class="code text"><a id="rest_code_28fbeeb3aec04105bef4102bc3b6eebd-1" name="rest_code_28fbeeb3aec04105bef4102bc3b6eebd-1" href="#rest_code_28fbeeb3aec04105bef4102bc3b6eebd-1"></a>'ssh'不是内部或外部命令，也不是可运行的程序或批处理文件
 </pre></div>
 <p>English Version</p>
-<div class="code"><pre class="code text"><a id="rest_code_73ccfa5fcd594f1280210654629d304f-1" name="rest_code_73ccfa5fcd594f1280210654629d304f-1" href="#rest_code_73ccfa5fcd594f1280210654629d304f-1"></a>'ssh' is not recognized as an internal or external command, operable program or batch file.
+<div class="code"><pre class="code text"><a id="rest_code_74780fff5d6b4049b6744ed34bd4b13a-1" name="rest_code_74780fff5d6b4049b6744ed34bd4b13a-1" href="#rest_code_74780fff5d6b4049b6744ed34bd4b13a-1"></a>'ssh' is not recognized as an internal or external command, operable program or batch file.
 </pre></div>
 </section><section id="section-2"><h2>解决方法</h2>
 <p>在 Windows 设置中安装 OpenSSH 客户端，且在环境变量 PATH 中加入：</p>
-<div class="code"><pre class="code text"><a id="rest_code_cc6fc35191c142b39292dce0fa1c8992-1" name="rest_code_cc6fc35191c142b39292dce0fa1c8992-1" href="#rest_code_cc6fc35191c142b39292dce0fa1c8992-1"></a>C:\Windows\System32\OpenSSH
+<div class="code"><pre class="code text"><a id="rest_code_3bfeeb9f26c2496fa5d09aef5c0eff5d-1" name="rest_code_3bfeeb9f26c2496fa5d09aef5c0eff5d-1" href="#rest_code_3bfeeb9f26c2496fa5d09aef5c0eff5d-1"></a>C:\Windows\System32\OpenSSH
 </pre></div>
 <p>验证方法：检查以上目录中是否有 ssh.exe 文件。</p>
 </section>
@@ -192,7 +192,7 @@ document.getElementById('nav-toggle-burger').onclick = function() {
     </section></article><script>var disqus_shortname="tt4e";(function(){var a=document.createElement("script");a.async=true;a.src="https://"+disqus_shortname+".disqus.com/count.js";(document.getElementsByTagName("head")[0]||document.getElementsByTagName("body")[0]).appendChild(a)}());</script>
 </div>
   </main><footer id="footer" class="footer"><div class="container">
-      Contents © 2023         <a href="mailto:xiaoyao@tt4e.com">逍遥</a> - Powered by         <a href="https://getnikola.com" rel="nofollow">Nikola</a>         
+      Contents © 2024         <a href="mailto:xiaoyao@tt4e.com">逍遥</a> - Powered by         <a href="https://getnikola.com" rel="nofollow">Nikola</a>         
       
     </div>
   </footer>

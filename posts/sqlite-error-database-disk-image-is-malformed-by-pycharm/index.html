@@ -15,6 +15,7 @@
 <link href="../../assets/css/custom.css" rel="stylesheet" type="text/css">
 <!--[if lt IE 9]><script src="../../assets/js/html5.js"></script><![endif]--><meta name="author" content="逍遥">
 <link rel="prev" href="../the-different-linesep-between-codecs-open-and-open-in-python-3/" title="The different linesep between codecs open and open in python 3" type="text/html">
+<link rel="next" href="../how-to-config-windows-cmd-proxy/" title="设置 Windows Cmd 使用代理服务器的方法" type="text/html">
 </head>
 <body>
 <script type="text/javascript">
@@ -81,7 +82,7 @@ document.getElementById('nav-toggle-burger').onclick = function() {
           <div class="hero-body hero-sqliteerrordatabasediskimageismalformedbypycharm">
           <div class="container has-text-centered">
               <p class="title">琅環笔记</p>
-              <p class="is-size-6" style="text-align: left">乐博学强记，尝为鹅厂从事。游于洞宫，遇一人于途，问逍遥曰：“君读书几何？”遥曰：“吾之未读者，则二十年内书盖有之也，若二十年外，则吾固已尽读之矣。”其人论议超然，遥颇内服，相与欢甚。因共至一处，大石中忽然有门，引遥入数歩，则别是天地，宫室嵯峨。引入一室中，陈书满架，其人曰：“此PL史也。”又至一室，则曰：“OS志也。”毎室各有奇书，惟一室屋宇颇高，封识甚严，有二犬守之。遥问故，答曰：“此皆操作系统、编程语言、算法分析、生发正骨诸秘籍。”指二犬曰：“此龙也。”历观诸室书，皆Windows以前事，多所未闻者，如「BeOS」、「Solaris」、「FreeBSD」、「LISP」亦皆在焉。遥心乐之，欲赁住数十日，其人笑曰：“君痴矣。此岂可赁地耶？”即命小童送出，遥问地名，对曰：“琅嬛福地也。”</p>
+              <p class="is-size-6" style="text-align: left">有博学强记者，尝为鹅厂从事。游于洞宫，遇一人于途，问逍遥曰：“君读书几何？”遥曰：“吾之未读者，则二十年内书盖有之也，若二十年外，则吾固已尽读之矣。”其人论议超然，遥颇内服，相与欢甚。因共至一处，大石中忽然有门，引遥入数歩，则别是天地，宫室嵯峨。引入一室中，陈书满架，其人曰：“此PL史也。”又至一室，则曰：“OS志也。”毎室各有奇书，惟一室屋宇颇高，封识甚严，有二犬守之。遥问故，答曰：“此皆操作系统、编程语言、算法分析、生发正骨诸秘籍。”指二犬曰：“此龙也。”历观诸室书，皆Windows以前事，多所未闻者，如「BeOS」、「Solaris」、「FreeBSD」、「LISP」亦皆在焉。遥心乐之，欲赁住数十日，其人笑曰：“君痴矣。此岂可赁地耶？”即命小童送出，遥问地名，对曰：“琅嬛福地也。”</p>
           </div>
         </div>
     
@@ -146,9 +147,9 @@ document.getElementById('nav-toggle-burger').onclick = function() {
 <p>当我在 PyCharm 中选中了项目的根目录后，在菜单 File -&gt; File Properties -&gt; Line Separators 的切换后，SQLite 数据库文件报错了；</p>
 <p>我进行这个操作的主要原因是，每当我添加文件到 git 时，以 LF 为分隔符的 sitemap.xml 文件总是有一个 warning；</p>
 <p>而这个报错的主要原因，被证明是一个 Python 2 的遗留问题导致的。</p>
-<div class="code"><pre class="code bash"><a id="rest_code_22fecc18e09f43e592968ee9622f0c0c-1" name="rest_code_22fecc18e09f43e592968ee9622f0c0c-1" href="#rest_code_22fecc18e09f43e592968ee9622f0c0c-1"></a>&gt;git<span class="w"> </span>add<span class="w"> </span>.
-<a id="rest_code_22fecc18e09f43e592968ee9622f0c0c-2" name="rest_code_22fecc18e09f43e592968ee9622f0c0c-2" href="#rest_code_22fecc18e09f43e592968ee9622f0c0c-2"></a>warning:<span class="w"> </span>LF<span class="w"> </span>will<span class="w"> </span>be<span class="w"> </span>replaced<span class="w"> </span>by<span class="w"> </span>CRLF<span class="w"> </span><span class="k">in</span><span class="w"> </span>docs/sitemap.xml.
-<a id="rest_code_22fecc18e09f43e592968ee9622f0c0c-3" name="rest_code_22fecc18e09f43e592968ee9622f0c0c-3" href="#rest_code_22fecc18e09f43e592968ee9622f0c0c-3"></a>The<span class="w"> </span>file<span class="w"> </span>will<span class="w"> </span>have<span class="w"> </span>its<span class="w"> </span>original<span class="w"> </span>line<span class="w"> </span>endings<span class="w"> </span><span class="k">in</span><span class="w"> </span>your<span class="w"> </span>working<span class="w"> </span>directory
+<div class="code"><pre class="code bash"><a id="rest_code_256bfc7674d84395b232ff9024da161c-1" name="rest_code_256bfc7674d84395b232ff9024da161c-1" href="#rest_code_256bfc7674d84395b232ff9024da161c-1"></a>&gt;git<span class="w"> </span>add<span class="w"> </span>.
+<a id="rest_code_256bfc7674d84395b232ff9024da161c-2" name="rest_code_256bfc7674d84395b232ff9024da161c-2" href="#rest_code_256bfc7674d84395b232ff9024da161c-2"></a>warning:<span class="w"> </span>LF<span class="w"> </span>will<span class="w"> </span>be<span class="w"> </span>replaced<span class="w"> </span>by<span class="w"> </span>CRLF<span class="w"> </span><span class="k">in</span><span class="w"> </span>docs/sitemap.xml.
+<a id="rest_code_256bfc7674d84395b232ff9024da161c-3" name="rest_code_256bfc7674d84395b232ff9024da161c-3" href="#rest_code_256bfc7674d84395b232ff9024da161c-3"></a>The<span class="w"> </span>file<span class="w"> </span>will<span class="w"> </span>have<span class="w"> </span>its<span class="w"> </span>original<span class="w"> </span>line<span class="w"> </span>endings<span class="w"> </span><span class="k">in</span><span class="w"> </span>your<span class="w"> </span>working<span class="w"> </span>directory
 </pre></div>
 </section><section id="section-2"><h2>问题原因</h2>
 <p>没有充分证实，但非常有可能是 LF 到 CRLF 的替换损坏了 SQLite 的数据库文件。</p>
@@ -160,10 +161,10 @@ document.getElementById('nav-toggle-burger').onclick = function() {
 </div>
   <aside class="postpromonav"><div class="columns tags" itemprop="keywords">
         <div class="column has-text-centered">
-          <a class="tag is-primary is-medium p-category" href="../../categories/pycharm/" rel="tag">PyCharm</a>
+          <a class="tag is-primary is-medium p-category" href="../../categories/pycharm/" rel="tag">pycharm</a>
         </div>
         <div class="column has-text-centered">
-          <a class="tag is-primary is-medium p-category" href="../../categories/sqlite/" rel="tag">SQLite</a>
+          <a class="tag is-primary is-medium p-category" href="../../categories/sqlite/" rel="tag">sqlite</a>
         </div>
   </div>
 
@@ -171,6 +172,7 @@ document.getElementById('nav-toggle-burger').onclick = function() {
   <div class="columns">
     <div class="column">
       <nav class="pagination pager hidden-print"><a class="pagination-previous previous" href="../the-different-linesep-between-codecs-open-and-open-in-python-3/" rel="prev" title="The different linesep between codecs open and open in python 3">上一篇文章</a>
+          <a class="pagination-next next" href="../how-to-config-windows-cmd-proxy/" rel="next" title="设置 Windows Cmd 使用代理服务器的方法">下一篇文章</a>
       </nav>
 </div>
   </div>
@@ -200,7 +202,7 @@ document.getElementById('nav-toggle-burger').onclick = function() {
     </section></article><script>var disqus_shortname="tt4e";(function(){var a=document.createElement("script");a.async=true;a.src="https://"+disqus_shortname+".disqus.com/count.js";(document.getElementsByTagName("head")[0]||document.getElementsByTagName("body")[0]).appendChild(a)}());</script>
 </div>
   </main><footer id="footer" class="footer"><div class="container">
-      Contents © 2023         <a href="mailto:xiaoyao@tt4e.com">逍遥</a> - Powered by         <a href="https://getnikola.com" rel="nofollow">Nikola</a>         
+      Contents © 2024         <a href="mailto:xiaoyao@tt4e.com">逍遥</a> - Powered by         <a href="https://getnikola.com" rel="nofollow">Nikola</a>         
       
     </div>
   </footer>

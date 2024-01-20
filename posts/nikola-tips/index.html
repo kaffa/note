@@ -84,7 +84,7 @@ document.getElementById('nav-toggle-burger').onclick = function() {
           <div class="hero-body hero-nikolatips">
           <div class="container has-text-centered">
               <p class="title">琅環笔记</p>
-              <p class="is-size-6" style="text-align: left">乐博学强记，尝为鹅厂从事。游于洞宫，遇一人于途，问逍遥曰：“君读书几何？”遥曰：“吾之未读者，则二十年内书盖有之也，若二十年外，则吾固已尽读之矣。”其人论议超然，遥颇内服，相与欢甚。因共至一处，大石中忽然有门，引遥入数歩，则别是天地，宫室嵯峨。引入一室中，陈书满架，其人曰：“此PL史也。”又至一室，则曰：“OS志也。”毎室各有奇书，惟一室屋宇颇高，封识甚严，有二犬守之。遥问故，答曰：“此皆操作系统、编程语言、算法分析、生发正骨诸秘籍。”指二犬曰：“此龙也。”历观诸室书，皆Windows以前事，多所未闻者，如「BeOS」、「Solaris」、「FreeBSD」、「LISP」亦皆在焉。遥心乐之，欲赁住数十日，其人笑曰：“君痴矣。此岂可赁地耶？”即命小童送出，遥问地名，对曰：“琅嬛福地也。”</p>
+              <p class="is-size-6" style="text-align: left">有博学强记者，尝为鹅厂从事。游于洞宫，遇一人于途，问逍遥曰：“君读书几何？”遥曰：“吾之未读者，则二十年内书盖有之也，若二十年外，则吾固已尽读之矣。”其人论议超然，遥颇内服，相与欢甚。因共至一处，大石中忽然有门，引遥入数歩，则别是天地，宫室嵯峨。引入一室中，陈书满架，其人曰：“此PL史也。”又至一室，则曰：“OS志也。”毎室各有奇书，惟一室屋宇颇高，封识甚严，有二犬守之。遥问故，答曰：“此皆操作系统、编程语言、算法分析、生发正骨诸秘籍。”指二犬曰：“此龙也。”历观诸室书，皆Windows以前事，多所未闻者，如「BeOS」、「Solaris」、「FreeBSD」、「LISP」亦皆在焉。遥心乐之，欲赁住数十日，其人笑曰：“君痴矣。此岂可赁地耶？”即命小童送出，遥问地名，对曰：“琅嬛福地也。”</p>
           </div>
         </div>
     
@@ -140,42 +140,42 @@ document.getElementById('nav-toggle-burger').onclick = function() {
 </header><div class="section content e-content entry-content" itemprop="articleBody text">
     <section id="nikola-tips"><h2>Nikola Tips</h2>
 <section id="nikola-serve"><h3>1. Nikola serve 自动刷新的命令行怎么写？</h3>
-<div class="code"><pre class="code shell"><a id="rest_code_e65edc90ad874d859b78dbfecd67abb4-1" name="rest_code_e65edc90ad874d859b78dbfecd67abb4-1" href="#rest_code_e65edc90ad874d859b78dbfecd67abb4-1"></a>nikola<span class="w"> </span>auto
+<div class="code"><pre class="code shell"><a id="rest_code_7c8a4aa7bc804eefaddb8a0f52183802-1" name="rest_code_7c8a4aa7bc804eefaddb8a0f52183802-1" href="#rest_code_7c8a4aa7bc804eefaddb8a0f52183802-1"></a>nikola<span class="w"> </span>auto
 </pre></div>
 <p>即使 <strong>conf.py</strong> 中已绑定非127.0.0.1的地址，上面的命令也只会在127.0.0.1启动调试。</p>
 <p>没有去看源代码，可能这样实现从安全角度存在一定的合理性。</p>
 <p>如果需要任意主机都能获得访问，可使用 -a 参数指定地址0.0.0.0</p>
-<div class="code"><pre class="code shell"><a id="rest_code_1d39d1269db44f6182d7b3b248d26b03-1" name="rest_code_1d39d1269db44f6182d7b3b248d26b03-1" href="#rest_code_1d39d1269db44f6182d7b3b248d26b03-1"></a>nikola<span class="w"> </span>auto<span class="w"> </span>-a0.0.0.0
+<div class="code"><pre class="code shell"><a id="rest_code_3aa2e57cee90446abc138eb5da477ec1-1" name="rest_code_3aa2e57cee90446abc138eb5da477ec1-1" href="#rest_code_3aa2e57cee90446abc138eb5da477ec1-1"></a>nikola<span class="w"> </span>auto<span class="w"> </span>-a0.0.0.0
 </pre></div>
 </section><section id="nikola-theme-css"><h3>2. Nikola Theme 如何定制 css</h3>
 <p>如果在模板中有代码</p>
-<div class="code"><pre class="code html+mako"><a id="rest_code_4f8aa68c06f24de6b985e1111b74963f-1" name="rest_code_4f8aa68c06f24de6b985e1111b74963f-1" href="#rest_code_4f8aa68c06f24de6b985e1111b74963f-1"></a><span class="cp">%</span><span class="k">if</span> <span class="n">has_custom_css</span><span class="p">:</span>
-<a id="rest_code_4f8aa68c06f24de6b985e1111b74963f-2" name="rest_code_4f8aa68c06f24de6b985e1111b74963f-2" href="#rest_code_4f8aa68c06f24de6b985e1111b74963f-2"></a>  <span class="p">&lt;</span><span class="nt">link</span> <span class="na">href</span><span class="o">=</span><span class="s">"/assets/css/custom.css"</span> <span class="na">rel</span><span class="o">=</span><span class="s">"stylesheet"</span> <span class="na">type</span><span class="o">=</span><span class="s">"text/css"</span><span class="p">&gt;</span>
-<a id="rest_code_4f8aa68c06f24de6b985e1111b74963f-3" name="rest_code_4f8aa68c06f24de6b985e1111b74963f-3" href="#rest_code_4f8aa68c06f24de6b985e1111b74963f-3"></a><span class="cp">%</span><span class="k">endif</span>
+<div class="code"><pre class="code html+mako"><a id="rest_code_f9b58058a6594ff5b7a3b403386038ee-1" name="rest_code_f9b58058a6594ff5b7a3b403386038ee-1" href="#rest_code_f9b58058a6594ff5b7a3b403386038ee-1"></a><span class="cp">%</span><span class="k">if</span> <span class="n">has_custom_css</span><span class="p">:</span>
+<a id="rest_code_f9b58058a6594ff5b7a3b403386038ee-2" name="rest_code_f9b58058a6594ff5b7a3b403386038ee-2" href="#rest_code_f9b58058a6594ff5b7a3b403386038ee-2"></a>  <span class="p">&lt;</span><span class="nt">link</span> <span class="na">href</span><span class="o">=</span><span class="s">"/assets/css/custom.css"</span> <span class="na">rel</span><span class="o">=</span><span class="s">"stylesheet"</span> <span class="na">type</span><span class="o">=</span><span class="s">"text/css"</span><span class="p">&gt;</span>
+<a id="rest_code_f9b58058a6594ff5b7a3b403386038ee-3" name="rest_code_f9b58058a6594ff5b7a3b403386038ee-3" href="#rest_code_f9b58058a6594ff5b7a3b403386038ee-3"></a><span class="cp">%</span><span class="k">endif</span>
 </pre></div>
 <p>因此，增加 /assets/css/custom.css 文件即可。</p>
 </section><section id="nikola-github"><h3>3. Nikola 如何推送到 GitHub</h3>
 <p>先设置好 git 推送</p>
-<div class="code"><pre class="code sh"><a id="rest_code_d9de9e052e23423bbabb77d76c003fd3-1" name="rest_code_d9de9e052e23423bbabb77d76c003fd3-1" href="#rest_code_d9de9e052e23423bbabb77d76c003fd3-1"></a>git<span class="w"> </span>config<span class="w"> </span>--global<span class="w"> </span>--add<span class="w"> </span>safe.directory<span class="w"> </span>/usr/home/kaffa/web/note.tt4e.com
-<a id="rest_code_d9de9e052e23423bbabb77d76c003fd3-2" name="rest_code_d9de9e052e23423bbabb77d76c003fd3-2" href="#rest_code_d9de9e052e23423bbabb77d76c003fd3-2"></a>git<span class="w"> </span>config<span class="w"> </span>--global<span class="w"> </span>user.email<span class="w"> </span><span class="s2">"yourname@tt4e.com"</span>
-<a id="rest_code_d9de9e052e23423bbabb77d76c003fd3-3" name="rest_code_d9de9e052e23423bbabb77d76c003fd3-3" href="#rest_code_d9de9e052e23423bbabb77d76c003fd3-3"></a>git<span class="w"> </span>config<span class="w"> </span>--global<span class="w"> </span>user.name<span class="w"> </span><span class="s2">"Your Name"</span>
+<div class="code"><pre class="code sh"><a id="rest_code_9f04b1e5bf4a43f3b68dafc67e5f9d87-1" name="rest_code_9f04b1e5bf4a43f3b68dafc67e5f9d87-1" href="#rest_code_9f04b1e5bf4a43f3b68dafc67e5f9d87-1"></a>git<span class="w"> </span>config<span class="w"> </span>--global<span class="w"> </span>--add<span class="w"> </span>safe.directory<span class="w"> </span>/usr/home/kaffa/web/note.tt4e.com
+<a id="rest_code_9f04b1e5bf4a43f3b68dafc67e5f9d87-2" name="rest_code_9f04b1e5bf4a43f3b68dafc67e5f9d87-2" href="#rest_code_9f04b1e5bf4a43f3b68dafc67e5f9d87-2"></a>git<span class="w"> </span>config<span class="w"> </span>--global<span class="w"> </span>user.email<span class="w"> </span><span class="s2">"yourname@tt4e.com"</span>
+<a id="rest_code_9f04b1e5bf4a43f3b68dafc67e5f9d87-3" name="rest_code_9f04b1e5bf4a43f3b68dafc67e5f9d87-3" href="#rest_code_9f04b1e5bf4a43f3b68dafc67e5f9d87-3"></a>git<span class="w"> </span>config<span class="w"> </span>--global<span class="w"> </span>user.name<span class="w"> </span><span class="s2">"Your Name"</span>
 </pre></div>
 <p>将以下内容保存为 aio.sh 脚本</p>
-<div class="code"><pre class="code sh"><a id="rest_code_787f1a3679ad49ccb812d9f4e0a34cf1-1" name="rest_code_787f1a3679ad49ccb812d9f4e0a34cf1-1" href="#rest_code_787f1a3679ad49ccb812d9f4e0a34cf1-1"></a><span class="ch">#!/bin/bash</span>
-<a id="rest_code_787f1a3679ad49ccb812d9f4e0a34cf1-2" name="rest_code_787f1a3679ad49ccb812d9f4e0a34cf1-2" href="#rest_code_787f1a3679ad49ccb812d9f4e0a34cf1-2"></a><span class="c1">#</span>
-<a id="rest_code_787f1a3679ad49ccb812d9f4e0a34cf1-3" name="rest_code_787f1a3679ad49ccb812d9f4e0a34cf1-3" href="#rest_code_787f1a3679ad49ccb812d9f4e0a34cf1-3"></a><span class="c1"># nikola output push to github</span>
-<a id="rest_code_787f1a3679ad49ccb812d9f4e0a34cf1-4" name="rest_code_787f1a3679ad49ccb812d9f4e0a34cf1-4" href="#rest_code_787f1a3679ad49ccb812d9f4e0a34cf1-4"></a><span class="nb">cd</span><span class="w"> </span>~/web/note.tt4e.com/
-<a id="rest_code_787f1a3679ad49ccb812d9f4e0a34cf1-5" name="rest_code_787f1a3679ad49ccb812d9f4e0a34cf1-5" href="#rest_code_787f1a3679ad49ccb812d9f4e0a34cf1-5"></a>nikola<span class="w"> </span>build
-<a id="rest_code_787f1a3679ad49ccb812d9f4e0a34cf1-6" name="rest_code_787f1a3679ad49ccb812d9f4e0a34cf1-6" href="#rest_code_787f1a3679ad49ccb812d9f4e0a34cf1-6"></a>git<span class="w"> </span>add<span class="w"> </span>.
-<a id="rest_code_787f1a3679ad49ccb812d9f4e0a34cf1-7" name="rest_code_787f1a3679ad49ccb812d9f4e0a34cf1-7" href="#rest_code_787f1a3679ad49ccb812d9f4e0a34cf1-7"></a>git<span class="w"> </span>commit<span class="w"> </span>-am<span class="w"> </span><span class="s1">'Kaffa'</span>
-<a id="rest_code_787f1a3679ad49ccb812d9f4e0a34cf1-8" name="rest_code_787f1a3679ad49ccb812d9f4e0a34cf1-8" href="#rest_code_787f1a3679ad49ccb812d9f4e0a34cf1-8"></a>git<span class="w"> </span>push
+<div class="code"><pre class="code sh"><a id="rest_code_5ea4b21a45f94a45b59fd2733fc90e89-1" name="rest_code_5ea4b21a45f94a45b59fd2733fc90e89-1" href="#rest_code_5ea4b21a45f94a45b59fd2733fc90e89-1"></a><span class="ch">#!/bin/bash</span>
+<a id="rest_code_5ea4b21a45f94a45b59fd2733fc90e89-2" name="rest_code_5ea4b21a45f94a45b59fd2733fc90e89-2" href="#rest_code_5ea4b21a45f94a45b59fd2733fc90e89-2"></a><span class="c1">#</span>
+<a id="rest_code_5ea4b21a45f94a45b59fd2733fc90e89-3" name="rest_code_5ea4b21a45f94a45b59fd2733fc90e89-3" href="#rest_code_5ea4b21a45f94a45b59fd2733fc90e89-3"></a><span class="c1"># nikola output push to github</span>
+<a id="rest_code_5ea4b21a45f94a45b59fd2733fc90e89-4" name="rest_code_5ea4b21a45f94a45b59fd2733fc90e89-4" href="#rest_code_5ea4b21a45f94a45b59fd2733fc90e89-4"></a><span class="nb">cd</span><span class="w"> </span>~/web/note.tt4e.com/
+<a id="rest_code_5ea4b21a45f94a45b59fd2733fc90e89-5" name="rest_code_5ea4b21a45f94a45b59fd2733fc90e89-5" href="#rest_code_5ea4b21a45f94a45b59fd2733fc90e89-5"></a>nikola<span class="w"> </span>build
+<a id="rest_code_5ea4b21a45f94a45b59fd2733fc90e89-6" name="rest_code_5ea4b21a45f94a45b59fd2733fc90e89-6" href="#rest_code_5ea4b21a45f94a45b59fd2733fc90e89-6"></a>git<span class="w"> </span>add<span class="w"> </span>.
+<a id="rest_code_5ea4b21a45f94a45b59fd2733fc90e89-7" name="rest_code_5ea4b21a45f94a45b59fd2733fc90e89-7" href="#rest_code_5ea4b21a45f94a45b59fd2733fc90e89-7"></a>git<span class="w"> </span>commit<span class="w"> </span>-am<span class="w"> </span><span class="s1">'Kaffa'</span>
+<a id="rest_code_5ea4b21a45f94a45b59fd2733fc90e89-8" name="rest_code_5ea4b21a45f94a45b59fd2733fc90e89-8" href="#rest_code_5ea4b21a45f94a45b59fd2733fc90e89-8"></a>git<span class="w"> </span>push
 </pre></div>
 <p>先 su 到 root 用户，然后运行以下命令，再 su 会当前用户</p>
-<div class="code"><pre class="code sh"><a id="rest_code_1d02a42272eb47dc861444810555eed1-1" name="rest_code_1d02a42272eb47dc861444810555eed1-1" href="#rest_code_1d02a42272eb47dc861444810555eed1-1"></a>chown<span class="w"> </span>-R<span class="w"> </span>kaffa:wheel<span class="w"> </span>.git
-<a id="rest_code_1d02a42272eb47dc861444810555eed1-2" name="rest_code_1d02a42272eb47dc861444810555eed1-2" href="#rest_code_1d02a42272eb47dc861444810555eed1-2"></a>chmod<span class="w"> </span>-R<span class="w"> </span><span class="m">777</span><span class="w"> </span>./aio.sh
+<div class="code"><pre class="code sh"><a id="rest_code_6ade0f7afb7542c79a253bfb3eb49d6e-1" name="rest_code_6ade0f7afb7542c79a253bfb3eb49d6e-1" href="#rest_code_6ade0f7afb7542c79a253bfb3eb49d6e-1"></a>chown<span class="w"> </span>-R<span class="w"> </span>kaffa:wheel<span class="w"> </span>.git
+<a id="rest_code_6ade0f7afb7542c79a253bfb3eb49d6e-2" name="rest_code_6ade0f7afb7542c79a253bfb3eb49d6e-2" href="#rest_code_6ade0f7afb7542c79a253bfb3eb49d6e-2"></a>chmod<span class="w"> </span>-R<span class="w"> </span><span class="m">777</span><span class="w"> </span>./aio.sh
 </pre></div>
 <p>如果遇到错误提示 Unable to create ** /.git/index.lock: Permission denied，则需要</p>
-<div class="code"><pre class="code sh"><a id="rest_code_dc717a3849404bce875db4479bcbf8f3-1" name="rest_code_dc717a3849404bce875db4479bcbf8f3-1" href="#rest_code_dc717a3849404bce875db4479bcbf8f3-1"></a>chown<span class="w"> </span>-R<span class="w"> </span>kaffa:wheel<span class="w"> </span>.git
+<div class="code"><pre class="code sh"><a id="rest_code_add8012898b6406297e9c9bacbfe2b36-1" name="rest_code_add8012898b6406297e9c9bacbfe2b36-1" href="#rest_code_add8012898b6406297e9c9bacbfe2b36-1"></a>chown<span class="w"> </span>-R<span class="w"> </span>kaffa:wheel<span class="w"> </span>.git
 </pre></div>
 <p>其中 用户名和所属组，可以用 groups 命令查看。</p>
 <p>完成书上步骤后，则每次可以运行 aio.sh 来推送 GitHub，GitHub 收到推送后，会使用 GitHub Action 来处理发布。</p>
@@ -191,7 +191,7 @@ document.getElementById('nav-toggle-burger').onclick = function() {
 </ol>
 <p>补充：</p>
 <p>采用这种方法时，Github Pages 的 Build and deployment 一节，source 下拉框中，要选择 Deploy from a branch，而不是 GitHub Actions。</p>
-<div class="code"><pre class="code text"><a id="rest_code_88a550dd602f4e888f6d966c41915c7e-1" name="rest_code_88a550dd602f4e888f6d966c41915c7e-1" href="#rest_code_88a550dd602f4e888f6d966c41915c7e-1"></a>nikola github_deploy
+<div class="code"><pre class="code text"><a id="rest_code_d4737f445d5143c3b1250b09aad70adf-1" name="rest_code_d4737f445d5143c3b1250b09aad70adf-1" href="#rest_code_d4737f445d5143c3b1250b09aad70adf-1"></a>nikola github_deploy
 </pre></div>
 </section></section></section><section id="section-1"><h2>脚注</h2>
 <aside class="footnote-list brackets"><aside class="footnote brackets" id="fn1" role="doc-footnote"><span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#footnote-reference-1">1</a><span class="fn-bracket">]</span></span>
@@ -238,7 +238,7 @@ document.getElementById('nav-toggle-burger').onclick = function() {
     </section></article><script>var disqus_shortname="tt4e";(function(){var a=document.createElement("script");a.async=true;a.src="https://"+disqus_shortname+".disqus.com/count.js";(document.getElementsByTagName("head")[0]||document.getElementsByTagName("body")[0]).appendChild(a)}());</script>
 </div>
   </main><footer id="footer" class="footer"><div class="container">
-      Contents © 2023         <a href="mailto:xiaoyao@tt4e.com">逍遥</a> - Powered by         <a href="https://getnikola.com" rel="nofollow">Nikola</a>         
+      Contents © 2024         <a href="mailto:xiaoyao@tt4e.com">逍遥</a> - Powered by         <a href="https://getnikola.com" rel="nofollow">Nikola</a>         
       
     </div>
   </footer>

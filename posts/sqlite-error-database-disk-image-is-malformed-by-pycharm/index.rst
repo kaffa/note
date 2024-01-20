@@ -1,7 +1,7 @@
 .. title: SQLite Error database disk image is malformed by PyCharm
 .. slug: sqlite-error-database-disk-image-is-malformed-by-pycharm
 .. date: 2023-12-13 21:14:50 UTC+08:00
-.. tags: PyCharm,SQLite
+.. tags: pycharm,sqlite
 .. category: Tips
 .. link: 
 .. description: 
