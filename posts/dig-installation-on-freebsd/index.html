@@ -3,19 +3,18 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width">
-<title>Taking Notes In Orgmode With Nikola | 琅環笔记</title>
+<title>Dig Installation on FreeBSD | 琅環笔记</title>
 <meta name="theme-color" content="#FED43F">
 <meta name="generator" content="Nikola (getnikola.com)">
 <link rel="alternate" type="application/rss+xml" title="RSS" href="../../rss.xml">
-<link rel="canonical" href="https://note.tt4e.com/posts/taking-notes-in-orgmode-with-nikola/">
+<link rel="canonical" href="https://note.tt4e.com/posts/dig-installation-on-freebsd/">
 <link href="../../assets/css/rst.css" rel="stylesheet" type="text/css">
 <link href="../../assets/css/code.css" rel="stylesheet" type="text/css">
 <link href="../../assets/css/font-awesome.css" rel="stylesheet" type="text/css">
 <link href="../../assets/css/styles.css" rel="stylesheet" type="text/css">
 <link href="../../assets/css/custom.css" rel="stylesheet" type="text/css">
 <!--[if lt IE 9]><script src="../../assets/js/html5.js"></script><![endif]--><meta name="author" content="逍遥">
-<link rel="prev" href="../nikola-tips/" title="Nikola Tips" type="text/html">
-<link rel="next" href="../everedit-sftp-error-with-freebsd/" title="EverEdit SFTP Error With FreeBSD" type="text/html">
+<link rel="prev" href="../how-to-config-windows-cmd-proxy/" title="设置 Windows Cmd 使用代理服务器的方法" type="text/html">
 </head>
 <body>
 <script type="text/javascript">
@@ -79,7 +78,7 @@ document.getElementById('nav-toggle-burger').onclick = function() {
     <!-- Hero content: will be in the middle -->
     
   
-          <div class="hero-body hero-takingnotesinorgmodewithnikola">
+          <div class="hero-body hero-diginstallationonfreebsd">
           <div class="container has-text-centered">
               <p class="title">琅環笔记</p>
               <p class="is-size-6" style="text-align: left">有博学强记者，尝为鹅厂从事。游于洞宫，遇一人于途，问逍遥曰：“君读书几何？”遥曰：“吾之未读者，则二十年内书盖有之也，若二十年外，则吾固已尽读之矣。”其人论议超然，遥颇内服，相与欢甚。因共至一处，大石中忽然有门，引遥入数歩，则别是天地，宫室嵯峨。引入一室中，陈书满架，其人曰：“此PL史也。”又至一室，则曰：“OS志也。”毎室各有奇书，惟一室屋宇颇高，封识甚严，有二犬守之。遥问故，答曰：“此皆操作系统、编程语言、算法分析、生发正骨诸秘籍。”指二犬曰：“此龙也。”历观诸室书，皆Windows以前事，多所未闻者，如「BeOS」、「Solaris」、「FreeBSD」、「LISP」亦皆在焉。遥心乐之，欲赁住数十日，其人笑曰：“君痴矣。此岂可赁地耶？”即命小童送出，遥问地名，对曰：“琅嬛福地也。”</p>
@@ -91,7 +90,7 @@ document.getElementById('nav-toggle-burger').onclick = function() {
   </section><main id="content" class="section section-main"><div class="container">
       
 <article class="post-text h-entry hentry postpage" itemscope="itemscope" itemtype="http://schema.org/Article"><header class="heading"><h1 class="title is-1 p-name entry-title" itemprop="headline name">
-    <a href="." class="u-url">Taking Notes In Orgmode With Nikola</a>
+    <a href="." class="u-url">Dig Installation on FreeBSD</a>
   </h1>
 
   <div class="level metadata">
@@ -110,14 +109,14 @@ document.getElementById('nav-toggle-burger').onclick = function() {
       <div class="level-item">
         <p class="dateline">
           <a href="." rel="bookmark">
-            <time class="published dt-published" datetime="2023-11-30T17:34:15+08:00" itemprop="datePublished" title="2023-11-30 17:34">2023-11-30 17:34</time></a>
+            <time class="published dt-published" datetime="2024-01-22T02:53:20+08:00" itemprop="datePublished" title="2024-01-22 02:53">2024-01-22 02:53</time></a>
         </p>
       </div>
       
         <div class="level-item">
           <p class="commentline">
     
-    <a href="#disqus_thread" data-disqus-identifier="cache/posts/taking-notes-in-orgmode-with-nikola.html">评论</a>
+    <a href="#disqus_thread" data-disqus-identifier="cache/posts/dig-installation-on-freebsd.html">评论</a>
 
 </p>
         </div>
@@ -125,7 +124,7 @@ document.getElementById('nav-toggle-burger').onclick = function() {
       
   <div class="level-item">
     <p class="sourceline">
-      <a href="index.org" id="sourcelink">源文件</a>
+      <a href="index.rst" id="sourcelink">源文件</a>
     </p>
   </div>
 
@@ -135,85 +134,23 @@ document.getElementById('nav-toggle-burger').onclick = function() {
   
 
 </header><div class="section content e-content entry-content" itemprop="articleBody text">
-    <div id="outline-container-orgaf0893a" class="outline-2">
-<h2 id="orgaf0893a">步骤</h2>
-<div class="outline-text-2" id="text-orgaf0893a">
-<ol class="org-ol">
-<li>安装 emacs，最新版已内置 Org mode</li>
-<li>安装 nikola</li>
-<li>安装 nikola orgmode 插件，并按插件目录下的 conf.py.sample 修改 conf.py</li>
-<li>开始写笔记</li>
-</ol>
-<div class="highlight"><pre><span></span>nikola<span class="w"> </span>new_post<span class="w"> </span>-f<span class="w"> </span>orgmode<span class="w"> </span>-e
+    <p>su 后，使用有权限的用户安装以下 package</p>
+<div class="code"><pre class="code sh"><a id="rest_code_918a94a74b53444488d3d2ad8f3edf5d-1" name="rest_code_918a94a74b53444488d3d2ad8f3edf5d-1" href="#rest_code_918a94a74b53444488d3d2ad8f3edf5d-1"></a>pkg<span class="w"> </span>install<span class="w"> </span>dns/bind-tools
 </pre></div>
-
-<ol class="org-ol">
-<li>预览</li>
-</ol>
-<div class="highlight"><pre><span></span>nikola<span class="w"> </span>auto<span class="w"> </span>-a0.0.0.0
-</pre></div>
-
-<ol class="org-ol">
-<li>发布到 GitHub</li>
-</ol>
-<p>
-设置 conf.py
-</p>
-<div class="highlight"><pre><span></span><span class="n">GITHUB_SOURCE_BRANCH</span> <span class="o">=</span> <span class="s1">'sources'</span>
-<span class="n">GITHUB_DEPLOY_BRANCH</span> <span class="o">=</span> <span class="s1">'master'</span>
-</pre></div>
-
-<p>
-发布
-</p>
-<div class="highlight"><pre><span></span>$<span class="w"> </span>nikola<span class="w"> </span>github_deploy
-</pre></div>
-</div>
-</div>
-
-<div id="outline-container-org90e4093" class="outline-2">
-<h2 id="org90e4093">其他</h2>
-<div class="outline-text-2" id="text-org90e4093">
-<ol class="org-ol">
-<li>修改默认编辑器为 emacs</li>
-</ol>
-<div class="highlight"><pre><span></span>emacs<span class="w"> </span>~/.profile
-</pre></div>
-
-<div class="highlight"><pre><span></span>EDITOR=emacs
-</pre></div>
-
-<ol class="org-ol">
-<li>显示当前 Shell</li>
-</ol>
-<div class="highlight"><pre><span></span>echo $0
-</pre></div>
-
-
-<hr>
-<p>
-我在房间里洗个澡
-同时在思考中国哪个rapper能比我屌
-</p>
-
-<hr>
-</div>
-</div>
   </div>
   <aside class="postpromonav"><div class="columns tags" itemprop="keywords">
         <div class="column has-text-centered">
-          <a class="tag is-primary is-medium p-category" href="../../categories/nikola/" rel="tag">nikola</a>
+          <a class="tag is-primary is-medium p-category" href="../../categories/dig/" rel="tag">dig</a>
         </div>
         <div class="column has-text-centered">
-          <a class="tag is-primary is-medium p-category" href="../../categories/orgmode/" rel="tag">orgmode</a>
+          <a class="tag is-primary is-medium p-category" href="../../categories/freebsd/" rel="tag">freebsd</a>
         </div>
   </div>
 
     
   <div class="columns">
     <div class="column">
-      <nav class="pagination pager hidden-print"><a class="pagination-previous previous" href="../nikola-tips/" rel="prev" title="Nikola Tips">上一篇文章</a>
-          <a class="pagination-next next" href="../everedit-sftp-error-with-freebsd/" rel="next" title="EverEdit SFTP Error With FreeBSD">下一篇文章</a>
+      <nav class="pagination pager hidden-print"><a class="pagination-previous previous" href="../how-to-config-windows-cmd-proxy/" rel="prev" title="设置 Windows Cmd 使用代理服务器的方法">上一篇文章</a>
       </nav>
 </div>
   </div>
@@ -224,9 +161,9 @@ document.getElementById('nav-toggle-burger').onclick = function() {
         <div id="disqus_thread"></div>
         <script>
         var disqus_shortname ="tt4e",
-            disqus_url="https://note.tt4e.com/posts/taking-notes-in-orgmode-with-nikola/",
-        disqus_title="Taking Notes In Orgmode With Nikola",
-        disqus_identifier="cache/posts/taking-notes-in-orgmode-with-nikola.html",
+            disqus_url="https://note.tt4e.com/posts/dig-installation-on-freebsd/",
+        disqus_title="Dig Installation on FreeBSD",
+        disqus_identifier="cache/posts/dig-installation-on-freebsd.html",
         disqus_config = function () {
             this.language = "zh_cn";
         };

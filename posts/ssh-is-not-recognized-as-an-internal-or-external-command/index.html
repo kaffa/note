@@ -137,14 +137,14 @@ document.getElementById('nav-toggle-burger').onclick = function() {
 </header><div class="section content e-content entry-content" itemprop="articleBody text">
     <section id="section-1"><h2>问题现象</h2>
 <p>当在 <a class="reference external" href="https://github.com/microsoft/terminal">Windows Terminal</a> 中运行 <em>ssh</em> 命令时，终端中提示：</p>
-<div class="code"><pre class="code text"><a id="rest_code_28fbeeb3aec04105bef4102bc3b6eebd-1" name="rest_code_28fbeeb3aec04105bef4102bc3b6eebd-1" href="#rest_code_28fbeeb3aec04105bef4102bc3b6eebd-1"></a>'ssh'不是内部或外部命令，也不是可运行的程序或批处理文件
+<div class="code"><pre class="code text"><a id="rest_code_b3ae1b7272764e4fa9ce6f7970d5f761-1" name="rest_code_b3ae1b7272764e4fa9ce6f7970d5f761-1" href="#rest_code_b3ae1b7272764e4fa9ce6f7970d5f761-1"></a>'ssh'不是内部或外部命令，也不是可运行的程序或批处理文件
 </pre></div>
 <p>English Version</p>
-<div class="code"><pre class="code text"><a id="rest_code_74780fff5d6b4049b6744ed34bd4b13a-1" name="rest_code_74780fff5d6b4049b6744ed34bd4b13a-1" href="#rest_code_74780fff5d6b4049b6744ed34bd4b13a-1"></a>'ssh' is not recognized as an internal or external command, operable program or batch file.
+<div class="code"><pre class="code text"><a id="rest_code_89561ea352db426a849222cb09eeb8e9-1" name="rest_code_89561ea352db426a849222cb09eeb8e9-1" href="#rest_code_89561ea352db426a849222cb09eeb8e9-1"></a>'ssh' is not recognized as an internal or external command, operable program or batch file.
 </pre></div>
 </section><section id="section-2"><h2>解决方法</h2>
 <p>在 Windows 设置中安装 OpenSSH 客户端，且在环境变量 PATH 中加入：</p>
-<div class="code"><pre class="code text"><a id="rest_code_3bfeeb9f26c2496fa5d09aef5c0eff5d-1" name="rest_code_3bfeeb9f26c2496fa5d09aef5c0eff5d-1" href="#rest_code_3bfeeb9f26c2496fa5d09aef5c0eff5d-1"></a>C:\Windows\System32\OpenSSH
+<div class="code"><pre class="code text"><a id="rest_code_4233cad73f38441dab0d5553c418e4e9-1" name="rest_code_4233cad73f38441dab0d5553c418e4e9-1" href="#rest_code_4233cad73f38441dab0d5553c418e4e9-1"></a>C:\Windows\System32\OpenSSH
 </pre></div>
 <p>验证方法：检查以上目录中是否有 ssh.exe 文件。</p>
 </section>
