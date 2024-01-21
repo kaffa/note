@@ -17,3 +17,4 @@ Windows cmd proxy 直给答案
    set proxy=https://127.0.0.1:6868
 
 
+看起来，也适用于 Linux FreeBSD
