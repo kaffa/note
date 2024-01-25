@@ -15,7 +15,7 @@
 <link href="assets/css/font-awesome.css" rel="stylesheet" type="text/css">
 <link href="assets/css/styles.css" rel="stylesheet" type="text/css">
 <link href="assets/css/custom.css" rel="stylesheet" type="text/css">
-<!--[if lt IE 9]><script src="assets/js/html5.js"></script><![endif]--><link rel="prefetch" href="posts/dig-installation-on-freebsd/" type="text/html">
+<!--[if lt IE 9]><script src="assets/js/html5.js"></script><![endif]--><link rel="prefetch" href="posts/get-localhost-ipv6-with-python/" type="text/html">
 </head>
 <body>
 <script type="text/javascript">
@@ -91,6 +91,58 @@ document.getElementById('nav-toggle-burger').onclick = function() {
 
   
 <div class="postindex">
+    <div class="columns">
+      <div class="column">
+        <div class="card post-card">
+          <article class="h-entry post-text"><div class="card-content">
+              <div class="media metadata">
+                <div class="media-content">
+                  <p class="title is-2 p-name entry-title">
+                    <a href="posts/get-localhost-ipv6-with-python/" class="u-url">Get Localhost IPv6 with Python</a>
+                  </p>
+                </div>
+                  <div class="media-right">
+                    <span class="icon">
+                      <i class="fa fa-file-text-o" aria-hidden="true"></i>
+                    </span>
+                    <span class="visuallyhidden">text</span>
+                  </div>
+              </div>
+                <div class="content e-content entry-content">
+                  <div class="code"><pre class="code python"><a id="rest_code_5bc9d11bc71a492bae42486615b27c83-1" name="rest_code_5bc9d11bc71a492bae42486615b27c83-1" href="posts/get-localhost-ipv6-with-python/#rest_code_5bc9d11bc71a492bae42486615b27c83-1"></a><span class="k">def</span> <span class="nf">get_ipv6</span><span class="p">():</span>
+<a id="rest_code_5bc9d11bc71a492bae42486615b27c83-2" name="rest_code_5bc9d11bc71a492bae42486615b27c83-2" href="posts/get-localhost-ipv6-with-python/#rest_code_5bc9d11bc71a492bae42486615b27c83-2"></a>    <span class="kn">import</span> <span class="nn">socket</span>
+<a id="rest_code_5bc9d11bc71a492bae42486615b27c83-3" name="rest_code_5bc9d11bc71a492bae42486615b27c83-3" href="posts/get-localhost-ipv6-with-python/#rest_code_5bc9d11bc71a492bae42486615b27c83-3"></a>    <span class="n">host_ipv6</span> <span class="o">=</span> <span class="p">[]</span>
+<a id="rest_code_5bc9d11bc71a492bae42486615b27c83-4" name="rest_code_5bc9d11bc71a492bae42486615b27c83-4" href="posts/get-localhost-ipv6-with-python/#rest_code_5bc9d11bc71a492bae42486615b27c83-4"></a>    <span class="n">ips</span> <span class="o">=</span> <span class="n">socket</span><span class="o">.</span><span class="n">getaddrinfo</span><span class="p">(</span><span class="n">socket</span><span class="o">.</span><span class="n">gethostname</span><span class="p">(),</span><span class="mi">80</span><span class="p">)</span>
+<a id="rest_code_5bc9d11bc71a492bae42486615b27c83-5" name="rest_code_5bc9d11bc71a492bae42486615b27c83-5" href="posts/get-localhost-ipv6-with-python/#rest_code_5bc9d11bc71a492bae42486615b27c83-5"></a>    <span class="k">for</span> <span class="n">ip</span> <span class="ow">in</span> <span class="n">ips</span><span class="p">:</span>
+<a id="rest_code_5bc9d11bc71a492bae42486615b27c83-6" name="rest_code_5bc9d11bc71a492bae42486615b27c83-6" href="posts/get-localhost-ipv6-with-python/#rest_code_5bc9d11bc71a492bae42486615b27c83-6"></a>        <span class="k">if</span> <span class="n">ip</span><span class="p">[</span><span class="mi">4</span><span class="p">][</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">startswith</span><span class="p">(</span><span class="s1">'24'</span><span class="p">):</span>
+<a id="rest_code_5bc9d11bc71a492bae42486615b27c83-7" name="rest_code_5bc9d11bc71a492bae42486615b27c83-7" href="posts/get-localhost-ipv6-with-python/#rest_code_5bc9d11bc71a492bae42486615b27c83-7"></a>        <span class="c1">#2408 中国联通</span>
+<a id="rest_code_5bc9d11bc71a492bae42486615b27c83-8" name="rest_code_5bc9d11bc71a492bae42486615b27c83-8" href="posts/get-localhost-ipv6-with-python/#rest_code_5bc9d11bc71a492bae42486615b27c83-8"></a>        <span class="c1">#2409 中国移动</span>
+<a id="rest_code_5bc9d11bc71a492bae42486615b27c83-9" name="rest_code_5bc9d11bc71a492bae42486615b27c83-9" href="posts/get-localhost-ipv6-with-python/#rest_code_5bc9d11bc71a492bae42486615b27c83-9"></a>        <span class="c1">#240e 中国电信</span>
+<a id="rest_code_5bc9d11bc71a492bae42486615b27c83-10" name="rest_code_5bc9d11bc71a492bae42486615b27c83-10" href="posts/get-localhost-ipv6-with-python/#rest_code_5bc9d11bc71a492bae42486615b27c83-10"></a>            <span class="c1">#print(ip[4][0])</span>
+<a id="rest_code_5bc9d11bc71a492bae42486615b27c83-11" name="rest_code_5bc9d11bc71a492bae42486615b27c83-11" href="posts/get-localhost-ipv6-with-python/#rest_code_5bc9d11bc71a492bae42486615b27c83-11"></a>            <span class="n">host_ipv6</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">ip</span><span class="p">[</span><span class="mi">4</span><span class="p">][</span><span class="mi">0</span><span class="p">])</span>
+<a id="rest_code_5bc9d11bc71a492bae42486615b27c83-12" name="rest_code_5bc9d11bc71a492bae42486615b27c83-12" href="posts/get-localhost-ipv6-with-python/#rest_code_5bc9d11bc71a492bae42486615b27c83-12"></a>    <span class="k">return</span> <span class="n">host_ipv6</span>
+</pre></div>
+                </div>
+            </div>
+
+            <footer class="card-footer"><p class="card-footer-item byline author vcard">
+                <span class="byline-name fn">
+                    逍遥
+                </span>
+              </p>
+              <p class="card-footer-item dateline">
+                <a href="posts/get-localhost-ipv6-with-python/" rel="bookmark">
+                  <time class="published dt-published" datetime="2024-01-25T12:14:56+08:00" title="2024-01-25 12:14">2024-01-25 12:14</time></a>
+              </p>
+                <p class="card-footer-item commentline">
+    
+    <a href="posts/get-localhost-ipv6-with-python/#disqus_thread" data-disqus-identifier="cache/posts/get-localhost-ipv6-with-python.html">评论</a>
+
+</p>
+            </footer></article>
+</div>
+      </div>
+    </div>
     <div class="columns">
       <div class="column">
         <div class="card post-card">
@@ -684,58 +736,6 @@ document.getElementById('nav-toggle-burger').onclick = function() {
                 <p class="card-footer-item commentline">
     
     <a href="posts/nikola-tips/#disqus_thread" data-disqus-identifier="cache/posts/nikola-tips.html">评论</a>
-
-</p>
-            </footer></article>
-</div>
-      </div>
-    </div>
-    <div class="columns">
-      <div class="column">
-        <div class="card post-card">
-          <article class="h-entry post-text"><div class="card-content">
-              <div class="media metadata">
-                <div class="media-content">
-                  <p class="title is-2 p-name entry-title">
-                    <a href="posts/ssh-is-not-recognized-as-an-internal-or-external-command/" class="u-url">「'ssh'不是内部或外部命令，也不是可运行的程序或批处理文件」的解决方法</a>
-                  </p>
-                </div>
-                  <div class="media-right">
-                    <span class="icon">
-                      <i class="fa fa-file-text-o" aria-hidden="true"></i>
-                    </span>
-                    <span class="visuallyhidden">text</span>
-                  </div>
-              </div>
-                <div class="content e-content entry-content">
-                  <section id="section-1"><h2>问题现象</h2>
-<p>当在 <a class="reference external" href="https://github.com/microsoft/terminal">Windows Terminal</a> 中运行 <em>ssh</em> 命令时，终端中提示：</p>
-<div class="code"><pre class="code text"><a id="rest_code_b3ae1b7272764e4fa9ce6f7970d5f761-1" name="rest_code_b3ae1b7272764e4fa9ce6f7970d5f761-1" href="posts/ssh-is-not-recognized-as-an-internal-or-external-command/#rest_code_b3ae1b7272764e4fa9ce6f7970d5f761-1"></a>'ssh'不是内部或外部命令，也不是可运行的程序或批处理文件
-</pre></div>
-<p>English Version</p>
-<div class="code"><pre class="code text"><a id="rest_code_89561ea352db426a849222cb09eeb8e9-1" name="rest_code_89561ea352db426a849222cb09eeb8e9-1" href="posts/ssh-is-not-recognized-as-an-internal-or-external-command/#rest_code_89561ea352db426a849222cb09eeb8e9-1"></a>'ssh' is not recognized as an internal or external command, operable program or batch file.
-</pre></div>
-</section><section id="section-2"><h2>解决方法</h2>
-<p>在 Windows 设置中安装 OpenSSH 客户端，且在环境变量 PATH 中加入：</p>
-<div class="code"><pre class="code text"><a id="rest_code_4233cad73f38441dab0d5553c418e4e9-1" name="rest_code_4233cad73f38441dab0d5553c418e4e9-1" href="posts/ssh-is-not-recognized-as-an-internal-or-external-command/#rest_code_4233cad73f38441dab0d5553c418e4e9-1"></a>C:\Windows\System32\OpenSSH
-</pre></div>
-<p>验证方法：检查以上目录中是否有 ssh.exe 文件。</p>
-</section>
-</div>
-            </div>
-
-            <footer class="card-footer"><p class="card-footer-item byline author vcard">
-                <span class="byline-name fn">
-                    逍遥
-                </span>
-              </p>
-              <p class="card-footer-item dateline">
-                <a href="posts/ssh-is-not-recognized-as-an-internal-or-external-command/" rel="bookmark">
-                  <time class="published dt-published" datetime="2023-11-27T13:17:12+08:00" title="2023-11-27 13:17">2023-11-27 13:17</time></a>
-              </p>
-                <p class="card-footer-item commentline">
-    
-    <a href="posts/ssh-is-not-recognized-as-an-internal-or-external-command/#disqus_thread" data-disqus-identifier="cache/posts/ssh-is-not-recognized-as-an-internal-or-external-command.html">评论</a>
 
 </p>
             </footer></article>

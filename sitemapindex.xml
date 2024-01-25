@@ -15,7 +15,7 @@
  </sitemap>
  <sitemap>
   <loc>https://note.tt4e.com/categories/cat_python.xml</loc>
-  <lastmod>2024-01-20T15:52:00Z</lastmod>
+  <lastmod>2024-01-25T04:17:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>https://note.tt4e.com/categories/cat_tips.xml</loc>
@@ -36,6 +36,10 @@
  <sitemap>
   <loc>https://note.tt4e.com/categories/freebsd.xml</loc>
   <lastmod>2024-01-21T18:56:00Z</lastmod>
+ </sitemap>
+ <sitemap>
+  <loc>https://note.tt4e.com/categories/ipv6.xml</loc>
+  <lastmod>2024-01-25T04:17:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>https://note.tt4e.com/categories/libcurl.xml</loc>
@@ -99,10 +103,10 @@
  </sitemap>
  <sitemap>
   <loc>https://note.tt4e.com/rss.xml</loc>
-  <lastmod>2024-01-21T18:56:00Z</lastmod>
+  <lastmod>2024-01-25T04:17:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>https://note.tt4e.com/sitemap.xml</loc>
-  <lastmod>2024-01-21T18:56:00Z</lastmod>
+  <lastmod>2024-01-25T04:17:00Z</lastmod>
  </sitemap>
 </sitemapindex>

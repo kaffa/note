@@ -98,6 +98,58 @@ document.getElementById('nav-toggle-burger').onclick = function() {
               <div class="media metadata">
                 <div class="media-content">
                   <p class="title is-2 p-name entry-title">
+                    <a href="posts/ssh-is-not-recognized-as-an-internal-or-external-command/" class="u-url">「'ssh'不是内部或外部命令，也不是可运行的程序或批处理文件」的解决方法</a>
+                  </p>
+                </div>
+                  <div class="media-right">
+                    <span class="icon">
+                      <i class="fa fa-file-text-o" aria-hidden="true"></i>
+                    </span>
+                    <span class="visuallyhidden">text</span>
+                  </div>
+              </div>
+                <div class="content e-content entry-content">
+                  <section id="section-1"><h2>问题现象</h2>
+<p>当在 <a class="reference external" href="https://github.com/microsoft/terminal">Windows Terminal</a> 中运行 <em>ssh</em> 命令时，终端中提示：</p>
+<div class="code"><pre class="code text"><a id="rest_code_b3ae1b7272764e4fa9ce6f7970d5f761-1" name="rest_code_b3ae1b7272764e4fa9ce6f7970d5f761-1" href="posts/ssh-is-not-recognized-as-an-internal-or-external-command/#rest_code_b3ae1b7272764e4fa9ce6f7970d5f761-1"></a>'ssh'不是内部或外部命令，也不是可运行的程序或批处理文件
+</pre></div>
+<p>English Version</p>
+<div class="code"><pre class="code text"><a id="rest_code_89561ea352db426a849222cb09eeb8e9-1" name="rest_code_89561ea352db426a849222cb09eeb8e9-1" href="posts/ssh-is-not-recognized-as-an-internal-or-external-command/#rest_code_89561ea352db426a849222cb09eeb8e9-1"></a>'ssh' is not recognized as an internal or external command, operable program or batch file.
+</pre></div>
+</section><section id="section-2"><h2>解决方法</h2>
+<p>在 Windows 设置中安装 OpenSSH 客户端，且在环境变量 PATH 中加入：</p>
+<div class="code"><pre class="code text"><a id="rest_code_4233cad73f38441dab0d5553c418e4e9-1" name="rest_code_4233cad73f38441dab0d5553c418e4e9-1" href="posts/ssh-is-not-recognized-as-an-internal-or-external-command/#rest_code_4233cad73f38441dab0d5553c418e4e9-1"></a>C:\Windows\System32\OpenSSH
+</pre></div>
+<p>验证方法：检查以上目录中是否有 ssh.exe 文件。</p>
+</section>
+</div>
+            </div>
+
+            <footer class="card-footer"><p class="card-footer-item byline author vcard">
+                <span class="byline-name fn">
+                    逍遥
+                </span>
+              </p>
+              <p class="card-footer-item dateline">
+                <a href="posts/ssh-is-not-recognized-as-an-internal-or-external-command/" rel="bookmark">
+                  <time class="published dt-published" datetime="2023-11-27T13:17:12+08:00" title="2023-11-27 13:17">2023-11-27 13:17</time></a>
+              </p>
+                <p class="card-footer-item commentline">
+    
+    <a href="posts/ssh-is-not-recognized-as-an-internal-or-external-command/#disqus_thread" data-disqus-identifier="cache/posts/ssh-is-not-recognized-as-an-internal-or-external-command.html">评论</a>
+
+</p>
+            </footer></article>
+</div>
+      </div>
+    </div>
+    <div class="columns">
+      <div class="column">
+        <div class="card post-card">
+          <article class="h-entry post-text"><div class="card-content">
+              <div class="media metadata">
+                <div class="media-content">
+                  <p class="title is-2 p-name entry-title">
                     <a href="posts/threads-and-async-in-python/" class="u-url">Threads and Async in Python</a>
                   </p>
                 </div>

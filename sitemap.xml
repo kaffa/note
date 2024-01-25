@@ -19,11 +19,11 @@
  </url>
  <url>
   <loc>https://note.tt4e.com/archive.html</loc>
-  <lastmod>2024-01-21T18:56:00Z</lastmod>
+  <lastmod>2024-01-25T04:17:00Z</lastmod>
  </url>
  <url>
   <loc>https://note.tt4e.com/categories/</loc>
-  <lastmod>2024-01-21T18:56:00Z</lastmod>
+  <lastmod>2024-01-25T04:17:00Z</lastmod>
  </url>
  <url>
   <loc>https://note.tt4e.com/categories/asyncio/</loc>
@@ -56,6 +56,10 @@
  <url>
   <loc>https://note.tt4e.com/categories/freebsd/</loc>
   <lastmod>2024-01-20T15:52:00Z</lastmod>
+ </url>
+ <url>
+  <loc>https://note.tt4e.com/categories/ipv6/</loc>
+  <lastmod>2024-01-25T04:17:00Z</lastmod>
  </url>
  <url>
   <loc>https://note.tt4e.com/categories/libcurl/</loc>
@@ -119,7 +123,7 @@
  </url>
  <url>
   <loc>https://note.tt4e.com/index-1.html</loc>
-  <lastmod>2024-01-21T18:56:00Z</lastmod>
+  <lastmod>2024-01-25T04:17:00Z</lastmod>
  </url>
  <url>
   <loc>https://note.tt4e.com/listings/</loc>
@@ -200,6 +204,10 @@
  <url>
   <loc>https://note.tt4e.com/posts/everedit-sftp-error-with-freebsd/</loc>
   <lastmod>2024-01-20T15:52:00Z</lastmod>
+ </url>
+ <url>
+  <loc>https://note.tt4e.com/posts/get-localhost-ipv6-with-python/</loc>
+  <lastmod>2024-01-25T04:17:00Z</lastmod>
  </url>
  <url>
   <loc>https://note.tt4e.com/posts/how-to-config-windows-cmd-proxy/</loc>
