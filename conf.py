@@ -142,6 +142,9 @@ TRANSLATIONS_PATTERN = '{path}.{lang}.{ext}'
 
 NAVIGATION_LINKS = {
     DEFAULT_LANG: (
+        ("/categories/cat_notes", "笔记"),
+        ("/categories/cat_tips", "填坑"),
+        ("/categories/cat_python", "Python"),
         ("/archive.html", "文章归档"),
         ("/categories/", "标签"),
         ("/rss.xml", "RSS 源"),
