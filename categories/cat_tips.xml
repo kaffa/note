@@ -1,5 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
-<?xml-stylesheet type="text/xsl" href="../assets/xml/rss.xsl" media="all"?><rss version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>琅環笔记 (关于 Tips 的文章)</title><link>https://note.tt4e.com/</link><description></description><atom:link href="https://note.tt4e.com/categories/cat_tips.xml" rel="self" type="application/rss+xml"></atom:link><language>zh_cn</language><copyright>Contents © 2024 &lt;a href="mailto:xiaoyao@tt4e.com"&gt;逍遥&lt;/a&gt; </copyright><lastBuildDate>Thu, 08 Feb 2024 10:42:32 GMT</lastBuildDate><generator>Nikola (getnikola.com)</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>Download Edge Browser Starter Background Image</title><link>https://note.tt4e.com/posts/download-edge-browser-starter-background-image/</link><dc:creator>逍遥</dc:creator><description>&lt;section id="section-1"&gt;
+<?xml-stylesheet type="text/xsl" href="../assets/xml/rss.xsl" media="all"?><rss version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>琅環笔记 (关于 Tips 的文章)</title><link>https://note.tt4e.com/</link><description></description><atom:link href="https://note.tt4e.com/categories/cat_tips.xml" rel="self" type="application/rss+xml"></atom:link><language>zh_cn</language><copyright>Contents © 2024 &lt;a href="mailto:xiaoyao@tt4e.com"&gt;逍遥&lt;/a&gt; </copyright><lastBuildDate>Thu, 08 Feb 2024 11:28:20 GMT</lastBuildDate><generator>Nikola (getnikola.com)</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>Sudo unable to resolve host On Ubuntu</title><link>https://note.tt4e.com/posts/sudo-unable-to-resolve-host-on-ubuntu/</link><dc:creator>逍遥</dc:creator><description>&lt;section id="section-1"&gt;
+&lt;h2&gt;直接给答案&lt;/h2&gt;
+&lt;p&gt;在 /etc/hosts 文件中加入主机名，比如:&lt;/p&gt;
+&lt;pre class="literal-block"&gt;127.0.0.1    ubuntu.tt.com&lt;/pre&gt;
+&lt;/section&gt;</description><category>ubuntu</category><guid>https://note.tt4e.com/posts/sudo-unable-to-resolve-host-on-ubuntu/</guid><pubDate>Thu, 08 Feb 2024 11:26:44 GMT</pubDate></item><item><title>Download Edge Browser Starter Background Image</title><link>https://note.tt4e.com/posts/download-edge-browser-starter-background-image/</link><dc:creator>逍遥</dc:creator><description>&lt;section id="section-1"&gt;
 &lt;h2&gt;直给答案&lt;/h2&gt;
 &lt;p&gt;浏览器地址打开 &lt;a class="reference external" href="chrome-search://theme/IDR_THEME_NTP_BACKGROUND"&gt;链接&lt;/a&gt;&lt;/p&gt;
 &lt;p&gt;如果是旧图，可以按 &lt;kbd&gt;Ctrl+&lt;kdb&gt;F5&lt;/kdb&gt;&lt;/kbd&gt; 刷新。&lt;/p&gt;&lt;/section&gt;</description><category>Edge</category><guid>https://note.tt4e.com/posts/download-edge-browser-starter-background-image/</guid><pubDate>Thu, 08 Feb 2024 10:36:48 GMT</pubDate></item><item><title>Reset Ubuntu Linux Password</title><link>https://note.tt4e.com/posts/reset-ubuntu-linux-password/</link><dc:creator>逍遥</dc:creator><description>&lt;section id="section-1"&gt;
@@ -241,19 +245,4 @@
 &lt;p&gt;master：类似 master，slave 这样带有种族歧视色彩的词，在编程世界中将不再继续使用，现有使用也逐步 &lt;a class="reference external" href="https://github.com/github/renaming"&gt;重命名&lt;/a&gt;。&lt;/p&gt;
 &lt;/aside&gt;
 &lt;/aside&gt;
-&lt;/section&gt;</description><category>nikola</category><guid>https://note.tt4e.com/posts/nikola-tips/</guid><pubDate>Mon, 27 Nov 2023 11:34:15 GMT</pubDate></item><item><title>「'ssh'不是内部或外部命令，也不是可运行的程序或批处理文件」的解决方法</title><link>https://note.tt4e.com/posts/ssh-is-not-recognized-as-an-internal-or-external-command/</link><dc:creator>逍遥</dc:creator><description>&lt;section id="section-1"&gt;
-&lt;h2&gt;问题现象&lt;/h2&gt;
-&lt;p&gt;当在 &lt;a class="reference external" href="https://github.com/microsoft/terminal"&gt;Windows Terminal&lt;/a&gt; 中运行 &lt;em&gt;ssh&lt;/em&gt; 命令时，终端中提示：&lt;/p&gt;
-&lt;div class="code"&gt;&lt;pre class="code text"&gt;&lt;a id="rest_code_b3ae1b7272764e4fa9ce6f7970d5f761-1" name="rest_code_b3ae1b7272764e4fa9ce6f7970d5f761-1" href="https://note.tt4e.com/posts/ssh-is-not-recognized-as-an-internal-or-external-command/#rest_code_b3ae1b7272764e4fa9ce6f7970d5f761-1"&gt;&lt;/a&gt;'ssh'不是内部或外部命令，也不是可运行的程序或批处理文件
-&lt;/pre&gt;&lt;/div&gt;
-&lt;p&gt;English Version&lt;/p&gt;
-&lt;div class="code"&gt;&lt;pre class="code text"&gt;&lt;a id="rest_code_89561ea352db426a849222cb09eeb8e9-1" name="rest_code_89561ea352db426a849222cb09eeb8e9-1" href="https://note.tt4e.com/posts/ssh-is-not-recognized-as-an-internal-or-external-command/#rest_code_89561ea352db426a849222cb09eeb8e9-1"&gt;&lt;/a&gt;'ssh' is not recognized as an internal or external command, operable program or batch file.
-&lt;/pre&gt;&lt;/div&gt;
-&lt;/section&gt;
-&lt;section id="section-2"&gt;
-&lt;h2&gt;解决方法&lt;/h2&gt;
-&lt;p&gt;在 Windows 设置中安装 OpenSSH 客户端，且在环境变量 PATH 中加入：&lt;/p&gt;
-&lt;div class="code"&gt;&lt;pre class="code text"&gt;&lt;a id="rest_code_4233cad73f38441dab0d5553c418e4e9-1" name="rest_code_4233cad73f38441dab0d5553c418e4e9-1" href="https://note.tt4e.com/posts/ssh-is-not-recognized-as-an-internal-or-external-command/#rest_code_4233cad73f38441dab0d5553c418e4e9-1"&gt;&lt;/a&gt;C:\Windows\System32\OpenSSH
-&lt;/pre&gt;&lt;/div&gt;
-&lt;p&gt;验证方法：检查以上目录中是否有 ssh.exe 文件。&lt;/p&gt;
-&lt;/section&gt;</description><category>openssh</category><category>ssh</category><guid>https://note.tt4e.com/posts/ssh-is-not-recognized-as-an-internal-or-external-command/</guid><pubDate>Mon, 27 Nov 2023 05:17:12 GMT</pubDate></item></channel></rss>
+&lt;/section&gt;</description><category>nikola</category><guid>https://note.tt4e.com/posts/nikola-tips/</guid><pubDate>Mon, 27 Nov 2023 11:34:15 GMT</pubDate></item></channel></rss>

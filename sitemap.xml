@@ -19,7 +19,7 @@
  </url>
  <url>
   <loc>https://note.tt4e.com/archive.html</loc>
-  <lastmod>2024-02-08T10:42:00Z</lastmod>
+  <lastmod>2024-02-08T11:28:00Z</lastmod>
  </url>
  <url>
   <loc>https://note.tt4e.com/categories/</loc>
@@ -131,7 +131,7 @@
  </url>
  <url>
   <loc>https://note.tt4e.com/index-1.html</loc>
-  <lastmod>2024-02-08T10:42:00Z</lastmod>
+  <lastmod>2024-02-08T11:28:00Z</lastmod>
  </url>
  <url>
   <loc>https://note.tt4e.com/listings/</loc>
@@ -252,6 +252,10 @@
  <url>
   <loc>https://note.tt4e.com/posts/ssh-is-not-recognized-as-an-internal-or-external-command/</loc>
   <lastmod>2024-01-20T15:52:00Z</lastmod>
+ </url>
+ <url>
+  <loc>https://note.tt4e.com/posts/sudo-unable-to-resolve-host-on-ubuntu/</loc>
+  <lastmod>2024-02-08T11:28:00Z</lastmod>
  </url>
  <url>
   <loc>https://note.tt4e.com/posts/taking-notes-in-orgmode-with-nikola/</loc>

@@ -1,5 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
-<?xml-stylesheet type="text/xsl" href="assets/xml/rss.xsl" media="all"?><rss version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>琅環笔记</title><link>https://note.tt4e.com/</link><description>有博学强记者，尝为鹅厂从事。游于洞宫，遇一人于途，问逍遥曰：“君读书几何？”遥曰：“吾之未读者，则二十年内书盖有之也，若二十年外，则吾固已尽读之矣。”其人论议超然，遥颇内服，相与欢甚。因共至一处，大石中忽然有门，引遥入数歩，则别是天地，宫室嵯峨。引入一室中，陈书满架，其人曰：“此PL史也。”又至一室，则曰：“OS志也。”毎室各有奇书，惟一室屋宇颇高，封识甚严，有二犬守之。遥问故，答曰：“此皆操作系统、编程语言、算法分析、生发正骨诸秘籍。”指二犬曰：“此龙也。”历观诸室书，皆Windows以前事，多所未闻者，如「BeOS」、「Solaris」、「FreeBSD」、「LISP」亦皆在焉。遥心乐之，欲赁住数十日，其人笑曰：“君痴矣。此岂可赁地耶？”即命小童送出，遥问地名，对曰：“琅嬛福地也。”</description><atom:link href="https://note.tt4e.com/rss.xml" rel="self" type="application/rss+xml"></atom:link><language>zh_cn</language><copyright>Contents © 2024 &lt;a href="mailto:xiaoyao@tt4e.com"&gt;逍遥&lt;/a&gt; </copyright><lastBuildDate>Thu, 08 Feb 2024 10:42:32 GMT</lastBuildDate><generator>Nikola (getnikola.com)</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>Download Edge Browser Starter Background Image</title><link>https://note.tt4e.com/posts/download-edge-browser-starter-background-image/</link><dc:creator>逍遥</dc:creator><description>&lt;section id="section-1"&gt;
+<?xml-stylesheet type="text/xsl" href="assets/xml/rss.xsl" media="all"?><rss version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>琅環笔记</title><link>https://note.tt4e.com/</link><description>有博学强记者，尝为鹅厂从事。游于洞宫，遇一人于途，问逍遥曰：“君读书几何？”遥曰：“吾之未读者，则二十年内书盖有之也，若二十年外，则吾固已尽读之矣。”其人论议超然，遥颇内服，相与欢甚。因共至一处，大石中忽然有门，引遥入数歩，则别是天地，宫室嵯峨。引入一室中，陈书满架，其人曰：“此PL史也。”又至一室，则曰：“OS志也。”毎室各有奇书，惟一室屋宇颇高，封识甚严，有二犬守之。遥问故，答曰：“此皆操作系统、编程语言、算法分析、生发正骨诸秘籍。”指二犬曰：“此龙也。”历观诸室书，皆Windows以前事，多所未闻者，如「BeOS」、「Solaris」、「FreeBSD」、「LISP」亦皆在焉。遥心乐之，欲赁住数十日，其人笑曰：“君痴矣。此岂可赁地耶？”即命小童送出，遥问地名，对曰：“琅嬛福地也。”</description><atom:link href="https://note.tt4e.com/rss.xml" rel="self" type="application/rss+xml"></atom:link><language>zh_cn</language><copyright>Contents © 2024 &lt;a href="mailto:xiaoyao@tt4e.com"&gt;逍遥&lt;/a&gt; </copyright><lastBuildDate>Thu, 08 Feb 2024 11:28:20 GMT</lastBuildDate><generator>Nikola (getnikola.com)</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>Sudo unable to resolve host On Ubuntu</title><link>https://note.tt4e.com/posts/sudo-unable-to-resolve-host-on-ubuntu/</link><dc:creator>逍遥</dc:creator><description>&lt;section id="section-1"&gt;
+&lt;h2&gt;直接给答案&lt;/h2&gt;
+&lt;p&gt;在 /etc/hosts 文件中加入主机名，比如:&lt;/p&gt;
+&lt;pre class="literal-block"&gt;127.0.0.1    ubuntu.tt.com&lt;/pre&gt;
+&lt;/section&gt;</description><category>ubuntu</category><guid>https://note.tt4e.com/posts/sudo-unable-to-resolve-host-on-ubuntu/</guid><pubDate>Thu, 08 Feb 2024 11:26:44 GMT</pubDate></item><item><title>Download Edge Browser Starter Background Image</title><link>https://note.tt4e.com/posts/download-edge-browser-starter-background-image/</link><dc:creator>逍遥</dc:creator><description>&lt;section id="section-1"&gt;
 &lt;h2&gt;直给答案&lt;/h2&gt;
 &lt;p&gt;浏览器地址打开 &lt;a class="reference external" href="chrome-search://theme/IDR_THEME_NTP_BACKGROUND"&gt;链接&lt;/a&gt;&lt;/p&gt;
 &lt;p&gt;如果是旧图，可以按 &lt;kbd&gt;Ctrl+&lt;kdb&gt;F5&lt;/kdb&gt;&lt;/kbd&gt; 刷新。&lt;/p&gt;&lt;/section&gt;</description><category>Edge</category><guid>https://note.tt4e.com/posts/download-edge-browser-starter-background-image/</guid><pubDate>Thu, 08 Feb 2024 10:36:48 GMT</pubDate></item><item><title>Reset Ubuntu Linux Password</title><link>https://note.tt4e.com/posts/reset-ubuntu-linux-password/</link><dc:creator>逍遥</dc:creator><description>&lt;section id="section-1"&gt;
@@ -179,32 +183,4 @@
 &lt;p&gt;想到这一点后，我尝试逐个关闭电脑相关程序来排除，终于当我关闭「富途牛牛」时，在 Emacs 中，Alt+V 或说 M-v 生效了，可以成功向上滚动。&lt;/p&gt;
 &lt;p&gt;再查看「富途牛牛」的快捷键清单中，是截屏直播的快捷键。同理还有全屏直播 Alt+C，以及快捷键 Ctrl+1，Alt+1 也显示被其他软件占用。&lt;/p&gt;
 &lt;p&gt;不知是不是因为富途牛牛的产品经理视角狭隘，或者开发人员用的都是 macOS，要不怎么会设计出这些明显冲突的全局快捷键。&lt;/p&gt;
-&lt;/section&gt;</description><category>emacs</category><category>securecrt</category><guid>https://note.tt4e.com/posts/securecrt-emacs-alt-v-not-work/</guid><pubDate>Sat, 02 Dec 2023 00:09:47 GMT</pubDate></item><item><title>EverEdit SFTP Error With FreeBSD</title><link>https://note.tt4e.com/posts/everedit-sftp-error-with-freebsd/</link><dc:creator>逍遥</dc:creator><description>&lt;section id="section-1"&gt;
-&lt;h2&gt;问题现象&lt;/h2&gt;
-&lt;p&gt;EverEdit 4 内置 SFTP 插件连接 FreeBSD 13.2 SSH 时，提示如下:&lt;/p&gt;
-&lt;pre class="literal-block"&gt;[23:19:56]:Hostname was found in DNS cache
-[23:19:56]:  Trying 192.168.2.81...
-[23:19:56]:Adding handle: conn: 0x22356d0cfa0
-[23:19:56]:Adding handle: send: 0
-[23:19:56]:Adding handle: recv: 0
-[23:19:56]:Curl_addHandleToPipeline: length: 1
-[23:19:56]:- Conn 1 (0x22356d0cfa0) send_pipe: 1, recv_pipe: 0
-[23:19:56]:Connected to 192.168.2.81 (192.168.2.81) port 22 (#1)
-[23:19:56]:Failure establishing ssh session
-[23:19:56]:Closing connection 1&lt;/pre&gt;
-&lt;p&gt;而使用其他 SFTP 客户端是完全正常的。&lt;/p&gt;
-&lt;/section&gt;
-&lt;section id="section-2"&gt;
-&lt;h2&gt;解决方法&lt;/h2&gt;
-&lt;p&gt;已提交给作者，还没找出解决办法。&lt;/p&gt;
-&lt;p&gt;在网上查找说是连接不上 FreeBSD 13.2 的 sftp，可能与 libcurl 有关。&lt;/p&gt;
-&lt;p&gt;但还没有时间写代码来调试。&lt;/p&gt;
-&lt;p&gt;待ee作者更新后，我再咨询。&lt;/p&gt;
-&lt;/section&gt;
-&lt;section id="section-3"&gt;
-&lt;h2&gt;参考&lt;/h2&gt;
-&lt;ol class="arabic simple"&gt;
-&lt;li&gt;&lt;p&gt;&lt;a class="reference external" href="https://curl.se/libcurl/c/sftpget.html"&gt;https://curl.se/libcurl/c/sftpget.html&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;
-&lt;li&gt;&lt;p&gt;&lt;a class="reference external" href="https://curl-users.cool.haxx.narkive.com/ppppPXNc/curl-sftp-failure-establishing-ssh-session"&gt;https://curl-users.cool.haxx.narkive.com/ppppPXNc/curl-sftp-failure-establishing-ssh-session&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;
-&lt;/ol&gt;
-&lt;/section&gt;</description><category>freebsd</category><category>libcurl</category><guid>https://note.tt4e.com/posts/everedit-sftp-error-with-freebsd/</guid><pubDate>Fri, 01 Dec 2023 03:09:38 GMT</pubDate></item></channel></rss>
+&lt;/section&gt;</description><category>emacs</category><category>securecrt</category><guid>https://note.tt4e.com/posts/securecrt-emacs-alt-v-not-work/</guid><pubDate>Sat, 02 Dec 2023 00:09:47 GMT</pubDate></item></channel></rss>
