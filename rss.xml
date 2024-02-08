@@ -1,5 +1,71 @@
 <?xml version="1.0" encoding="utf-8"?>
-<?xml-stylesheet type="text/xsl" href="assets/xml/rss.xsl" media="all"?><rss version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>琅環笔记</title><link>https://note.tt4e.com/</link><description>有博学强记者，尝为鹅厂从事。游于洞宫，遇一人于途，问逍遥曰：“君读书几何？”遥曰：“吾之未读者，则二十年内书盖有之也，若二十年外，则吾固已尽读之矣。”其人论议超然，遥颇内服，相与欢甚。因共至一处，大石中忽然有门，引遥入数歩，则别是天地，宫室嵯峨。引入一室中，陈书满架，其人曰：“此PL史也。”又至一室，则曰：“OS志也。”毎室各有奇书，惟一室屋宇颇高，封识甚严，有二犬守之。遥问故，答曰：“此皆操作系统、编程语言、算法分析、生发正骨诸秘籍。”指二犬曰：“此龙也。”历观诸室书，皆Windows以前事，多所未闻者，如「BeOS」、「Solaris」、「FreeBSD」、「LISP」亦皆在焉。遥心乐之，欲赁住数十日，其人笑曰：“君痴矣。此岂可赁地耶？”即命小童送出，遥问地名，对曰：“琅嬛福地也。”</description><atom:link href="https://note.tt4e.com/rss.xml" rel="self" type="application/rss+xml"></atom:link><language>zh_cn</language><copyright>Contents © 2024 &lt;a href="mailto:xiaoyao@tt4e.com"&gt;逍遥&lt;/a&gt; </copyright><lastBuildDate>Fri, 26 Jan 2024 00:57:40 GMT</lastBuildDate><generator>Nikola (getnikola.com)</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>Get Localhost IPv6 with Python</title><link>https://note.tt4e.com/posts/get-localhost-ipv6-with-python/</link><dc:creator>逍遥</dc:creator><description>&lt;div class="code"&gt;&lt;pre class="code python"&gt;&lt;a id="rest_code_a705faf2e42140d2acd260b3c3194f5d-1" name="rest_code_a705faf2e42140d2acd260b3c3194f5d-1" href="https://note.tt4e.com/posts/get-localhost-ipv6-with-python/#rest_code_a705faf2e42140d2acd260b3c3194f5d-1"&gt;&lt;/a&gt;&lt;span class="k"&gt;def&lt;/span&gt; &lt;span class="nf"&gt;get_ipv6&lt;/span&gt;&lt;span class="p"&gt;():&lt;/span&gt;
+<?xml-stylesheet type="text/xsl" href="assets/xml/rss.xsl" media="all"?><rss version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>琅環笔记</title><link>https://note.tt4e.com/</link><description>有博学强记者，尝为鹅厂从事。游于洞宫，遇一人于途，问逍遥曰：“君读书几何？”遥曰：“吾之未读者，则二十年内书盖有之也，若二十年外，则吾固已尽读之矣。”其人论议超然，遥颇内服，相与欢甚。因共至一处，大石中忽然有门，引遥入数歩，则别是天地，宫室嵯峨。引入一室中，陈书满架，其人曰：“此PL史也。”又至一室，则曰：“OS志也。”毎室各有奇书，惟一室屋宇颇高，封识甚严，有二犬守之。遥问故，答曰：“此皆操作系统、编程语言、算法分析、生发正骨诸秘籍。”指二犬曰：“此龙也。”历观诸室书，皆Windows以前事，多所未闻者，如「BeOS」、「Solaris」、「FreeBSD」、「LISP」亦皆在焉。遥心乐之，欲赁住数十日，其人笑曰：“君痴矣。此岂可赁地耶？”即命小童送出，遥问地名，对曰：“琅嬛福地也。”</description><atom:link href="https://note.tt4e.com/rss.xml" rel="self" type="application/rss+xml"></atom:link><language>zh_cn</language><copyright>Contents © 2024 &lt;a href="mailto:xiaoyao@tt4e.com"&gt;逍遥&lt;/a&gt; </copyright><lastBuildDate>Thu, 08 Feb 2024 00:38:41 GMT</lastBuildDate><generator>Nikola (getnikola.com)</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>Reset Ubuntu Liunx Password</title><link>https://note.tt4e.com/posts/reset-ubuntu-liunx-password/</link><dc:creator>逍遥</dc:creator><description>&lt;section id="section-1"&gt;
+&lt;h2&gt;前提&lt;/h2&gt;
+&lt;p&gt;须具有本地权限，通俗的说就是，需要肉身在服务器旁边。&lt;/p&gt;
+&lt;/section&gt;
+&lt;section id="section-2"&gt;
+&lt;h2&gt;步骤&lt;/h2&gt;
+&lt;ol class="arabic"&gt;
+&lt;li&gt;&lt;p&gt;启动服务器时按住 Shift 键，会进入 GNU GRUB  version x.yz... 界面&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;在 GNU GRUB  version x.yz... 界面下方至少会出现以下选项：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;p&gt;Ubuntu&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;&lt;a href="https://note.tt4e.com/posts/reset-ubuntu-liunx-password/#system-message-1"&gt;&lt;span class="problematic" id="problematic-1"&gt;*&lt;/span&gt;&lt;/a&gt;Advanced options for Ubuntu&lt;/p&gt;
+&lt;aside class="system-message" id="system-message-1"&gt;
+&lt;p class="system-message-title"&gt;System Message: WARNING/2 (&lt;span class="docutils literal"&gt;&amp;lt;string&amp;gt;&lt;/span&gt;, line 14); &lt;em&gt;&lt;a href="https://note.tt4e.com/posts/reset-ubuntu-liunx-password/#problematic-1"&gt;backlink&lt;/a&gt;&lt;/em&gt;&lt;/p&gt;
+&lt;p&gt;Inline emphasis start-string without end-string.&lt;/p&gt;
+&lt;/aside&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;选择 Advanced options for Ubuntu，按回车键；&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;出现新的选项：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;p&gt;Ubuntu, with Linux ...&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;&lt;a href="https://note.tt4e.com/posts/reset-ubuntu-liunx-password/#system-message-2"&gt;&lt;span class="problematic" id="problematic-2"&gt;*&lt;/span&gt;&lt;/a&gt;Ubuntu, with Linux ... (recovery mode)&lt;/p&gt;
+&lt;aside class="system-message" id="system-message-2"&gt;
+&lt;p class="system-message-title"&gt;System Message: WARNING/2 (&lt;span class="docutils literal"&gt;&amp;lt;string&amp;gt;&lt;/span&gt;, line 21); &lt;em&gt;&lt;a href="https://note.tt4e.com/posts/reset-ubuntu-liunx-password/#problematic-2"&gt;backlink&lt;/a&gt;&lt;/em&gt;&lt;/p&gt;
+&lt;p&gt;Inline emphasis start-string without end-string.&lt;/p&gt;
+&lt;/aside&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;选择带有 (recovery mode) 的一行，按回车键；&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;系统会显示一些输出并跳转到 Recovery Menu 菜单界面，选项如下：&lt;/p&gt;
+&lt;ul class="simple"&gt;
+&lt;li&gt;&lt;p&gt;resume&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;clean&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;dpkg&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;failsafeX&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;fsck&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;grub&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;network&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;root&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;system-summary&lt;/p&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;选择 root，按回车键&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;重新 mount 具有写权限的 root，运行命令：:&lt;/p&gt;
+&lt;aside class="system-message"&gt;
+&lt;p class="system-message-title"&gt;System Message: WARNING/2 (&lt;span class="docutils literal"&gt;&amp;lt;string&amp;gt;&lt;/span&gt;, line 41)&lt;/p&gt;
+&lt;p&gt;Literal block expected; none found.&lt;/p&gt;
+&lt;/aside&gt;
+&lt;p&gt;mount -rw -o remount /&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;使用 &lt;code class="docutils literal"&gt;ls /home&lt;/code&gt; 命令可以查看用户名，假设是 USER1，则使用如下命令重置密码:&lt;/p&gt;
+&lt;aside class="system-message"&gt;
+&lt;p class="system-message-title"&gt;System Message: WARNING/2 (&lt;span class="docutils literal"&gt;&amp;lt;string&amp;gt;&lt;/span&gt;, line 45)&lt;/p&gt;
+&lt;p&gt;Literal block expected; none found.&lt;/p&gt;
+&lt;/aside&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;blockquote&gt;
+&lt;p&gt;passwd USER1&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;ol class="arabic simple" start="7"&gt;
+&lt;li&gt;&lt;p&gt;根据命令提示，你可以完成密码修改，然后退出到 Recovery Menu，选择 resume 重启，然后就可以使用上一步修改的新密码进入系统了。&lt;/p&gt;&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/section&gt;</description><category>ubuntu</category><guid>https://note.tt4e.com/posts/reset-ubuntu-liunx-password/</guid><pubDate>Wed, 07 Feb 2024 22:47:39 GMT</pubDate></item><item><title>Get Localhost IPv6 with Python</title><link>https://note.tt4e.com/posts/get-localhost-ipv6-with-python/</link><dc:creator>逍遥</dc:creator><description>&lt;div class="code"&gt;&lt;pre class="code python"&gt;&lt;a id="rest_code_a705faf2e42140d2acd260b3c3194f5d-1" name="rest_code_a705faf2e42140d2acd260b3c3194f5d-1" href="https://note.tt4e.com/posts/get-localhost-ipv6-with-python/#rest_code_a705faf2e42140d2acd260b3c3194f5d-1"&gt;&lt;/a&gt;&lt;span class="k"&gt;def&lt;/span&gt; &lt;span class="nf"&gt;get_ipv6&lt;/span&gt;&lt;span class="p"&gt;():&lt;/span&gt;
 &lt;a id="rest_code_a705faf2e42140d2acd260b3c3194f5d-2" name="rest_code_a705faf2e42140d2acd260b3c3194f5d-2" href="https://note.tt4e.com/posts/get-localhost-ipv6-with-python/#rest_code_a705faf2e42140d2acd260b3c3194f5d-2"&gt;&lt;/a&gt;    &lt;span class="kn"&gt;import&lt;/span&gt; &lt;span class="nn"&gt;socket&lt;/span&gt;
 &lt;a id="rest_code_a705faf2e42140d2acd260b3c3194f5d-3" name="rest_code_a705faf2e42140d2acd260b3c3194f5d-3" href="https://note.tt4e.com/posts/get-localhost-ipv6-with-python/#rest_code_a705faf2e42140d2acd260b3c3194f5d-3"&gt;&lt;/a&gt;    &lt;span class="n"&gt;host_ipv6&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="p"&gt;[]&lt;/span&gt;
 &lt;a id="rest_code_a705faf2e42140d2acd260b3c3194f5d-4" name="rest_code_a705faf2e42140d2acd260b3c3194f5d-4" href="https://note.tt4e.com/posts/get-localhost-ipv6-with-python/#rest_code_a705faf2e42140d2acd260b3c3194f5d-4"&gt;&lt;/a&gt;    &lt;span class="n"&gt;ips&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;socket&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;getaddrinfo&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;socket&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;gethostname&lt;/span&gt;&lt;span class="p"&gt;(),&lt;/span&gt;&lt;span class="mi"&gt;80&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
@@ -229,77 +295,4 @@
 
 &lt;hr&gt;
 &lt;/div&gt;
-&lt;/div&gt;</description><category>nikola</category><category>orgmode</category><guid>https://note.tt4e.com/posts/taking-notes-in-orgmode-with-nikola/</guid><pubDate>Thu, 30 Nov 2023 09:34:15 GMT</pubDate></item><item><title>Nikola Tips</title><link>https://note.tt4e.com/posts/nikola-tips/</link><dc:creator>逍遥</dc:creator><description>&lt;section id="nikola-tips"&gt;
-&lt;h2&gt;Nikola Tips&lt;/h2&gt;
-&lt;section id="nikola-serve"&gt;
-&lt;h3&gt;1. Nikola serve 自动刷新的命令行怎么写？&lt;/h3&gt;
-&lt;div class="code"&gt;&lt;pre class="code shell"&gt;&lt;a id="rest_code_52f403fe27824798aec89307b41e315c-1" name="rest_code_52f403fe27824798aec89307b41e315c-1" href="https://note.tt4e.com/posts/nikola-tips/#rest_code_52f403fe27824798aec89307b41e315c-1"&gt;&lt;/a&gt;nikola&lt;span class="w"&gt; &lt;/span&gt;auto
-&lt;/pre&gt;&lt;/div&gt;
-&lt;p&gt;即使 &lt;strong&gt;conf.py&lt;/strong&gt; 中已绑定非127.0.0.1的地址，上面的命令也只会在127.0.0.1启动调试。&lt;/p&gt;
-&lt;p&gt;没有去看源代码，可能这样实现从安全角度存在一定的合理性。&lt;/p&gt;
-&lt;p&gt;如果需要任意主机都能获得访问，可使用 -a 参数指定地址0.0.0.0&lt;/p&gt;
-&lt;div class="code"&gt;&lt;pre class="code shell"&gt;&lt;a id="rest_code_d775740ed93b494fac186d0850f65bb8-1" name="rest_code_d775740ed93b494fac186d0850f65bb8-1" href="https://note.tt4e.com/posts/nikola-tips/#rest_code_d775740ed93b494fac186d0850f65bb8-1"&gt;&lt;/a&gt;nikola&lt;span class="w"&gt; &lt;/span&gt;auto&lt;span class="w"&gt; &lt;/span&gt;-a0.0.0.0
-&lt;/pre&gt;&lt;/div&gt;
-&lt;/section&gt;
-&lt;section id="nikola-theme-css"&gt;
-&lt;h3&gt;2. Nikola Theme 如何定制 css&lt;/h3&gt;
-&lt;p&gt;如果在模板中有代码&lt;/p&gt;
-&lt;div class="code"&gt;&lt;pre class="code html+mako"&gt;&lt;a id="rest_code_dfaf94537de74be3845906cfb4bba418-1" name="rest_code_dfaf94537de74be3845906cfb4bba418-1" href="https://note.tt4e.com/posts/nikola-tips/#rest_code_dfaf94537de74be3845906cfb4bba418-1"&gt;&lt;/a&gt;&lt;span class="cp"&gt;%&lt;/span&gt;&lt;span class="k"&gt;if&lt;/span&gt; &lt;span class="n"&gt;has_custom_css&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;
-&lt;a id="rest_code_dfaf94537de74be3845906cfb4bba418-2" name="rest_code_dfaf94537de74be3845906cfb4bba418-2" href="https://note.tt4e.com/posts/nikola-tips/#rest_code_dfaf94537de74be3845906cfb4bba418-2"&gt;&lt;/a&gt;  &lt;span class="p"&gt;&amp;lt;&lt;/span&gt;&lt;span class="nt"&gt;link&lt;/span&gt; &lt;span class="na"&gt;href&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s"&gt;"/assets/css/custom.css"&lt;/span&gt; &lt;span class="na"&gt;rel&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s"&gt;"stylesheet"&lt;/span&gt; &lt;span class="na"&gt;type&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s"&gt;"text/css"&lt;/span&gt;&lt;span class="p"&gt;&amp;gt;&lt;/span&gt;
-&lt;a id="rest_code_dfaf94537de74be3845906cfb4bba418-3" name="rest_code_dfaf94537de74be3845906cfb4bba418-3" href="https://note.tt4e.com/posts/nikola-tips/#rest_code_dfaf94537de74be3845906cfb4bba418-3"&gt;&lt;/a&gt;&lt;span class="cp"&gt;%&lt;/span&gt;&lt;span class="k"&gt;endif&lt;/span&gt;
-&lt;/pre&gt;&lt;/div&gt;
-&lt;p&gt;因此，增加 /assets/css/custom.css 文件即可。&lt;/p&gt;
-&lt;/section&gt;
-&lt;section id="nikola-github"&gt;
-&lt;h3&gt;3. Nikola 如何推送到 GitHub&lt;/h3&gt;
-&lt;p&gt;先设置好 git 推送&lt;/p&gt;
-&lt;div class="code"&gt;&lt;pre class="code sh"&gt;&lt;a id="rest_code_40a5efe4a12c45c496dd1df4477a963b-1" name="rest_code_40a5efe4a12c45c496dd1df4477a963b-1" href="https://note.tt4e.com/posts/nikola-tips/#rest_code_40a5efe4a12c45c496dd1df4477a963b-1"&gt;&lt;/a&gt;git&lt;span class="w"&gt; &lt;/span&gt;config&lt;span class="w"&gt; &lt;/span&gt;--global&lt;span class="w"&gt; &lt;/span&gt;--add&lt;span class="w"&gt; &lt;/span&gt;safe.directory&lt;span class="w"&gt; &lt;/span&gt;/usr/home/kaffa/web/note.tt4e.com
-&lt;a id="rest_code_40a5efe4a12c45c496dd1df4477a963b-2" name="rest_code_40a5efe4a12c45c496dd1df4477a963b-2" href="https://note.tt4e.com/posts/nikola-tips/#rest_code_40a5efe4a12c45c496dd1df4477a963b-2"&gt;&lt;/a&gt;git&lt;span class="w"&gt; &lt;/span&gt;config&lt;span class="w"&gt; &lt;/span&gt;--global&lt;span class="w"&gt; &lt;/span&gt;user.email&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="s2"&gt;"yourname@tt4e.com"&lt;/span&gt;
-&lt;a id="rest_code_40a5efe4a12c45c496dd1df4477a963b-3" name="rest_code_40a5efe4a12c45c496dd1df4477a963b-3" href="https://note.tt4e.com/posts/nikola-tips/#rest_code_40a5efe4a12c45c496dd1df4477a963b-3"&gt;&lt;/a&gt;git&lt;span class="w"&gt; &lt;/span&gt;config&lt;span class="w"&gt; &lt;/span&gt;--global&lt;span class="w"&gt; &lt;/span&gt;user.name&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="s2"&gt;"Your Name"&lt;/span&gt;
-&lt;/pre&gt;&lt;/div&gt;
-&lt;p&gt;将以下内容保存为 aio.sh 脚本&lt;/p&gt;
-&lt;div class="code"&gt;&lt;pre class="code sh"&gt;&lt;a id="rest_code_a6431af2cee9407dbbfbbc17505b4c7c-1" name="rest_code_a6431af2cee9407dbbfbbc17505b4c7c-1" href="https://note.tt4e.com/posts/nikola-tips/#rest_code_a6431af2cee9407dbbfbbc17505b4c7c-1"&gt;&lt;/a&gt;&lt;span class="ch"&gt;#!/bin/bash&lt;/span&gt;
-&lt;a id="rest_code_a6431af2cee9407dbbfbbc17505b4c7c-2" name="rest_code_a6431af2cee9407dbbfbbc17505b4c7c-2" href="https://note.tt4e.com/posts/nikola-tips/#rest_code_a6431af2cee9407dbbfbbc17505b4c7c-2"&gt;&lt;/a&gt;&lt;span class="c1"&gt;#&lt;/span&gt;
-&lt;a id="rest_code_a6431af2cee9407dbbfbbc17505b4c7c-3" name="rest_code_a6431af2cee9407dbbfbbc17505b4c7c-3" href="https://note.tt4e.com/posts/nikola-tips/#rest_code_a6431af2cee9407dbbfbbc17505b4c7c-3"&gt;&lt;/a&gt;&lt;span class="c1"&gt;# nikola output push to github&lt;/span&gt;
-&lt;a id="rest_code_a6431af2cee9407dbbfbbc17505b4c7c-4" name="rest_code_a6431af2cee9407dbbfbbc17505b4c7c-4" href="https://note.tt4e.com/posts/nikola-tips/#rest_code_a6431af2cee9407dbbfbbc17505b4c7c-4"&gt;&lt;/a&gt;&lt;span class="nb"&gt;cd&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;~/web/note.tt4e.com/
-&lt;a id="rest_code_a6431af2cee9407dbbfbbc17505b4c7c-5" name="rest_code_a6431af2cee9407dbbfbbc17505b4c7c-5" href="https://note.tt4e.com/posts/nikola-tips/#rest_code_a6431af2cee9407dbbfbbc17505b4c7c-5"&gt;&lt;/a&gt;nikola&lt;span class="w"&gt; &lt;/span&gt;build
-&lt;a id="rest_code_a6431af2cee9407dbbfbbc17505b4c7c-6" name="rest_code_a6431af2cee9407dbbfbbc17505b4c7c-6" href="https://note.tt4e.com/posts/nikola-tips/#rest_code_a6431af2cee9407dbbfbbc17505b4c7c-6"&gt;&lt;/a&gt;git&lt;span class="w"&gt; &lt;/span&gt;add&lt;span class="w"&gt; &lt;/span&gt;.
-&lt;a id="rest_code_a6431af2cee9407dbbfbbc17505b4c7c-7" name="rest_code_a6431af2cee9407dbbfbbc17505b4c7c-7" href="https://note.tt4e.com/posts/nikola-tips/#rest_code_a6431af2cee9407dbbfbbc17505b4c7c-7"&gt;&lt;/a&gt;git&lt;span class="w"&gt; &lt;/span&gt;commit&lt;span class="w"&gt; &lt;/span&gt;-am&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="s1"&gt;'Kaffa'&lt;/span&gt;
-&lt;a id="rest_code_a6431af2cee9407dbbfbbc17505b4c7c-8" name="rest_code_a6431af2cee9407dbbfbbc17505b4c7c-8" href="https://note.tt4e.com/posts/nikola-tips/#rest_code_a6431af2cee9407dbbfbbc17505b4c7c-8"&gt;&lt;/a&gt;git&lt;span class="w"&gt; &lt;/span&gt;push
-&lt;/pre&gt;&lt;/div&gt;
-&lt;p&gt;先 su 到 root 用户，然后运行以下命令，再 su 会当前用户&lt;/p&gt;
-&lt;div class="code"&gt;&lt;pre class="code sh"&gt;&lt;a id="rest_code_07857398bf354793be34b806fe322c25-1" name="rest_code_07857398bf354793be34b806fe322c25-1" href="https://note.tt4e.com/posts/nikola-tips/#rest_code_07857398bf354793be34b806fe322c25-1"&gt;&lt;/a&gt;chown&lt;span class="w"&gt; &lt;/span&gt;-R&lt;span class="w"&gt; &lt;/span&gt;kaffa:wheel&lt;span class="w"&gt; &lt;/span&gt;.git
-&lt;a id="rest_code_07857398bf354793be34b806fe322c25-2" name="rest_code_07857398bf354793be34b806fe322c25-2" href="https://note.tt4e.com/posts/nikola-tips/#rest_code_07857398bf354793be34b806fe322c25-2"&gt;&lt;/a&gt;chmod&lt;span class="w"&gt; &lt;/span&gt;-R&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="m"&gt;777&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;./aio.sh
-&lt;/pre&gt;&lt;/div&gt;
-&lt;p&gt;如果遇到错误提示 Unable to create ** /.git/index.lock: Permission denied，则需要&lt;/p&gt;
-&lt;div class="code"&gt;&lt;pre class="code sh"&gt;&lt;a id="rest_code_a8e41bce595f495eace66536aa99dfae-1" name="rest_code_a8e41bce595f495eace66536aa99dfae-1" href="https://note.tt4e.com/posts/nikola-tips/#rest_code_a8e41bce595f495eace66536aa99dfae-1"&gt;&lt;/a&gt;chown&lt;span class="w"&gt; &lt;/span&gt;-R&lt;span class="w"&gt; &lt;/span&gt;kaffa:wheel&lt;span class="w"&gt; &lt;/span&gt;.git
-&lt;/pre&gt;&lt;/div&gt;
-&lt;p&gt;其中 用户名和所属组，可以用 groups 命令查看。&lt;/p&gt;
-&lt;p&gt;完成书上步骤后，则每次可以运行 aio.sh 来推送 GitHub，GitHub 收到推送后，会使用 GitHub Action 来处理发布。&lt;/p&gt;
-&lt;p&gt;使用以上方法是有效的，但却说明没有认真读 nikola 文档。&lt;/p&gt;
-&lt;section id="nikola-github-1"&gt;
-&lt;h4&gt;Nikola 官方支持推送到 GitHub&lt;/h4&gt;
-&lt;p&gt;&lt;a class="reference external" href="https://getnikola.com/handbook.html#toc-entry-60"&gt;官方文档&lt;/a&gt;&lt;/p&gt;
-&lt;p&gt;解释一下：&lt;/p&gt;
-&lt;ol class="arabic simple"&gt;
-&lt;li&gt;&lt;p&gt;GITHUB_DEPLOY_BRANCH：发布分支，是 Nikola 产生的 HTML 文件，建议命名为 src。&lt;/p&gt;&lt;/li&gt;
-&lt;li&gt;&lt;p&gt;GITHUB_SOURCE_BRANCH：源码分支，建议在 GitHub 上设置为默认分支，建议命名为 main，而不是 master &lt;a class="footnote-reference brackets" href="https://note.tt4e.com/posts/nikola-tips/#fn1" id="footnote-reference-1" role="doc-noteref"&gt;&lt;span class="fn-bracket"&gt;[&lt;/span&gt;1&lt;span class="fn-bracket"&gt;]&lt;/span&gt;&lt;/a&gt;。&lt;/p&gt;&lt;/li&gt;
-&lt;li&gt;&lt;p&gt;GITHUB_REMOTE_NAME：远程仓库名；&lt;/p&gt;&lt;/li&gt;
-&lt;li&gt;&lt;p&gt;GITHUB_COMMIT_SOURCE：True，发布时会自动提交 src 分支。&lt;/p&gt;&lt;/li&gt;
-&lt;/ol&gt;
-&lt;p&gt;补充：&lt;/p&gt;
-&lt;p&gt;采用这种方法时，Github Pages 的 Build and deployment 一节，source 下拉框中，要选择 Deploy from a branch，而不是 GitHub Actions。&lt;/p&gt;
-&lt;div class="code"&gt;&lt;pre class="code text"&gt;&lt;a id="rest_code_52677e3370454172801737e6d0bfb2fc-1" name="rest_code_52677e3370454172801737e6d0bfb2fc-1" href="https://note.tt4e.com/posts/nikola-tips/#rest_code_52677e3370454172801737e6d0bfb2fc-1"&gt;&lt;/a&gt;nikola github_deploy
-&lt;/pre&gt;&lt;/div&gt;
-&lt;/section&gt;
-&lt;/section&gt;
-&lt;/section&gt;
-&lt;section id="section-1"&gt;
-&lt;h2&gt;脚注&lt;/h2&gt;
-&lt;aside class="footnote-list brackets"&gt;
-&lt;aside class="footnote brackets" id="fn1" role="doc-footnote"&gt;
-&lt;span class="label"&gt;&lt;span class="fn-bracket"&gt;[&lt;/span&gt;&lt;a role="doc-backlink" href="https://note.tt4e.com/posts/nikola-tips/#footnote-reference-1"&gt;1&lt;/a&gt;&lt;span class="fn-bracket"&gt;]&lt;/span&gt;&lt;/span&gt;
-&lt;p&gt;master：类似 master，slave 这样带有种族歧视色彩的词，在编程世界中将不再继续使用，现有使用也逐步 &lt;a class="reference external" href="https://github.com/github/renaming"&gt;重命名&lt;/a&gt;。&lt;/p&gt;
-&lt;/aside&gt;
-&lt;/aside&gt;
-&lt;/section&gt;</description><category>nikola</category><guid>https://note.tt4e.com/posts/nikola-tips/</guid><pubDate>Mon, 27 Nov 2023 11:34:15 GMT</pubDate></item></channel></rss>
+&lt;/div&gt;</description><category>nikola</category><category>orgmode</category><guid>https://note.tt4e.com/posts/taking-notes-in-orgmode-with-nikola/</guid><pubDate>Thu, 30 Nov 2023 09:34:15 GMT</pubDate></item></channel></rss>

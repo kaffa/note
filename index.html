@@ -15,7 +15,7 @@
 <link href="assets/css/font-awesome.css" rel="stylesheet" type="text/css">
 <link href="assets/css/styles.css" rel="stylesheet" type="text/css">
 <link href="assets/css/custom.css" rel="stylesheet" type="text/css">
-<!--[if lt IE 9]><script src="assets/js/html5.js"></script><![endif]--><link rel="prefetch" href="posts/get-localhost-ipv6-with-python/" type="text/html">
+<!--[if lt IE 9]><script src="assets/js/html5.js"></script><![endif]--><link rel="prefetch" href="posts/reset-ubuntu-liunx-password/" type="text/html">
 </head>
 <body>
 <script type="text/javascript">
@@ -94,6 +94,110 @@ document.getElementById('nav-toggle-burger').onclick = function() {
 
   
 <div class="postindex">
+    <div class="columns">
+      <div class="column">
+        <div class="card post-card">
+          <article class="h-entry post-text"><div class="card-content">
+              <div class="media metadata">
+                <div class="media-content">
+                  <p class="title is-2 p-name entry-title">
+                    <a href="posts/reset-ubuntu-liunx-password/" class="u-url">Reset Ubuntu Liunx Password</a>
+                  </p>
+                </div>
+                  <div class="media-right">
+                    <span class="icon">
+                      <i class="fa fa-file-text-o" aria-hidden="true"></i>
+                    </span>
+                    <span class="visuallyhidden">text</span>
+                  </div>
+              </div>
+                <div class="content e-content entry-content">
+                  <section id="section-1"><h2>前提</h2>
+<p>须具有本地权限，通俗的说就是，需要肉身在服务器旁边。</p>
+</section><section id="section-2"><h2>步骤</h2>
+<ol class="arabic">
+<li><p>启动服务器时按住 Shift 键，会进入 GNU GRUB  version x.yz... 界面</p></li>
+<li>
+<p>在 GNU GRUB  version x.yz... 界面下方至少会出现以下选项：</p>
+<ul>
+<li><p>Ubuntu</p></li>
+<li>
+<p><a href="posts/reset-ubuntu-liunx-password/#system-message-1"><span class="problematic" id="problematic-1">*</span></a>Advanced options for Ubuntu</p>
+<aside class="system-message" id="system-message-1"><p class="system-message-title">System Message: WARNING/2 (<span class="docutils literal">&lt;string&gt;</span>, line 14); <em><a href="posts/reset-ubuntu-liunx-password/#problematic-1">backlink</a></em></p>
+<p>Inline emphasis start-string without end-string.</p>
+</aside>
+</li>
+</ul>
+<p>选择 Advanced options for Ubuntu，按回车键；</p>
+</li>
+<li>
+<p>出现新的选项：</p>
+<ul>
+<li><p>Ubuntu, with Linux ...</p></li>
+<li>
+<p><a href="posts/reset-ubuntu-liunx-password/#system-message-2"><span class="problematic" id="problematic-2">*</span></a>Ubuntu, with Linux ... (recovery mode)</p>
+<aside class="system-message" id="system-message-2"><p class="system-message-title">System Message: WARNING/2 (<span class="docutils literal">&lt;string&gt;</span>, line 21); <em><a href="posts/reset-ubuntu-liunx-password/#problematic-2">backlink</a></em></p>
+<p>Inline emphasis start-string without end-string.</p>
+</aside>
+</li>
+</ul>
+<p>选择带有 (recovery mode) 的一行，按回车键；</p>
+</li>
+<li>
+<p>系统会显示一些输出并跳转到 Recovery Menu 菜单界面，选项如下：</p>
+<ul class="simple">
+<li><p>resume</p></li>
+<li><p>clean</p></li>
+<li><p>dpkg</p></li>
+<li><p>failsafeX</p></li>
+<li><p>fsck</p></li>
+<li><p>grub</p></li>
+<li><p>network</p></li>
+<li><p>root</p></li>
+<li><p>system-summary</p></li>
+</ul>
+<p>选择 root，按回车键</p>
+</li>
+<li>
+<p>重新 mount 具有写权限的 root，运行命令：:</p>
+<aside class="system-message"><p class="system-message-title">System Message: WARNING/2 (<span class="docutils literal">&lt;string&gt;</span>, line 41)</p>
+<p>Literal block expected; none found.</p>
+</aside><p>mount -rw -o remount /</p>
+</li>
+<li>
+<p>使用 <code class="docutils literal">ls /home</code> 命令可以查看用户名，假设是 USER1，则使用如下命令重置密码:</p>
+<aside class="system-message"><p class="system-message-title">System Message: WARNING/2 (<span class="docutils literal">&lt;string&gt;</span>, line 45)</p>
+<p>Literal block expected; none found.</p>
+</aside>
+</li>
+</ol>
+<blockquote>
+<p>passwd USER1</p>
+</blockquote>
+<ol class="arabic simple" start="7">
+<li><p>根据命令提示，你可以完成密码修改，然后退出到 Recovery Menu，选择 resume 重启，然后就可以使用上一步修改的新密码进入系统了。</p></li>
+</ol></section>
+</div>
+            </div>
+
+            <footer class="card-footer"><p class="card-footer-item byline author vcard">
+                <span class="byline-name fn">
+                    逍遥
+                </span>
+              </p>
+              <p class="card-footer-item dateline">
+                <a href="posts/reset-ubuntu-liunx-password/" rel="bookmark">
+                  <time class="published dt-published" datetime="2024-02-08T06:47:39+08:00" title="2024-02-08 06:47">2024-02-08 06:47</time></a>
+              </p>
+                <p class="card-footer-item commentline">
+    
+    <a href="posts/reset-ubuntu-liunx-password/#disqus_thread" data-disqus-identifier="cache/posts/reset-ubuntu-liunx-password.html">评论</a>
+
+</p>
+            </footer></article>
+</div>
+      </div>
+    </div>
     <div class="columns">
       <div class="column">
         <div class="card post-card">
@@ -640,104 +744,6 @@ document.getElementById('nav-toggle-burger').onclick = function() {
                 <p class="card-footer-item commentline">
     
     <a href="posts/taking-notes-in-orgmode-with-nikola/#disqus_thread" data-disqus-identifier="cache/posts/taking-notes-in-orgmode-with-nikola.html">评论</a>
-
-</p>
-            </footer></article>
-</div>
-      </div>
-    </div>
-    <div class="columns">
-      <div class="column">
-        <div class="card post-card">
-          <article class="h-entry post-text"><div class="card-content">
-              <div class="media metadata">
-                <div class="media-content">
-                  <p class="title is-2 p-name entry-title">
-                    <a href="posts/nikola-tips/" class="u-url">Nikola Tips</a>
-                  </p>
-                </div>
-                  <div class="media-right">
-                    <span class="icon">
-                      <i class="fa fa-file-text-o" aria-hidden="true"></i>
-                    </span>
-                    <span class="visuallyhidden">text</span>
-                  </div>
-              </div>
-                <div class="content e-content entry-content">
-                  <section id="nikola-tips"><h2>Nikola Tips</h2>
-<section id="nikola-serve"><h3>1. Nikola serve 自动刷新的命令行怎么写？</h3>
-<div class="code"><pre class="code shell"><a id="rest_code_52f403fe27824798aec89307b41e315c-1" name="rest_code_52f403fe27824798aec89307b41e315c-1" href="posts/nikola-tips/#rest_code_52f403fe27824798aec89307b41e315c-1"></a>nikola<span class="w"> </span>auto
-</pre></div>
-<p>即使 <strong>conf.py</strong> 中已绑定非127.0.0.1的地址，上面的命令也只会在127.0.0.1启动调试。</p>
-<p>没有去看源代码，可能这样实现从安全角度存在一定的合理性。</p>
-<p>如果需要任意主机都能获得访问，可使用 -a 参数指定地址0.0.0.0</p>
-<div class="code"><pre class="code shell"><a id="rest_code_d775740ed93b494fac186d0850f65bb8-1" name="rest_code_d775740ed93b494fac186d0850f65bb8-1" href="posts/nikola-tips/#rest_code_d775740ed93b494fac186d0850f65bb8-1"></a>nikola<span class="w"> </span>auto<span class="w"> </span>-a0.0.0.0
-</pre></div>
-</section><section id="nikola-theme-css"><h3>2. Nikola Theme 如何定制 css</h3>
-<p>如果在模板中有代码</p>
-<div class="code"><pre class="code html+mako"><a id="rest_code_dfaf94537de74be3845906cfb4bba418-1" name="rest_code_dfaf94537de74be3845906cfb4bba418-1" href="posts/nikola-tips/#rest_code_dfaf94537de74be3845906cfb4bba418-1"></a><span class="cp">%</span><span class="k">if</span> <span class="n">has_custom_css</span><span class="p">:</span>
-<a id="rest_code_dfaf94537de74be3845906cfb4bba418-2" name="rest_code_dfaf94537de74be3845906cfb4bba418-2" href="posts/nikola-tips/#rest_code_dfaf94537de74be3845906cfb4bba418-2"></a>  <span class="p">&lt;</span><span class="nt">link</span> <span class="na">href</span><span class="o">=</span><span class="s">"/assets/css/custom.css"</span> <span class="na">rel</span><span class="o">=</span><span class="s">"stylesheet"</span> <span class="na">type</span><span class="o">=</span><span class="s">"text/css"</span><span class="p">&gt;</span>
-<a id="rest_code_dfaf94537de74be3845906cfb4bba418-3" name="rest_code_dfaf94537de74be3845906cfb4bba418-3" href="posts/nikola-tips/#rest_code_dfaf94537de74be3845906cfb4bba418-3"></a><span class="cp">%</span><span class="k">endif</span>
-</pre></div>
-<p>因此，增加 /assets/css/custom.css 文件即可。</p>
-</section><section id="nikola-github"><h3>3. Nikola 如何推送到 GitHub</h3>
-<p>先设置好 git 推送</p>
-<div class="code"><pre class="code sh"><a id="rest_code_40a5efe4a12c45c496dd1df4477a963b-1" name="rest_code_40a5efe4a12c45c496dd1df4477a963b-1" href="posts/nikola-tips/#rest_code_40a5efe4a12c45c496dd1df4477a963b-1"></a>git<span class="w"> </span>config<span class="w"> </span>--global<span class="w"> </span>--add<span class="w"> </span>safe.directory<span class="w"> </span>/usr/home/kaffa/web/note.tt4e.com
-<a id="rest_code_40a5efe4a12c45c496dd1df4477a963b-2" name="rest_code_40a5efe4a12c45c496dd1df4477a963b-2" href="posts/nikola-tips/#rest_code_40a5efe4a12c45c496dd1df4477a963b-2"></a>git<span class="w"> </span>config<span class="w"> </span>--global<span class="w"> </span>user.email<span class="w"> </span><span class="s2">"yourname@tt4e.com"</span>
-<a id="rest_code_40a5efe4a12c45c496dd1df4477a963b-3" name="rest_code_40a5efe4a12c45c496dd1df4477a963b-3" href="posts/nikola-tips/#rest_code_40a5efe4a12c45c496dd1df4477a963b-3"></a>git<span class="w"> </span>config<span class="w"> </span>--global<span class="w"> </span>user.name<span class="w"> </span><span class="s2">"Your Name"</span>
-</pre></div>
-<p>将以下内容保存为 aio.sh 脚本</p>
-<div class="code"><pre class="code sh"><a id="rest_code_a6431af2cee9407dbbfbbc17505b4c7c-1" name="rest_code_a6431af2cee9407dbbfbbc17505b4c7c-1" href="posts/nikola-tips/#rest_code_a6431af2cee9407dbbfbbc17505b4c7c-1"></a><span class="ch">#!/bin/bash</span>
-<a id="rest_code_a6431af2cee9407dbbfbbc17505b4c7c-2" name="rest_code_a6431af2cee9407dbbfbbc17505b4c7c-2" href="posts/nikola-tips/#rest_code_a6431af2cee9407dbbfbbc17505b4c7c-2"></a><span class="c1">#</span>
-<a id="rest_code_a6431af2cee9407dbbfbbc17505b4c7c-3" name="rest_code_a6431af2cee9407dbbfbbc17505b4c7c-3" href="posts/nikola-tips/#rest_code_a6431af2cee9407dbbfbbc17505b4c7c-3"></a><span class="c1"># nikola output push to github</span>
-<a id="rest_code_a6431af2cee9407dbbfbbc17505b4c7c-4" name="rest_code_a6431af2cee9407dbbfbbc17505b4c7c-4" href="posts/nikola-tips/#rest_code_a6431af2cee9407dbbfbbc17505b4c7c-4"></a><span class="nb">cd</span><span class="w"> </span>~/web/note.tt4e.com/
-<a id="rest_code_a6431af2cee9407dbbfbbc17505b4c7c-5" name="rest_code_a6431af2cee9407dbbfbbc17505b4c7c-5" href="posts/nikola-tips/#rest_code_a6431af2cee9407dbbfbbc17505b4c7c-5"></a>nikola<span class="w"> </span>build
-<a id="rest_code_a6431af2cee9407dbbfbbc17505b4c7c-6" name="rest_code_a6431af2cee9407dbbfbbc17505b4c7c-6" href="posts/nikola-tips/#rest_code_a6431af2cee9407dbbfbbc17505b4c7c-6"></a>git<span class="w"> </span>add<span class="w"> </span>.
-<a id="rest_code_a6431af2cee9407dbbfbbc17505b4c7c-7" name="rest_code_a6431af2cee9407dbbfbbc17505b4c7c-7" href="posts/nikola-tips/#rest_code_a6431af2cee9407dbbfbbc17505b4c7c-7"></a>git<span class="w"> </span>commit<span class="w"> </span>-am<span class="w"> </span><span class="s1">'Kaffa'</span>
-<a id="rest_code_a6431af2cee9407dbbfbbc17505b4c7c-8" name="rest_code_a6431af2cee9407dbbfbbc17505b4c7c-8" href="posts/nikola-tips/#rest_code_a6431af2cee9407dbbfbbc17505b4c7c-8"></a>git<span class="w"> </span>push
-</pre></div>
-<p>先 su 到 root 用户，然后运行以下命令，再 su 会当前用户</p>
-<div class="code"><pre class="code sh"><a id="rest_code_07857398bf354793be34b806fe322c25-1" name="rest_code_07857398bf354793be34b806fe322c25-1" href="posts/nikola-tips/#rest_code_07857398bf354793be34b806fe322c25-1"></a>chown<span class="w"> </span>-R<span class="w"> </span>kaffa:wheel<span class="w"> </span>.git
-<a id="rest_code_07857398bf354793be34b806fe322c25-2" name="rest_code_07857398bf354793be34b806fe322c25-2" href="posts/nikola-tips/#rest_code_07857398bf354793be34b806fe322c25-2"></a>chmod<span class="w"> </span>-R<span class="w"> </span><span class="m">777</span><span class="w"> </span>./aio.sh
-</pre></div>
-<p>如果遇到错误提示 Unable to create ** /.git/index.lock: Permission denied，则需要</p>
-<div class="code"><pre class="code sh"><a id="rest_code_a8e41bce595f495eace66536aa99dfae-1" name="rest_code_a8e41bce595f495eace66536aa99dfae-1" href="posts/nikola-tips/#rest_code_a8e41bce595f495eace66536aa99dfae-1"></a>chown<span class="w"> </span>-R<span class="w"> </span>kaffa:wheel<span class="w"> </span>.git
-</pre></div>
-<p>其中 用户名和所属组，可以用 groups 命令查看。</p>
-<p>完成书上步骤后，则每次可以运行 aio.sh 来推送 GitHub，GitHub 收到推送后，会使用 GitHub Action 来处理发布。</p>
-<p>使用以上方法是有效的，但却说明没有认真读 nikola 文档。</p>
-<section id="nikola-github-1"><h4>Nikola 官方支持推送到 GitHub</h4>
-<p><a class="reference external" href="https://getnikola.com/handbook.html#toc-entry-60">官方文档</a></p>
-<p>解释一下：</p>
-<ol class="arabic simple">
-<li><p>GITHUB_DEPLOY_BRANCH：发布分支，是 Nikola 产生的 HTML 文件，建议命名为 src。</p></li>
-<li><p>GITHUB_SOURCE_BRANCH：源码分支，建议在 GitHub 上设置为默认分支，建议命名为 main，而不是 master <a class="footnote-reference brackets" href="posts/nikola-tips/#fn1" id="footnote-reference-1" role="doc-noteref"><span class="fn-bracket">[</span>1<span class="fn-bracket">]</span></a>。</p></li>
-<li><p>GITHUB_REMOTE_NAME：远程仓库名；</p></li>
-<li><p>GITHUB_COMMIT_SOURCE：True，发布时会自动提交 src 分支。</p></li>
-</ol>
-<p>补充：</p>
-<p>采用这种方法时，Github Pages 的 Build and deployment 一节，source 下拉框中，要选择 Deploy from a branch，而不是 GitHub Actions。</p>
-<div class="code"><pre class="code text"><a id="rest_code_52677e3370454172801737e6d0bfb2fc-1" name="rest_code_52677e3370454172801737e6d0bfb2fc-1" href="posts/nikola-tips/#rest_code_52677e3370454172801737e6d0bfb2fc-1"></a>nikola github_deploy
-</pre></div>
-</section></section></section><section id="section-1"><h2>脚注</h2>
-<aside class="footnote-list brackets"><aside class="footnote brackets" id="fn1" role="doc-footnote"><span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="posts/nikola-tips/#footnote-reference-1">1</a><span class="fn-bracket">]</span></span>
-<p>master：类似 master，slave 这样带有种族歧视色彩的词，在编程世界中将不再继续使用，现有使用也逐步 <a class="reference external" href="https://github.com/github/renaming">重命名</a>。</p>
-</aside></aside></section>
-</div>
-            </div>
-
-            <footer class="card-footer"><p class="card-footer-item byline author vcard">
-                <span class="byline-name fn">
-                    逍遥
-                </span>
-              </p>
-              <p class="card-footer-item dateline">
-                <a href="posts/nikola-tips/" rel="bookmark">
-                  <time class="published dt-published" datetime="2023-11-27T19:34:15+08:00" title="2023-11-27 19:34">2023-11-27 19:34</time></a>
-              </p>
-                <p class="card-footer-item commentline">
-    
-    <a href="posts/nikola-tips/#disqus_thread" data-disqus-identifier="cache/posts/nikola-tips.html">评论</a>
 
 </p>
             </footer></article>

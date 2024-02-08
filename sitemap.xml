@@ -19,11 +19,11 @@
  </url>
  <url>
   <loc>https://note.tt4e.com/archive.html</loc>
-  <lastmod>2024-01-26T00:49:00Z</lastmod>
+  <lastmod>2024-02-08T00:38:00Z</lastmod>
  </url>
  <url>
   <loc>https://note.tt4e.com/categories/</loc>
-  <lastmod>2024-01-25T04:17:00Z</lastmod>
+  <lastmod>2024-02-08T00:38:00Z</lastmod>
  </url>
  <url>
   <loc>https://note.tt4e.com/categories/asyncio/</loc>
@@ -114,6 +114,10 @@
   <lastmod>2024-01-20T15:52:00Z</lastmod>
  </url>
  <url>
+  <loc>https://note.tt4e.com/categories/ubuntu/</loc>
+  <lastmod>2024-02-08T00:38:00Z</lastmod>
+ </url>
+ <url>
   <loc>https://note.tt4e.com/galleries/</loc>
   <lastmod>2024-01-20T15:52:00Z</lastmod>
  </url>
@@ -123,7 +127,7 @@
  </url>
  <url>
   <loc>https://note.tt4e.com/index-1.html</loc>
-  <lastmod>2024-01-26T00:49:00Z</lastmod>
+  <lastmod>2024-02-08T00:38:00Z</lastmod>
  </url>
  <url>
   <loc>https://note.tt4e.com/listings/</loc>
@@ -220,6 +224,10 @@
  <url>
   <loc>https://note.tt4e.com/posts/nikola-tips/</loc>
   <lastmod>2024-01-20T15:52:00Z</lastmod>
+ </url>
+ <url>
+  <loc>https://note.tt4e.com/posts/reset-ubuntu-liunx-password/</loc>
+  <lastmod>2024-02-08T00:38:00Z</lastmod>
  </url>
  <url>
   <loc>https://note.tt4e.com/posts/securecrt-emacs-alt-v-not-work/</loc>
