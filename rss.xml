@@ -1,5 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
-<?xml-stylesheet type="text/xsl" href="assets/xml/rss.xsl" media="all"?><rss version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>琅環笔记</title><link>https://note.tt4e.com/</link><description>有博学强记者，尝为鹅厂从事。游于洞宫，遇一人于途，问逍遥曰：“君读书几何？”遥曰：“吾之未读者，则二十年内书盖有之也，若二十年外，则吾固已尽读之矣。”其人论议超然，遥颇内服，相与欢甚。因共至一处，大石中忽然有门，引遥入数歩，则别是天地，宫室嵯峨。引入一室中，陈书满架，其人曰：“此PL史也。”又至一室，则曰：“OS志也。”毎室各有奇书，惟一室屋宇颇高，封识甚严，有二犬守之。遥问故，答曰：“此皆操作系统、编程语言、算法分析、生发正骨诸秘籍。”指二犬曰：“此龙也。”历观诸室书，皆Windows以前事，多所未闻者，如「BeOS」、「Solaris」、「FreeBSD」、「LISP」亦皆在焉。遥心乐之，欲赁住数十日，其人笑曰：“君痴矣。此岂可赁地耶？”即命小童送出，遥问地名，对曰：“琅嬛福地也。”</description><atom:link href="https://note.tt4e.com/rss.xml" rel="self" type="application/rss+xml"></atom:link><language>zh_cn</language><copyright>Contents © 2024 &lt;a href="mailto:xiaoyao@tt4e.com"&gt;逍遥&lt;/a&gt; </copyright><lastBuildDate>Thu, 08 Feb 2024 10:10:04 GMT</lastBuildDate><generator>Nikola (getnikola.com)</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>Reset Ubuntu Linux Password</title><link>https://note.tt4e.com/posts/reset-ubuntu-linux-password/</link><dc:creator>逍遥</dc:creator><description>&lt;section id="section-1"&gt;
+<?xml-stylesheet type="text/xsl" href="assets/xml/rss.xsl" media="all"?><rss version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>琅環笔记</title><link>https://note.tt4e.com/</link><description>有博学强记者，尝为鹅厂从事。游于洞宫，遇一人于途，问逍遥曰：“君读书几何？”遥曰：“吾之未读者，则二十年内书盖有之也，若二十年外，则吾固已尽读之矣。”其人论议超然，遥颇内服，相与欢甚。因共至一处，大石中忽然有门，引遥入数歩，则别是天地，宫室嵯峨。引入一室中，陈书满架，其人曰：“此PL史也。”又至一室，则曰：“OS志也。”毎室各有奇书，惟一室屋宇颇高，封识甚严，有二犬守之。遥问故，答曰：“此皆操作系统、编程语言、算法分析、生发正骨诸秘籍。”指二犬曰：“此龙也。”历观诸室书，皆Windows以前事，多所未闻者，如「BeOS」、「Solaris」、「FreeBSD」、「LISP」亦皆在焉。遥心乐之，欲赁住数十日，其人笑曰：“君痴矣。此岂可赁地耶？”即命小童送出，遥问地名，对曰：“琅嬛福地也。”</description><atom:link href="https://note.tt4e.com/rss.xml" rel="self" type="application/rss+xml"></atom:link><language>zh_cn</language><copyright>Contents © 2024 &lt;a href="mailto:xiaoyao@tt4e.com"&gt;逍遥&lt;/a&gt; </copyright><lastBuildDate>Thu, 08 Feb 2024 10:42:32 GMT</lastBuildDate><generator>Nikola (getnikola.com)</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>Download Edge Browser Starter Background Image</title><link>https://note.tt4e.com/posts/download-edge-browser-starter-background-image/</link><dc:creator>逍遥</dc:creator><description>&lt;section id="section-1"&gt;
+&lt;h2&gt;直给答案&lt;/h2&gt;
+&lt;p&gt;浏览器地址打开 &lt;a class="reference external" href="chrome-search://theme/IDR_THEME_NTP_BACKGROUND"&gt;链接&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;如果是旧图，可以按 &lt;kbd&gt;Ctrl+&lt;kdb&gt;F5&lt;/kdb&gt;&lt;/kbd&gt; 刷新。&lt;/p&gt;&lt;/section&gt;</description><category>Edge</category><guid>https://note.tt4e.com/posts/download-edge-browser-starter-background-image/</guid><pubDate>Thu, 08 Feb 2024 10:36:48 GMT</pubDate></item><item><title>Reset Ubuntu Linux Password</title><link>https://note.tt4e.com/posts/reset-ubuntu-linux-password/</link><dc:creator>逍遥</dc:creator><description>&lt;section id="section-1"&gt;
 &lt;h2&gt;前提&lt;/h2&gt;
 &lt;p&gt;须具有本地权限，通俗的说就是，需要肉身在服务器旁边。&lt;/p&gt;
 &lt;/section&gt;
@@ -204,73 +207,4 @@
 &lt;li&gt;&lt;p&gt;&lt;a class="reference external" href="https://curl.se/libcurl/c/sftpget.html"&gt;https://curl.se/libcurl/c/sftpget.html&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;
 &lt;li&gt;&lt;p&gt;&lt;a class="reference external" href="https://curl-users.cool.haxx.narkive.com/ppppPXNc/curl-sftp-failure-establishing-ssh-session"&gt;https://curl-users.cool.haxx.narkive.com/ppppPXNc/curl-sftp-failure-establishing-ssh-session&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;
 &lt;/ol&gt;
-&lt;/section&gt;</description><category>freebsd</category><category>libcurl</category><guid>https://note.tt4e.com/posts/everedit-sftp-error-with-freebsd/</guid><pubDate>Fri, 01 Dec 2023 03:09:38 GMT</pubDate></item><item><title>Taking Notes In Orgmode With Nikola</title><link>https://note.tt4e.com/posts/taking-notes-in-orgmode-with-nikola/</link><dc:creator>逍遥</dc:creator><description>&lt;div id="outline-container-orgaf0893a" class="outline-2"&gt;
-&lt;h2 id="orgaf0893a"&gt;步骤&lt;/h2&gt;
-&lt;div class="outline-text-2" id="text-orgaf0893a"&gt;
-&lt;ol class="org-ol"&gt;
-&lt;li&gt;安装 emacs，最新版已内置 Org mode&lt;/li&gt;
-&lt;li&gt;安装 nikola&lt;/li&gt;
-&lt;li&gt;安装 nikola orgmode 插件，并按插件目录下的 conf.py.sample 修改 conf.py&lt;/li&gt;
-&lt;li&gt;开始写笔记&lt;/li&gt;
-&lt;/ol&gt;
-
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;nikola&lt;span class="w"&gt; &lt;/span&gt;new_post&lt;span class="w"&gt; &lt;/span&gt;-f&lt;span class="w"&gt; &lt;/span&gt;orgmode&lt;span class="w"&gt; &lt;/span&gt;-e
-&lt;/pre&gt;&lt;/div&gt;
-
-&lt;ol class="org-ol"&gt;
-&lt;li&gt;预览&lt;/li&gt;
-&lt;/ol&gt;
-
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;nikola&lt;span class="w"&gt; &lt;/span&gt;auto&lt;span class="w"&gt; &lt;/span&gt;-a0.0.0.0
-&lt;/pre&gt;&lt;/div&gt;
-
-&lt;ol class="org-ol"&gt;
-&lt;li&gt;发布到 GitHub&lt;/li&gt;
-&lt;/ol&gt;
-
-&lt;p&gt;
-设置 conf.py
-&lt;/p&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="n"&gt;GITHUB_SOURCE_BRANCH&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="s1"&gt;'sources'&lt;/span&gt;
-&lt;span class="n"&gt;GITHUB_DEPLOY_BRANCH&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="s1"&gt;'master'&lt;/span&gt;
-&lt;/pre&gt;&lt;/div&gt;
-
-&lt;p&gt;
-发布
-&lt;/p&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;$&lt;span class="w"&gt; &lt;/span&gt;nikola&lt;span class="w"&gt; &lt;/span&gt;github_deploy
-&lt;/pre&gt;&lt;/div&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-
-&lt;div id="outline-container-org90e4093" class="outline-2"&gt;
-&lt;h2 id="org90e4093"&gt;其他&lt;/h2&gt;
-&lt;div class="outline-text-2" id="text-org90e4093"&gt;
-&lt;ol class="org-ol"&gt;
-&lt;li&gt;修改默认编辑器为 emacs&lt;/li&gt;
-&lt;/ol&gt;
-
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;emacs&lt;span class="w"&gt; &lt;/span&gt;~/.profile
-&lt;/pre&gt;&lt;/div&gt;
-
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;EDITOR=emacs
-&lt;/pre&gt;&lt;/div&gt;
-
-&lt;ol class="org-ol"&gt;
-&lt;li&gt;显示当前 Shell&lt;/li&gt;
-&lt;/ol&gt;
-
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;echo $0
-&lt;/pre&gt;&lt;/div&gt;
-
-
-&lt;hr&gt;
-
-&lt;p&gt;
-我在房间里洗个澡
-同时在思考中国哪个rapper能比我屌
-&lt;/p&gt;
-
-&lt;hr&gt;
-&lt;/div&gt;
-&lt;/div&gt;</description><category>nikola</category><category>orgmode</category><guid>https://note.tt4e.com/posts/taking-notes-in-orgmode-with-nikola/</guid><pubDate>Thu, 30 Nov 2023 09:34:15 GMT</pubDate></item></channel></rss>
+&lt;/section&gt;</description><category>freebsd</category><category>libcurl</category><guid>https://note.tt4e.com/posts/everedit-sftp-error-with-freebsd/</guid><pubDate>Fri, 01 Dec 2023 03:09:38 GMT</pubDate></item></channel></rss>

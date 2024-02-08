@@ -101,6 +101,109 @@ document.getElementById('nav-toggle-burger').onclick = function() {
               <div class="media metadata">
                 <div class="media-content">
                   <p class="title is-2 p-name entry-title">
+                    <a href="posts/taking-notes-in-orgmode-with-nikola/" class="u-url">Taking Notes In Orgmode With Nikola</a>
+                  </p>
+                </div>
+                  <div class="media-right">
+                    <span class="icon">
+                      <i class="fa fa-file-text-o" aria-hidden="true"></i>
+                    </span>
+                    <span class="visuallyhidden">text</span>
+                  </div>
+              </div>
+                <div class="content e-content entry-content">
+                  <div id="outline-container-orgaf0893a" class="outline-2">
+<h2 id="orgaf0893a">步骤</h2>
+<div class="outline-text-2" id="text-orgaf0893a">
+<ol class="org-ol">
+<li>安装 emacs，最新版已内置 Org mode</li>
+<li>安装 nikola</li>
+<li>安装 nikola orgmode 插件，并按插件目录下的 conf.py.sample 修改 conf.py</li>
+<li>开始写笔记</li>
+</ol>
+<div class="highlight"><pre><span></span>nikola<span class="w"> </span>new_post<span class="w"> </span>-f<span class="w"> </span>orgmode<span class="w"> </span>-e
+</pre></div>
+
+<ol class="org-ol">
+<li>预览</li>
+</ol>
+<div class="highlight"><pre><span></span>nikola<span class="w"> </span>auto<span class="w"> </span>-a0.0.0.0
+</pre></div>
+
+<ol class="org-ol">
+<li>发布到 GitHub</li>
+</ol>
+<p>
+设置 conf.py
+</p>
+<div class="highlight"><pre><span></span><span class="n">GITHUB_SOURCE_BRANCH</span> <span class="o">=</span> <span class="s1">'sources'</span>
+<span class="n">GITHUB_DEPLOY_BRANCH</span> <span class="o">=</span> <span class="s1">'master'</span>
+</pre></div>
+
+<p>
+发布
+</p>
+<div class="highlight"><pre><span></span>$<span class="w"> </span>nikola<span class="w"> </span>github_deploy
+</pre></div>
+</div>
+</div>
+
+<div id="outline-container-org90e4093" class="outline-2">
+<h2 id="org90e4093">其他</h2>
+<div class="outline-text-2" id="text-org90e4093">
+<ol class="org-ol">
+<li>修改默认编辑器为 emacs</li>
+</ol>
+<div class="highlight"><pre><span></span>emacs<span class="w"> </span>~/.profile
+</pre></div>
+
+<div class="highlight"><pre><span></span>EDITOR=emacs
+</pre></div>
+
+<ol class="org-ol">
+<li>显示当前 Shell</li>
+</ol>
+<div class="highlight"><pre><span></span>echo $0
+</pre></div>
+
+
+<hr>
+<p>
+我在房间里洗个澡
+同时在思考中国哪个rapper能比我屌
+</p>
+
+<hr>
+</div>
+</div>
+                </div>
+            </div>
+
+            <footer class="card-footer"><p class="card-footer-item byline author vcard">
+                <span class="byline-name fn">
+                    逍遥
+                </span>
+              </p>
+              <p class="card-footer-item dateline">
+                <a href="posts/taking-notes-in-orgmode-with-nikola/" rel="bookmark">
+                  <time class="published dt-published" datetime="2023-11-30T17:34:15+08:00" title="2023-11-30 17:34">2023-11-30 17:34</time></a>
+              </p>
+                <p class="card-footer-item commentline">
+    
+    <a href="posts/taking-notes-in-orgmode-with-nikola/#disqus_thread" data-disqus-identifier="cache/posts/taking-notes-in-orgmode-with-nikola.html">评论</a>
+
+</p>
+            </footer></article>
+</div>
+      </div>
+    </div>
+    <div class="columns">
+      <div class="column">
+        <div class="card post-card">
+          <article class="h-entry post-text"><div class="card-content">
+              <div class="media metadata">
+                <div class="media-content">
+                  <p class="title is-2 p-name entry-title">
                     <a href="posts/nikola-tips/" class="u-url">Nikola Tips</a>
                   </p>
                 </div>

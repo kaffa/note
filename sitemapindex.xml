@@ -19,7 +19,7 @@
  </sitemap>
  <sitemap>
   <loc>https://note.tt4e.com/categories/cat_tips.xml</loc>
-  <lastmod>2024-02-08T01:43:00Z</lastmod>
+  <lastmod>2024-02-08T10:42:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>https://note.tt4e.com/categories/cmd.xml</loc>
@@ -28,6 +28,10 @@
  <sitemap>
   <loc>https://note.tt4e.com/categories/dig.xml</loc>
   <lastmod>2024-01-21T18:56:00Z</lastmod>
+ </sitemap>
+ <sitemap>
+  <loc>https://note.tt4e.com/categories/edge.xml</loc>
+  <lastmod>2024-02-08T10:42:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>https://note.tt4e.com/categories/emacs.xml</loc>
@@ -95,7 +99,7 @@
  </sitemap>
  <sitemap>
   <loc>https://note.tt4e.com/categories/ubuntu.xml</loc>
-  <lastmod>2024-02-08T01:43:00Z</lastmod>
+  <lastmod>2024-02-08T10:10:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>https://note.tt4e.com/galleries/demo/rss.xml</loc>
@@ -107,10 +111,10 @@
  </sitemap>
  <sitemap>
   <loc>https://note.tt4e.com/rss.xml</loc>
-  <lastmod>2024-02-08T01:43:00Z</lastmod>
+  <lastmod>2024-02-08T10:42:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>https://note.tt4e.com/sitemap.xml</loc>
-  <lastmod>2024-02-08T01:44:00Z</lastmod>
+  <lastmod>2024-02-08T10:42:00Z</lastmod>
  </sitemap>
 </sitemapindex>
