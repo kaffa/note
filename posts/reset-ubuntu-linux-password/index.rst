@@ -1,5 +1,5 @@
-.. title: Reset Ubuntu Liunx Password
-.. slug: reset-ubuntu-liunx-password
+.. title: Reset Ubuntu Linux Password
+.. slug: reset-ubuntu-linux-password
 .. date: 2024-02-08 06:47:39 UTC+08:00
 .. tags: ubuntu 
 .. category: Tips

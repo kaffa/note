@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<?xml-stylesheet type="text/xsl" href="../assets/xml/rss.xsl" media="all"?><rss version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>琅環笔记 (关于 ubuntu 的文章)</title><link>https://note.tt4e.com/</link><description></description><atom:link href="https://note.tt4e.com/categories/ubuntu.xml" rel="self" type="application/rss+xml"></atom:link><language>zh_cn</language><copyright>Contents © 2024 &lt;a href="mailto:xiaoyao@tt4e.com"&gt;逍遥&lt;/a&gt; </copyright><lastBuildDate>Thu, 08 Feb 2024 00:38:42 GMT</lastBuildDate><generator>Nikola (getnikola.com)</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>Reset Ubuntu Liunx Password</title><link>https://note.tt4e.com/posts/reset-ubuntu-liunx-password/</link><dc:creator>逍遥</dc:creator><description>&lt;section id="section-1"&gt;
+<?xml-stylesheet type="text/xsl" href="../assets/xml/rss.xsl" media="all"?><rss version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>琅環笔记 (关于 ubuntu 的文章)</title><link>https://note.tt4e.com/</link><description></description><atom:link href="https://note.tt4e.com/categories/ubuntu.xml" rel="self" type="application/rss+xml"></atom:link><language>zh_cn</language><copyright>Contents © 2024 &lt;a href="mailto:xiaoyao@tt4e.com"&gt;逍遥&lt;/a&gt; </copyright><lastBuildDate>Thu, 08 Feb 2024 01:43:20 GMT</lastBuildDate><generator>Nikola (getnikola.com)</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>Reset Ubuntu Linux Password</title><link>https://note.tt4e.com/posts/reset-ubuntu-linux-password/</link><dc:creator>逍遥</dc:creator><description>&lt;section id="section-1"&gt;
 &lt;h2&gt;前提&lt;/h2&gt;
 &lt;p&gt;须具有本地权限，通俗的说就是，需要肉身在服务器旁边。&lt;/p&gt;
 &lt;/section&gt;
@@ -10,9 +10,9 @@
 &lt;li&gt;&lt;p&gt;在 GNU GRUB  version x.yz... 界面下方至少会出现以下选项：&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;&lt;p&gt;Ubuntu&lt;/p&gt;&lt;/li&gt;
-&lt;li&gt;&lt;p&gt;&lt;a href="https://note.tt4e.com/posts/reset-ubuntu-liunx-password/#system-message-1"&gt;&lt;span class="problematic" id="problematic-1"&gt;*&lt;/span&gt;&lt;/a&gt;Advanced options for Ubuntu&lt;/p&gt;
+&lt;li&gt;&lt;p&gt;&lt;a href="https://note.tt4e.com/posts/reset-ubuntu-linux-password/#system-message-1"&gt;&lt;span class="problematic" id="problematic-1"&gt;*&lt;/span&gt;&lt;/a&gt;Advanced options for Ubuntu&lt;/p&gt;
 &lt;aside class="system-message" id="system-message-1"&gt;
-&lt;p class="system-message-title"&gt;System Message: WARNING/2 (&lt;span class="docutils literal"&gt;&amp;lt;string&amp;gt;&lt;/span&gt;, line 14); &lt;em&gt;&lt;a href="https://note.tt4e.com/posts/reset-ubuntu-liunx-password/#problematic-1"&gt;backlink&lt;/a&gt;&lt;/em&gt;&lt;/p&gt;
+&lt;p class="system-message-title"&gt;System Message: WARNING/2 (&lt;span class="docutils literal"&gt;&amp;lt;string&amp;gt;&lt;/span&gt;, line 14); &lt;em&gt;&lt;a href="https://note.tt4e.com/posts/reset-ubuntu-linux-password/#problematic-1"&gt;backlink&lt;/a&gt;&lt;/em&gt;&lt;/p&gt;
 &lt;p&gt;Inline emphasis start-string without end-string.&lt;/p&gt;
 &lt;/aside&gt;
 &lt;/li&gt;
@@ -22,9 +22,9 @@
 &lt;li&gt;&lt;p&gt;出现新的选项：&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;&lt;p&gt;Ubuntu, with Linux ...&lt;/p&gt;&lt;/li&gt;
-&lt;li&gt;&lt;p&gt;&lt;a href="https://note.tt4e.com/posts/reset-ubuntu-liunx-password/#system-message-2"&gt;&lt;span class="problematic" id="problematic-2"&gt;*&lt;/span&gt;&lt;/a&gt;Ubuntu, with Linux ... (recovery mode)&lt;/p&gt;
+&lt;li&gt;&lt;p&gt;&lt;a href="https://note.tt4e.com/posts/reset-ubuntu-linux-password/#system-message-2"&gt;&lt;span class="problematic" id="problematic-2"&gt;*&lt;/span&gt;&lt;/a&gt;Ubuntu, with Linux ... (recovery mode)&lt;/p&gt;
 &lt;aside class="system-message" id="system-message-2"&gt;
-&lt;p class="system-message-title"&gt;System Message: WARNING/2 (&lt;span class="docutils literal"&gt;&amp;lt;string&amp;gt;&lt;/span&gt;, line 21); &lt;em&gt;&lt;a href="https://note.tt4e.com/posts/reset-ubuntu-liunx-password/#problematic-2"&gt;backlink&lt;/a&gt;&lt;/em&gt;&lt;/p&gt;
+&lt;p class="system-message-title"&gt;System Message: WARNING/2 (&lt;span class="docutils literal"&gt;&amp;lt;string&amp;gt;&lt;/span&gt;, line 21); &lt;em&gt;&lt;a href="https://note.tt4e.com/posts/reset-ubuntu-linux-password/#problematic-2"&gt;backlink&lt;/a&gt;&lt;/em&gt;&lt;/p&gt;
 &lt;p&gt;Inline emphasis start-string without end-string.&lt;/p&gt;
 &lt;/aside&gt;
 &lt;/li&gt;
@@ -65,4 +65,4 @@
 &lt;ol class="arabic simple" start="7"&gt;
 &lt;li&gt;&lt;p&gt;根据命令提示，你可以完成密码修改，然后退出到 Recovery Menu，选择 resume 重启，然后就可以使用上一步修改的新密码进入系统了。&lt;/p&gt;&lt;/li&gt;
 &lt;/ol&gt;
-&lt;/section&gt;</description><category>ubuntu</category><guid>https://note.tt4e.com/posts/reset-ubuntu-liunx-password/</guid><pubDate>Wed, 07 Feb 2024 22:47:39 GMT</pubDate></item></channel></rss>
+&lt;/section&gt;</description><category>ubuntu</category><guid>https://note.tt4e.com/posts/reset-ubuntu-linux-password/</guid><pubDate>Wed, 07 Feb 2024 22:47:39 GMT</pubDate></item></channel></rss>
