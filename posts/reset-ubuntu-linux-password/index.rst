@@ -20,14 +20,14 @@
 2. 在 GNU GRUB  version x.yz... 界面下方至少会出现以下选项：
 
    - Ubuntu
-   - *Advanced options for Ubuntu
+   - \*Advanced options for Ubuntu
 
    选择 Advanced options for Ubuntu，按回车键；
 
 3. 出现新的选项：
 
    - Ubuntu, with Linux ...
-   - *Ubuntu, with Linux ... (recovery mode)
+   - \*Ubuntu, with Linux ... (recovery mode)
 
    选择带有 (recovery mode) 的一行，按回车键；
 
@@ -47,11 +47,11 @@
 
 5. 重新 mount 具有写权限的 root，运行命令：::
 
-   mount -rw -o remount /
+    mount -rw -o remount /
 
 6. 使用 ``ls /home`` 命令可以查看用户名，假设是 USER1，则使用如下命令重置密码::
 
-  passwd USER1
+    passwd USER1
 
 7. 根据命令提示，你可以完成密码修改，然后退出到 Recovery Menu，选择 resume 重启，然后就可以使用上一步修改的新密码进入系统了。
    

@@ -119,27 +119,17 @@ document.getElementById('nav-toggle-burger').onclick = function() {
 <li><p>启动服务器时按住 Shift 键，会进入 GNU GRUB  version x.yz... 界面</p></li>
 <li>
 <p>在 GNU GRUB  version x.yz... 界面下方至少会出现以下选项：</p>
-<ul>
+<ul class="simple">
 <li><p>Ubuntu</p></li>
-<li>
-<p><a href="posts/reset-ubuntu-linux-password/#system-message-1"><span class="problematic" id="problematic-1">*</span></a>Advanced options for Ubuntu</p>
-<aside class="system-message" id="system-message-1"><p class="system-message-title">System Message: WARNING/2 (<span class="docutils literal">&lt;string&gt;</span>, line 14); <em><a href="posts/reset-ubuntu-linux-password/#problematic-1">backlink</a></em></p>
-<p>Inline emphasis start-string without end-string.</p>
-</aside>
-</li>
+<li><p>*Advanced options for Ubuntu</p></li>
 </ul>
 <p>选择 Advanced options for Ubuntu，按回车键；</p>
 </li>
 <li>
 <p>出现新的选项：</p>
-<ul>
+<ul class="simple">
 <li><p>Ubuntu, with Linux ...</p></li>
-<li>
-<p><a href="posts/reset-ubuntu-linux-password/#system-message-2"><span class="problematic" id="problematic-2">*</span></a>Ubuntu, with Linux ... (recovery mode)</p>
-<aside class="system-message" id="system-message-2"><p class="system-message-title">System Message: WARNING/2 (<span class="docutils literal">&lt;string&gt;</span>, line 21); <em><a href="posts/reset-ubuntu-linux-password/#problematic-2">backlink</a></em></p>
-<p>Inline emphasis start-string without end-string.</p>
-</aside>
-</li>
+<li><p>*Ubuntu, with Linux ... (recovery mode)</p></li>
 </ul>
 <p>选择带有 (recovery mode) 的一行，按回车键；</p>
 </li>
@@ -160,21 +150,12 @@ document.getElementById('nav-toggle-burger').onclick = function() {
 </li>
 <li>
 <p>重新 mount 具有写权限的 root，运行命令：:</p>
-<aside class="system-message"><p class="system-message-title">System Message: WARNING/2 (<span class="docutils literal">&lt;string&gt;</span>, line 41)</p>
-<p>Literal block expected; none found.</p>
-</aside><p>mount -rw -o remount /</p>
+<pre class="literal-block">mount -rw -o remount /</pre>
 </li>
 <li>
 <p>使用 <code class="docutils literal">ls /home</code> 命令可以查看用户名，假设是 USER1，则使用如下命令重置密码:</p>
-<aside class="system-message"><p class="system-message-title">System Message: WARNING/2 (<span class="docutils literal">&lt;string&gt;</span>, line 45)</p>
-<p>Literal block expected; none found.</p>
-</aside>
+<pre class="literal-block">passwd USER1</pre>
 </li>
-</ol>
-<blockquote>
-<p>passwd USER1</p>
-</blockquote>
-<ol class="arabic simple" start="7">
 <li><p>根据命令提示，你可以完成密码修改，然后退出到 Recovery Menu，选择 resume 重启，然后就可以使用上一步修改的新密码进入系统了。</p></li>
 </ol></section>
 </div>
