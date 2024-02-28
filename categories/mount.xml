@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<?xml-stylesheet type="text/xsl" href="../assets/xml/rss.xsl" media="all"?><rss version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>琅環笔记 (关于 mount 的文章)</title><link>https://note.tt4e.com/</link><description></description><atom:link href="https://note.tt4e.com/categories/mount.xml" rel="self" type="application/rss+xml"></atom:link><language>zh_cn</language><copyright>Contents © 2024 &lt;a href="mailto:xiaoyao@tt4e.com"&gt;逍遥&lt;/a&gt; </copyright><lastBuildDate>Wed, 28 Feb 2024 16:29:32 GMT</lastBuildDate><generator>Nikola (getnikola.com)</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>Solution to "Could not chdir to home directory No such file or directory"</title><link>https://note.tt4e.com/posts/solution-to-could-not-chdir-to-home-directory-no-such-file-or-directory/</link><dc:creator>逍遥</dc:creator><description>&lt;section id="section-1"&gt;
+&lt;h2&gt;两种登录模式&lt;/h2&gt;
+&lt;ol class="arabic simple"&gt;
+&lt;li&gt;&lt;p&gt;多用户登录模式，可读写全部文件。&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;单用户登录模式，只可操作根目录下的文件，只能读操作。常用来检查和修复文件系统。&lt;/p&gt;&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/section&gt;
+&lt;section id="section-2"&gt;
+&lt;h2&gt;问题现象&lt;/h2&gt;
+&lt;p&gt;当开机后，系统提示 "Cound not chdir to home directory /home/your_username No such file or directory"&lt;/p&gt;
+&lt;p&gt;此时，尝试执行 &lt;code class="docutils literal"&gt;ls /home&lt;/code&gt; 会发现一无所获，表现为你的用户目录丢失了，非常惊悚。&lt;/p&gt;
+&lt;/section&gt;
+&lt;section id="section-3"&gt;
+&lt;h2&gt;产生原因&lt;/h2&gt;
+&lt;ol class="arabic"&gt;
+&lt;li&gt;&lt;p&gt;黑客获得了你的系统权限，强制删除了你的用户目录。这一般是瞎扯的。&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;用户创建目录和 zfs 挂载的先后顺序问题。&lt;/p&gt;
+&lt;p&gt;详细来说，zfs 是一种高级文件系统，比如可以按需增加容量。&lt;/p&gt;
+&lt;p&gt;通常我们会将用户目录放到 zfs 的池中管理，挂载点的对应关系在 zfs 的 dataset 中保存。&lt;/p&gt;
+&lt;p&gt;此时，如果用户在 zfs 挂载 /usr/home 以前 (/home 是 /usr/home 的硬连接)，在目录 /home 下创建了目录，再挂载 zfs 的目录时，会覆盖 /home 目录。&lt;/p&gt;
+&lt;p&gt;这里怎么理解？就好比目录和文件是对象，挂载点可以是层叠结构，后挂载的目录会指向同样的挂载点，而系统在挂载后，只会显示最后的挂载。&lt;/p&gt;
+&lt;p&gt;此时，先前的目录和文件并没有丢失，只是被遮蔽了。&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/section&gt;
+&lt;section id="section-4"&gt;
+&lt;h2&gt;怎么处理&lt;/h2&gt;
+&lt;p&gt;进入单用户登录模式登录，尝试执行 &lt;code class="docutils literal"&gt;ls /home&lt;/code&gt; ，一般会看到「丢失的」目录。&lt;/p&gt;
+&lt;p&gt;确认这一点后，可以重新进入多用户模式，先用 unmount 命令强制停止挂载 /home 目录&lt;/p&gt;
+&lt;div class="code"&gt;&lt;pre class="code sh"&gt;&lt;a id="rest_code_ce3c7c1c730941a79d3e7a4633bdf918-1" name="rest_code_ce3c7c1c730941a79d3e7a4633bdf918-1" href="https://note.tt4e.com/posts/solution-to-could-not-chdir-to-home-directory-no-such-file-or-directory/#rest_code_ce3c7c1c730941a79d3e7a4633bdf918-1"&gt;&lt;/a&gt;zfs&lt;span class="w"&gt; &lt;/span&gt;unmount&lt;span class="w"&gt; &lt;/span&gt;zroot/usr/home
+&lt;/pre&gt;&lt;/div&gt;
+&lt;/section&gt;
+&lt;section id="section-5"&gt;
+&lt;h2&gt;问题发现和解决过程&lt;/h2&gt;
+&lt;p&gt;我在 &lt;a class="reference external" href="https://forums.freebsd.org/threads/lost-home-directory.89382/"&gt;https://forums.freebsd.org/threads/lost-home-directory.89382/&lt;/a&gt; 看到，问题可能与 ZFS 有关，在没有思路时，我请教了 OpenAI 的 ChatGPT 3.5，效果好的可怕。&lt;/p&gt;
+&lt;p&gt;我的提示语如下:&lt;/p&gt;
+&lt;pre class="literal-block"&gt;你是FreeBSD系统专家，我遇到一个问题向你请教：我的用户名是 xyz，当我从 multiple user mode 登录系统时，/home 和 /usr/home 下没有 xyz 目录，但当我从 Single user mode 登录系统时，/home 和 /usr/home 下存在 xyz 目录，既存在 /home/xyz 和 /usr/home/xyz，请问如何做才可实现当重启进入 multiple user mode 时，依然看到这个目录。我不清楚导致这个现象的原因是什么，可能是电脑异常关机导致的，我的 FreeBSD 是安装在 vpc 上的。&lt;/pre&gt;
+&lt;p&gt;结果 ChatGPT 给与了初步判断，并给了我命令，我继续执行命令，将结果告诉它，它接着提示，大约通过 10 轮对话，它帮我找到了 zfs 和 mount 的原因，也让我理解了为什么会出现这样的问题。&lt;/p&gt;
+&lt;p&gt;ChatGPT 真的可以。&lt;/p&gt;
+&lt;/section&gt;</description><category>freebsd</category><category>mount</category><category>zfs</category><guid>https://note.tt4e.com/posts/solution-to-could-not-chdir-to-home-directory-no-such-file-or-directory/</guid><pubDate>Wed, 28 Feb 2024 14:52:30 GMT</pubDate></item></channel></rss>

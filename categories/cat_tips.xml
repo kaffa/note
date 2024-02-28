@@ -1,5 +1,44 @@
 <?xml version="1.0" encoding="utf-8"?>
-<?xml-stylesheet type="text/xsl" href="../assets/xml/rss.xsl" media="all"?><rss version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>琅環笔记 (关于 Tips 的文章)</title><link>https://note.tt4e.com/</link><description></description><atom:link href="https://note.tt4e.com/categories/cat_tips.xml" rel="self" type="application/rss+xml"></atom:link><language>zh_cn</language><copyright>Contents © 2024 &lt;a href="mailto:xiaoyao@tt4e.com"&gt;逍遥&lt;/a&gt; </copyright><lastBuildDate>Thu, 08 Feb 2024 11:28:20 GMT</lastBuildDate><generator>Nikola (getnikola.com)</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>Sudo unable to resolve host On Ubuntu</title><link>https://note.tt4e.com/posts/sudo-unable-to-resolve-host-on-ubuntu/</link><dc:creator>逍遥</dc:creator><description>&lt;section id="section-1"&gt;
+<?xml-stylesheet type="text/xsl" href="../assets/xml/rss.xsl" media="all"?><rss version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>琅環笔记 (关于 Tips 的文章)</title><link>https://note.tt4e.com/</link><description></description><atom:link href="https://note.tt4e.com/categories/cat_tips.xml" rel="self" type="application/rss+xml"></atom:link><language>zh_cn</language><copyright>Contents © 2024 &lt;a href="mailto:xiaoyao@tt4e.com"&gt;逍遥&lt;/a&gt; </copyright><lastBuildDate>Wed, 28 Feb 2024 16:29:32 GMT</lastBuildDate><generator>Nikola (getnikola.com)</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>Solution to "Could not chdir to home directory No such file or directory"</title><link>https://note.tt4e.com/posts/solution-to-could-not-chdir-to-home-directory-no-such-file-or-directory/</link><dc:creator>逍遥</dc:creator><description>&lt;section id="section-1"&gt;
+&lt;h2&gt;两种登录模式&lt;/h2&gt;
+&lt;ol class="arabic simple"&gt;
+&lt;li&gt;&lt;p&gt;多用户登录模式，可读写全部文件。&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;单用户登录模式，只可操作根目录下的文件，只能读操作。常用来检查和修复文件系统。&lt;/p&gt;&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/section&gt;
+&lt;section id="section-2"&gt;
+&lt;h2&gt;问题现象&lt;/h2&gt;
+&lt;p&gt;当开机后，系统提示 "Cound not chdir to home directory /home/your_username No such file or directory"&lt;/p&gt;
+&lt;p&gt;此时，尝试执行 &lt;code class="docutils literal"&gt;ls /home&lt;/code&gt; 会发现一无所获，表现为你的用户目录丢失了，非常惊悚。&lt;/p&gt;
+&lt;/section&gt;
+&lt;section id="section-3"&gt;
+&lt;h2&gt;产生原因&lt;/h2&gt;
+&lt;ol class="arabic"&gt;
+&lt;li&gt;&lt;p&gt;黑客获得了你的系统权限，强制删除了你的用户目录。这一般是瞎扯的。&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;用户创建目录和 zfs 挂载的先后顺序问题。&lt;/p&gt;
+&lt;p&gt;详细来说，zfs 是一种高级文件系统，比如可以按需增加容量。&lt;/p&gt;
+&lt;p&gt;通常我们会将用户目录放到 zfs 的池中管理，挂载点的对应关系在 zfs 的 dataset 中保存。&lt;/p&gt;
+&lt;p&gt;此时，如果用户在 zfs 挂载 /usr/home 以前 (/home 是 /usr/home 的硬连接)，在目录 /home 下创建了目录，再挂载 zfs 的目录时，会覆盖 /home 目录。&lt;/p&gt;
+&lt;p&gt;这里怎么理解？就好比目录和文件是对象，挂载点可以是层叠结构，后挂载的目录会指向同样的挂载点，而系统在挂载后，只会显示最后的挂载。&lt;/p&gt;
+&lt;p&gt;此时，先前的目录和文件并没有丢失，只是被遮蔽了。&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/section&gt;
+&lt;section id="section-4"&gt;
+&lt;h2&gt;怎么处理&lt;/h2&gt;
+&lt;p&gt;进入单用户登录模式登录，尝试执行 &lt;code class="docutils literal"&gt;ls /home&lt;/code&gt; ，一般会看到「丢失的」目录。&lt;/p&gt;
+&lt;p&gt;确认这一点后，可以重新进入多用户模式，先用 unmount 命令强制停止挂载 /home 目录&lt;/p&gt;
+&lt;div class="code"&gt;&lt;pre class="code sh"&gt;&lt;a id="rest_code_ce3c7c1c730941a79d3e7a4633bdf918-1" name="rest_code_ce3c7c1c730941a79d3e7a4633bdf918-1" href="https://note.tt4e.com/posts/solution-to-could-not-chdir-to-home-directory-no-such-file-or-directory/#rest_code_ce3c7c1c730941a79d3e7a4633bdf918-1"&gt;&lt;/a&gt;zfs&lt;span class="w"&gt; &lt;/span&gt;unmount&lt;span class="w"&gt; &lt;/span&gt;zroot/usr/home
+&lt;/pre&gt;&lt;/div&gt;
+&lt;/section&gt;
+&lt;section id="section-5"&gt;
+&lt;h2&gt;问题发现和解决过程&lt;/h2&gt;
+&lt;p&gt;我在 &lt;a class="reference external" href="https://forums.freebsd.org/threads/lost-home-directory.89382/"&gt;https://forums.freebsd.org/threads/lost-home-directory.89382/&lt;/a&gt; 看到，问题可能与 ZFS 有关，在没有思路时，我请教了 OpenAI 的 ChatGPT 3.5，效果好的可怕。&lt;/p&gt;
+&lt;p&gt;我的提示语如下:&lt;/p&gt;
+&lt;pre class="literal-block"&gt;你是FreeBSD系统专家，我遇到一个问题向你请教：我的用户名是 xyz，当我从 multiple user mode 登录系统时，/home 和 /usr/home 下没有 xyz 目录，但当我从 Single user mode 登录系统时，/home 和 /usr/home 下存在 xyz 目录，既存在 /home/xyz 和 /usr/home/xyz，请问如何做才可实现当重启进入 multiple user mode 时，依然看到这个目录。我不清楚导致这个现象的原因是什么，可能是电脑异常关机导致的，我的 FreeBSD 是安装在 vpc 上的。&lt;/pre&gt;
+&lt;p&gt;结果 ChatGPT 给与了初步判断，并给了我命令，我继续执行命令，将结果告诉它，它接着提示，大约通过 10 轮对话，它帮我找到了 zfs 和 mount 的原因，也让我理解了为什么会出现这样的问题。&lt;/p&gt;
+&lt;p&gt;ChatGPT 真的可以。&lt;/p&gt;
+&lt;/section&gt;</description><category>freebsd</category><category>mount</category><category>zfs</category><guid>https://note.tt4e.com/posts/solution-to-could-not-chdir-to-home-directory-no-such-file-or-directory/</guid><pubDate>Wed, 28 Feb 2024 14:52:30 GMT</pubDate></item><item><title>Sudo unable to resolve host On Ubuntu</title><link>https://note.tt4e.com/posts/sudo-unable-to-resolve-host-on-ubuntu/</link><dc:creator>逍遥</dc:creator><description>&lt;section id="section-1"&gt;
 &lt;h2&gt;直接给答案&lt;/h2&gt;
 &lt;p&gt;在 /etc/hosts 文件中加入主机名，比如:&lt;/p&gt;
 &lt;pre class="literal-block"&gt;127.0.0.1    ubuntu.tt.com&lt;/pre&gt;
@@ -172,77 +211,4 @@
 &lt;p&gt;想到这一点后，我尝试逐个关闭电脑相关程序来排除，终于当我关闭「富途牛牛」时，在 Emacs 中，Alt+V 或说 M-v 生效了，可以成功向上滚动。&lt;/p&gt;
 &lt;p&gt;再查看「富途牛牛」的快捷键清单中，是截屏直播的快捷键。同理还有全屏直播 Alt+C，以及快捷键 Ctrl+1，Alt+1 也显示被其他软件占用。&lt;/p&gt;
 &lt;p&gt;不知是不是因为富途牛牛的产品经理视角狭隘，或者开发人员用的都是 macOS，要不怎么会设计出这些明显冲突的全局快捷键。&lt;/p&gt;
-&lt;/section&gt;</description><category>emacs</category><category>securecrt</category><guid>https://note.tt4e.com/posts/securecrt-emacs-alt-v-not-work/</guid><pubDate>Sat, 02 Dec 2023 00:09:47 GMT</pubDate></item><item><title>Nikola Tips</title><link>https://note.tt4e.com/posts/nikola-tips/</link><dc:creator>逍遥</dc:creator><description>&lt;section id="nikola-tips"&gt;
-&lt;h2&gt;Nikola Tips&lt;/h2&gt;
-&lt;section id="nikola-serve"&gt;
-&lt;h3&gt;1. Nikola serve 自动刷新的命令行怎么写？&lt;/h3&gt;
-&lt;div class="code"&gt;&lt;pre class="code shell"&gt;&lt;a id="rest_code_52f403fe27824798aec89307b41e315c-1" name="rest_code_52f403fe27824798aec89307b41e315c-1" href="https://note.tt4e.com/posts/nikola-tips/#rest_code_52f403fe27824798aec89307b41e315c-1"&gt;&lt;/a&gt;nikola&lt;span class="w"&gt; &lt;/span&gt;auto
-&lt;/pre&gt;&lt;/div&gt;
-&lt;p&gt;即使 &lt;strong&gt;conf.py&lt;/strong&gt; 中已绑定非127.0.0.1的地址，上面的命令也只会在127.0.0.1启动调试。&lt;/p&gt;
-&lt;p&gt;没有去看源代码，可能这样实现从安全角度存在一定的合理性。&lt;/p&gt;
-&lt;p&gt;如果需要任意主机都能获得访问，可使用 -a 参数指定地址0.0.0.0&lt;/p&gt;
-&lt;div class="code"&gt;&lt;pre class="code shell"&gt;&lt;a id="rest_code_d775740ed93b494fac186d0850f65bb8-1" name="rest_code_d775740ed93b494fac186d0850f65bb8-1" href="https://note.tt4e.com/posts/nikola-tips/#rest_code_d775740ed93b494fac186d0850f65bb8-1"&gt;&lt;/a&gt;nikola&lt;span class="w"&gt; &lt;/span&gt;auto&lt;span class="w"&gt; &lt;/span&gt;-a0.0.0.0
-&lt;/pre&gt;&lt;/div&gt;
-&lt;/section&gt;
-&lt;section id="nikola-theme-css"&gt;
-&lt;h3&gt;2. Nikola Theme 如何定制 css&lt;/h3&gt;
-&lt;p&gt;如果在模板中有代码&lt;/p&gt;
-&lt;div class="code"&gt;&lt;pre class="code html+mako"&gt;&lt;a id="rest_code_dfaf94537de74be3845906cfb4bba418-1" name="rest_code_dfaf94537de74be3845906cfb4bba418-1" href="https://note.tt4e.com/posts/nikola-tips/#rest_code_dfaf94537de74be3845906cfb4bba418-1"&gt;&lt;/a&gt;&lt;span class="cp"&gt;%&lt;/span&gt;&lt;span class="k"&gt;if&lt;/span&gt; &lt;span class="n"&gt;has_custom_css&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;
-&lt;a id="rest_code_dfaf94537de74be3845906cfb4bba418-2" name="rest_code_dfaf94537de74be3845906cfb4bba418-2" href="https://note.tt4e.com/posts/nikola-tips/#rest_code_dfaf94537de74be3845906cfb4bba418-2"&gt;&lt;/a&gt;  &lt;span class="p"&gt;&amp;lt;&lt;/span&gt;&lt;span class="nt"&gt;link&lt;/span&gt; &lt;span class="na"&gt;href&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s"&gt;"/assets/css/custom.css"&lt;/span&gt; &lt;span class="na"&gt;rel&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s"&gt;"stylesheet"&lt;/span&gt; &lt;span class="na"&gt;type&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s"&gt;"text/css"&lt;/span&gt;&lt;span class="p"&gt;&amp;gt;&lt;/span&gt;
-&lt;a id="rest_code_dfaf94537de74be3845906cfb4bba418-3" name="rest_code_dfaf94537de74be3845906cfb4bba418-3" href="https://note.tt4e.com/posts/nikola-tips/#rest_code_dfaf94537de74be3845906cfb4bba418-3"&gt;&lt;/a&gt;&lt;span class="cp"&gt;%&lt;/span&gt;&lt;span class="k"&gt;endif&lt;/span&gt;
-&lt;/pre&gt;&lt;/div&gt;
-&lt;p&gt;因此，增加 /assets/css/custom.css 文件即可。&lt;/p&gt;
-&lt;/section&gt;
-&lt;section id="nikola-github"&gt;
-&lt;h3&gt;3. Nikola 如何推送到 GitHub&lt;/h3&gt;
-&lt;p&gt;先设置好 git 推送&lt;/p&gt;
-&lt;div class="code"&gt;&lt;pre class="code sh"&gt;&lt;a id="rest_code_40a5efe4a12c45c496dd1df4477a963b-1" name="rest_code_40a5efe4a12c45c496dd1df4477a963b-1" href="https://note.tt4e.com/posts/nikola-tips/#rest_code_40a5efe4a12c45c496dd1df4477a963b-1"&gt;&lt;/a&gt;git&lt;span class="w"&gt; &lt;/span&gt;config&lt;span class="w"&gt; &lt;/span&gt;--global&lt;span class="w"&gt; &lt;/span&gt;--add&lt;span class="w"&gt; &lt;/span&gt;safe.directory&lt;span class="w"&gt; &lt;/span&gt;/usr/home/kaffa/web/note.tt4e.com
-&lt;a id="rest_code_40a5efe4a12c45c496dd1df4477a963b-2" name="rest_code_40a5efe4a12c45c496dd1df4477a963b-2" href="https://note.tt4e.com/posts/nikola-tips/#rest_code_40a5efe4a12c45c496dd1df4477a963b-2"&gt;&lt;/a&gt;git&lt;span class="w"&gt; &lt;/span&gt;config&lt;span class="w"&gt; &lt;/span&gt;--global&lt;span class="w"&gt; &lt;/span&gt;user.email&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="s2"&gt;"yourname@tt4e.com"&lt;/span&gt;
-&lt;a id="rest_code_40a5efe4a12c45c496dd1df4477a963b-3" name="rest_code_40a5efe4a12c45c496dd1df4477a963b-3" href="https://note.tt4e.com/posts/nikola-tips/#rest_code_40a5efe4a12c45c496dd1df4477a963b-3"&gt;&lt;/a&gt;git&lt;span class="w"&gt; &lt;/span&gt;config&lt;span class="w"&gt; &lt;/span&gt;--global&lt;span class="w"&gt; &lt;/span&gt;user.name&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="s2"&gt;"Your Name"&lt;/span&gt;
-&lt;/pre&gt;&lt;/div&gt;
-&lt;p&gt;将以下内容保存为 aio.sh 脚本&lt;/p&gt;
-&lt;div class="code"&gt;&lt;pre class="code sh"&gt;&lt;a id="rest_code_a6431af2cee9407dbbfbbc17505b4c7c-1" name="rest_code_a6431af2cee9407dbbfbbc17505b4c7c-1" href="https://note.tt4e.com/posts/nikola-tips/#rest_code_a6431af2cee9407dbbfbbc17505b4c7c-1"&gt;&lt;/a&gt;&lt;span class="ch"&gt;#!/bin/bash&lt;/span&gt;
-&lt;a id="rest_code_a6431af2cee9407dbbfbbc17505b4c7c-2" name="rest_code_a6431af2cee9407dbbfbbc17505b4c7c-2" href="https://note.tt4e.com/posts/nikola-tips/#rest_code_a6431af2cee9407dbbfbbc17505b4c7c-2"&gt;&lt;/a&gt;&lt;span class="c1"&gt;#&lt;/span&gt;
-&lt;a id="rest_code_a6431af2cee9407dbbfbbc17505b4c7c-3" name="rest_code_a6431af2cee9407dbbfbbc17505b4c7c-3" href="https://note.tt4e.com/posts/nikola-tips/#rest_code_a6431af2cee9407dbbfbbc17505b4c7c-3"&gt;&lt;/a&gt;&lt;span class="c1"&gt;# nikola output push to github&lt;/span&gt;
-&lt;a id="rest_code_a6431af2cee9407dbbfbbc17505b4c7c-4" name="rest_code_a6431af2cee9407dbbfbbc17505b4c7c-4" href="https://note.tt4e.com/posts/nikola-tips/#rest_code_a6431af2cee9407dbbfbbc17505b4c7c-4"&gt;&lt;/a&gt;&lt;span class="nb"&gt;cd&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;~/web/note.tt4e.com/
-&lt;a id="rest_code_a6431af2cee9407dbbfbbc17505b4c7c-5" name="rest_code_a6431af2cee9407dbbfbbc17505b4c7c-5" href="https://note.tt4e.com/posts/nikola-tips/#rest_code_a6431af2cee9407dbbfbbc17505b4c7c-5"&gt;&lt;/a&gt;nikola&lt;span class="w"&gt; &lt;/span&gt;build
-&lt;a id="rest_code_a6431af2cee9407dbbfbbc17505b4c7c-6" name="rest_code_a6431af2cee9407dbbfbbc17505b4c7c-6" href="https://note.tt4e.com/posts/nikola-tips/#rest_code_a6431af2cee9407dbbfbbc17505b4c7c-6"&gt;&lt;/a&gt;git&lt;span class="w"&gt; &lt;/span&gt;add&lt;span class="w"&gt; &lt;/span&gt;.
-&lt;a id="rest_code_a6431af2cee9407dbbfbbc17505b4c7c-7" name="rest_code_a6431af2cee9407dbbfbbc17505b4c7c-7" href="https://note.tt4e.com/posts/nikola-tips/#rest_code_a6431af2cee9407dbbfbbc17505b4c7c-7"&gt;&lt;/a&gt;git&lt;span class="w"&gt; &lt;/span&gt;commit&lt;span class="w"&gt; &lt;/span&gt;-am&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="s1"&gt;'Kaffa'&lt;/span&gt;
-&lt;a id="rest_code_a6431af2cee9407dbbfbbc17505b4c7c-8" name="rest_code_a6431af2cee9407dbbfbbc17505b4c7c-8" href="https://note.tt4e.com/posts/nikola-tips/#rest_code_a6431af2cee9407dbbfbbc17505b4c7c-8"&gt;&lt;/a&gt;git&lt;span class="w"&gt; &lt;/span&gt;push
-&lt;/pre&gt;&lt;/div&gt;
-&lt;p&gt;先 su 到 root 用户，然后运行以下命令，再 su 会当前用户&lt;/p&gt;
-&lt;div class="code"&gt;&lt;pre class="code sh"&gt;&lt;a id="rest_code_07857398bf354793be34b806fe322c25-1" name="rest_code_07857398bf354793be34b806fe322c25-1" href="https://note.tt4e.com/posts/nikola-tips/#rest_code_07857398bf354793be34b806fe322c25-1"&gt;&lt;/a&gt;chown&lt;span class="w"&gt; &lt;/span&gt;-R&lt;span class="w"&gt; &lt;/span&gt;kaffa:wheel&lt;span class="w"&gt; &lt;/span&gt;.git
-&lt;a id="rest_code_07857398bf354793be34b806fe322c25-2" name="rest_code_07857398bf354793be34b806fe322c25-2" href="https://note.tt4e.com/posts/nikola-tips/#rest_code_07857398bf354793be34b806fe322c25-2"&gt;&lt;/a&gt;chmod&lt;span class="w"&gt; &lt;/span&gt;-R&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="m"&gt;777&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;./aio.sh
-&lt;/pre&gt;&lt;/div&gt;
-&lt;p&gt;如果遇到错误提示 Unable to create ** /.git/index.lock: Permission denied，则需要&lt;/p&gt;
-&lt;div class="code"&gt;&lt;pre class="code sh"&gt;&lt;a id="rest_code_a8e41bce595f495eace66536aa99dfae-1" name="rest_code_a8e41bce595f495eace66536aa99dfae-1" href="https://note.tt4e.com/posts/nikola-tips/#rest_code_a8e41bce595f495eace66536aa99dfae-1"&gt;&lt;/a&gt;chown&lt;span class="w"&gt; &lt;/span&gt;-R&lt;span class="w"&gt; &lt;/span&gt;kaffa:wheel&lt;span class="w"&gt; &lt;/span&gt;.git
-&lt;/pre&gt;&lt;/div&gt;
-&lt;p&gt;其中 用户名和所属组，可以用 groups 命令查看。&lt;/p&gt;
-&lt;p&gt;完成书上步骤后，则每次可以运行 aio.sh 来推送 GitHub，GitHub 收到推送后，会使用 GitHub Action 来处理发布。&lt;/p&gt;
-&lt;p&gt;使用以上方法是有效的，但却说明没有认真读 nikola 文档。&lt;/p&gt;
-&lt;section id="nikola-github-1"&gt;
-&lt;h4&gt;Nikola 官方支持推送到 GitHub&lt;/h4&gt;
-&lt;p&gt;&lt;a class="reference external" href="https://getnikola.com/handbook.html#toc-entry-60"&gt;官方文档&lt;/a&gt;&lt;/p&gt;
-&lt;p&gt;解释一下：&lt;/p&gt;
-&lt;ol class="arabic simple"&gt;
-&lt;li&gt;&lt;p&gt;GITHUB_DEPLOY_BRANCH：发布分支，是 Nikola 产生的 HTML 文件，建议命名为 src。&lt;/p&gt;&lt;/li&gt;
-&lt;li&gt;&lt;p&gt;GITHUB_SOURCE_BRANCH：源码分支，建议在 GitHub 上设置为默认分支，建议命名为 main，而不是 master &lt;a class="footnote-reference brackets" href="https://note.tt4e.com/posts/nikola-tips/#fn1" id="footnote-reference-1" role="doc-noteref"&gt;&lt;span class="fn-bracket"&gt;[&lt;/span&gt;1&lt;span class="fn-bracket"&gt;]&lt;/span&gt;&lt;/a&gt;。&lt;/p&gt;&lt;/li&gt;
-&lt;li&gt;&lt;p&gt;GITHUB_REMOTE_NAME：远程仓库名；&lt;/p&gt;&lt;/li&gt;
-&lt;li&gt;&lt;p&gt;GITHUB_COMMIT_SOURCE：True，发布时会自动提交 src 分支。&lt;/p&gt;&lt;/li&gt;
-&lt;/ol&gt;
-&lt;p&gt;补充：&lt;/p&gt;
-&lt;p&gt;采用这种方法时，Github Pages 的 Build and deployment 一节，source 下拉框中，要选择 Deploy from a branch，而不是 GitHub Actions。&lt;/p&gt;
-&lt;div class="code"&gt;&lt;pre class="code text"&gt;&lt;a id="rest_code_52677e3370454172801737e6d0bfb2fc-1" name="rest_code_52677e3370454172801737e6d0bfb2fc-1" href="https://note.tt4e.com/posts/nikola-tips/#rest_code_52677e3370454172801737e6d0bfb2fc-1"&gt;&lt;/a&gt;nikola github_deploy
-&lt;/pre&gt;&lt;/div&gt;
-&lt;/section&gt;
-&lt;/section&gt;
-&lt;/section&gt;
-&lt;section id="section-1"&gt;
-&lt;h2&gt;脚注&lt;/h2&gt;
-&lt;aside class="footnote-list brackets"&gt;
-&lt;aside class="footnote brackets" id="fn1" role="doc-footnote"&gt;
-&lt;span class="label"&gt;&lt;span class="fn-bracket"&gt;[&lt;/span&gt;&lt;a role="doc-backlink" href="https://note.tt4e.com/posts/nikola-tips/#footnote-reference-1"&gt;1&lt;/a&gt;&lt;span class="fn-bracket"&gt;]&lt;/span&gt;&lt;/span&gt;
-&lt;p&gt;master：类似 master，slave 这样带有种族歧视色彩的词，在编程世界中将不再继续使用，现有使用也逐步 &lt;a class="reference external" href="https://github.com/github/renaming"&gt;重命名&lt;/a&gt;。&lt;/p&gt;
-&lt;/aside&gt;
-&lt;/aside&gt;
-&lt;/section&gt;</description><category>nikola</category><guid>https://note.tt4e.com/posts/nikola-tips/</guid><pubDate>Mon, 27 Nov 2023 11:34:15 GMT</pubDate></item></channel></rss>
+&lt;/section&gt;</description><category>emacs</category><category>securecrt</category><guid>https://note.tt4e.com/posts/securecrt-emacs-alt-v-not-work/</guid><pubDate>Sat, 02 Dec 2023 00:09:47 GMT</pubDate></item></channel></rss>

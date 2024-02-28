@@ -2,20 +2,21 @@
 <html prefix="" lang="zh_cn">
 <head>
 <meta charset="utf-8">
+<meta name="description" content="当在 FreeBSD 系统中，用户目录丢失的处理">
 <meta name="viewport" content="width=device-width">
-<title>Sudo unable to resolve host On Ubuntu | 琅環笔记</title>
+<title>Solution to "Could not chdir to home directory No such file or directory" | 琅環笔记</title>
 <meta name="theme-color" content="#FED43F">
 <meta name="generator" content="Nikola (getnikola.com)">
 <link rel="alternate" type="application/rss+xml" title="RSS" href="../../rss.xml">
-<link rel="canonical" href="https://note.tt4e.com/posts/sudo-unable-to-resolve-host-on-ubuntu/">
+<link rel="canonical" href="https://note.tt4e.com/posts/solution-to-could-not-chdir-to-home-directory-no-such-file-or-directory/">
 <link href="../../assets/css/rst.css" rel="stylesheet" type="text/css">
 <link href="../../assets/css/code.css" rel="stylesheet" type="text/css">
 <link href="../../assets/css/font-awesome.css" rel="stylesheet" type="text/css">
 <link href="../../assets/css/styles.css" rel="stylesheet" type="text/css">
 <link href="../../assets/css/custom.css" rel="stylesheet" type="text/css">
-<!--[if lt IE 9]><script src="../../assets/js/html5.js"></script><![endif]--><meta name="author" content="逍遥">
-<link rel="prev" href="../download-edge-browser-starter-background-image/" title="Download Edge Browser Starter Background Image" type="text/html">
-<link rel="next" href="../solution-to-could-not-chdir-to-home-directory-no-such-file-or-directory/" title='Solution to "Could not chdir to home directory No such file or directory"' type="text/html">
+<!--[if lt IE 9]><script src="../../assets/js/html5.js"></script><![endif]--><meta name="description" content="当在 FreeBSD 系统中，用户目录丢失的处理">
+<meta name="author" content="逍遥">
+<link rel="prev" href="../sudo-unable-to-resolve-host-on-ubuntu/" title="Sudo unable to resolve host On Ubuntu" type="text/html">
 </head>
 <body>
 <script type="text/javascript">
@@ -82,7 +83,7 @@ document.getElementById('nav-toggle-burger').onclick = function() {
     <!-- Hero content: will be in the middle -->
     
   
-          <div class="hero-body hero-sudounabletoresolvehostonubuntu">
+          <div class="hero-body hero-solutiontocouldnotchdirtohomedirectorynosuchfileordirectory">
           <div class="container has-text-centered">
               <p class="title">琅環笔记</p>
               <p class="is-size-6" style="text-align: left">有博学强记者，尝为鹅厂从事。游于洞宫，遇一人于途，问逍遥曰：“君读书几何？”遥曰：“吾之未读者，则二十年内书盖有之也，若二十年外，则吾固已尽读之矣。”其人论议超然，遥颇内服，相与欢甚。因共至一处，大石中忽然有门，引遥入数歩，则别是天地，宫室嵯峨。引入一室中，陈书满架，其人曰：“此PL史也。”又至一室，则曰：“OS志也。”毎室各有奇书，惟一室屋宇颇高，封识甚严，有二犬守之。遥问故，答曰：“此皆操作系统、编程语言、算法分析、生发正骨诸秘籍。”指二犬曰：“此龙也。”历观诸室书，皆Windows以前事，多所未闻者，如「BeOS」、「Solaris」、「FreeBSD」、「LISP」亦皆在焉。遥心乐之，欲赁住数十日，其人笑曰：“君痴矣。此岂可赁地耶？”即命小童送出，遥问地名，对曰：“琅嬛福地也。”</p>
@@ -94,7 +95,7 @@ document.getElementById('nav-toggle-burger').onclick = function() {
   </section><main id="content" class="section section-main"><div class="container">
       
 <article class="post-text h-entry hentry postpage" itemscope="itemscope" itemtype="http://schema.org/Article"><header class="heading"><h1 class="title is-1 p-name entry-title" itemprop="headline name">
-    <a href="." class="u-url">Sudo unable to resolve host On Ubuntu</a>
+    <a href="." class="u-url">Solution to "Could not chdir to home directory No such file or directory"</a>
   </h1>
 
   <div class="level metadata">
@@ -113,14 +114,14 @@ document.getElementById('nav-toggle-burger').onclick = function() {
       <div class="level-item">
         <p class="dateline">
           <a href="." rel="bookmark">
-            <time class="published dt-published" datetime="2024-02-08T19:26:44+08:00" itemprop="datePublished" title="2024-02-08 19:26">2024-02-08 19:26</time></a>
+            <time class="published dt-published" datetime="2024-02-28T22:52:30+08:00" itemprop="datePublished" title="2024-02-28 22:52">2024-02-28 22:52</time></a>
         </p>
       </div>
       
         <div class="level-item">
           <p class="commentline">
     
-    <a href="#disqus_thread" data-disqus-identifier="cache/posts/sudo-unable-to-resolve-host-on-ubuntu.html">评论</a>
+    <a href="#disqus_thread" data-disqus-identifier="cache/posts/solution-to-could-not-chdir-to-home-directory-no-such-file-or-directory.html">评论</a>
 
 </p>
         </div>
@@ -133,27 +134,59 @@ document.getElementById('nav-toggle-burger').onclick = function() {
   </div>
 
       
-    </div>
+        <meta name="description" itemprop="description" content="当在 FreeBSD 系统中，用户目录丢失的处理">
+</div>
   </div>
   
 
 </header><div class="section content e-content entry-content" itemprop="articleBody text">
-    <section id="section-1"><h2>直接给答案</h2>
-<p>在 /etc/hosts 文件中加入主机名，比如:</p>
-<pre class="literal-block">127.0.0.1    ubuntu.tt.com</pre>
+    <section id="section-1"><h2>两种登录模式</h2>
+<ol class="arabic simple">
+<li><p>多用户登录模式，可读写全部文件。</p></li>
+<li><p>单用户登录模式，只可操作根目录下的文件，只能读操作。常用来检查和修复文件系统。</p></li>
+</ol></section><section id="section-2"><h2>问题现象</h2>
+<p>当开机后，系统提示 "Cound not chdir to home directory /home/your_username No such file or directory"</p>
+<p>此时，尝试执行 <code class="docutils literal">ls /home</code> 会发现一无所获，表现为你的用户目录丢失了，非常惊悚。</p>
+</section><section id="section-3"><h2>产生原因</h2>
+<ol class="arabic">
+<li><p>黑客获得了你的系统权限，强制删除了你的用户目录。这一般是瞎扯的。</p></li>
+<li>
+<p>用户创建目录和 zfs 挂载的先后顺序问题。</p>
+<p>详细来说，zfs 是一种高级文件系统，比如可以按需增加容量。</p>
+<p>通常我们会将用户目录放到 zfs 的池中管理，挂载点的对应关系在 zfs 的 dataset 中保存。</p>
+<p>此时，如果用户在 zfs 挂载 /usr/home 以前 (/home 是 /usr/home 的硬连接)，在目录 /home 下创建了目录，再挂载 zfs 的目录时，会覆盖 /home 目录。</p>
+<p>这里怎么理解？就好比目录和文件是对象，挂载点可以是层叠结构，后挂载的目录会指向同样的挂载点，而系统在挂载后，只会显示最后的挂载。</p>
+<p>此时，先前的目录和文件并没有丢失，只是被遮蔽了。</p>
+</li>
+</ol></section><section id="section-4"><h2>怎么处理</h2>
+<p>进入单用户登录模式登录，尝试执行 <code class="docutils literal">ls /home</code> ，一般会看到「丢失的」目录。</p>
+<p>确认这一点后，可以重新进入多用户模式，先用 unmount 命令强制停止挂载 /home 目录</p>
+<div class="code"><pre class="code sh"><a id="rest_code_ce3c7c1c730941a79d3e7a4633bdf918-1" name="rest_code_ce3c7c1c730941a79d3e7a4633bdf918-1" href="#rest_code_ce3c7c1c730941a79d3e7a4633bdf918-1"></a>zfs<span class="w"> </span>unmount<span class="w"> </span>zroot/usr/home
+</pre></div>
+</section><section id="section-5"><h2>问题发现和解决过程</h2>
+<p>我在 <a class="reference external" href="https://forums.freebsd.org/threads/lost-home-directory.89382/">https://forums.freebsd.org/threads/lost-home-directory.89382/</a> 看到，问题可能与 ZFS 有关，在没有思路时，我请教了 OpenAI 的 ChatGPT 3.5，效果好的可怕。</p>
+<p>我的提示语如下:</p>
+<pre class="literal-block">你是FreeBSD系统专家，我遇到一个问题向你请教：我的用户名是 xyz，当我从 multiple user mode 登录系统时，/home 和 /usr/home 下没有 xyz 目录，但当我从 Single user mode 登录系统时，/home 和 /usr/home 下存在 xyz 目录，既存在 /home/xyz 和 /usr/home/xyz，请问如何做才可实现当重启进入 multiple user mode 时，依然看到这个目录。我不清楚导致这个现象的原因是什么，可能是电脑异常关机导致的，我的 FreeBSD 是安装在 vpc 上的。</pre>
+<p>结果 ChatGPT 给与了初步判断，并给了我命令，我继续执行命令，将结果告诉它，它接着提示，大约通过 10 轮对话，它帮我找到了 zfs 和 mount 的原因，也让我理解了为什么会出现这样的问题。</p>
+<p>ChatGPT 真的可以。</p>
 </section>
 </div>
   <aside class="postpromonav"><div class="columns tags" itemprop="keywords">
         <div class="column has-text-centered">
-          <a class="tag is-primary is-medium p-category" href="../../categories/ubuntu/" rel="tag">ubuntu</a>
+          <a class="tag is-primary is-medium p-category" href="../../categories/freebsd/" rel="tag">freebsd</a>
+        </div>
+        <div class="column has-text-centered">
+          <a class="tag is-primary is-medium p-category" href="../../categories/mount/" rel="tag">mount</a>
+        </div>
+        <div class="column has-text-centered">
+          <a class="tag is-primary is-medium p-category" href="../../categories/zfs/" rel="tag">zfs</a>
         </div>
   </div>
 
     
   <div class="columns">
     <div class="column">
-      <nav class="pagination pager hidden-print"><a class="pagination-previous previous" href="../download-edge-browser-starter-background-image/" rel="prev" title="Download Edge Browser Starter Background Image">上一篇文章</a>
-          <a class="pagination-next next" href="../solution-to-could-not-chdir-to-home-directory-no-such-file-or-directory/" rel="next" title='Solution to "Could not chdir to home directory No such file or directory"'>下一篇文章</a>
+      <nav class="pagination pager hidden-print"><a class="pagination-previous previous" href="../sudo-unable-to-resolve-host-on-ubuntu/" rel="prev" title="Sudo unable to resolve host On Ubuntu">上一篇文章</a>
       </nav>
 </div>
   </div>
@@ -164,9 +197,9 @@ document.getElementById('nav-toggle-burger').onclick = function() {
         <div id="disqus_thread"></div>
         <script>
         var disqus_shortname ="tt4e",
-            disqus_url="https://note.tt4e.com/posts/sudo-unable-to-resolve-host-on-ubuntu/",
-        disqus_title="Sudo unable to resolve host On Ubuntu",
-        disqus_identifier="cache/posts/sudo-unable-to-resolve-host-on-ubuntu.html",
+            disqus_url="https://note.tt4e.com/posts/solution-to-could-not-chdir-to-home-directory-no-such-file-or-directory/",
+        disqus_title="Solution to \"Could not chdir to home directory No such file or directory\"",
+        disqus_identifier="cache/posts/solution-to-could-not-chdir-to-home-directory-no-such-file-or-directory.html",
         disqus_config = function () {
             this.language = "zh_cn";
         };
