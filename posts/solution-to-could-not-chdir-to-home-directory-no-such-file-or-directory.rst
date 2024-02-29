@@ -58,10 +58,18 @@
 
 我在 https://forums.freebsd.org/threads/lost-home-directory.89382/ 看到，问题可能与 ZFS 有关，在没有思路时，我请教了 OpenAI 的 ChatGPT 3.5，效果好的可怕。
 
-我的提示语如下::
+我的提示语如下：『你是协助我工作的精通FreeBSD系统的专家，此时我遇到一个问题向你请教。我的用户名是 xyz，当我从 multiple user mode 登录系统时，/home 和 /usr/home 下找不到 xyz 目录，但当我从 Single user mode 登录系统时，/home 和 /usr/home 下存在 xyz 目录，既存在 /home/xyz 和 /usr/home/xyz，请问现在如何做才可实现，当重启进入 multiple user mode 时依然看到 xyz 目录。我不清楚导致这个现象的原因是什么，可能是因为VPC异常关机，而我的 FreeBSD 是安装在 vpc 上的。』
 
-    你是FreeBSD系统专家，我遇到一个问题向你请教：我的用户名是 xyz，当我从 multiple user mode 登录系统时，/home 和 /usr/home 下没有 xyz 目录，但当我从 Single user mode 登录系统时，/home 和 /usr/home 下存在 xyz 目录，既存在 /home/xyz 和 /usr/home/xyz，请问如何做才可实现当重启进入 multiple user mode 时，依然看到这个目录。我不清楚导致这个现象的原因是什么，可能是电脑异常关机导致的，我的 FreeBSD 是安装在 vpc 上的。
+结果 ChatGPT 给与了初步判断，并给了我处理步骤和命令提示，我继续执行它给的命令，并将结果告诉它，它便接着提示，大约通过十多轮对话，它帮我找到了 zfs 和 mount 的原因，也让我理解了为什么会出现这样的问题。
 
-结果 ChatGPT 给与了初步判断，并给了我命令，我继续执行命令，将结果告诉它，它接着提示，大约通过 10 轮对话，它帮我找到了 zfs 和 mount 的原因，也让我理解了为什么会出现这样的问题。
+ChatGPT 真的可以，这里它做到了。
 
-ChatGPT 真的可以。
+1. 帮助我弥补专业知识不足；
+2. 教这些专业知识，让我理解；
+3. 就问题给出解答步骤，并可以交互式推进；
+
+所以，我说它真的不错，至少在缺少领域知识的场景下，提高了问题解决的可能性，并缩短了问题解决的时间。
+
+但，这里应看到的时，我们有一个共识：基于 FreeBSD 的存在和表现，它并不会出现无端丢失目录和文件的问题，如果你怀疑，就是在怀疑世界上聪明人的数量，及它们为热爱事物所付出的努力。
+
+如果遇到 FreeBSD 的类似问题，你有此怀疑，这说明，你的思维方式不在正途，你不对劲。
