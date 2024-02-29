@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<?xml-stylesheet type="text/xsl" href="assets/xml/rss.xsl" media="all"?><rss version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>琅環笔记</title><link>https://note.tt4e.com/</link><description>有博学强记者，尝为鹅厂从事。游于洞宫，遇一人于途，问逍遥曰：“君读书几何？”遥曰：“吾之未读者，则二十年内书盖有之也，若二十年外，则吾固已尽读之矣。”其人论议超然，遥颇内服，相与欢甚。因共至一处，大石中忽然有门，引遥入数歩，则别是天地，宫室嵯峨。引入一室中，陈书满架，其人曰：“此PL史也。”又至一室，则曰：“OS志也。”毎室各有奇书，惟一室屋宇颇高，封识甚严，有二犬守之。遥问故，答曰：“此皆操作系统、编程语言、算法分析、生发正骨诸秘籍。”指二犬曰：“此龙也。”历观诸室书，皆Windows以前事，多所未闻者，如「BeOS」、「Solaris」、「FreeBSD」、「LISP」亦皆在焉。遥心乐之，欲赁住数十日，其人笑曰：“君痴矣。此岂可赁地耶？”即命小童送出，遥问地名，对曰：“琅嬛福地也。”</description><atom:link href="https://note.tt4e.com/rss.xml" rel="self" type="application/rss+xml"></atom:link><language>zh_cn</language><copyright>Contents © 2024 &lt;a href="mailto:xiaoyao@tt4e.com"&gt;逍遥&lt;/a&gt; </copyright><lastBuildDate>Wed, 28 Feb 2024 16:29:31 GMT</lastBuildDate><generator>Nikola (getnikola.com)</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>Solution to "Could not chdir to home directory No such file or directory"</title><link>https://note.tt4e.com/posts/solution-to-could-not-chdir-to-home-directory-no-such-file-or-directory/</link><dc:creator>逍遥</dc:creator><description>&lt;section id="section-1"&gt;
+<?xml-stylesheet type="text/xsl" href="assets/xml/rss.xsl" media="all"?><rss version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>琅環笔记</title><link>https://note.tt4e.com/</link><description>有博学强记者，尝为鹅厂从事。游于洞宫，遇一人于途，问逍遥曰：“君读书几何？”遥曰：“吾之未读者，则二十年内书盖有之也，若二十年外，则吾固已尽读之矣。”其人论议超然，遥颇内服，相与欢甚。因共至一处，大石中忽然有门，引遥入数歩，则别是天地，宫室嵯峨。引入一室中，陈书满架，其人曰：“此PL史也。”又至一室，则曰：“OS志也。”毎室各有奇书，惟一室屋宇颇高，封识甚严，有二犬守之。遥问故，答曰：“此皆操作系统、编程语言、算法分析、生发正骨诸秘籍。”指二犬曰：“此龙也。”历观诸室书，皆Windows以前事，多所未闻者，如「BeOS」、「Solaris」、「FreeBSD」、「LISP」亦皆在焉。遥心乐之，欲赁住数十日，其人笑曰：“君痴矣。此岂可赁地耶？”即命小童送出，遥问地名，对曰：“琅嬛福地也。”</description><atom:link href="https://note.tt4e.com/rss.xml" rel="self" type="application/rss+xml"></atom:link><language>zh_cn</language><copyright>Contents © 2024 &lt;a href="mailto:xiaoyao@tt4e.com"&gt;逍遥&lt;/a&gt; </copyright><lastBuildDate>Thu, 29 Feb 2024 02:37:55 GMT</lastBuildDate><generator>Nikola (getnikola.com)</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>Solution to "Could not chdir to home directory No such file or directory"</title><link>https://note.tt4e.com/posts/solution-to-could-not-chdir-to-home-directory-no-such-file-or-directory/</link><dc:creator>逍遥</dc:creator><description>&lt;section id="section-1"&gt;
 &lt;h2&gt;两种登录模式&lt;/h2&gt;
 &lt;ol class="arabic simple"&gt;
 &lt;li&gt;&lt;p&gt;多用户登录模式，可读写全部文件。&lt;/p&gt;&lt;/li&gt;
@@ -28,16 +28,23 @@
 &lt;h2&gt;怎么处理&lt;/h2&gt;
 &lt;p&gt;进入单用户登录模式登录，尝试执行 &lt;code class="docutils literal"&gt;ls /home&lt;/code&gt; ，一般会看到「丢失的」目录。&lt;/p&gt;
 &lt;p&gt;确认这一点后，可以重新进入多用户模式，先用 unmount 命令强制停止挂载 /home 目录&lt;/p&gt;
-&lt;div class="code"&gt;&lt;pre class="code sh"&gt;&lt;a id="rest_code_ce3c7c1c730941a79d3e7a4633bdf918-1" name="rest_code_ce3c7c1c730941a79d3e7a4633bdf918-1" href="https://note.tt4e.com/posts/solution-to-could-not-chdir-to-home-directory-no-such-file-or-directory/#rest_code_ce3c7c1c730941a79d3e7a4633bdf918-1"&gt;&lt;/a&gt;zfs&lt;span class="w"&gt; &lt;/span&gt;unmount&lt;span class="w"&gt; &lt;/span&gt;zroot/usr/home
+&lt;div class="code"&gt;&lt;pre class="code sh"&gt;&lt;a id="rest_code_98a7706c0fb94ef09c659033817b8982-1" name="rest_code_98a7706c0fb94ef09c659033817b8982-1" href="https://note.tt4e.com/posts/solution-to-could-not-chdir-to-home-directory-no-such-file-or-directory/#rest_code_98a7706c0fb94ef09c659033817b8982-1"&gt;&lt;/a&gt;zfs&lt;span class="w"&gt; &lt;/span&gt;unmount&lt;span class="w"&gt; &lt;/span&gt;zroot/usr/home
 &lt;/pre&gt;&lt;/div&gt;
 &lt;/section&gt;
 &lt;section id="section-5"&gt;
 &lt;h2&gt;问题发现和解决过程&lt;/h2&gt;
 &lt;p&gt;我在 &lt;a class="reference external" href="https://forums.freebsd.org/threads/lost-home-directory.89382/"&gt;https://forums.freebsd.org/threads/lost-home-directory.89382/&lt;/a&gt; 看到，问题可能与 ZFS 有关，在没有思路时，我请教了 OpenAI 的 ChatGPT 3.5，效果好的可怕。&lt;/p&gt;
-&lt;p&gt;我的提示语如下:&lt;/p&gt;
-&lt;pre class="literal-block"&gt;你是FreeBSD系统专家，我遇到一个问题向你请教：我的用户名是 xyz，当我从 multiple user mode 登录系统时，/home 和 /usr/home 下没有 xyz 目录，但当我从 Single user mode 登录系统时，/home 和 /usr/home 下存在 xyz 目录，既存在 /home/xyz 和 /usr/home/xyz，请问如何做才可实现当重启进入 multiple user mode 时，依然看到这个目录。我不清楚导致这个现象的原因是什么，可能是电脑异常关机导致的，我的 FreeBSD 是安装在 vpc 上的。&lt;/pre&gt;
-&lt;p&gt;结果 ChatGPT 给与了初步判断，并给了我命令，我继续执行命令，将结果告诉它，它接着提示，大约通过 10 轮对话，它帮我找到了 zfs 和 mount 的原因，也让我理解了为什么会出现这样的问题。&lt;/p&gt;
-&lt;p&gt;ChatGPT 真的可以。&lt;/p&gt;
+&lt;p&gt;我的提示语如下：『你是协助我工作的精通FreeBSD系统的专家，此时我遇到一个问题向你请教。我的用户名是 xyz，当我从 multiple user mode 登录系统时，/home 和 /usr/home 下找不到 xyz 目录，但当我从 Single user mode 登录系统时，/home 和 /usr/home 下存在 xyz 目录，既存在 /home/xyz 和 /usr/home/xyz，请问现在如何做才可实现，当重启进入 multiple user mode 时依然看到 xyz 目录。我不清楚导致这个现象的原因是什么，可能是因为VPC异常关机，而我的 FreeBSD 是安装在 vpc 上的。』&lt;/p&gt;
+&lt;p&gt;结果 ChatGPT 给与了初步判断，并给了我处理步骤和命令提示，我继续执行它给的命令，并将结果告诉它，它便接着提示，大约通过十多轮对话，它帮我找到了 zfs 和 mount 的原因，也让我理解了为什么会出现这样的问题。&lt;/p&gt;
+&lt;p&gt;ChatGPT 真的可以，这里它做到了。&lt;/p&gt;
+&lt;ol class="arabic simple"&gt;
+&lt;li&gt;&lt;p&gt;帮助我弥补专业知识不足；&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;教这些专业知识，让我理解；&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;就问题给出解答步骤，并可以交互式推进；&lt;/p&gt;&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;所以，我说它真的不错，至少在缺少领域知识的场景下，提高了问题解决的可能性，并缩短了问题解决的时间。&lt;/p&gt;
+&lt;p&gt;但，这里应看到的时，我们有一个共识：基于 FreeBSD 的存在和表现，它并不会出现无端丢失目录和文件的问题，如果你怀疑，就是在怀疑世界上聪明人的数量，及它们为热爱事物所付出的努力。&lt;/p&gt;
+&lt;p&gt;如果遇到 FreeBSD 的类似问题，你有此怀疑，这说明，你的思维方式不在正途，你不对劲。&lt;/p&gt;
 &lt;/section&gt;</description><category>freebsd</category><category>mount</category><category>zfs</category><guid>https://note.tt4e.com/posts/solution-to-could-not-chdir-to-home-directory-no-such-file-or-directory/</guid><pubDate>Wed, 28 Feb 2024 14:52:30 GMT</pubDate></item><item><title>Sudo unable to resolve host On Ubuntu</title><link>https://note.tt4e.com/posts/sudo-unable-to-resolve-host-on-ubuntu/</link><dc:creator>逍遥</dc:creator><description>&lt;section id="section-1"&gt;
 &lt;h2&gt;直接给答案&lt;/h2&gt;
 &lt;p&gt;在 /etc/hosts 文件中加入主机名，比如:&lt;/p&gt;
