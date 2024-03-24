@@ -101,6 +101,74 @@ document.getElementById('nav-toggle-burger').onclick = function() {
               <div class="media metadata">
                 <div class="media-content">
                   <p class="title is-2 p-name entry-title">
+                    <a href="posts/absolute-and-relative-path-in-python/" class="u-url">Absolute and Relative Path in Python</a>
+                  </p>
+                </div>
+                  <div class="media-right">
+                    <span class="icon">
+                      <i class="fa fa-file-text-o" aria-hidden="true"></i>
+                    </span>
+                    <span class="visuallyhidden">text</span>
+                  </div>
+              </div>
+                <div class="content e-content entry-content">
+                  <section id="os-path-isabs"><h2>1. os.path.isabs()</h2>
+<p>os.path.isabs() 的行为是：如果路径以 / 开头，或者在非类 Unix 平台上，以盘符跟一个 os.sep 开头，就返回 True；否则，就返回 False</p>
+<p>这里要注意的是在 Windows 上，是支持两种斜线符号的，一种是Windows的斜线，但需要双写以转义 '\'，另一种是类似 Unix 反写 '/'。</p>
+<p>看如下代码，在 Windows 下的返回结果</p>
+<div class="code"><pre class="code python"><a id="rest_code_b600c9119a6b4db39eb1afcb24bf8c7e-1" name="rest_code_b600c9119a6b4db39eb1afcb24bf8c7e-1" href="posts/absolute-and-relative-path-in-python/#rest_code_b600c9119a6b4db39eb1afcb24bf8c7e-1"></a><span class="n">Python</span> <span class="mf">3.10.6</span> <span class="p">(</span><span class="n">tags</span><span class="o">/</span><span class="n">v3</span><span class="mf">.10.6</span><span class="p">:</span><span class="mi">9</span><span class="n">c7b4bd</span><span class="p">,</span> <span class="n">Aug</span>  <span class="mi">1</span> <span class="mi">2022</span><span class="p">,</span> <span class="mi">21</span><span class="p">:</span><span class="mi">53</span><span class="p">:</span><span class="mi">49</span><span class="p">)</span> <span class="p">[</span><span class="n">MSC</span> <span class="n">v</span><span class="mf">.1932</span> <span class="mi">64</span> <span class="n">bit</span> <span class="p">(</span><span class="n">AMD64</span><span class="p">)]</span> <span class="n">on</span> <span class="n">win32</span>
+<a id="rest_code_b600c9119a6b4db39eb1afcb24bf8c7e-2" name="rest_code_b600c9119a6b4db39eb1afcb24bf8c7e-2" href="posts/absolute-and-relative-path-in-python/#rest_code_b600c9119a6b4db39eb1afcb24bf8c7e-2"></a><span class="n">Type</span> <span class="s2">"help"</span><span class="p">,</span> <span class="s2">"copyright"</span><span class="p">,</span> <span class="s2">"credits"</span> <span class="ow">or</span> <span class="s2">"license"</span> <span class="k">for</span> <span class="n">more</span> <span class="n">information</span><span class="o">.</span>
+<a id="rest_code_b600c9119a6b4db39eb1afcb24bf8c7e-3" name="rest_code_b600c9119a6b4db39eb1afcb24bf8c7e-3" href="posts/absolute-and-relative-path-in-python/#rest_code_b600c9119a6b4db39eb1afcb24bf8c7e-3"></a><span class="o">&gt;&gt;&gt;</span> <span class="kn">import</span> <span class="nn">os</span>
+<a id="rest_code_b600c9119a6b4db39eb1afcb24bf8c7e-4" name="rest_code_b600c9119a6b4db39eb1afcb24bf8c7e-4" href="posts/absolute-and-relative-path-in-python/#rest_code_b600c9119a6b4db39eb1afcb24bf8c7e-4"></a><span class="o">&gt;&gt;&gt;</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">isabs</span><span class="p">(</span><span class="s1">'c:/abc'</span><span class="p">)</span>
+<a id="rest_code_b600c9119a6b4db39eb1afcb24bf8c7e-5" name="rest_code_b600c9119a6b4db39eb1afcb24bf8c7e-5" href="posts/absolute-and-relative-path-in-python/#rest_code_b600c9119a6b4db39eb1afcb24bf8c7e-5"></a><span class="kc">True</span>
+<a id="rest_code_b600c9119a6b4db39eb1afcb24bf8c7e-6" name="rest_code_b600c9119a6b4db39eb1afcb24bf8c7e-6" href="posts/absolute-and-relative-path-in-python/#rest_code_b600c9119a6b4db39eb1afcb24bf8c7e-6"></a><span class="o">&gt;&gt;&gt;</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">isabs</span><span class="p">(</span><span class="s1">'/abc'</span><span class="p">)</span>
+<a id="rest_code_b600c9119a6b4db39eb1afcb24bf8c7e-7" name="rest_code_b600c9119a6b4db39eb1afcb24bf8c7e-7" href="posts/absolute-and-relative-path-in-python/#rest_code_b600c9119a6b4db39eb1afcb24bf8c7e-7"></a><span class="kc">True</span>
+<a id="rest_code_b600c9119a6b4db39eb1afcb24bf8c7e-8" name="rest_code_b600c9119a6b4db39eb1afcb24bf8c7e-8" href="posts/absolute-and-relative-path-in-python/#rest_code_b600c9119a6b4db39eb1afcb24bf8c7e-8"></a><span class="o">&gt;&gt;&gt;</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">isabs</span><span class="p">(</span><span class="s1">'c:</span><span class="se">\a</span><span class="s1">bc'</span><span class="p">)</span> <span class="c1"># 未转义，错误</span>
+<a id="rest_code_b600c9119a6b4db39eb1afcb24bf8c7e-9" name="rest_code_b600c9119a6b4db39eb1afcb24bf8c7e-9" href="posts/absolute-and-relative-path-in-python/#rest_code_b600c9119a6b4db39eb1afcb24bf8c7e-9"></a><span class="kc">False</span>
+<a id="rest_code_b600c9119a6b4db39eb1afcb24bf8c7e-10" name="rest_code_b600c9119a6b4db39eb1afcb24bf8c7e-10" href="posts/absolute-and-relative-path-in-python/#rest_code_b600c9119a6b4db39eb1afcb24bf8c7e-10"></a><span class="o">&gt;&gt;&gt;</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">isabs</span><span class="p">(</span><span class="s1">'c:/abc'</span><span class="p">)</span>
+<a id="rest_code_b600c9119a6b4db39eb1afcb24bf8c7e-11" name="rest_code_b600c9119a6b4db39eb1afcb24bf8c7e-11" href="posts/absolute-and-relative-path-in-python/#rest_code_b600c9119a6b4db39eb1afcb24bf8c7e-11"></a><span class="kc">True</span>
+<a id="rest_code_b600c9119a6b4db39eb1afcb24bf8c7e-12" name="rest_code_b600c9119a6b4db39eb1afcb24bf8c7e-12" href="posts/absolute-and-relative-path-in-python/#rest_code_b600c9119a6b4db39eb1afcb24bf8c7e-12"></a><span class="o">&gt;&gt;&gt;</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">isabs</span><span class="p">(</span><span class="s1">'c:</span><span class="se">\\</span><span class="s1">abc'</span><span class="p">)</span>
+<a id="rest_code_b600c9119a6b4db39eb1afcb24bf8c7e-13" name="rest_code_b600c9119a6b4db39eb1afcb24bf8c7e-13" href="posts/absolute-and-relative-path-in-python/#rest_code_b600c9119a6b4db39eb1afcb24bf8c7e-13"></a><span class="kc">True</span>
+<a id="rest_code_b600c9119a6b4db39eb1afcb24bf8c7e-14" name="rest_code_b600c9119a6b4db39eb1afcb24bf8c7e-14" href="posts/absolute-and-relative-path-in-python/#rest_code_b600c9119a6b4db39eb1afcb24bf8c7e-14"></a><span class="o">&gt;&gt;&gt;</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">isabs</span><span class="p">(</span><span class="s1">'</span><span class="se">\\</span><span class="s1">abc'</span><span class="p">)</span>
+<a id="rest_code_b600c9119a6b4db39eb1afcb24bf8c7e-15" name="rest_code_b600c9119a6b4db39eb1afcb24bf8c7e-15" href="posts/absolute-and-relative-path-in-python/#rest_code_b600c9119a6b4db39eb1afcb24bf8c7e-15"></a><span class="kc">True</span>
+<a id="rest_code_b600c9119a6b4db39eb1afcb24bf8c7e-16" name="rest_code_b600c9119a6b4db39eb1afcb24bf8c7e-16" href="posts/absolute-and-relative-path-in-python/#rest_code_b600c9119a6b4db39eb1afcb24bf8c7e-16"></a><span class="o">&gt;&gt;&gt;</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">isabs</span><span class="p">(</span><span class="s1">'abc'</span><span class="p">)</span>
+<a id="rest_code_b600c9119a6b4db39eb1afcb24bf8c7e-17" name="rest_code_b600c9119a6b4db39eb1afcb24bf8c7e-17" href="posts/absolute-and-relative-path-in-python/#rest_code_b600c9119a6b4db39eb1afcb24bf8c7e-17"></a><span class="kc">False</span>
+</pre></div>
+<p>所以说，实际上这个方法在 Windows 并不好用，试着查看源代码，但实现并不是 Python 的，似乎有 macpath,posixpath,ntpath，但 ntpath 在 Windows 上返回就是上述值。</p>
+</section><section id="pathlib-path-is-absolute-windows"><h2>2. pathlib.Path().is_absolute() 在 Windows 上更好用</h2>
+<p>实际上判断是否绝对路径时，应该使用以下代码</p>
+<div class="code"><pre class="code python"><a id="rest_code_ffb51a6001254d0d92e6ccf5627106e4-1" name="rest_code_ffb51a6001254d0d92e6ccf5627106e4-1" href="posts/absolute-and-relative-path-in-python/#rest_code_ffb51a6001254d0d92e6ccf5627106e4-1"></a><span class="kn">import</span> <span class="nn">pathlib</span>
+<a id="rest_code_ffb51a6001254d0d92e6ccf5627106e4-2" name="rest_code_ffb51a6001254d0d92e6ccf5627106e4-2" href="posts/absolute-and-relative-path-in-python/#rest_code_ffb51a6001254d0d92e6ccf5627106e4-2"></a><span class="n">pathlib</span><span class="o">.</span><span class="n">Path</span><span class="p">(</span><span class="s1">'/abc'</span><span class="p">)</span><span class="o">.</span><span class="n">is_absolute</span><span class="p">()</span>
+</pre></div>
+</section>
+</div>
+            </div>
+
+            <footer class="card-footer"><p class="card-footer-item byline author vcard">
+                <span class="byline-name fn">
+                    逍遥
+                </span>
+              </p>
+              <p class="card-footer-item dateline">
+                <a href="posts/absolute-and-relative-path-in-python/" rel="bookmark">
+                  <time class="published dt-published" datetime="2023-12-07T08:12:45+08:00" title="2023-12-07 08:12">2023-12-07 08:12</time></a>
+              </p>
+                <p class="card-footer-item commentline">
+    
+    <a href="posts/absolute-and-relative-path-in-python/#disqus_thread" data-disqus-identifier="cache/posts/absolute-and-relative-path-in-python.html">评论</a>
+
+</p>
+            </footer></article>
+</div>
+      </div>
+    </div>
+    <div class="columns">
+      <div class="column">
+        <div class="card post-card">
+          <article class="h-entry post-text"><div class="card-content">
+              <div class="media metadata">
+                <div class="media-content">
+                  <p class="title is-2 p-name entry-title">
                     <a href="posts/securecrt-emacs-alt-v-not-work/" class="u-url">SecureCRT 中 Emacs 向上翻页快捷键 Alt+V 失效</a>
                   </p>
                 </div>
