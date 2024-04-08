@@ -15,7 +15,7 @@
 <link href="assets/css/font-awesome.css" rel="stylesheet" type="text/css">
 <link href="assets/css/styles.css" rel="stylesheet" type="text/css">
 <link href="assets/css/custom.css" rel="stylesheet" type="text/css">
-<!--[if lt IE 9]><script src="assets/js/html5.js"></script><![endif]--><link rel="prefetch" href="posts/set-env-on-unix-like-and-windows-system/" type="text/html">
+<!--[if lt IE 9]><script src="assets/js/html5.js"></script><![endif]--><link rel="prefetch" href="posts/initel-doesnt-automatically-load-on-startup-of-emacs/" type="text/html">
 </head>
 <body>
 <script type="text/javascript">
@@ -94,6 +94,49 @@ document.getElementById('nav-toggle-burger').onclick = function() {
 
   
 <div class="postindex">
+    <div class="columns">
+      <div class="column">
+        <div class="card post-card">
+          <article class="h-entry post-text"><div class="card-content">
+              <div class="media metadata">
+                <div class="media-content">
+                  <p class="title is-2 p-name entry-title">
+                    <a href="posts/initel-doesnt-automatically-load-on-startup-of-emacs/" class="u-url">init.el doesn't automatically load on startup of emacs</a>
+                  </p>
+                </div>
+                  <div class="media-right">
+                    <span class="icon">
+                      <i class="fa fa-file-text-o" aria-hidden="true"></i>
+                    </span>
+                    <span class="visuallyhidden">text</span>
+                  </div>
+              </div>
+                <div class="content e-content entry-content">
+                  <section id="section-1"><h2>解决办法</h2>
+<ul class="simple">
+<li><p>可能的解决办法之一是删除 ~/.emacs 文件，当然删除前先看看内容是否需要备份。</p></li>
+</ul></section>
+</div>
+            </div>
+
+            <footer class="card-footer"><p class="card-footer-item byline author vcard">
+                <span class="byline-name fn">
+                    逍遥
+                </span>
+              </p>
+              <p class="card-footer-item dateline">
+                <a href="posts/initel-doesnt-automatically-load-on-startup-of-emacs/" rel="bookmark">
+                  <time class="published dt-published" datetime="2024-04-09T03:44:20+08:00" title="2024-04-09 03:44">2024-04-09 03:44</time></a>
+              </p>
+                <p class="card-footer-item commentline">
+    
+    <a href="posts/initel-doesnt-automatically-load-on-startup-of-emacs/#disqus_thread" data-disqus-identifier="cache/posts/initel-doesnt-automatically-load-on-startup-of-emacs.html">评论</a>
+
+</p>
+            </footer></article>
+</div>
+      </div>
+    </div>
     <div class="columns">
       <div class="column">
         <div class="card post-card">
@@ -190,7 +233,7 @@ setx path "%path%;%USERPROFILE%bin"</p>
 </ol></section><section id="section-4"><h2>怎么处理</h2>
 <p>进入单用户登录模式登录，尝试执行 <code class="docutils literal">ls /home</code> ，一般会看到「丢失的」目录。</p>
 <p>确认这一点后，可以重新进入多用户模式，先用 unmount 命令强制停止挂载 /home 目录</p>
-<div class="code"><pre class="code sh"><a id="rest_code_98a7706c0fb94ef09c659033817b8982-1" name="rest_code_98a7706c0fb94ef09c659033817b8982-1" href="posts/solution-to-could-not-chdir-to-home-directory-no-such-file-or-directory/#rest_code_98a7706c0fb94ef09c659033817b8982-1"></a>zfs<span class="w"> </span>unmount<span class="w"> </span>zroot/usr/home
+<div class="code"><pre class="code sh"><a id="rest_code_a4a4e2a43c114761826e298f6a9f36db-1" name="rest_code_a4a4e2a43c114761826e298f6a9f36db-1" href="posts/solution-to-could-not-chdir-to-home-directory-no-such-file-or-directory/#rest_code_a4a4e2a43c114761826e298f6a9f36db-1"></a>zfs<span class="w"> </span>unmount<span class="w"> </span>zroot/usr/home
 </pre></div>
 </section><section id="section-5"><h2>问题发现和解决过程</h2>
 <p>我在 <a class="reference external" href="https://forums.freebsd.org/threads/lost-home-directory.89382/">https://forums.freebsd.org/threads/lost-home-directory.89382/</a> 看到，问题可能与 ZFS 有关，在没有思路时，我请教了 OpenAI 的 ChatGPT 3.5，效果好的可怕。</p>
@@ -415,17 +458,17 @@ setx path "%path%;%USERPROFILE%bin"</p>
                   </div>
               </div>
                 <div class="content e-content entry-content">
-                  <div class="code"><pre class="code python"><a id="rest_code_a705faf2e42140d2acd260b3c3194f5d-1" name="rest_code_a705faf2e42140d2acd260b3c3194f5d-1" href="posts/get-localhost-ipv6-with-python/#rest_code_a705faf2e42140d2acd260b3c3194f5d-1"></a><span class="k">def</span> <span class="nf">get_ipv6</span><span class="p">():</span>
-<a id="rest_code_a705faf2e42140d2acd260b3c3194f5d-2" name="rest_code_a705faf2e42140d2acd260b3c3194f5d-2" href="posts/get-localhost-ipv6-with-python/#rest_code_a705faf2e42140d2acd260b3c3194f5d-2"></a>    <span class="kn">import</span> <span class="nn">socket</span>
-<a id="rest_code_a705faf2e42140d2acd260b3c3194f5d-3" name="rest_code_a705faf2e42140d2acd260b3c3194f5d-3" href="posts/get-localhost-ipv6-with-python/#rest_code_a705faf2e42140d2acd260b3c3194f5d-3"></a>    <span class="n">host_ipv6</span> <span class="o">=</span> <span class="p">[]</span>
-<a id="rest_code_a705faf2e42140d2acd260b3c3194f5d-4" name="rest_code_a705faf2e42140d2acd260b3c3194f5d-4" href="posts/get-localhost-ipv6-with-python/#rest_code_a705faf2e42140d2acd260b3c3194f5d-4"></a>    <span class="n">ips</span> <span class="o">=</span> <span class="n">socket</span><span class="o">.</span><span class="n">getaddrinfo</span><span class="p">(</span><span class="n">socket</span><span class="o">.</span><span class="n">gethostname</span><span class="p">(),</span><span class="mi">80</span><span class="p">)</span>
-<a id="rest_code_a705faf2e42140d2acd260b3c3194f5d-5" name="rest_code_a705faf2e42140d2acd260b3c3194f5d-5" href="posts/get-localhost-ipv6-with-python/#rest_code_a705faf2e42140d2acd260b3c3194f5d-5"></a>    <span class="k">for</span> <span class="n">ip</span> <span class="ow">in</span> <span class="n">ips</span><span class="p">:</span>
-<a id="rest_code_a705faf2e42140d2acd260b3c3194f5d-6" name="rest_code_a705faf2e42140d2acd260b3c3194f5d-6" href="posts/get-localhost-ipv6-with-python/#rest_code_a705faf2e42140d2acd260b3c3194f5d-6"></a>        <span class="k">if</span> <span class="n">ip</span><span class="p">[</span><span class="mi">4</span><span class="p">][</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">startswith</span><span class="p">(</span><span class="s1">'24'</span><span class="p">):</span>
-<a id="rest_code_a705faf2e42140d2acd260b3c3194f5d-7" name="rest_code_a705faf2e42140d2acd260b3c3194f5d-7" href="posts/get-localhost-ipv6-with-python/#rest_code_a705faf2e42140d2acd260b3c3194f5d-7"></a>            <span class="c1"># 2408 中国联通</span>
-<a id="rest_code_a705faf2e42140d2acd260b3c3194f5d-8" name="rest_code_a705faf2e42140d2acd260b3c3194f5d-8" href="posts/get-localhost-ipv6-with-python/#rest_code_a705faf2e42140d2acd260b3c3194f5d-8"></a>            <span class="c1"># 2409 中国移动</span>
-<a id="rest_code_a705faf2e42140d2acd260b3c3194f5d-9" name="rest_code_a705faf2e42140d2acd260b3c3194f5d-9" href="posts/get-localhost-ipv6-with-python/#rest_code_a705faf2e42140d2acd260b3c3194f5d-9"></a>            <span class="c1"># 240e 中国电信</span>
-<a id="rest_code_a705faf2e42140d2acd260b3c3194f5d-10" name="rest_code_a705faf2e42140d2acd260b3c3194f5d-10" href="posts/get-localhost-ipv6-with-python/#rest_code_a705faf2e42140d2acd260b3c3194f5d-10"></a>            <span class="n">host_ipv6</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">ip</span><span class="p">[</span><span class="mi">4</span><span class="p">][</span><span class="mi">0</span><span class="p">])</span>
-<a id="rest_code_a705faf2e42140d2acd260b3c3194f5d-11" name="rest_code_a705faf2e42140d2acd260b3c3194f5d-11" href="posts/get-localhost-ipv6-with-python/#rest_code_a705faf2e42140d2acd260b3c3194f5d-11"></a>    <span class="k">return</span> <span class="n">host_ipv6</span>
+                  <div class="code"><pre class="code python"><a id="rest_code_0280e984d36a468092800174b2f37a0e-1" name="rest_code_0280e984d36a468092800174b2f37a0e-1" href="posts/get-localhost-ipv6-with-python/#rest_code_0280e984d36a468092800174b2f37a0e-1"></a><span class="k">def</span> <span class="nf">get_ipv6</span><span class="p">():</span>
+<a id="rest_code_0280e984d36a468092800174b2f37a0e-2" name="rest_code_0280e984d36a468092800174b2f37a0e-2" href="posts/get-localhost-ipv6-with-python/#rest_code_0280e984d36a468092800174b2f37a0e-2"></a>    <span class="kn">import</span> <span class="nn">socket</span>
+<a id="rest_code_0280e984d36a468092800174b2f37a0e-3" name="rest_code_0280e984d36a468092800174b2f37a0e-3" href="posts/get-localhost-ipv6-with-python/#rest_code_0280e984d36a468092800174b2f37a0e-3"></a>    <span class="n">host_ipv6</span> <span class="o">=</span> <span class="p">[]</span>
+<a id="rest_code_0280e984d36a468092800174b2f37a0e-4" name="rest_code_0280e984d36a468092800174b2f37a0e-4" href="posts/get-localhost-ipv6-with-python/#rest_code_0280e984d36a468092800174b2f37a0e-4"></a>    <span class="n">ips</span> <span class="o">=</span> <span class="n">socket</span><span class="o">.</span><span class="n">getaddrinfo</span><span class="p">(</span><span class="n">socket</span><span class="o">.</span><span class="n">gethostname</span><span class="p">(),</span><span class="mi">80</span><span class="p">)</span>
+<a id="rest_code_0280e984d36a468092800174b2f37a0e-5" name="rest_code_0280e984d36a468092800174b2f37a0e-5" href="posts/get-localhost-ipv6-with-python/#rest_code_0280e984d36a468092800174b2f37a0e-5"></a>    <span class="k">for</span> <span class="n">ip</span> <span class="ow">in</span> <span class="n">ips</span><span class="p">:</span>
+<a id="rest_code_0280e984d36a468092800174b2f37a0e-6" name="rest_code_0280e984d36a468092800174b2f37a0e-6" href="posts/get-localhost-ipv6-with-python/#rest_code_0280e984d36a468092800174b2f37a0e-6"></a>        <span class="k">if</span> <span class="n">ip</span><span class="p">[</span><span class="mi">4</span><span class="p">][</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">startswith</span><span class="p">(</span><span class="s1">'24'</span><span class="p">):</span>
+<a id="rest_code_0280e984d36a468092800174b2f37a0e-7" name="rest_code_0280e984d36a468092800174b2f37a0e-7" href="posts/get-localhost-ipv6-with-python/#rest_code_0280e984d36a468092800174b2f37a0e-7"></a>            <span class="c1"># 2408 中国联通</span>
+<a id="rest_code_0280e984d36a468092800174b2f37a0e-8" name="rest_code_0280e984d36a468092800174b2f37a0e-8" href="posts/get-localhost-ipv6-with-python/#rest_code_0280e984d36a468092800174b2f37a0e-8"></a>            <span class="c1"># 2409 中国移动</span>
+<a id="rest_code_0280e984d36a468092800174b2f37a0e-9" name="rest_code_0280e984d36a468092800174b2f37a0e-9" href="posts/get-localhost-ipv6-with-python/#rest_code_0280e984d36a468092800174b2f37a0e-9"></a>            <span class="c1"># 240e 中国电信</span>
+<a id="rest_code_0280e984d36a468092800174b2f37a0e-10" name="rest_code_0280e984d36a468092800174b2f37a0e-10" href="posts/get-localhost-ipv6-with-python/#rest_code_0280e984d36a468092800174b2f37a0e-10"></a>            <span class="n">host_ipv6</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">ip</span><span class="p">[</span><span class="mi">4</span><span class="p">][</span><span class="mi">0</span><span class="p">])</span>
+<a id="rest_code_0280e984d36a468092800174b2f37a0e-11" name="rest_code_0280e984d36a468092800174b2f37a0e-11" href="posts/get-localhost-ipv6-with-python/#rest_code_0280e984d36a468092800174b2f37a0e-11"></a>    <span class="k">return</span> <span class="n">host_ipv6</span>
 </pre></div>
                 </div>
             </div>
@@ -467,7 +510,7 @@ setx path "%path%;%USERPROFILE%bin"</p>
               </div>
                 <div class="content e-content entry-content">
                   <p>su 后，使用有权限的用户安装以下 package</p>
-<div class="code"><pre class="code sh"><a id="rest_code_918a94a74b53444488d3d2ad8f3edf5d-1" name="rest_code_918a94a74b53444488d3d2ad8f3edf5d-1" href="posts/dig-installation-on-freebsd/#rest_code_918a94a74b53444488d3d2ad8f3edf5d-1"></a>pkg<span class="w"> </span>install<span class="w"> </span>dns/bind-tools
+<div class="code"><pre class="code sh"><a id="rest_code_fc77cf1eb1d34e14a9253431a63e5e9b-1" name="rest_code_fc77cf1eb1d34e14a9253431a63e5e9b-1" href="posts/dig-installation-on-freebsd/#rest_code_fc77cf1eb1d34e14a9253431a63e5e9b-1"></a>pkg<span class="w"> </span>install<span class="w"> </span>dns/bind-tools
 </pre></div>
                 </div>
             </div>
@@ -509,8 +552,8 @@ setx path "%path%;%USERPROFILE%bin"</p>
               </div>
                 <div class="content e-content entry-content">
                   <section id="windows-cmd-proxy"><h2>Windows cmd proxy 直给答案</h2>
-<div class="code"><pre class="code bash"><a id="rest_code_0c9ea877fe984d1eb75a7057c968950e-1" name="rest_code_0c9ea877fe984d1eb75a7057c968950e-1" href="posts/how-to-config-windows-cmd-proxy/#rest_code_0c9ea877fe984d1eb75a7057c968950e-1"></a><span class="nb">set</span><span class="w"> </span><span class="nv">proxy</span><span class="o">=</span>http://127.0.0.1:6868
-<a id="rest_code_0c9ea877fe984d1eb75a7057c968950e-2" name="rest_code_0c9ea877fe984d1eb75a7057c968950e-2" href="posts/how-to-config-windows-cmd-proxy/#rest_code_0c9ea877fe984d1eb75a7057c968950e-2"></a><span class="nb">set</span><span class="w"> </span><span class="nv">proxy</span><span class="o">=</span>https://127.0.0.1:6868
+<div class="code"><pre class="code bash"><a id="rest_code_5a8a99002b1a4f4ea629ffcb2ceb12cf-1" name="rest_code_5a8a99002b1a4f4ea629ffcb2ceb12cf-1" href="posts/how-to-config-windows-cmd-proxy/#rest_code_5a8a99002b1a4f4ea629ffcb2ceb12cf-1"></a><span class="nb">set</span><span class="w"> </span><span class="nv">proxy</span><span class="o">=</span>http://127.0.0.1:6868
+<a id="rest_code_5a8a99002b1a4f4ea629ffcb2ceb12cf-2" name="rest_code_5a8a99002b1a4f4ea629ffcb2ceb12cf-2" href="posts/how-to-config-windows-cmd-proxy/#rest_code_5a8a99002b1a4f4ea629ffcb2ceb12cf-2"></a><span class="nb">set</span><span class="w"> </span><span class="nv">proxy</span><span class="o">=</span>https://127.0.0.1:6868
 </pre></div>
 <p>看起来，也适用于 Linux FreeBSD</p>
 </section>
@@ -565,9 +608,9 @@ setx path "%path%;%USERPROFILE%bin"</p>
 <p>当我在 PyCharm 中选中了项目的根目录后，在菜单 File -&gt; File Properties -&gt; Line Separators 的切换后，SQLite 数据库文件报错了；</p>
 <p>我进行这个操作的主要原因是，每当我添加文件到 git 时，以 LF 为分隔符的 sitemap.xml 文件总是有一个 warning；</p>
 <p>而这个报错的主要原因，被证明是一个 Python 2 的遗留问题导致的。</p>
-<div class="code"><pre class="code bash"><a id="rest_code_379ce1ae869c478ca4824bb6508fa083-1" name="rest_code_379ce1ae869c478ca4824bb6508fa083-1" href="posts/sqlite-error-database-disk-image-is-malformed-by-pycharm/#rest_code_379ce1ae869c478ca4824bb6508fa083-1"></a>&gt;git<span class="w"> </span>add<span class="w"> </span>.
-<a id="rest_code_379ce1ae869c478ca4824bb6508fa083-2" name="rest_code_379ce1ae869c478ca4824bb6508fa083-2" href="posts/sqlite-error-database-disk-image-is-malformed-by-pycharm/#rest_code_379ce1ae869c478ca4824bb6508fa083-2"></a>warning:<span class="w"> </span>LF<span class="w"> </span>will<span class="w"> </span>be<span class="w"> </span>replaced<span class="w"> </span>by<span class="w"> </span>CRLF<span class="w"> </span><span class="k">in</span><span class="w"> </span>docs/sitemap.xml.
-<a id="rest_code_379ce1ae869c478ca4824bb6508fa083-3" name="rest_code_379ce1ae869c478ca4824bb6508fa083-3" href="posts/sqlite-error-database-disk-image-is-malformed-by-pycharm/#rest_code_379ce1ae869c478ca4824bb6508fa083-3"></a>The<span class="w"> </span>file<span class="w"> </span>will<span class="w"> </span>have<span class="w"> </span>its<span class="w"> </span>original<span class="w"> </span>line<span class="w"> </span>endings<span class="w"> </span><span class="k">in</span><span class="w"> </span>your<span class="w"> </span>working<span class="w"> </span>directory
+<div class="code"><pre class="code bash"><a id="rest_code_a98fcf3e59aa4eaf860ec0d6e6c0d696-1" name="rest_code_a98fcf3e59aa4eaf860ec0d6e6c0d696-1" href="posts/sqlite-error-database-disk-image-is-malformed-by-pycharm/#rest_code_a98fcf3e59aa4eaf860ec0d6e6c0d696-1"></a>&gt;git<span class="w"> </span>add<span class="w"> </span>.
+<a id="rest_code_a98fcf3e59aa4eaf860ec0d6e6c0d696-2" name="rest_code_a98fcf3e59aa4eaf860ec0d6e6c0d696-2" href="posts/sqlite-error-database-disk-image-is-malformed-by-pycharm/#rest_code_a98fcf3e59aa4eaf860ec0d6e6c0d696-2"></a>warning:<span class="w"> </span>LF<span class="w"> </span>will<span class="w"> </span>be<span class="w"> </span>replaced<span class="w"> </span>by<span class="w"> </span>CRLF<span class="w"> </span><span class="k">in</span><span class="w"> </span>docs/sitemap.xml.
+<a id="rest_code_a98fcf3e59aa4eaf860ec0d6e6c0d696-3" name="rest_code_a98fcf3e59aa4eaf860ec0d6e6c0d696-3" href="posts/sqlite-error-database-disk-image-is-malformed-by-pycharm/#rest_code_a98fcf3e59aa4eaf860ec0d6e6c0d696-3"></a>The<span class="w"> </span>file<span class="w"> </span>will<span class="w"> </span>have<span class="w"> </span>its<span class="w"> </span>original<span class="w"> </span>line<span class="w"> </span>endings<span class="w"> </span><span class="k">in</span><span class="w"> </span>your<span class="w"> </span>working<span class="w"> </span>directory
 </pre></div>
 </section><section id="section-2"><h2>问题原因</h2>
 <p>没有充分证实，但非常有可能是 LF 到 CRLF 的替换损坏了 SQLite 的数据库文件。</p>
@@ -591,74 +634,6 @@ setx path "%path%;%USERPROFILE%bin"</p>
                 <p class="card-footer-item commentline">
     
     <a href="posts/sqlite-error-database-disk-image-is-malformed-by-pycharm/#disqus_thread" data-disqus-identifier="cache/posts/sqlite-error-database-disk-image-is-malformed-by-pycharm.html">评论</a>
-
-</p>
-            </footer></article>
-</div>
-      </div>
-    </div>
-    <div class="columns">
-      <div class="column">
-        <div class="card post-card">
-          <article class="h-entry post-text"><div class="card-content">
-              <div class="media metadata">
-                <div class="media-content">
-                  <p class="title is-2 p-name entry-title">
-                    <a href="posts/the-different-linesep-between-codecs-open-and-open-in-python-3/" class="u-url">The different linesep between codecs open and open in python 3</a>
-                  </p>
-                </div>
-                  <div class="media-right">
-                    <span class="icon">
-                      <i class="fa fa-file-text-o" aria-hidden="true"></i>
-                    </span>
-                    <span class="visuallyhidden">text</span>
-                  </div>
-              </div>
-                <div class="content e-content entry-content">
-                  <section id="section-1"><h2>文件分隔符之回车换行的故事</h2>
-<p>最初的打字机上，将打字位置 Carriage 从行末移动到行首叫做 Carriage Return，既CR，既回车，将纸张上滚一行，叫做换行 Linefeed。</p>
-<p>来到计算机时代，分别为这两种操作都定义了 ASCII 码</p>
-<ol class="arabic simple">
-<li><p>ASCII \n: CR，Carriage Return，UNIX 上是行分隔符，newline，取第一个字；macOS 也采用了此换行符；</p></li>
-<li><p>ASCII \r: LF，Linefeed，Classic Mac OS 中，文件换行符是这个；</p></li>
-<li><p>ASCII \r\n: CRLF，Carriage Return &amp; Linefeed，Windows 最晚出现，为在 Windows 上能显示 Unix 和 Apple Mac OS 文件内容，弄出一个兼容的。</p></li>
-</ol></section><section id="python"><h2>Python 世界的换行</h2>
-<p>为兼容各平台差异，Python 的 os 模块中弄出多个属性来处理，比如</p>
-<ul class="simple">
-<li><p>linesep 行分隔符</p></li>
-<li><p>sep 文件路径名分割符</p></li>
-<li><p>pathsep 文件路径分隔符</p></li>
-<li><p>curdir 当前工作目录</p></li>
-<li><p>pardir 父目录</p></li>
-</ul>
-<p>os 模块是处理好了这件事，但其它模块却不一定。</p>
-</section><section id="python-2"><h2>Python 2 的写文件</h2>
-<ol class="arabic simple">
-<li><p>open()，可能最早从 c 语言 fopen 学习的，未考虑编码参数</p></li>
-<li><p>codecs.open()，支持编码参数</p></li>
-<li><p>io.open()，支持编码参数的 open()，推荐使用</p></li>
-</ol></section><section id="python-3"><h2>Python 3 的写文件</h2>
-<ol class="arabic simple">
-<li><p>open()，修正了 Python 2 时代的设计遗漏，支持 encoding 和 newline 参数</p></li>
-<li><p>codecs.open()，在读写文件时不推荐使用了，且此模块方法在 Windows 下有坑，文件换行符会弄成 LF</p></li>
-</ol></section><section id="section-2"><h2>不同平台的差异随处可见</h2>
-<p>一定程度上反映了，人各有各的思想，分久必合，当人们无法忍受差异时，就会发展为统一。</p>
-</section>
-</div>
-            </div>
-
-            <footer class="card-footer"><p class="card-footer-item byline author vcard">
-                <span class="byline-name fn">
-                    逍遥
-                </span>
-              </p>
-              <p class="card-footer-item dateline">
-                <a href="posts/the-different-linesep-between-codecs-open-and-open-in-python-3/" rel="bookmark">
-                  <time class="published dt-published" datetime="2023-12-13T20:01:17+08:00" title="2023-12-13 20:01">2023-12-13 20:01</time></a>
-              </p>
-                <p class="card-footer-item commentline">
-    
-    <a href="posts/the-different-linesep-between-codecs-open-and-open-in-python-3/#disqus_thread" data-disqus-identifier="cache/posts/the-different-linesep-between-codecs-open-and-open-in-python-3.html">评论</a>
 
 </p>
             </footer></article>

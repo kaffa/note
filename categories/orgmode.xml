@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
-<?xml-stylesheet type="text/xsl" href="../assets/xml/rss.xsl" media="all"?><rss version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>琅環笔记 (关于 orgmode 的文章)</title><link>https://note.tt4e.com/</link><description></description><atom:link href="https://note.tt4e.com/categories/orgmode.xml" rel="self" type="application/rss+xml"></atom:link><language>zh_cn</language><copyright>Contents © 2024 &lt;a href="mailto:xiaoyao@tt4e.com"&gt;逍遥&lt;/a&gt; </copyright><lastBuildDate>Sat, 20 Jan 2024 15:52:36 GMT</lastBuildDate><generator>Nikola (getnikola.com)</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>Taking Notes In Orgmode With Nikola</title><link>https://note.tt4e.com/posts/taking-notes-in-orgmode-with-nikola/</link><dc:creator>逍遥</dc:creator><description>&lt;div id="outline-container-orgaf0893a" class="outline-2"&gt;
-&lt;h2 id="orgaf0893a"&gt;步骤&lt;/h2&gt;
-&lt;div class="outline-text-2" id="text-orgaf0893a"&gt;
+<?xml-stylesheet type="text/xsl" href="../assets/xml/rss.xsl" media="all"?><rss version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>琅環笔记 (关于 orgmode 的文章)</title><link>https://note.tt4e.com/</link><description></description><atom:link href="https://note.tt4e.com/categories/orgmode.xml" rel="self" type="application/rss+xml"></atom:link><language>zh_cn</language><copyright>Contents © 2024 &lt;a href="mailto:xiaoyao@tt4e.com"&gt;逍遥&lt;/a&gt; </copyright><lastBuildDate>Mon, 08 Apr 2024 20:03:08 GMT</lastBuildDate><generator>Nikola (getnikola.com)</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>Taking Notes In Orgmode With Nikola</title><link>https://note.tt4e.com/posts/taking-notes-in-orgmode-with-nikola/</link><dc:creator>逍遥</dc:creator><description>&lt;div id="outline-container-orgfa00121" class="outline-2"&gt;
+&lt;h2 id="orgfa00121"&gt;步骤&lt;/h2&gt;
+&lt;div class="outline-text-2" id="text-orgfa00121"&gt;
 &lt;ol class="org-ol"&gt;
 &lt;li&gt;安装 emacs，最新版已内置 Org mode&lt;/li&gt;
 &lt;li&gt;安装 nikola&lt;/li&gt;
@@ -38,9 +38,9 @@
 &lt;/div&gt;
 &lt;/div&gt;
 
-&lt;div id="outline-container-org90e4093" class="outline-2"&gt;
-&lt;h2 id="org90e4093"&gt;其他&lt;/h2&gt;
-&lt;div class="outline-text-2" id="text-org90e4093"&gt;
+&lt;div id="outline-container-org10613cb" class="outline-2"&gt;
+&lt;h2 id="org10613cb"&gt;其他&lt;/h2&gt;
+&lt;div class="outline-text-2" id="text-org10613cb"&gt;
 &lt;ol class="org-ol"&gt;
 &lt;li&gt;修改默认编辑器为 emacs&lt;/li&gt;
 &lt;/ol&gt;
