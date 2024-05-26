@@ -37,25 +37,25 @@
 ==========
 
 1. 用 ps aux 查看进程，发现 mariadbd 进程，发现未使用配置文件，则使用的默认路径配置；
-2. 查看默认配置文件::
+2. 查看默认配置文件 ::
 
-   cat /etc/mysql/mariadb.cnf
-   cat /etc/mysql/mariadb.conf.d/50-server.cnf 
+    cat /etc/mysql/mariadb.cnf
+    cat /etc/mysql/mariadb.conf.d/50-server.cnf 
 
    
-3. 发现默认配置文件中未指定数据路径，则进入默认数据路径，并查看文件权限，发现 xxx 的所有者是 root 用户::
+3. 发现默认配置文件中未指定数据路径，则进入默认数据路径，并查看文件权限，发现 xxx 的所有者是 root 用户 ::
 
-   cd /var/lib/mysql/
-   ls -l
+    cd /var/lib/mysql/
+    ls -l
 
 
 4. 猜测是使用了不同的用户创建的数据库导致没有权限，执行 cat /etc/passwd 查看用户，发现 mysql 用户；
-5. 于是将 xxx 目录和下面文件的所有者修改为 mysql::
+5. 于是将 xxx 目录和下面文件的所有者修改为 mysql ::
 
-   sudo chown mysql:mysql xxx/
-   cd xxx/
-   ls
-   sudo chown mysql:mysql db.opt
+    sudo chown mysql:mysql xxx/
+    cd xxx/
+    ls
+    sudo chown mysql:mysql db.opt
 
 
 6. 执行 systemctl restart mysql 重启服务，进入 mysql 命令行客户端，再次执行 drop database xxx 即成功删除。
