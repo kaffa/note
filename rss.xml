@@ -1,5 +1,52 @@
 <?xml version="1.0" encoding="utf-8"?>
-<?xml-stylesheet type="text/xsl" href="assets/xml/rss.xsl" media="all"?><rss version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>琅環笔记</title><link>https://note.tt4e.com/</link><description>有博学强记者，尝为鹅厂从事。游于洞宫，遇一人于途，问逍遥曰：“君读书几何？”遥曰：“吾之未读者，则二十年内书盖有之也，若二十年外，则吾固已尽读之矣。”其人论议超然，遥颇内服，相与欢甚。因共至一处，大石中忽然有门，引遥入数歩，则别是天地，宫室嵯峨。引入一室中，陈书满架，其人曰：“此PL史也。”又至一室，则曰：“OS志也。”毎室各有奇书，惟一室屋宇颇高，封识甚严，有二犬守之。遥问故，答曰：“此皆操作系统、编程语言、算法分析、生发正骨诸秘籍。”指二犬曰：“此龙也。”历观诸室书，皆Windows以前事，多所未闻者，如「BeOS」、「Solaris」、「FreeBSD」、「LISP」亦皆在焉。遥心乐之，欲赁住数十日，其人笑曰：“君痴矣。此岂可赁地耶？”即命小童送出，遥问地名，对曰：“琅嬛福地也。”</description><atom:link href="https://note.tt4e.com/rss.xml" rel="self" type="application/rss+xml"></atom:link><language>zh_cn</language><copyright>Contents © 2024 &lt;a href="mailto:xiaoyao@tt4e.com"&gt;逍遥&lt;/a&gt; </copyright><lastBuildDate>Mon, 08 Apr 2024 20:03:09 GMT</lastBuildDate><generator>Nikola (getnikola.com)</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>init.el doesn't automatically load on startup of emacs</title><link>https://note.tt4e.com/posts/initel-doesnt-automatically-load-on-startup-of-emacs/</link><dc:creator>逍遥</dc:creator><description>&lt;section id="section-1"&gt;
+<?xml-stylesheet type="text/xsl" href="assets/xml/rss.xsl" media="all"?><rss version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>琅環笔记</title><link>https://note.tt4e.com/</link><description>有博学强记者，尝为鹅厂从事。游于洞宫，遇一人于途，问逍遥曰：“君读书几何？”遥曰：“吾之未读者，则二十年内书盖有之也，若二十年外，则吾固已尽读之矣。”其人论议超然，遥颇内服，相与欢甚。因共至一处，大石中忽然有门，引遥入数歩，则别是天地，宫室嵯峨。引入一室中，陈书满架，其人曰：“此PL史也。”又至一室，则曰：“OS志也。”毎室各有奇书，惟一室屋宇颇高，封识甚严，有二犬守之。遥问故，答曰：“此皆操作系统、编程语言、算法分析、生发正骨诸秘籍。”指二犬曰：“此龙也。”历观诸室书，皆Windows以前事，多所未闻者，如「BeOS」、「Solaris」、「FreeBSD」、「LISP」亦皆在焉。遥心乐之，欲赁住数十日，其人笑曰：“君痴矣。此岂可赁地耶？”即命小童送出，遥问地名，对曰：“琅嬛福地也。”</description><atom:link href="https://note.tt4e.com/rss.xml" rel="self" type="application/rss+xml"></atom:link><language>zh_cn</language><copyright>Contents © 2024 &lt;a href="mailto:xiaoyao@tt4e.com"&gt;逍遥&lt;/a&gt; </copyright><lastBuildDate>Sun, 26 May 2024 17:57:35 GMT</lastBuildDate><generator>Nikola (getnikola.com)</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>Solution to Can't drop database 'tt4e'; database doesn't exist</title><link>https://note.tt4e.com/posts/solution-to-cant-drop-database-tt4e-database-doesnt-exist/</link><dc:creator>逍遥</dc:creator><description>&lt;section id="section-1"&gt;
+&lt;h2&gt;问题现象&lt;/h2&gt;
+&lt;p&gt;一台服务器上，有一个数据库怎么也删不掉，但可以显示。&lt;/p&gt;
+&lt;pre class="literal-block"&gt;MariaDB [(none)]&amp;gt; show databases;
++--------------------+
+| Database           |
++--------------------+
+| information_schema |
+| mysql              |
+| performance_schema |
+| sys                |
+| xxx                |
++--------------------+
+5 rows in set (0.002 sec)
+
+MariaDB [(none)]&amp;gt; drop database xxx;
+ERROR 1008 (HY000): Can't drop database 'xxx'; database doesn't exist&lt;/pre&gt;
+&lt;/section&gt;
+&lt;section id="section-2"&gt;
+&lt;h2&gt;问题解决&lt;/h2&gt;
+&lt;ol class="arabic"&gt;
+&lt;li&gt;&lt;p&gt;用 ps aux 查看进程，发现 mariadbd 进程，发现未使用配置文件，则使用的默认路径配置；&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;查看默认配置文件:&lt;/p&gt;
+&lt;aside class="system-message"&gt;
+&lt;p class="system-message-title"&gt;System Message: WARNING/2 (&lt;span class="docutils literal"&gt;&amp;lt;string&amp;gt;&lt;/span&gt;, line 33)&lt;/p&gt;
+&lt;p&gt;Literal block expected; none found.&lt;/p&gt;
+&lt;/aside&gt;
+&lt;p&gt;cat /etc/mysql/mariadb.cnf
+cat /etc/mysql/mariadb.conf.d/50-server.cnf&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;发现默认配置文件中未指定数据路径，则进入默认数据路径，并查看文件权限，发现 xxx 的所有者是 root 用户:&lt;/p&gt;
+&lt;aside class="system-message"&gt;
+&lt;p class="system-message-title"&gt;System Message: WARNING/2 (&lt;span class="docutils literal"&gt;&amp;lt;string&amp;gt;&lt;/span&gt;, line 38)&lt;/p&gt;
+&lt;p&gt;Literal block expected; none found.&lt;/p&gt;
+&lt;/aside&gt;
+&lt;p&gt;cd /var/lib/mysql/
+ls -l&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;猜测是使用了不同的用户创建的数据库导致没有权限，执行 cat /etc/passwd 查看用户，发现 mysql 用户；&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;于是将 xxx 目录和下面文件的所有者修改为 mysql&lt;/p&gt;
+&lt;p&gt;sudo chown mysql:mysql xxx/
+cd xxx/
+ls
+sudo chown mysql:mysql db.opt&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;执行 systemctl restart mysql 重启服务，进入 mysql 命令行客户端，再次执行 drop database xxx 即成功删除。&lt;/p&gt;&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/section&gt;</description><category>mysql</category><guid>https://note.tt4e.com/posts/solution-to-cant-drop-database-tt4e-database-doesnt-exist/</guid><pubDate>Sun, 26 May 2024 17:23:39 GMT</pubDate></item><item><title>init.el doesn't automatically load on startup of emacs</title><link>https://note.tt4e.com/posts/initel-doesnt-automatically-load-on-startup-of-emacs/</link><dc:creator>逍遥</dc:creator><description>&lt;section id="section-1"&gt;
 &lt;h2&gt;解决办法&lt;/h2&gt;
 &lt;ul class="simple"&gt;
 &lt;li&gt;&lt;p&gt;可能的解决办法之一是删除 ~/.emacs 文件，当然删除前先看看内容是否需要备份。&lt;/p&gt;&lt;/li&gt;
@@ -137,33 +184,4 @@ setx path "%path%;%USERPROFILE%bin"&lt;/p&gt;
 &lt;a id="rest_code_5a8a99002b1a4f4ea629ffcb2ceb12cf-2" name="rest_code_5a8a99002b1a4f4ea629ffcb2ceb12cf-2" href="https://note.tt4e.com/posts/how-to-config-windows-cmd-proxy/#rest_code_5a8a99002b1a4f4ea629ffcb2ceb12cf-2"&gt;&lt;/a&gt;&lt;span class="nb"&gt;set&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nv"&gt;proxy&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;https://127.0.0.1:6868
 &lt;/pre&gt;&lt;/div&gt;
 &lt;p&gt;看起来，也适用于 Linux FreeBSD&lt;/p&gt;
-&lt;/section&gt;</description><category>cmd</category><category>proxy</category><guid>https://note.tt4e.com/posts/how-to-config-windows-cmd-proxy/</guid><pubDate>Sat, 20 Jan 2024 01:14:15 GMT</pubDate></item><item><title>SQLite Error database disk image is malformed by PyCharm</title><link>https://note.tt4e.com/posts/sqlite-error-database-disk-image-is-malformed-by-pycharm/</link><dc:creator>逍遥</dc:creator><description>&lt;section id="tips"&gt;
-&lt;h2&gt;大多数 Tips 背后总能找到一个设计错误&lt;/h2&gt;
-&lt;p&gt;Tips 之所以让人眼前一亮，那是因为这个 Tips 的结构不寻常。&lt;/p&gt;
-&lt;p&gt;大体上，是因为设计者没有想到，或者想到了，但没有设计好导致的。&lt;/p&gt;
-&lt;p&gt;比如下面这个：&lt;/p&gt;
-&lt;/section&gt;
-&lt;section id="database-disk-image-is-malformed"&gt;
-&lt;h2&gt;database disk image is malformed&lt;/h2&gt;
-&lt;p&gt;SQLite 提示 "database disk image is malformed"&lt;/p&gt;
-&lt;p&gt;看起来很惊悚，说是数据库磁盘镜像畸形了。&lt;/p&gt;
-&lt;p&gt;第一感觉似乎是磁盘硬件坏道了？&lt;/p&gt;
-&lt;/section&gt;
-&lt;section id="section-1"&gt;
-&lt;h2&gt;问题重现&lt;/h2&gt;
-&lt;p&gt;当我在 PyCharm 中选中了项目的根目录后，在菜单 File -&amp;gt; File Properties -&amp;gt; Line Separators 的切换后，SQLite 数据库文件报错了；&lt;/p&gt;
-&lt;p&gt;我进行这个操作的主要原因是，每当我添加文件到 git 时，以 LF 为分隔符的 sitemap.xml 文件总是有一个 warning；&lt;/p&gt;
-&lt;p&gt;而这个报错的主要原因，被证明是一个 Python 2 的遗留问题导致的。&lt;/p&gt;
-&lt;div class="code"&gt;&lt;pre class="code bash"&gt;&lt;a id="rest_code_a98fcf3e59aa4eaf860ec0d6e6c0d696-1" name="rest_code_a98fcf3e59aa4eaf860ec0d6e6c0d696-1" href="https://note.tt4e.com/posts/sqlite-error-database-disk-image-is-malformed-by-pycharm/#rest_code_a98fcf3e59aa4eaf860ec0d6e6c0d696-1"&gt;&lt;/a&gt;&amp;gt;git&lt;span class="w"&gt; &lt;/span&gt;add&lt;span class="w"&gt; &lt;/span&gt;.
-&lt;a id="rest_code_a98fcf3e59aa4eaf860ec0d6e6c0d696-2" name="rest_code_a98fcf3e59aa4eaf860ec0d6e6c0d696-2" href="https://note.tt4e.com/posts/sqlite-error-database-disk-image-is-malformed-by-pycharm/#rest_code_a98fcf3e59aa4eaf860ec0d6e6c0d696-2"&gt;&lt;/a&gt;warning:&lt;span class="w"&gt; &lt;/span&gt;LF&lt;span class="w"&gt; &lt;/span&gt;will&lt;span class="w"&gt; &lt;/span&gt;be&lt;span class="w"&gt; &lt;/span&gt;replaced&lt;span class="w"&gt; &lt;/span&gt;by&lt;span class="w"&gt; &lt;/span&gt;CRLF&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="k"&gt;in&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;docs/sitemap.xml.
-&lt;a id="rest_code_a98fcf3e59aa4eaf860ec0d6e6c0d696-3" name="rest_code_a98fcf3e59aa4eaf860ec0d6e6c0d696-3" href="https://note.tt4e.com/posts/sqlite-error-database-disk-image-is-malformed-by-pycharm/#rest_code_a98fcf3e59aa4eaf860ec0d6e6c0d696-3"&gt;&lt;/a&gt;The&lt;span class="w"&gt; &lt;/span&gt;file&lt;span class="w"&gt; &lt;/span&gt;will&lt;span class="w"&gt; &lt;/span&gt;have&lt;span class="w"&gt; &lt;/span&gt;its&lt;span class="w"&gt; &lt;/span&gt;original&lt;span class="w"&gt; &lt;/span&gt;line&lt;span class="w"&gt; &lt;/span&gt;endings&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="k"&gt;in&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;your&lt;span class="w"&gt; &lt;/span&gt;working&lt;span class="w"&gt; &lt;/span&gt;directory
-&lt;/pre&gt;&lt;/div&gt;
-&lt;/section&gt;
-&lt;section id="section-2"&gt;
-&lt;h2&gt;问题原因&lt;/h2&gt;
-&lt;p&gt;没有充分证实，但非常有可能是 LF 到 CRLF 的替换损坏了 SQLite 的数据库文件。&lt;/p&gt;
-&lt;p&gt;你想问问 PyCharm，你怎么这么蠢？&lt;/p&gt;
-&lt;p&gt;PyCharm 可能会说，怪我干什么，我只是个工具！&lt;/p&gt;
-&lt;p&gt;但我认为吧，PyCharm 确实有理由识别这是一个数据库文件吧，毕竟你是可以直接打开浏览和处理的。&lt;/p&gt;
-&lt;p&gt;好在此处，是之用到 SQLite 作为数据生成的本地缓存，且在 GitHub 上有备份，于是拿了一份下来本地覆盖既修复了。&lt;/p&gt;
-&lt;/section&gt;</description><category>pycharm</category><category>sqlite</category><guid>https://note.tt4e.com/posts/sqlite-error-database-disk-image-is-malformed-by-pycharm/</guid><pubDate>Wed, 13 Dec 2023 13:14:50 GMT</pubDate></item></channel></rss>
+&lt;/section&gt;</description><category>cmd</category><category>proxy</category><guid>https://note.tt4e.com/posts/how-to-config-windows-cmd-proxy/</guid><pubDate>Sat, 20 Jan 2024 01:14:15 GMT</pubDate></item></channel></rss>

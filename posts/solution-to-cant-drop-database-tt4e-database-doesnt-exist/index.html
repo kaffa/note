@@ -2,22 +2,21 @@
 <html prefix="" lang="zh_cn">
 <head>
 <meta charset="utf-8">
-<meta name="description" content="本文解决 init.el 不自动加载的问题">
+<meta name="description" content="本文解决在 mysql 中 show databases 可以显示但 drop database 却失败的情况">
 <meta name="viewport" content="width=device-width">
-<title>init.el doesn't automatically load on startup of emacs | 琅環笔记</title>
+<title>Solution to Can't drop database 'tt4e'; database doesn't exist | 琅環笔记</title>
 <meta name="theme-color" content="#FED43F">
 <meta name="generator" content="Nikola (getnikola.com)">
 <link rel="alternate" type="application/rss+xml" title="RSS" href="../../rss.xml">
-<link rel="canonical" href="https://note.tt4e.com/posts/initel-doesnt-automatically-load-on-startup-of-emacs/">
+<link rel="canonical" href="https://note.tt4e.com/posts/solution-to-cant-drop-database-tt4e-database-doesnt-exist/">
 <link href="../../assets/css/rst.css" rel="stylesheet" type="text/css">
 <link href="../../assets/css/code.css" rel="stylesheet" type="text/css">
 <link href="../../assets/css/font-awesome.css" rel="stylesheet" type="text/css">
 <link href="../../assets/css/styles.css" rel="stylesheet" type="text/css">
 <link href="../../assets/css/custom.css" rel="stylesheet" type="text/css">
-<!--[if lt IE 9]><script src="../../assets/js/html5.js"></script><![endif]--><meta name="description" content="本文解决 init.el 不自动加载的问题">
+<!--[if lt IE 9]><script src="../../assets/js/html5.js"></script><![endif]--><meta name="description" content="本文解决在 mysql 中 show databases 可以显示但 drop database 却失败的情况">
 <meta name="author" content="逍遥">
-<link rel="prev" href="../set-env-on-unix-like-and-windows-system/" title="Set Env on Unix-like and Windows System" type="text/html">
-<link rel="next" href="../solution-to-cant-drop-database-tt4e-database-doesnt-exist/" title="Solution to Can't drop database 'tt4e'; database doesn't exist" type="text/html">
+<link rel="prev" href="../initel-doesnt-automatically-load-on-startup-of-emacs/" title="init.el doesn't automatically load on startup of emacs" type="text/html">
 </head>
 <body>
 <script type="text/javascript">
@@ -84,7 +83,7 @@ document.getElementById('nav-toggle-burger').onclick = function() {
     <!-- Hero content: will be in the middle -->
     
   
-          <div class="hero-body hero-initeldoesntautomaticallyloadonstartupofemacs">
+          <div class="hero-body hero-solutiontocantdropdatabasett4edatabasedoesntexist">
           <div class="container has-text-centered">
               <p class="title">琅環笔记</p>
               <p class="is-size-6" style="text-align: left">有博学强记者，尝为鹅厂从事。游于洞宫，遇一人于途，问逍遥曰：“君读书几何？”遥曰：“吾之未读者，则二十年内书盖有之也，若二十年外，则吾固已尽读之矣。”其人论议超然，遥颇内服，相与欢甚。因共至一处，大石中忽然有门，引遥入数歩，则别是天地，宫室嵯峨。引入一室中，陈书满架，其人曰：“此PL史也。”又至一室，则曰：“OS志也。”毎室各有奇书，惟一室屋宇颇高，封识甚严，有二犬守之。遥问故，答曰：“此皆操作系统、编程语言、算法分析、生发正骨诸秘籍。”指二犬曰：“此龙也。”历观诸室书，皆Windows以前事，多所未闻者，如「BeOS」、「Solaris」、「FreeBSD」、「LISP」亦皆在焉。遥心乐之，欲赁住数十日，其人笑曰：“君痴矣。此岂可赁地耶？”即命小童送出，遥问地名，对曰：“琅嬛福地也。”</p>
@@ -96,7 +95,7 @@ document.getElementById('nav-toggle-burger').onclick = function() {
   </section><main id="content" class="section section-main"><div class="container">
       
 <article class="post-text h-entry hentry postpage" itemscope="itemscope" itemtype="http://schema.org/Article"><header class="heading"><h1 class="title is-1 p-name entry-title" itemprop="headline name">
-    <a href="." class="u-url">init.el doesn't automatically load on startup of emacs</a>
+    <a href="." class="u-url">Solution to Can't drop database 'tt4e'; database doesn't exist</a>
   </h1>
 
   <div class="level metadata">
@@ -115,14 +114,14 @@ document.getElementById('nav-toggle-burger').onclick = function() {
       <div class="level-item">
         <p class="dateline">
           <a href="." rel="bookmark">
-            <time class="published dt-published" datetime="2024-04-09T03:44:20+08:00" itemprop="datePublished" title="2024-04-09 03:44">2024-04-09 03:44</time></a>
+            <time class="published dt-published" datetime="2024-05-27T01:23:39+08:00" itemprop="datePublished" title="2024-05-27 01:23">2024-05-27 01:23</time></a>
         </p>
       </div>
       
         <div class="level-item">
           <p class="commentline">
     
-    <a href="#disqus_thread" data-disqus-identifier="cache/posts/initel-doesnt-automatically-load-on-startup-of-emacs.html">评论</a>
+    <a href="#disqus_thread" data-disqus-identifier="cache/posts/solution-to-cant-drop-database-tt4e-database-doesnt-exist.html">评论</a>
 
 </p>
         </div>
@@ -135,28 +134,66 @@ document.getElementById('nav-toggle-burger').onclick = function() {
   </div>
 
       
-        <meta name="description" itemprop="description" content="本文解决 init.el 不自动加载的问题">
+        <meta name="description" itemprop="description" content="本文解决在 mysql 中 show databases 可以显示但 drop database 却失败的情况">
 </div>
   </div>
   
 
 </header><div class="section content e-content entry-content" itemprop="articleBody text">
-    <section id="section-1"><h2>解决办法</h2>
-<ul class="simple">
-<li><p>可能的解决办法之一是删除 ~/.emacs 文件，当然删除前先看看内容是否需要备份。</p></li>
-</ul></section>
+    <section id="section-1"><h2>问题现象</h2>
+<p>一台服务器上，有一个数据库怎么也删不掉，但可以显示。</p>
+<pre class="literal-block">MariaDB [(none)]&gt; show databases;
++--------------------+
+| Database           |
++--------------------+
+| information_schema |
+| mysql              |
+| performance_schema |
+| sys                |
+| xxx                |
++--------------------+
+5 rows in set (0.002 sec)
+
+MariaDB [(none)]&gt; drop database xxx;
+ERROR 1008 (HY000): Can't drop database 'xxx'; database doesn't exist</pre>
+</section><section id="section-2"><h2>问题解决</h2>
+<ol class="arabic">
+<li><p>用 ps aux 查看进程，发现 mariadbd 进程，发现未使用配置文件，则使用的默认路径配置；</p></li>
+<li>
+<p>查看默认配置文件:</p>
+<aside class="system-message"><p class="system-message-title">System Message: WARNING/2 (<span class="docutils literal">&lt;string&gt;</span>, line 33)</p>
+<p>Literal block expected; none found.</p>
+</aside><p>cat /etc/mysql/mariadb.cnf
+cat /etc/mysql/mariadb.conf.d/50-server.cnf</p>
+</li>
+<li>
+<p>发现默认配置文件中未指定数据路径，则进入默认数据路径，并查看文件权限，发现 xxx 的所有者是 root 用户:</p>
+<aside class="system-message"><p class="system-message-title">System Message: WARNING/2 (<span class="docutils literal">&lt;string&gt;</span>, line 38)</p>
+<p>Literal block expected; none found.</p>
+</aside><p>cd /var/lib/mysql/
+ls -l</p>
+</li>
+<li><p>猜测是使用了不同的用户创建的数据库导致没有权限，执行 cat /etc/passwd 查看用户，发现 mysql 用户；</p></li>
+<li>
+<p>于是将 xxx 目录和下面文件的所有者修改为 mysql</p>
+<p>sudo chown mysql:mysql xxx/
+cd xxx/
+ls
+sudo chown mysql:mysql db.opt</p>
+</li>
+<li><p>执行 systemctl restart mysql 重启服务，进入 mysql 命令行客户端，再次执行 drop database xxx 即成功删除。</p></li>
+</ol></section>
 </div>
   <aside class="postpromonav"><div class="columns tags" itemprop="keywords">
         <div class="column has-text-centered">
-          <a class="tag is-primary is-medium p-category" href="../../categories/tips/" rel="tag">tips</a>
+          <a class="tag is-primary is-medium p-category" href="../../categories/mysql/" rel="tag">mysql</a>
         </div>
   </div>
 
     
   <div class="columns">
     <div class="column">
-      <nav class="pagination pager hidden-print"><a class="pagination-previous previous" href="../set-env-on-unix-like-and-windows-system/" rel="prev" title="Set Env on Unix-like and Windows System">上一篇文章</a>
-          <a class="pagination-next next" href="../solution-to-cant-drop-database-tt4e-database-doesnt-exist/" rel="next" title="Solution to Can't drop database 'tt4e'; database doesn't exist">下一篇文章</a>
+      <nav class="pagination pager hidden-print"><a class="pagination-previous previous" href="../initel-doesnt-automatically-load-on-startup-of-emacs/" rel="prev" title="init.el doesn't automatically load on startup of emacs">上一篇文章</a>
       </nav>
 </div>
   </div>
@@ -167,9 +204,9 @@ document.getElementById('nav-toggle-burger').onclick = function() {
         <div id="disqus_thread"></div>
         <script>
         var disqus_shortname ="tt4e",
-            disqus_url="https://note.tt4e.com/posts/initel-doesnt-automatically-load-on-startup-of-emacs/",
-        disqus_title="init.el doesn't automatically load on startup of emacs",
-        disqus_identifier="cache/posts/initel-doesnt-automatically-load-on-startup-of-emacs.html",
+            disqus_url="https://note.tt4e.com/posts/solution-to-cant-drop-database-tt4e-database-doesnt-exist/",
+        disqus_title="Solution to Can't drop database 'tt4e'; database doesn't exist",
+        disqus_identifier="cache/posts/solution-to-cant-drop-database-tt4e-database-doesnt-exist.html",
         disqus_config = function () {
             this.language = "zh_cn";
         };

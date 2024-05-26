@@ -7,7 +7,7 @@
                         http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">
  <url>
   <loc>https://note.tt4e.com/</loc>
-  <lastmod>2024-04-08T20:03:00Z</lastmod>
+  <lastmod>2024-05-26T17:57:00Z</lastmod>
  </url>
  <url>
   <loc>https://note.tt4e.com/2023/</loc>
@@ -19,11 +19,11 @@
  </url>
  <url>
   <loc>https://note.tt4e.com/archive.html</loc>
-  <lastmod>2024-04-08T20:03:00Z</lastmod>
+  <lastmod>2024-05-26T17:57:00Z</lastmod>
  </url>
  <url>
   <loc>https://note.tt4e.com/categories/</loc>
-  <lastmod>2024-04-08T20:03:00Z</lastmod>
+  <lastmod>2024-05-26T17:57:00Z</lastmod>
  </url>
  <url>
   <loc>https://note.tt4e.com/categories/asyncio/</loc>
@@ -88,6 +88,10 @@
  <url>
   <loc>https://note.tt4e.com/categories/mount/</loc>
   <lastmod>2024-04-08T20:03:00Z</lastmod>
+ </url>
+ <url>
+  <loc>https://note.tt4e.com/categories/mysql/</loc>
+  <lastmod>2024-05-26T17:57:00Z</lastmod>
  </url>
  <url>
   <loc>https://note.tt4e.com/categories/newline/</loc>
@@ -155,7 +159,11 @@
  </url>
  <url>
   <loc>https://note.tt4e.com/index-1.html</loc>
-  <lastmod>2024-04-08T20:03:00Z</lastmod>
+  <lastmod>2024-05-26T17:57:00Z</lastmod>
+ </url>
+ <url>
+  <loc>https://note.tt4e.com/index-2.html</loc>
+  <lastmod>2024-05-26T17:57:00Z</lastmod>
  </url>
  <url>
   <loc>https://note.tt4e.com/listings/</loc>
@@ -276,6 +284,10 @@
  <url>
   <loc>https://note.tt4e.com/posts/solution-to-arrow-keys-changed-into-abcd-in-securecrt-emacs-vim/</loc>
   <lastmod>2024-04-08T20:03:00Z</lastmod>
+ </url>
+ <url>
+  <loc>https://note.tt4e.com/posts/solution-to-cant-drop-database-tt4e-database-doesnt-exist/</loc>
+  <lastmod>2024-05-26T17:57:00Z</lastmod>
  </url>
  <url>
   <loc>https://note.tt4e.com/posts/solution-to-could-not-chdir-to-home-directory-no-such-file-or-directory/</loc>

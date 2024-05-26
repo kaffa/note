@@ -27,7 +27,7 @@
  </sitemap>
  <sitemap>
   <loc>https://note.tt4e.com/categories/cat_tips.xml</loc>
-  <lastmod>2024-04-08T20:03:00Z</lastmod>
+  <lastmod>2024-05-26T17:57:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>https://note.tt4e.com/categories/cmd.xml</loc>
@@ -68,6 +68,10 @@
  <sitemap>
   <loc>https://note.tt4e.com/categories/mount.xml</loc>
   <lastmod>2024-04-08T20:03:00Z</lastmod>
+ </sitemap>
+ <sitemap>
+  <loc>https://note.tt4e.com/categories/mysql.xml</loc>
+  <lastmod>2024-05-26T17:57:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>https://note.tt4e.com/categories/newline.xml</loc>
@@ -135,10 +139,10 @@
  </sitemap>
  <sitemap>
   <loc>https://note.tt4e.com/rss.xml</loc>
-  <lastmod>2024-04-08T20:03:00Z</lastmod>
+  <lastmod>2024-05-26T17:57:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>https://note.tt4e.com/sitemap.xml</loc>
-  <lastmod>2024-04-08T20:03:00Z</lastmod>
+  <lastmod>2024-05-26T17:57:00Z</lastmod>
  </sitemap>
 </sitemapindex>

@@ -1,5 +1,52 @@
 <?xml version="1.0" encoding="utf-8"?>
-<?xml-stylesheet type="text/xsl" href="../assets/xml/rss.xsl" media="all"?><rss version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>琅環笔记 (关于 Tips 的文章)</title><link>https://note.tt4e.com/</link><description></description><atom:link href="https://note.tt4e.com/categories/cat_tips.xml" rel="self" type="application/rss+xml"></atom:link><language>zh_cn</language><copyright>Contents © 2024 &lt;a href="mailto:xiaoyao@tt4e.com"&gt;逍遥&lt;/a&gt; </copyright><lastBuildDate>Mon, 08 Apr 2024 20:03:08 GMT</lastBuildDate><generator>Nikola (getnikola.com)</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>Solution to "Could not chdir to home directory No such file or directory"</title><link>https://note.tt4e.com/posts/solution-to-could-not-chdir-to-home-directory-no-such-file-or-directory/</link><dc:creator>逍遥</dc:creator><description>&lt;section id="section-1"&gt;
+<?xml-stylesheet type="text/xsl" href="../assets/xml/rss.xsl" media="all"?><rss version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>琅環笔记 (关于 Tips 的文章)</title><link>https://note.tt4e.com/</link><description></description><atom:link href="https://note.tt4e.com/categories/cat_tips.xml" rel="self" type="application/rss+xml"></atom:link><language>zh_cn</language><copyright>Contents © 2024 &lt;a href="mailto:xiaoyao@tt4e.com"&gt;逍遥&lt;/a&gt; </copyright><lastBuildDate>Sun, 26 May 2024 17:57:35 GMT</lastBuildDate><generator>Nikola (getnikola.com)</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>Solution to Can't drop database 'tt4e'; database doesn't exist</title><link>https://note.tt4e.com/posts/solution-to-cant-drop-database-tt4e-database-doesnt-exist/</link><dc:creator>逍遥</dc:creator><description>&lt;section id="section-1"&gt;
+&lt;h2&gt;问题现象&lt;/h2&gt;
+&lt;p&gt;一台服务器上，有一个数据库怎么也删不掉，但可以显示。&lt;/p&gt;
+&lt;pre class="literal-block"&gt;MariaDB [(none)]&amp;gt; show databases;
++--------------------+
+| Database           |
++--------------------+
+| information_schema |
+| mysql              |
+| performance_schema |
+| sys                |
+| xxx                |
++--------------------+
+5 rows in set (0.002 sec)
+
+MariaDB [(none)]&amp;gt; drop database xxx;
+ERROR 1008 (HY000): Can't drop database 'xxx'; database doesn't exist&lt;/pre&gt;
+&lt;/section&gt;
+&lt;section id="section-2"&gt;
+&lt;h2&gt;问题解决&lt;/h2&gt;
+&lt;ol class="arabic"&gt;
+&lt;li&gt;&lt;p&gt;用 ps aux 查看进程，发现 mariadbd 进程，发现未使用配置文件，则使用的默认路径配置；&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;查看默认配置文件:&lt;/p&gt;
+&lt;aside class="system-message"&gt;
+&lt;p class="system-message-title"&gt;System Message: WARNING/2 (&lt;span class="docutils literal"&gt;&amp;lt;string&amp;gt;&lt;/span&gt;, line 33)&lt;/p&gt;
+&lt;p&gt;Literal block expected; none found.&lt;/p&gt;
+&lt;/aside&gt;
+&lt;p&gt;cat /etc/mysql/mariadb.cnf
+cat /etc/mysql/mariadb.conf.d/50-server.cnf&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;发现默认配置文件中未指定数据路径，则进入默认数据路径，并查看文件权限，发现 xxx 的所有者是 root 用户:&lt;/p&gt;
+&lt;aside class="system-message"&gt;
+&lt;p class="system-message-title"&gt;System Message: WARNING/2 (&lt;span class="docutils literal"&gt;&amp;lt;string&amp;gt;&lt;/span&gt;, line 38)&lt;/p&gt;
+&lt;p&gt;Literal block expected; none found.&lt;/p&gt;
+&lt;/aside&gt;
+&lt;p&gt;cd /var/lib/mysql/
+ls -l&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;猜测是使用了不同的用户创建的数据库导致没有权限，执行 cat /etc/passwd 查看用户，发现 mysql 用户；&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;于是将 xxx 目录和下面文件的所有者修改为 mysql&lt;/p&gt;
+&lt;p&gt;sudo chown mysql:mysql xxx/
+cd xxx/
+ls
+sudo chown mysql:mysql db.opt&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;执行 systemctl restart mysql 重启服务，进入 mysql 命令行客户端，再次执行 drop database xxx 即成功删除。&lt;/p&gt;&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/section&gt;</description><category>mysql</category><guid>https://note.tt4e.com/posts/solution-to-cant-drop-database-tt4e-database-doesnt-exist/</guid><pubDate>Sun, 26 May 2024 17:23:39 GMT</pubDate></item><item><title>Solution to "Could not chdir to home directory No such file or directory"</title><link>https://note.tt4e.com/posts/solution-to-could-not-chdir-to-home-directory-no-such-file-or-directory/</link><dc:creator>逍遥</dc:creator><description>&lt;section id="section-1"&gt;
 &lt;h2&gt;两种登录模式&lt;/h2&gt;
 &lt;ol class="arabic simple"&gt;
 &lt;li&gt;&lt;p&gt;多用户登录模式，可读写全部文件。&lt;/p&gt;&lt;/li&gt;
@@ -204,18 +251,4 @@
 &lt;div class="code"&gt;&lt;pre class="code python"&gt;&lt;a id="rest_code_7334ec3b73724a4da776905f79b5bfcc-1" name="rest_code_7334ec3b73724a4da776905f79b5bfcc-1" href="https://note.tt4e.com/posts/absolute-and-relative-path-in-python/#rest_code_7334ec3b73724a4da776905f79b5bfcc-1"&gt;&lt;/a&gt;&lt;span class="kn"&gt;import&lt;/span&gt; &lt;span class="nn"&gt;pathlib&lt;/span&gt;
 &lt;a id="rest_code_7334ec3b73724a4da776905f79b5bfcc-2" name="rest_code_7334ec3b73724a4da776905f79b5bfcc-2" href="https://note.tt4e.com/posts/absolute-and-relative-path-in-python/#rest_code_7334ec3b73724a4da776905f79b5bfcc-2"&gt;&lt;/a&gt;&lt;span class="n"&gt;pathlib&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;Path&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s1"&gt;'/abc'&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;is_absolute&lt;/span&gt;&lt;span class="p"&gt;()&lt;/span&gt;
 &lt;/pre&gt;&lt;/div&gt;
-&lt;/section&gt;</description><category>path</category><category>python</category><guid>https://note.tt4e.com/posts/absolute-and-relative-path-in-python/</guid><pubDate>Thu, 07 Dec 2023 00:12:45 GMT</pubDate></item><item><title>SecureCRT 中 Emacs 向上翻页快捷键 Alt+V 失效</title><link>https://note.tt4e.com/posts/securecrt-emacs-alt-v-not-work/</link><dc:creator>逍遥</dc:creator><description>&lt;section id="section-1"&gt;
-&lt;h2&gt;问题现象&lt;/h2&gt;
-&lt;p&gt;无论怎么配置 Options 中 Emacs 的配置，M-v 都无法向上滚屏。&lt;/p&gt;
-&lt;p&gt;配置位置：Menu「Options」-&amp;gt; Edit Default Session... -&amp;gt; Dialog「Session Options - Default」 -&amp;gt; Tree「Category」-&amp;gt; Emulation -&amp;gt; Emacs -&amp;gt; CheckBox「Use ALT as meta key」&lt;/p&gt;
-&lt;p&gt;尝试修改各相关配置无效。&lt;/p&gt;
-&lt;p&gt;尝试搜索关键字，Google 中似乎类似问题很少人问。&lt;/p&gt;
-&lt;/section&gt;
-&lt;section id="section-2"&gt;
-&lt;h2&gt;解决方法&lt;/h2&gt;
-&lt;p&gt;因为 Google 搜索关键字 SecureCRT Emacs ALT-V 没有类似提问，所以怀疑我的现象是特例 &amp;lt;-- 想到这一点非常重要。&lt;/p&gt;
-&lt;p&gt;特例说明，问题产生条件是我独有的，很大可能是我的环境引入的，就是说，不是内因，而是外因，是由于 SecureCRT 之外的程序导致的。&lt;/p&gt;
-&lt;p&gt;想到这一点后，我尝试逐个关闭电脑相关程序来排除，终于当我关闭「富途牛牛」时，在 Emacs 中，Alt+V 或说 M-v 生效了，可以成功向上滚动。&lt;/p&gt;
-&lt;p&gt;再查看「富途牛牛」的快捷键清单中，是截屏直播的快捷键。同理还有全屏直播 Alt+C，以及快捷键 Ctrl+1，Alt+1 也显示被其他软件占用。&lt;/p&gt;
-&lt;p&gt;不知是不是因为富途牛牛的产品经理视角狭隘，或者开发人员用的都是 macOS，要不怎么会设计出这些明显冲突的全局快捷键。&lt;/p&gt;
-&lt;/section&gt;</description><category>emacs</category><category>securecrt</category><guid>https://note.tt4e.com/posts/securecrt-emacs-alt-v-not-work/</guid><pubDate>Sat, 02 Dec 2023 00:09:47 GMT</pubDate></item></channel></rss>
+&lt;/section&gt;</description><category>path</category><category>python</category><guid>https://note.tt4e.com/posts/absolute-and-relative-path-in-python/</guid><pubDate>Thu, 07 Dec 2023 00:12:45 GMT</pubDate></item></channel></rss>
