@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<?xml-stylesheet type="text/xsl" href="../assets/xml/rss.xsl" media="all"?><rss version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>琅環笔记 (关于 mysql 的文章)</title><link>https://note.tt4e.com/</link><description></description><atom:link href="https://note.tt4e.com/categories/mysql.xml" rel="self" type="application/rss+xml"></atom:link><language>zh_cn</language><copyright>Contents © 2024 &lt;a href="mailto:xiaoyao@tt4e.com"&gt;逍遥&lt;/a&gt; </copyright><lastBuildDate>Sun, 26 May 2024 18:24:25 GMT</lastBuildDate><generator>Nikola (getnikola.com)</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>Solution to Can't drop database 'tt4e'; database doesn't exist</title><link>https://note.tt4e.com/posts/solution-to-cant-drop-database-tt4e-database-doesnt-exist/</link><dc:creator>逍遥</dc:creator><description>&lt;section id="section-1"&gt;
+<?xml-stylesheet type="text/xsl" href="../assets/xml/rss.xsl" media="all"?><rss version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>琅環笔记 (关于 mysql 的文章)</title><link>https://note.tt4e.com/</link><description></description><atom:link href="https://note.tt4e.com/categories/mysql.xml" rel="self" type="application/rss+xml"></atom:link><language>zh_cn</language><copyright>Contents © 2024 &lt;a href="mailto:xiaoyao@tt4e.com"&gt;逍遥&lt;/a&gt; </copyright><lastBuildDate>Sun, 26 May 2024 19:44:49 GMT</lastBuildDate><generator>Nikola (getnikola.com)</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>Solution to Can't drop database 'tt4e'; database doesn't exist</title><link>https://note.tt4e.com/posts/solution-to-cant-drop-database-tt4e-database-doesnt-exist/</link><dc:creator>逍遥</dc:creator><description>&lt;section id="section-1"&gt;
 &lt;h2&gt;问题现象&lt;/h2&gt;
 &lt;p&gt;一台服务器上，有一个数据库怎么也删不掉，但可以显示。&lt;/p&gt;
 &lt;pre class="literal-block"&gt;MariaDB [(none)]&amp;gt; show databases;
@@ -31,7 +31,7 @@ cat /etc/mysql/mariadb.conf.d/50-server.cnf&lt;/p&gt;
 &lt;/li&gt;
 &lt;li&gt;&lt;p&gt;发现默认配置文件中未指定数据路径，则进入默认数据路径，并查看文件权限，发现 xxx 的所有者是 root 用户:&lt;/p&gt;
 &lt;aside class="system-message"&gt;
-&lt;p class="system-message-title"&gt;System Message: WARNING/2 (&lt;span class="docutils literal"&gt;&amp;lt;string&amp;gt;&lt;/span&gt;, line 38)&lt;/p&gt;
+&lt;p class="system-message-title"&gt;System Message: WARNING/2 (&lt;span class="docutils literal"&gt;&amp;lt;string&amp;gt;&lt;/span&gt;, line 39)&lt;/p&gt;
 &lt;p&gt;Literal block expected; none found.&lt;/p&gt;
 &lt;/aside&gt;
 &lt;p&gt;cd /var/lib/mysql/
@@ -40,7 +40,7 @@ ls -l&lt;/p&gt;
 &lt;li&gt;&lt;p&gt;猜测是使用了不同的用户创建的数据库导致没有权限，执行 cat /etc/passwd 查看用户，发现 mysql 用户；&lt;/p&gt;&lt;/li&gt;
 &lt;li&gt;&lt;p&gt;于是将 xxx 目录和下面文件的所有者修改为 mysql:&lt;/p&gt;
 &lt;aside class="system-message"&gt;
-&lt;p class="system-message-title"&gt;System Message: WARNING/2 (&lt;span class="docutils literal"&gt;&amp;lt;string&amp;gt;&lt;/span&gt;, line 45)&lt;/p&gt;
+&lt;p class="system-message-title"&gt;System Message: WARNING/2 (&lt;span class="docutils literal"&gt;&amp;lt;string&amp;gt;&lt;/span&gt;, line 46)&lt;/p&gt;
 &lt;p&gt;Literal block expected; none found.&lt;/p&gt;
 &lt;/aside&gt;
 &lt;p&gt;sudo chown mysql:mysql xxx/
