@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<?xml-stylesheet type="text/xsl" href="../assets/xml/rss.xsl" media="all"?><rss version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>琅環笔记 (关于 certbot 的文章)</title><link>https://note.tt4e.com/</link><description></description><atom:link href="https://note.tt4e.com/categories/certbot.xml" rel="self" type="application/rss+xml"></atom:link><language>zh_cn</language><copyright>Contents © 2024 &lt;a href="mailto:xiaoyao@tt4e.com"&gt;逍遥&lt;/a&gt; </copyright><lastBuildDate>Sun, 26 May 2024 19:37:03 GMT</lastBuildDate><generator>Nikola (getnikola.com)</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>certbot 一分钟搞定 https 的 ssl 证书申请</title><link>https://note.tt4e.com/posts/certbot-https-ssl-in-one-minute/</link><dc:creator>逍遥</dc:creator><description>&lt;p&gt;不要去某云手动申请免费证书，再等待不知道多久，再下载配置证书了。&lt;/p&gt;
+&lt;p&gt;这个过程已经被 certbot 项目自动化了，ssl 作为互联网基础设施的一部分，这本该是被简单解决和处理的事。&lt;/p&gt;
+&lt;p&gt;certbot 项目由此而生。&lt;/p&gt;
+&lt;section id="ubuntu"&gt;
+&lt;h2&gt;Ubuntu 为例&lt;/h2&gt;
+&lt;pre class="literal-block"&gt;sudo apt-get install certbot
+sudo apt-get install python3-certbot-apache
+sudo certbot --apache&lt;/pre&gt;
+&lt;p&gt;如果使用的是 nginx 则:&lt;/p&gt;
+&lt;pre class="literal-block"&gt;sudo certbot --nginx&lt;/pre&gt;
+&lt;p&gt;按提示输入即可，秒通，连Web服务器都不用手动重启。&lt;/p&gt;
+&lt;/section&gt;</description><category>certbot</category><guid>https://note.tt4e.com/posts/certbot-https-ssl-in-one-minute/</guid><pubDate>Sun, 26 May 2024 19:29:32 GMT</pubDate></item></channel></rss>

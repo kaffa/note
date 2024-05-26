@@ -15,7 +15,7 @@
 <link href="assets/css/font-awesome.css" rel="stylesheet" type="text/css">
 <link href="assets/css/styles.css" rel="stylesheet" type="text/css">
 <link href="assets/css/custom.css" rel="stylesheet" type="text/css">
-<!--[if lt IE 9]><script src="assets/js/html5.js"></script><![endif]--><link rel="prefetch" href="posts/solution-to-cant-drop-database-tt4e-database-doesnt-exist/" type="text/html">
+<!--[if lt IE 9]><script src="assets/js/html5.js"></script><![endif]--><link rel="prefetch" href="posts/certbot-https-ssl-in-one-minute/" type="text/html">
 </head>
 <body>
 <script type="text/javascript">
@@ -94,6 +94,56 @@ document.getElementById('nav-toggle-burger').onclick = function() {
 
   
 <div class="postindex">
+    <div class="columns">
+      <div class="column">
+        <div class="card post-card">
+          <article class="h-entry post-text"><div class="card-content">
+              <div class="media metadata">
+                <div class="media-content">
+                  <p class="title is-2 p-name entry-title">
+                    <a href="posts/certbot-https-ssl-in-one-minute/" class="u-url">certbot 一分钟搞定 https 的 ssl 证书申请</a>
+                  </p>
+                </div>
+                  <div class="media-right">
+                    <span class="icon">
+                      <i class="fa fa-file-text-o" aria-hidden="true"></i>
+                    </span>
+                    <span class="visuallyhidden">text</span>
+                  </div>
+              </div>
+                <div class="content e-content entry-content">
+                  <p>不要去某云手动申请免费证书，再等待不知道多久，再下载配置证书了。</p>
+<p>这个过程已经被 certbot 项目自动化了，ssl 作为互联网基础设施的一部分，这本该是被简单解决和处理的事。</p>
+<p>certbot 项目由此而生。</p>
+<section id="ubuntu"><h2>Ubuntu 为例</h2>
+<pre class="literal-block">sudo apt-get install certbot
+sudo apt-get install python3-certbot-apache
+sudo certbot --apache</pre>
+<p>如果使用的是 nginx 则:</p>
+<pre class="literal-block">sudo certbot --nginx</pre>
+<p>按提示输入即可，秒通，连Web服务器都不用手动重启。</p>
+</section>
+</div>
+            </div>
+
+            <footer class="card-footer"><p class="card-footer-item byline author vcard">
+                <span class="byline-name fn">
+                    逍遥
+                </span>
+              </p>
+              <p class="card-footer-item dateline">
+                <a href="posts/certbot-https-ssl-in-one-minute/" rel="bookmark">
+                  <time class="published dt-published" datetime="2024-05-27T03:29:32+08:00" title="2024-05-27 03:29">2024-05-27 03:29</time></a>
+              </p>
+                <p class="card-footer-item commentline">
+    
+    <a href="posts/certbot-https-ssl-in-one-minute/#disqus_thread" data-disqus-identifier="cache/posts/certbot-yi-fen-zhong-gao-ding-https-de-ssl-zheng-shu-shen-qing.html">评论</a>
+
+</p>
+            </footer></article>
+</div>
+      </div>
+    </div>
     <div class="columns">
       <div class="column">
         <div class="card post-card">
@@ -611,51 +661,6 @@ setx path "%path%;%USERPROFILE%bin"</p>
                 <p class="card-footer-item commentline">
     
     <a href="posts/dig-installation-on-freebsd/#disqus_thread" data-disqus-identifier="cache/posts/dig-installation-on-freebsd.html">评论</a>
-
-</p>
-            </footer></article>
-</div>
-      </div>
-    </div>
-    <div class="columns">
-      <div class="column">
-        <div class="card post-card">
-          <article class="h-entry post-text"><div class="card-content">
-              <div class="media metadata">
-                <div class="media-content">
-                  <p class="title is-2 p-name entry-title">
-                    <a href="posts/how-to-config-windows-cmd-proxy/" class="u-url">设置 Windows Cmd 使用代理服务器的方法</a>
-                  </p>
-                </div>
-                  <div class="media-right">
-                    <span class="icon">
-                      <i class="fa fa-file-text-o" aria-hidden="true"></i>
-                    </span>
-                    <span class="visuallyhidden">text</span>
-                  </div>
-              </div>
-                <div class="content e-content entry-content">
-                  <section id="windows-cmd-proxy"><h2>Windows cmd proxy 直给答案</h2>
-<div class="code"><pre class="code bash"><a id="rest_code_5a8a99002b1a4f4ea629ffcb2ceb12cf-1" name="rest_code_5a8a99002b1a4f4ea629ffcb2ceb12cf-1" href="posts/how-to-config-windows-cmd-proxy/#rest_code_5a8a99002b1a4f4ea629ffcb2ceb12cf-1"></a><span class="nb">set</span><span class="w"> </span><span class="nv">proxy</span><span class="o">=</span>http://127.0.0.1:6868
-<a id="rest_code_5a8a99002b1a4f4ea629ffcb2ceb12cf-2" name="rest_code_5a8a99002b1a4f4ea629ffcb2ceb12cf-2" href="posts/how-to-config-windows-cmd-proxy/#rest_code_5a8a99002b1a4f4ea629ffcb2ceb12cf-2"></a><span class="nb">set</span><span class="w"> </span><span class="nv">proxy</span><span class="o">=</span>https://127.0.0.1:6868
-</pre></div>
-<p>看起来，也适用于 Linux FreeBSD</p>
-</section>
-</div>
-            </div>
-
-            <footer class="card-footer"><p class="card-footer-item byline author vcard">
-                <span class="byline-name fn">
-                    逍遥
-                </span>
-              </p>
-              <p class="card-footer-item dateline">
-                <a href="posts/how-to-config-windows-cmd-proxy/" rel="bookmark">
-                  <time class="published dt-published" datetime="2024-01-20T09:14:15+08:00" title="2024-01-20 09:14">2024-01-20 09:14</time></a>
-              </p>
-                <p class="card-footer-item commentline">
-    
-    <a href="posts/how-to-config-windows-cmd-proxy/#disqus_thread" data-disqus-identifier="cache/posts/how-to-config-windows-cmd-proxy.html">评论</a>
 
 </p>
             </footer></article>
