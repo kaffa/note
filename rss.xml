@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<?xml-stylesheet type="text/xsl" href="assets/xml/rss.xsl" media="all"?><rss version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>琅環笔记</title><link>https://note.tt4e.com/</link><description>有博学强记者，尝为鹅厂从事。游于洞宫，遇一人于途，问逍遥曰：“君读书几何？”遥曰：“吾之未读者，则二十年内书盖有之也，若二十年外，则吾固已尽读之矣。”其人论议超然，遥颇内服，相与欢甚。因共至一处，大石中忽然有门，引遥入数歩，则别是天地，宫室嵯峨。引入一室中，陈书满架，其人曰：“此PL史也。”又至一室，则曰：“OS志也。”毎室各有奇书，惟一室屋宇颇高，封识甚严，有二犬守之。遥问故，答曰：“此皆操作系统、编程语言、算法分析、生发正骨诸秘籍。”指二犬曰：“此龙也。”历观诸室书，皆Windows以前事，多所未闻者，如「BeOS」、「Solaris」、「FreeBSD」、「LISP」亦皆在焉。遥心乐之，欲赁住数十日，其人笑曰：“君痴矣。此岂可赁地耶？”即命小童送出，遥问地名，对曰：“琅嬛福地也。”</description><atom:link href="https://note.tt4e.com/rss.xml" rel="self" type="application/rss+xml"></atom:link><language>zh_cn</language><copyright>Contents © 2024 &lt;a href="mailto:xiaoyao@tt4e.com"&gt;逍遥&lt;/a&gt; </copyright><lastBuildDate>Sun, 26 May 2024 19:44:49 GMT</lastBuildDate><generator>Nikola (getnikola.com)</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>certbot 一分钟搞定 https 的 ssl 证书申请</title><link>https://note.tt4e.com/posts/certbot-https-ssl-in-one-minute/</link><dc:creator>逍遥</dc:creator><description>&lt;p&gt;不要去某云手动申请免费证书，再等待不知道多久，再下载配置证书了。&lt;/p&gt;
+<?xml-stylesheet type="text/xsl" href="assets/xml/rss.xsl" media="all"?><rss version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>琅環笔记</title><link>https://note.tt4e.com/</link><description>有博学强记者，尝为鹅厂从事。游于洞宫，遇一人于途，问逍遥曰：“君读书几何？”遥曰：“吾之未读者，则二十年内书盖有之也，若二十年外，则吾固已尽读之矣。”其人论议超然，遥颇内服，相与欢甚。因共至一处，大石中忽然有门，引遥入数歩，则别是天地，宫室嵯峨。引入一室中，陈书满架，其人曰：“此PL史也。”又至一室，则曰：“OS志也。”毎室各有奇书，惟一室屋宇颇高，封识甚严，有二犬守之。遥问故，答曰：“此皆操作系统、编程语言、算法分析、生发正骨诸秘籍。”指二犬曰：“此龙也。”历观诸室书，皆Windows以前事，多所未闻者，如「BeOS」、「Solaris」、「FreeBSD」、「LISP」亦皆在焉。遥心乐之，欲赁住数十日，其人笑曰：“君痴矣。此岂可赁地耶？”即命小童送出，遥问地名，对曰：“琅嬛福地也。”</description><atom:link href="https://note.tt4e.com/rss.xml" rel="self" type="application/rss+xml"></atom:link><language>zh_cn</language><copyright>Contents © 2024 &lt;a href="mailto:xiaoyao@tt4e.com"&gt;逍遥&lt;/a&gt; </copyright><lastBuildDate>Sun, 26 May 2024 20:11:27 GMT</lastBuildDate><generator>Nikola (getnikola.com)</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>certbot 一分钟搞定 https 的 ssl 证书申请</title><link>https://note.tt4e.com/posts/certbot-https-ssl-in-one-minute/</link><dc:creator>逍遥</dc:creator><description>&lt;p&gt;不要去某云手动申请免费证书，再等待不知道多久，再下载配置证书了。&lt;/p&gt;
 &lt;p&gt;这个过程已经被 certbot 项目自动化了，ssl 作为互联网基础设施的一部分，这本该是被简单解决和处理的事。&lt;/p&gt;
 &lt;p&gt;certbot 项目由此而生。&lt;/p&gt;
 &lt;section id="ubuntu"&gt;
@@ -32,32 +32,20 @@ ERROR 1008 (HY000): Can't drop database 'xxx'; database doesn't exist&lt;/pre&gt
 &lt;h2&gt;问题解决&lt;/h2&gt;
 &lt;ol class="arabic"&gt;
 &lt;li&gt;&lt;p&gt;用 ps aux 查看进程，发现 mariadbd 进程，发现未使用配置文件，则使用的默认路径配置；&lt;/p&gt;&lt;/li&gt;
-&lt;li&gt;&lt;p&gt;查看默认配置文件:&lt;/p&gt;
-&lt;aside class="system-message"&gt;
-&lt;p class="system-message-title"&gt;System Message: WARNING/2 (&lt;span class="docutils literal"&gt;&amp;lt;string&amp;gt;&lt;/span&gt;, line 33)&lt;/p&gt;
-&lt;p&gt;Literal block expected; none found.&lt;/p&gt;
-&lt;/aside&gt;
-&lt;p&gt;cat /etc/mysql/mariadb.cnf
-cat /etc/mysql/mariadb.conf.d/50-server.cnf&lt;/p&gt;
+&lt;li&gt;&lt;p&gt;查看默认配置文件&lt;/p&gt;
+&lt;pre class="literal-block"&gt;cat /etc/mysql/mariadb.cnf
+cat /etc/mysql/mariadb.conf.d/50-server.cnf&lt;/pre&gt;
 &lt;/li&gt;
-&lt;li&gt;&lt;p&gt;发现默认配置文件中未指定数据路径，则进入默认数据路径，并查看文件权限，发现 xxx 的所有者是 root 用户:&lt;/p&gt;
-&lt;aside class="system-message"&gt;
-&lt;p class="system-message-title"&gt;System Message: WARNING/2 (&lt;span class="docutils literal"&gt;&amp;lt;string&amp;gt;&lt;/span&gt;, line 39)&lt;/p&gt;
-&lt;p&gt;Literal block expected; none found.&lt;/p&gt;
-&lt;/aside&gt;
-&lt;p&gt;cd /var/lib/mysql/
-ls -l&lt;/p&gt;
+&lt;li&gt;&lt;p&gt;发现默认配置文件中未指定数据路径，则进入默认数据路径，并查看文件权限，发现 xxx 的所有者是 root 用户&lt;/p&gt;
+&lt;pre class="literal-block"&gt;cd /var/lib/mysql/
+ls -l&lt;/pre&gt;
 &lt;/li&gt;
 &lt;li&gt;&lt;p&gt;猜测是使用了不同的用户创建的数据库导致没有权限，执行 cat /etc/passwd 查看用户，发现 mysql 用户；&lt;/p&gt;&lt;/li&gt;
-&lt;li&gt;&lt;p&gt;于是将 xxx 目录和下面文件的所有者修改为 mysql:&lt;/p&gt;
-&lt;aside class="system-message"&gt;
-&lt;p class="system-message-title"&gt;System Message: WARNING/2 (&lt;span class="docutils literal"&gt;&amp;lt;string&amp;gt;&lt;/span&gt;, line 46)&lt;/p&gt;
-&lt;p&gt;Literal block expected; none found.&lt;/p&gt;
-&lt;/aside&gt;
-&lt;p&gt;sudo chown mysql:mysql xxx/
+&lt;li&gt;&lt;p&gt;于是将 xxx 目录和下面文件的所有者修改为 mysql&lt;/p&gt;
+&lt;pre class="literal-block"&gt;sudo chown mysql:mysql xxx/
 cd xxx/
 ls
-sudo chown mysql:mysql db.opt&lt;/p&gt;
+sudo chown mysql:mysql db.opt&lt;/pre&gt;
 &lt;/li&gt;
 &lt;li&gt;&lt;p&gt;执行 systemctl restart mysql 重启服务，进入 mysql 命令行客户端，再次执行 drop database xxx 即成功删除。&lt;/p&gt;&lt;/li&gt;
 &lt;/ol&gt;
