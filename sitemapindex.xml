@@ -27,7 +27,7 @@
  </sitemap>
  <sitemap>
   <loc>https://note.tt4e.com/categories/cat_tips.xml</loc>
-  <lastmod>2024-05-26T19:37:00Z</lastmod>
+  <lastmod>2024-06-23T05:32:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>https://note.tt4e.com/categories/certbot.xml</loc>
@@ -54,6 +54,10 @@
   <lastmod>2024-04-08T20:03:00Z</lastmod>
  </sitemap>
  <sitemap>
+  <loc>https://note.tt4e.com/categories/featured.xml</loc>
+  <lastmod>2024-06-23T05:32:00Z</lastmod>
+ </sitemap>
+ <sitemap>
   <loc>https://note.tt4e.com/categories/freebsd.xml</loc>
   <lastmod>2024-04-08T20:03:00Z</lastmod>
  </sitemap>
@@ -75,7 +79,7 @@
  </sitemap>
  <sitemap>
   <loc>https://note.tt4e.com/categories/mysql.xml</loc>
-  <lastmod>2024-05-26T18:24:00Z</lastmod>
+  <lastmod>2024-05-26T20:11:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>https://note.tt4e.com/categories/newline.xml</loc>
@@ -143,10 +147,10 @@
  </sitemap>
  <sitemap>
   <loc>https://note.tt4e.com/rss.xml</loc>
-  <lastmod>2024-05-26T19:37:00Z</lastmod>
+  <lastmod>2024-06-23T05:32:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>https://note.tt4e.com/sitemap.xml</loc>
-  <lastmod>2024-05-26T19:37:00Z</lastmod>
+  <lastmod>2024-06-23T05:32:00Z</lastmod>
  </sitemap>
 </sitemapindex>

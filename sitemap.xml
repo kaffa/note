@@ -19,11 +19,11 @@
  </url>
  <url>
   <loc>https://note.tt4e.com/archive.html</loc>
-  <lastmod>2024-05-26T19:37:00Z</lastmod>
+  <lastmod>2024-06-23T05:32:00Z</lastmod>
  </url>
  <url>
   <loc>https://note.tt4e.com/categories/</loc>
-  <lastmod>2024-05-26T19:37:00Z</lastmod>
+  <lastmod>2024-06-23T05:32:00Z</lastmod>
  </url>
  <url>
   <loc>https://note.tt4e.com/categories/asyncio/</loc>
@@ -72,6 +72,10 @@
  <url>
   <loc>https://note.tt4e.com/categories/env/</loc>
   <lastmod>2024-04-08T20:03:00Z</lastmod>
+ </url>
+ <url>
+  <loc>https://note.tt4e.com/categories/featured/</loc>
+  <lastmod>2024-06-23T05:32:00Z</lastmod>
  </url>
  <url>
   <loc>https://note.tt4e.com/categories/freebsd/</loc>
@@ -167,7 +171,7 @@
  </url>
  <url>
   <loc>https://note.tt4e.com/index-2.html</loc>
-  <lastmod>2024-05-26T19:37:00Z</lastmod>
+  <lastmod>2024-06-23T05:32:00Z</lastmod>
  </url>
  <url>
   <loc>https://note.tt4e.com/listings/</loc>
@@ -264,6 +268,10 @@
  <url>
   <loc>https://note.tt4e.com/posts/how-to-config-windows-cmd-proxy/</loc>
   <lastmod>2024-04-08T20:03:00Z</lastmod>
+ </url>
+ <url>
+  <loc>https://note.tt4e.com/posts/important-tips-for-solving-probles-that-cannot-be-found-on-the-internet/</loc>
+  <lastmod>2024-06-23T05:32:00Z</lastmod>
  </url>
  <url>
   <loc>https://note.tt4e.com/posts/initel-doesnt-automatically-load-on-startup-of-emacs/</loc>
