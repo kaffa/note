@@ -24,16 +24,18 @@
 
 
 ::
-   .footnote-target {
-     position: relative;
-     top: -5rem; /* negative value of the fixed html element height */
-     height: 0;
-     overflow: hidden;
-   }
+
+    .footnote-target {
+      position: relative;
+      top: -5rem; /* negative value of the fixed html element height */
+      height: 0;
+      overflow: hidden;
+    }
 
 ::
-   $(function(){
-     $('.footnote').before(function(i) {
-       return '<a class="footnote-target" name="' + this.id + '"></a>';
-     }).removeAttr('id');
-   });
+
+    $(function(){
+      $('.footnote').before(function(i) {
+        return '<a class="footnote-target" name="' + this.id + '"></a>';
+      }).removeAttr('id');
+    });
