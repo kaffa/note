@@ -19,11 +19,11 @@
  </url>
  <url>
   <loc>https://note.tt4e.com/archive.html</loc>
-  <lastmod>2024-06-23T05:32:00Z</lastmod>
+  <lastmod>2024-07-08T16:30:00Z</lastmod>
  </url>
  <url>
   <loc>https://note.tt4e.com/categories/</loc>
-  <lastmod>2024-06-23T05:32:00Z</lastmod>
+  <lastmod>2024-07-08T16:30:00Z</lastmod>
  </url>
  <url>
   <loc>https://note.tt4e.com/categories/asyncio/</loc>
@@ -56,6 +56,10 @@
  <url>
   <loc>https://note.tt4e.com/categories/cmd/</loc>
   <lastmod>2024-04-08T20:03:00Z</lastmod>
+ </url>
+ <url>
+  <loc>https://note.tt4e.com/categories/css/</loc>
+  <lastmod>2024-07-08T16:30:00Z</lastmod>
  </url>
  <url>
   <loc>https://note.tt4e.com/categories/dig/</loc>
@@ -171,7 +175,7 @@
  </url>
  <url>
   <loc>https://note.tt4e.com/index-2.html</loc>
-  <lastmod>2024-06-23T05:32:00Z</lastmod>
+  <lastmod>2024-07-08T16:30:00Z</lastmod>
  </url>
  <url>
   <loc>https://note.tt4e.com/listings/</loc>
@@ -296,6 +300,10 @@
  <url>
   <loc>https://note.tt4e.com/posts/set-env-on-unix-like-and-windows-system/</loc>
   <lastmod>2024-04-08T20:03:00Z</lastmod>
+ </url>
+ <url>
+  <loc>https://note.tt4e.com/posts/solution-for-html-anchor-element-linked-to-css-fixed-elements/</loc>
+  <lastmod>2024-07-08T16:30:00Z</lastmod>
  </url>
  <url>
   <loc>https://note.tt4e.com/posts/solution-to-arrow-keys-changed-into-abcd-in-securecrt-emacs-vim/</loc>
