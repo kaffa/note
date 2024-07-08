@@ -143,48 +143,18 @@ document.getElementById('nav-toggle-burger').onclick = function() {
 </section><section id="section-3"><h3>解决方案一种</h3>
 <p>解决方式有多种，我认为侵入较少的方式是在元素之上插入一个用来校准位置的隐藏元素。</p>
 <p>这里假设需要校准滚动的是脚注元素 .footnote</p>
-<dl>
-<dt>::</dt>
-<dd>
-<dl>
-<dt>.footnote-target {</dt>
-<dd>
-<p>position: relative;
-top: -5rem; /* negative value of the fixed html element height <a href="#system-message-1"><span class="problematic" id="problematic-1">*</span></a>/
-height: 0;
-overflow: hidden;</p>
-<aside class="system-message" id="system-message-1"><p class="system-message-title">System Message: WARNING/2 (<span class="docutils literal">&lt;string&gt;</span>, line 19); <em><a href="#problematic-1">backlink</a></em></p>
-<p>Inline emphasis start-string without end-string.</p>
-</aside>
-</dd>
-</dl>
-<aside class="system-message"><p class="system-message-title">System Message: WARNING/2 (<span class="docutils literal">&lt;string&gt;</span>, line 23)</p>
-<p>Definition list ends without a blank line; unexpected unindent.</p>
-</aside><p>}</p>
-</dd>
-</dl>
-<dl>
-<dt>::</dt>
-<dd>
-<dl>
-<dt>$(function(){</dt>
-<dd>
-<dl class="simple">
-<dt>$('.footnote').before(function(i) {</dt>
-<dd>
-<p>return '&lt;a class="footnote-target" name="' + this.id + '"&gt;&lt;/a&gt;';</p>
-</dd>
-</dl>
-<aside class="system-message"><p class="system-message-title">System Message: WARNING/2 (<span class="docutils literal">&lt;string&gt;</span>, line 29)</p>
-<p>Definition list ends without a blank line; unexpected unindent.</p>
-</aside><p>}).removeAttr('id');</p>
-</dd>
-</dl>
-<aside class="system-message"><p class="system-message-title">System Message: WARNING/2 (<span class="docutils literal">&lt;string&gt;</span>, line 30)</p>
-<p>Definition list ends without a blank line; unexpected unindent.</p>
-</aside><p>});</p>
-</dd>
-</dl></section></section>
+<pre class="literal-block">.footnote-target {
+  position: relative;
+  top: -5rem; /* negative value of the fixed html element height */
+  height: 0;
+  overflow: hidden;
+}</pre>
+<pre class="literal-block">$(function(){
+  $('.footnote').before(function(i) {
+    return '&lt;a class="footnote-target" name="' + this.id + '"&gt;&lt;/a&gt;';
+  }).removeAttr('id');
+});</pre>
+</section></section>
 </div>
   <aside class="postpromonav"><div class="columns tags" itemprop="keywords">
         <div class="column has-text-centered">
